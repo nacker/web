@@ -1,0 +1,32 @@
+.lt_cart {
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  border-top: 1px solid red;
+  width: 100%;
+  background-color: #eee;
+  padding: 10px;
+}
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.price {
+  color: red;
+}
+.oldPrice {
+  color: #666;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.product_size span {
+  border: 1px solid #000;
+  padding: 5px;
+  font-size: 12px;
+  background-color: #eee;
+  line-height: 30px;
+}
+.product_size span.now {
+  background-color: orange;
+  color: #fff;
+}

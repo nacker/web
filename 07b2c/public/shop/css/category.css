@@ -1,0 +1,46 @@
+.lt_main {
+  display: flex;
+}
+.lt_main .aside {
+  width: 90px;
+  position: relative;
+}
+.lt_main .aside li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #eee;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.lt_main .aside li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #333;
+}
+.lt_main .aside li.now {
+  background-color: #fff;
+  border-right: none;
+}
+.lt_main .content {
+  flex: 1;
+  position: relative;
+}
+.lt_main .content ul {
+  overflow: hidden;
+}
+.lt_main .content li {
+  padding: 5px 0;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+.lt_main .content li img {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+.lt_main .content .tips {
+  padding: 10px;
+}

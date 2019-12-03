@@ -1,0 +1,128 @@
+html,
+body {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.lt_container {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.lt_header {
+  height: 45px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #069;
+  display: flex;
+}
+.lt_header .icon_left,
+.lt_header .icon_right {
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+}
+.lt_header .title {
+  flex: 1;
+}
+.lt_header .title h4 {
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  margin: 0;
+}
+.lt_footer {
+  height: 55px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #069;
+}
+.lt_footer ul {
+  display: flex;
+}
+.lt_footer ul li {
+  flex: 1;
+  text-align: center;
+  padding-top: 5px;
+}
+.lt_footer ul li.now a {
+  color: orange;
+}
+.lt_footer ul li.now a p {
+  color: orange;
+}
+.lt_footer ul li a {
+  color: #fff;
+}
+.lt_footer ul li a span {
+  font-size: 20px;
+}
+.lt_footer ul li a p {
+  color: #fff;
+}
+.lt_main {
+  position: absolute;
+  width: 100%;
+  top: 45px;
+  bottom: 55px;
+}
+.lt_main .search {
+  padding: 10px;
+  position: relative;
+}
+.lt_main .search input {
+  height: 34px;
+  line-height: 34px;
+  font-size: 12px;
+  border-color: #007aff;
+  padding-right: 54px;
+  margin: 0;
+}
+.lt_main .search button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 3px 3px 0;
+}
+.lt_main .product {
+  padding: 10px;
+}
+.lt_main .product .item {
+  margin-bottom: 20px;
+  float: left;
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.lt_main .product .item:nth-child(even) {
+  margin-left: 4%;
+}
+.lt_main .product .item .mui-ellipsis-2 {
+  height: 42px;
+}
+.lt_main .product .item img {
+  width: 130px;
+  height: 130px;
+}
+.lt_main .product .item .price {
+  color: red;
+}
+.lt_main .product .item .oldPrice {
+  text-decoration: line-through;
+}

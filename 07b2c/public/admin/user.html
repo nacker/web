@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <body>
+    <div class="lt_aside">
+      <div class="brand">
+        <a href="index.html">黑马39期</a>
+      </div>
+      <div class="userinfo">
+        <img src="images/default.png" alt="" />
+        <p>超级管理员</p>
+      </div>
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="user.html" class="now">
+              <span class="glyphicon glyphicon-user"></span>
+              <span>用户管理</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="glyphicon glyphicon-list"></span>
+              <span>分类管理</span>
+            </a>
+            <ul class="second" style="display: none;">
+              <li><a href="first.html">一级分类</a></li>
+              <li><a href="second.html">二级分类</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="product.html">
+              <span class="glyphicon glyphicon-tags"></span>
+              <span>商品管理</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="lt_content">
+      <div class="topbar">
+        <a href="javascript:;" class="pull-left icon-toggle"
+          ><span class="glyphicon glyphicon-align-justify"></span
+        ></a>
+        <a href="javascript:;" class="pull-right icon-logout"
+          ><span class="glyphicon glyphicon-log-out"></span
+        ></a>
+      </div>
+
+      <div class="main">
+        <ol class="breadcrumb">
+          <li><a href="index.html">管理系统</a></li>
+          <li class="active">用户管理</li>
+        </ol>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <!-- end -->
+            <!-- 右箭头  fn+右箭头 -->
+            <tr>
+              <th width="10%">序号</th>
+              <th width="20%">用户名</th>
+              <th width="30%">手机号</th>
+              <th width="20%">状态</th>
+              <th width="20%">操作</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <!-- 分页的容器一定要是一个ul 还需要指定一个唯一的id -->
+        <ul id="paginator"></ul>
+      </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">
+              <span class="glyphicon glyphicon-info-sign"></span>
+              <span>您确定要退出后台管理系统吗？</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary btn-logout">
+              退出
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">
+              <span class="glyphicon glyphicon-info-sign"></span>
+              <span>你确定要执行此操作吗？</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary btn-confirm">
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/html" id="tpl">
+      {{each rows v i}}
+      <tr>
+        <td>{{(page - 1) * size + i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>{{v.isDelete === 1 ? '正常':'禁用'}}</td>
+        <td data-id="{{v.id}}">
+          {{if v.isDelete === 0}}
+          <button class="btn btn-success">启用</button>
+          {{else}}
+          <button class="btn btn-danger">禁用</button>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/user.js"></script>
+  </body>
+</html>

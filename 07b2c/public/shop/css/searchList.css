@@ -1,0 +1,18 @@
+.sort {
+  height: 30px;
+  line-height: 30px;
+  background-color: #eee;
+  display: flex;
+  padding: 0 10px;
+}
+.sort li {
+  flex: 1;
+  text-align: center;
+}
+.sort li.now a {
+  color: orange;
+}
+.sort li a {
+  color: #333;
+  font-size: 12px;
+}

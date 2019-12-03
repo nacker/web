@@ -1,0 +1,51 @@
+.lt_main {
+  display: flex;
+  .aside {
+    width: 90px;
+    // background-color: green;
+    position: relative;
+
+    li {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: #eee;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #333;
+      }
+
+      &.now {
+        background-color: #fff;
+        border-right: none;
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    // background-color: pink;
+    position: relative;
+    ul {
+      overflow: hidden;
+    }
+    li {
+      padding: 5px 0;
+      float: left;
+      width: 33.33%;
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .tips {
+      padding: 10px;
+    }
+  }
+}

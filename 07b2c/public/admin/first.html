@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css" />
+    <link
+      rel="stylesheet"
+      href="lib/bootstrap-validator/css/bootstrapValidator.css"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <body>
+    <div class="lt_aside">
+      <div class="brand">
+        <a href="index.html">黑马39期</a>
+      </div>
+      <div class="userinfo">
+        <img src="images/default.png" alt="" />
+        <p>超级管理员</p>
+      </div>
+      <div class="nav">
+        <ul>
+          <li>
+            <a href="user.html">
+              <span class="glyphicon glyphicon-user"></span>
+              <span>用户管理</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;">
+              <span class="glyphicon glyphicon-list"></span>
+              <span>分类管理</span>
+            </a>
+            <ul class="second" style="display: block;">
+              <li><a class="now" href="first.html">一级分类</a></li>
+              <li><a href="second.html">二级分类</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="product.html">
+              <span class="glyphicon glyphicon-tags"></span>
+              <span>商品管理</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="lt_content">
+      <div class="topbar">
+        <a href="javascript:;" class="pull-left icon-toggle"
+          ><span class="glyphicon glyphicon-align-justify"></span
+        ></a>
+        <a href="javascript:;" class="pull-right icon-logout"
+          ><span class="glyphicon glyphicon-log-out"></span
+        ></a>
+      </div>
+
+      <div class="main">
+        <ol class="breadcrumb">
+          <li><a href="index.html">管理系统</a></li>
+          <li><a href="#">分类管理</a></li>
+          <li class="active">一级分类</li>
+        </ol>
+
+        <!-- 内容 -->
+        <button class="btn btn-default btn-add">添加分类</button>
+
+        <!-- 表格 -->
+        <table class="table table-bordered table-striped mt_20">
+          <thead>
+            <tr>
+              <th width="20%">序号</th>
+              <th>一级分类名称</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 挖个坑 -->
+          </tbody>
+        </table>
+        <!-- <div class="pull-right"> -->
+        <ul id="paginator" class="pull-right"></ul>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">温馨提示</h4>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">
+              <span class="glyphicon glyphicon-info-sign"></span>
+              <span>您确定要退出后台管理系统吗？</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary btn-logout">
+              退出
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">添加一级分类</h4>
+          </div>
+          <form id="form">
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="categoryName"
+                  class="form-control"
+                  placeholder="请输入一级分类名称"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+              <button type="submit" class="btn btn-primary">
+                保存
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/html" id="tpl">
+      {{each rows v i}}
+      <tr>
+         <td>{{(page-1) * size + i + 1}}</td>
+         <td>{{v.categoryName}}</td>
+       </tr>
+       {{/each}}
+    </script>
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/first.js"></script>
+  </body>
+</html>

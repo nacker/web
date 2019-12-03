@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css" />
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/category.css" />
+  </head>
+  <body>
+    <div class="lt_container">
+      <div class="lt_header">
+        <a href="index.html" class="icon_left">
+          <span class="fa fa-home"></span>
+        </a>
+        <div class="title">
+          <h4>商品分类</h4>
+        </div>
+        <a href="search.html" class="icon_right">
+          <span class="fa fa-search"></span>
+        </a>
+      </div>
+      <div class="lt_main">
+        <!-- 左和右 -->
+        <div class="aside">
+          <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+              <ul>
+                <!-- 挖个坑 -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+              <ul>
+                <!-- 再挖个坑 -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lt_footer">
+        <ul>
+          <li>
+            <a href="index.html">
+              <span class="fa fa-home"></span>
+              <p>首页</p>
+            </a>
+          </li>
+          <li class="now">
+            <a href="category.html">
+              <span class="fa fa-bars"></span>
+              <p>分类页</p>
+            </a>
+          </li>
+          <li>
+            <a href="cart.html">
+              <span class="fa fa-shopping-cart"></span>
+              <p>购物车</p>
+            </a>
+          </li>
+          <li>
+            <a href="user.html">
+              <span class="fa fa-user"></span>
+              <p>用户中心</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/html" id="tpl1">
+      {{each rows v i}}
+      <li data-id="{{v.id}}" class="{{i === 0 ? 'now':''}}"><a href="#">{{v.categoryName}}</a></li>
+      {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl2">
+      {{if rows.length === 0}}
+        <p class="tips">该分类下没有更多的数据</p>
+      {{/if}}
+      {{each rows v i}}
+      <li>
+        <a href="#">
+          <img src="{{v.brandLogo}}" alt="" />
+          <p>{{v.brandName}}</p>
+        </a>
+      </li>
+      {{/each}}
+    </script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/category.js"></script>
+  </body>
+</html>

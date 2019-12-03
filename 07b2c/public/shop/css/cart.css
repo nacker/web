@@ -1,0 +1,32 @@
+.img {
+  float: left;
+  width: 60px;
+  margin-right: 10px;
+}
+.img img {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+.content {
+  overflow: hidden;
+}
+.content .productName {
+  color: #000;
+}
+.content .price {
+  color: red;
+}
+.content .oldPrice {
+  text-decoration: line-through;
+  color: #666;
+  font-size: 14px;
+}
+.content .num {
+  color: #666;
+  font-size: 14px;
+}
+.content .productSize {
+  color: #666;
+  font-size: 14px;
+}
