@@ -1,0 +1,10 @@
+span {
+  display: inline-block;
+  width: 150px;
+}
+
+.todos-active {
+  font-weight: bold;
+  color: yellowgreen;
+  text-decoration: none;
+}

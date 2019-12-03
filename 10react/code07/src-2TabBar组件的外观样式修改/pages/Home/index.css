@@ -1,0 +1,13 @@
+.home .iconfont {
+  font-size: 20px;
+}
+
+.home .tabbar {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  /* bottom: 0;
+  left: 0;
+  height: 50px; */
+}

@@ -1,0 +1,9 @@
+.root {
+  background-color: #fff;
+}
+.root .list {
+  list-style: none;
+}
+.root .list > li {
+  font-size: 30px;
+}

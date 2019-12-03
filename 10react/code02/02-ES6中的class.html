@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 在 ES6 中出现了 class 关键字，用来实现面向对象。
+      // class 语法仅仅是 JS 的一个 语法糖。
+
+      class Person {
+        // 构造函数
+        // constructor 是固定的语法
+        // constructor() {
+        //   this.name = 'pm'
+        //   this.age = 28
+        // }
+
+        // 通过构造函数接收到创建实例对象时，创建的参数
+        constructor(name, age) {
+          this.name = name
+          this.age = age
+        }
+
+        // 实例方法
+        // 相当于在原型对象中，添加的方法
+        say() {
+          console.log('你好，我叫：' + this.name, ' 我今年 ', this.age, ' 岁了')
+        }
+      }
+
+      // 创建 Person 类的实例对象
+      const p = new Person()
+      console.log(p)
+
+      const p1 = new Person('cc', 29)
+      console.log(p1)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ES6 中通过class 实现继承：
+      // 至少需要两个类（子类 和 父类）
+
+      // 创建父类
+      class Person {
+        constructor(age) {
+          this.name = '张三'
+          // this.age = 1
+          this.age = age
+        }
+
+        say() {
+          console.log('你好，我叫：', this.name)
+        }
+      }
+
+      // // 创建子类
+      // // 继承的语法： class 子类 extends 父类 {}
+      // class Chinese extends Person {
+      //   constructor() {
+      //     // 注意：如果手动在子类中使用了 constructor ，那么，就必须在使用 this 之前
+      //     // 手动调用 super()！！！
+      //     // super() 表示父类的构造函数，在该例子中，就是 Person 的constructor
+      //     super()
+      //     /*
+      //     this.name = '张三'
+      //     this.age = 1
+      //     */
+
+      //     this.name = '李四本人'
+      //   }
+      // }
+
+      // // 创建子类的实例对象
+      // const c = new Chinese()
+
+      class Chinese extends Person {
+        constructor(name, age) {
+          super(age)
+
+          this.name = name
+        }
+      }
+
+      const c = new Chinese('王五', 19)
+      console.log('子类的实例对象：', c)
+      c.say()
+    </script>
+  </body>
+</html>

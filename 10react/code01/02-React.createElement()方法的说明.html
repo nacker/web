@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+
+    <div id="root"></div>
+    <script>
+      // 创建React元素
+      // 第一个参数：表示要创建什么元素，就是 HTML 标签名称
+      // 第二个参数：表示元素自身属性，如果没有就传 null
+      //  如果要指定元素自身的属性，就传递一个对象（{}）
+      //  1 class ==> className
+      //  2 for ==> htmlFor
+      // 第三个及其以后的参数：表示元素的子节点（文本、元素节点）
+      //  如果是文本节点，就直接传递 字符串。
+      //  如果是元素节点，就继续调用 React.createElement() 方法，创建新的React元素节点
+      //
+      // const h1 = React.createElement('div', null, 'Hello React')
+      const h1 = React.createElement(
+        'h1',
+        {
+          id: 'title',
+          className: 'cls',
+          htmlFor: 'd'
+        },
+        'Hello React',
+        'test 文本节点',
+        React.createElement('span', null, '这是一个span')
+      )
+
+      // 渲染React元素
+      // 第一个参数：表示要渲染哪个react元素
+      // 第二个参数：表示要渲染在页面中的哪个元素中（挂载点）
+      ReactDOM.render(h1, document.getElementById('root'))
+    </script>
+  </body>
+</html>

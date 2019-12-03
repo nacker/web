@@ -1,0 +1,13 @@
+.navBar {
+  margin-top: -45px;
+  background-color: #f6f5f6;
+}
+
+/* 通过 :global() 来告诉 react 脚手架这是一个全局类名，不要对它进行重命名 */
+.navBar :global(.icon-back) {
+  color: #333;
+}
+
+.navBar :global(.am-navbar-title) {
+  color: #333;
+}

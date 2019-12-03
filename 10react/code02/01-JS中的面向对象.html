@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // JS 中是如何实现面向对象的？
+      // 构造函数 + 原型
+
+      // 继承：子类继承父类中的属性和方法，在 JS 中，是通过 原型 来实现的
+
+      function Person() {
+        // 添加实例属性
+        this.name = 'pm'
+        this.age = 28
+      }
+
+      // 将公共的属性或方法，添加到原型对象中，那么，将来所有的实例对象，都可以直接访问到
+      // 原型中的属性或方法。
+      Person.prototype.say = function() {
+        console.log('你好，我叫：' + this.name, ' 我今年 ', this.age, ' 岁了')
+      }
+
+      // 创建 Person 的实例对象
+      const p = new Person()
+      console.log(p)
+
+      p.say()
+    </script>
+  </body>
+</html>

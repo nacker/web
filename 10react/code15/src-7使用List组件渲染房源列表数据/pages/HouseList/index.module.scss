@@ -1,0 +1,34 @@
+.root {
+  height: 100%;
+}
+
+.listHeader {
+  height: 45px;
+  padding-left: 10px;
+  background-color: #f6f5f6;
+
+  :global {
+    .icon-back {
+      color: #999;
+    }
+  }
+}
+
+.listSearch {
+  position: relative;
+  top: 0;
+  padding-left: 0;
+
+  :global {
+    .am-flexbox {
+      height: 30px;
+    }
+    .icon-map {
+      color: #00ae66;
+    }
+  }
+}
+
+:global(.ReactVirtualized__List) {
+  padding: 0 10px;
+}

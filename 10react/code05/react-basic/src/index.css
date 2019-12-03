@@ -1,0 +1,17 @@
+.root {
+  border: 1px solid red;
+}
+
+.app {
+  display: flex;
+}
+
+.parent {
+  flex: 1;
+  height: 200px;
+  background-color: hotpink;
+}
+
+.parent:last-child {
+  background-color: yellowgreen;
+}

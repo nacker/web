@@ -1,0 +1,79 @@
+.index {
+  .swiper {
+    height: 212px;
+  }
+
+  // 导航
+  .nav {
+    padding: 10px 0;
+    text-align: center;
+
+    img {
+      width: 48px;
+    }
+
+    p {
+      margin-top: 7px;
+      font-size: 13px;
+    }
+  }
+
+  // 租房小组
+  .groups {
+    padding: 0 10px;
+    overflow: hidden;
+    background-color: #f6f5f6;
+
+    &-title {
+      margin: 15px 0 15px 10px;
+
+      h3 {
+        font-size: 15px;
+      }
+
+      span {
+        color: #787d82;
+        font-size: 14px;
+      }
+    }
+
+    .grid {
+      &-item {
+        padding: 0 13px;
+
+        p {
+          margin-bottom: 5px;
+          font-weight: bold;
+          font-size: 13px;
+        }
+
+        span {
+          font-size: 12px;
+          color: #999;
+        }
+
+        img {
+          width: 55px;
+        }
+      }
+
+      .am-flexbox-item .am-grid-item-content {
+        padding: 8px 0;
+      }
+
+      .am-flexbox {
+        background-color: transparent;
+      }
+
+      .am-grid-item {
+        height: 85px;
+        margin-bottom: 10px;
+        background-color: #fff;
+      }
+
+      .am-grid-item:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}

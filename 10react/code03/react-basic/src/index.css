@@ -1,0 +1,22 @@
+.parent {
+  height: 300px;
+  padding: 20px;
+  background-color: pink;
+}
+
+.child {
+  height: 100px;
+  background-color: yellowgreen;
+}
+
+.child2 {
+  height: 100px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: green;
+}
+
+.child3 {
+  height: 50px;
+  background-color: blue;
+}
