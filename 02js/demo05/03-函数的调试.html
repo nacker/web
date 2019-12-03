@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // F10: 让代码一行一行的执行，如果这行代码是函数的调用，直接当成一行代码执行。不会进入到函数的内部去执行。
+    // F11: 让代码一行一行执行，如果是函数的调用，会进入到函数的内部
+    // shift + F11: 跳出当前函数
+    function fn() {
+      console.log('早上9点开始备课.....');
+      play();
+      console.log('晚上6点结束备课');
+    }
+
+    function play() {
+      console.log('早上9点30开始吃鸡');
+      console.log('晚上5.30结束吃鸡');
+    }
+    fn();
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="box">111</div>
+  <div>111</div>
+  <div>111</div>
+  <div>111</div>
+  <div>111</div>
+
+  <div>
+    <div>1</div>
+    <div>1</div>
+    <div class="demo">1</div>
+    <div>
+      <div class="demo">11</div>
+      <div>11</div>
+    </div>
+  </div>
+
+  <input type="text" name="bb">
+
+  <p class="demo">11</p>
+  <script>
+    // 1和2 完全没有兼容性问题
+    // 1. document.getElementById() 根据id获取元素
+    var box = document.getElementById('box');
+    console.log(box);
+
+    // 2. document.getElementsByTagName() 根据标签名来获取元素
+    var divs = document.getElementsByTagName('div');
+    console.log(divs);
+
+    // 新增的方法， ie678不支持
+    // 3. document.getElementsByClassName() 根据类名获取元素
+    var demos = document.getElementsByClassName('demo');
+    console.log(demos);
+
+    // 4. document.getElementsByName(); 根据表单的name属性来获取元素 
+    var result = document.getElementsByName('aa');
+    console.log(result);
+
+
+
+    // document.querySelector()
+
+    // 参数：css的选择器
+    // 返回值： 一定是一个伪数组
+    // document.querySeletorAll();
+
+    // query: 查询  Selector:选择器
+    // 参数：任意的css选择器
+    // 返回值： 永远只会返回一个元素 如果多个，只会返回第一个
+    // var box = document.querySelector('#box');
+    // var input = document.querySelector('input');
+    // var demo = document.querySelector('p.demo');
+    // console.log(box);
+    // console.log(input);
+    // console.log(demo);
+
+    var div = document.querySelectorAll('div');
+    console.log(div);
+    var box = document.querySelectorAll('#box');
+    console.log(box);
+
+
+
+    // 根据id获取元素 document.getElementById()  元素
+    // 根据标签名获取元素 document.getElementsByTagName() 伪数组
+    // 根据类名获取元素: document.getElementsByClassName() 伪数组
+    // 根据name属性获取元素 document.getElementsByName(): 伪数组 
+
+    // document.querySelector('css选择器') : 元素
+    // document.querySelectorAll('css选择器') : 伪数组
+
+    // console.log('哈哈哈');
+    // var box = document.getElementById('box');
+    // var box = document.getElementById('box');
+
+    // var div = document.querySelector('#box');
+    // var divs = document.querySelectorAll('div');
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 100px;
+      margin-top: 10px;
+      background-color: pink;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="show">显示</button>
+  <button id="set">设置内容</button>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <!-- 使用jquery，首先需要引入 -->
+  <script src="jquery-3.0.0.js"></script>
+  <script>
+    // 找元素
+    // div.onclick = function(){}
+    $('#show').click(function() {
+      // 让所有的div显示出来
+      $('div').show(2000);
+    });
+
+    $('#set').click(function(){
+      $('div').text('我是内容');
+    });
+  </script>
+</body>
+</html>

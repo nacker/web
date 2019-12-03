@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var flag = false;
+    // 如果flag为true，打印 哈哈哈
+    // 如果flag为false, 打印 呵呵呵
+
+    // 如果变量本身就是布尔类型，没必要和布尔类型比较
+    // if (flag) {
+    //   console.log('哈哈');
+    // } else {
+    //   console.log('呵呵呵');
+    // }
+
+    if (!flag) {
+      console.log('呵呵呵');
+    } else {
+      console.log('哈哈哈');
+    }
+
+    // 结论： 布尔类型 === true    ===true可以省略
+    //        布尔类型 === false   取反  !布尔类型
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      
+      // 链式编程： jquery中允许我们一直调用jquery的方法，可以一直链式下去。
+
+      // 要求： 只有设置性的操作才可以链式编程， 因为设置性操作不会修改jquery对象，返回当前这个jquery对象
+      // 如果是jquery的获取操作  width() val() text() css('backgroundColor') 不能继续链式编程了
+      // console.log($('div').width(200));
+      var result = $('div').width(200).height(200).css('backgroundColor', 'pink').text('哈哈').height();
+      console.log(result);
+      // var $div = $('div');
+      // $div.width(200);
+      // $div.height(200);
+
+    });
+  </script>
+</body>
+</html>

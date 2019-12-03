@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 600px;
+      height: 600px;
+      border: 1px solid #000;
+      margin: 100px auto;
+
+      display: flex;
+
+      /* 
+        设置flex是否换行
+          nowrap: 不换行(默认)
+          wrap: 开启换行，子元素放不下了，就会换行
+      */
+      flex-wrap: wrap;
+      /* 
+        align-items: 调整侧轴的对齐方式（单行模式，不换行）
+        align-content: 调整侧轴的对齐方式（多行的模式） 
+          和justify-content一样： flex-start flex-end center space-around space-between
+      */
+      align-content: space-between;
+      justify-content: space-between;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: red;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+      <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+  </div>
+</body>
+</html>

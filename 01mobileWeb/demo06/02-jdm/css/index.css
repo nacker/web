@@ -1,0 +1,64 @@
+.jd_container {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  height: 1000px;
+  background-color: pink;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.jd_header {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  height: 40px;
+  background-color: #f23030;
+  position: fixed;
+  top: 0;
+}
+.jd_header .logo {
+  width: 75px;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+.jd_header .logo i {
+  position: absolute;
+  width: 57px;
+  height: 23px;
+  background: url('../images/jd-sprites.png') 0 -108px;
+  background-size: 200px 200px;
+  top: 7px;
+  left: 7px;
+}
+.jd_header .login {
+  width: 50px;
+  height: 40px;
+  float: right;
+  text-align: center;
+  line-height: 40px;
+}
+.jd_header .login a {
+  color: #fff;
+}
+.jd_header .search {
+  overflow: hidden;
+  height: 40px;
+  position: relative;
+}
+.jd_header .search input {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+  border-radius: 15px;
+  padding-left: 35px;
+}
+.jd_header .search i {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('../images/jd-sprites.png') -59px -108px;
+  background-size: 200px 200px;
+  top: 9px;
+  left: 9px;
+}

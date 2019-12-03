@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{person.name}}
+
+    <input type="text" v-model="person.name">
+
+    <input type="text" v-model="person.age">
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        person: {
+          name: "张学友",
+          age: 18
+        }
+      },
+      watch: {
+
+        // watch其实就是一个函数
+        // 函数的名字就是要监视的数据的名字
+        // 当这个数据发生变化的时候，这个函数会自动被执行
+
+        // 如果要见识对象中的属性的变化，不能只写对象的名字
+        // 因为对象是个引用类型的数据，属性发生变化的时候，地址是不会变化的
+        // 地址不变化，监视就不生效
+
+        // 我们需要在监视属性的时候，将对象.属性名作为监视函数的名字，这样就能监视到属性的变化了
+        // "person.name": function(newValue, oldValue){
+        //   console.log("person.name发生变化了", newValue, oldValue)
+        // },
+        // "person.age": function(newValue, oldValue){
+        //   console.log("person.age发生变化了", newValue, oldValue)
+        // }
+
+        // watch的平时的写法只是一个简写形式，他还有一个完整形态
+        person: {
+          handler(newValue, oldValue){
+            console.log("person变化了")
+            console.log(newValue, oldValue)
+          },
+          // 进行深度监视，只要对象的任意属性发生变化，都会触发这个监视函数
+          // 进行深度监视的时候，newValue和oldValue值一样，因为监视的是引用类型的值，newValue和oldValue指向的是同一个对象
+          deep: true,
+          // 这个属性设置的是，代码一开始运行，就执行一次handler函数！
+          immediate: true
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <p></p>
+  <script src="jquery-1.12.4.js"></script>
+  <script src="jquery.hi.js"></script>
+  <script>
+    // jquery本身是一个js文件，里面的功能是有限的
+    // 我们可以把一些额外的功能放到独立js文件，这个js文件依赖了jquery， jquery的插件
+
+    // 只需要给jquery原型 的增加一个方法， 将来所有的jquery对象都会增加一个方法
+
+    // 给$.fn增加一个方法，将来所有的jquery对象都会有这个方法
+    // console.log($.fn);
+    // $.fn.sayHi = function() {
+    //   console.log('哈哈哈');
+    // }
+
+    // $('div').sayHi();
+
+    $('div').sayHi();
+  </script>
+</body>
+</html>

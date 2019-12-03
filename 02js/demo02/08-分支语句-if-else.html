@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 语法1：  if (条件) { 代码 }
+    // 当条件满足了，代码就会执行
+    // var age = 19;
+    // if (age >= 18) {
+    //   console.log('能够玩王者荣耀');
+    // }
+
+
+    /* 
+      语法2：
+      if (条件) {
+        语句1
+      } else {
+        语句2
+      }
+      如果条件满足了，执行语句1  否则执行语句2
+    */
+    // var age = 10;
+    // if (age < 18) {
+    //   console.log('回家看喜羊羊把');
+    // } else {
+    //   console.log('可以打王者荣耀');
+    // }
+
+    /* 
+      需求： 如果没满12， 只能看喜羊羊 如果是12-18岁，可以打2个小时王者荣耀 满了18：可以打一天王者荣耀
+      语法：
+      if (条件1) {
+        语句1
+      } else if (条件2) {
+        语句2
+      } else {
+        语句3
+      }
+      如果条件1满足了，执行语句1
+      如果条件1不满足， 是否满足条件2， 执行语句2
+      都不满足：执行语句3
+    */
+    var age = 19;
+    if (age >= 18) {
+      console.log('你可以玩一天');
+    } else if (age >= 12) {
+      console.log('你可以玩2个小时');
+    } else {
+      console.log('回家看喜羊羊');
+    }
+
+  </script>
+</body>
+</html>

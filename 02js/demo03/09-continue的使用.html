@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 如果for循环遇到了break,整个for循环结束了 终止整个for循环
+    // 如果for循环遇到了continue, 本次循环不执行，继续下一次循环 跳过本次循环
+
+    // 需求：打印1-10中所有的数字，除了7
+    // for(var i = 1; i <= 10; i++) {
+    //   if (i === 7) {
+    //     continue;
+    //   }
+    //   console.log(i);
+    // }
+
+    for(var i = 1; i <=10; i++) {
+      if(i == 7){
+        break;
+      }
+      if(i == 7){
+        continue;
+      }
+      console.log(i);
+    }
+  </script>
+</body>
+</html>

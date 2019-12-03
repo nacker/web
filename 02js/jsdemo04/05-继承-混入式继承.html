@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 在js中，继承 一个对象自己没有的属性和方法，另一个对象有，拿过来使用就实现了继承
+
+      // 混入式继承
+
+      // 把一个对象中所有的属性添加给自己
+      // 想要给一个对象增加属性方法
+      var ff = {
+        name: '灰灰',
+        // 继承
+        extend: function(obj) {
+          for (var k in obj) {
+            if (obj.hasOwnProperty(k)) {
+              this[k] = obj[k]
+            }
+          }
+        }
+      }
+
+      var cc = {
+        house: '新疆的海景房',
+        car: '凤凰牌自行车'
+      }
+
+      var obj = {
+        money: 1000000,
+        girlFriend: '如花'
+      }
+      ff.extend(cc)
+
+      ff.extend(obj)
+
+      ff.extend({
+        sayHi: function() {
+          console.log('哈哈')
+        }
+      })
+
+      console.log(ff)
+
+      // for (var k in cc) {
+      //   if (cc.hasOwnProperty(k)) {
+      //     ff[k] = cc[k]
+      //   }
+      // }
+
+      // for (var k in obj) {
+      //   if (obj.hasOwnProperty(k)) {
+      //     ff[k] = obj[k]
+      //   }
+      // }
+
+      // console.log(ff)
+    </script>
+  </body>
+</html>

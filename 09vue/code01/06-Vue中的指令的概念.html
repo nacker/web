@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <!-- vue中指令是什么意思？ -->
+
+  <!-- vue中内置了很多自定义的类似于html属性的东西，每个vue提供的这种属性都会对应一个特定的功能，这些类似于自定义属性的东西就叫做指令 -->
+
+  <div id="app">
+    <!-- 在Vue中给标签的属性赋值数据的时候，不可以使用插值表达式。 -->
+    <!-- 应该使用v-bind指令，或者:的缩写形式 -->
+    <!-- <img src="{{imgUrl}}" alt=""> -->
+    <img v-bind:src="imgUrl" alt="">
+    <img :src="imgUrl" alt="">
+
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        imgUrl: "./logo.png"
+      }
+    });
+  </script>
+</body>
+</html>

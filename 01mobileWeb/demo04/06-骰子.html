@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: hotpink;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      background-color: #fff;
+      margin: 10px;
+    }
+
+    li {
+      width: 20px;
+      height: 20px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+
+
+    ul:nth-child(1) {
+      /* 让一个盒子绝对居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    ul:nth-child(3) {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+
+    ul:nth-child(3) li:nth-child(2) {
+      align-self: center;
+    }
+
+    ul:nth-child(3) li:nth-child(3) {
+      align-self: flex-end;
+    }
+
+
+    ul:nth-child(4),
+    ul:nth-child(6) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-around;
+    }
+
+    ul:nth-child(4) li,
+    ul:nth-child(6) li {
+      margin: 0 20px;
+    }
+
+
+    ul:nth-child(5) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-around;
+    }
+
+    ul:nth-child(5) li {
+      margin: 0 20px;
+    }
+
+    ul:nth-child(5) li:nth-child(3) {
+      margin: 0 40px;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+</html>

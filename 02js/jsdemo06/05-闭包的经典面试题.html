@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+      // 点击某个按钮，打印下标， 要求：使用闭包
+      // 1. 使用index属性存起来
+      // 2. 使用闭包的方式来解决
+      // 3. let解决
+      // var btns = document.querySelectorAll('button')
+      // for (var i = 0; i < btns.length; i++) {
+      //   ;(function(i) {
+      //     btns[i].onclick = function() {
+      //       console.log(i)
+      //     }
+      //   })(i)
+      // }
+
+      // var btns = document.querySelectorAll('button')
+      // for (var i = 0; i < btns.length; i++) {
+      //   btns[i].onclick = (function(i) {
+      //     return function() {
+      //       console.log(i)
+      //     }
+      //   })(i)
+      // }
+
+      // let和var一样，都可以声明一个变量  let 在每个{}都是独立
+      var btns = document.querySelectorAll('button')
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick = function() {
+          console.log(i)
+        }
+      }
+    </script>
+  </body>
+</html>

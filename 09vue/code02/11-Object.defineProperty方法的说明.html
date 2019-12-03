@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Object.defineProperty方法，可以用来实现我们的需求
+
+    // 数据变化的时候，我们可以像注册事件一样注册一个函数，数据发生变化，函数就会执行
+
+
+    
+    // 1. 如何给对象添加一个属性？
+
+    // let obj = {name: ""}
+    // obj.age = 18;
+    // obj["gender"] = "male";
+
+
+    // Object.defineProperty可以用来给对象添加属性，也可以用来修改现有的属性
+    // 在添加属性的时候，可以设置属性以下的特性：
+    // 1. 是否为只读属性
+    // 2. 是否可以删除
+    // 3. 是否可以遍历
+    // 4. 可以为属性注册像改变事件一样的函数
+
+
+    let obj = {};
+
+    // Object.defineProperty(要添加或者修改属性的对象, 要添加或者修改的属性名, 特征对象)
+
+    // Object.defineProperty(obj, "name", {
+    //   // 1. 默认的，该属性是只读的，不能被赋值 默认是false
+    //   writable: true,
+    //   // 2. 默认的，该属性不能被for in循环遍历 默认是false
+    //   enumerable: true,
+    //   // 3. 默认的，该属性不能被delete删除 默认是false
+    //   configurable: true,
+    //   // value属性用来设置属性的默认值
+    //   value: "123"
+    // })
+
+
+    let nameValue = "";
+
+    Object.defineProperty(obj, "name", {
+      // set和get不能和上面的额writable，value同时出现
+      set(value){
+        // 这个函数就像是属性的改变事件，我们在给属性赋值的时候
+        // JS内部会自动调用这个函数
+        console.log("属性被赋值了");
+
+        // 在set函数中，需要接收用户所赋值的内容，也就是等号右边的内容 可以通过value形参接收
+        // 将其存储起来
+
+        nameValue = value;
+      },
+      get(){
+        // 这个函数就像是属性的被获取的事件，只要有人用到这个属性了，那这个函数就会被调用
+        console.log("属性被获取值了")
+
+        // 这个函数会在用户获取值得时候调用，用户获取到的值，就是当前函数的返回值
+        return nameValue;
+      }
+    })
+
+    console.log(obj);
+  </script>
+</body>
+</html>

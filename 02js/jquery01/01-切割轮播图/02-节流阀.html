@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .box {
+      width: 560px;
+      height: 380px;
+      /* border: 1px solid #000; */
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .box ul {
+      width: 20%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      /* perspective: 1000px; */
+      transform: rotateX(0deg);
+      float: left;
+    }
+
+    .box ul li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .box ul:nth-child(2) li {
+      background-position: -112px 0;
+    }
+    .box ul:nth-child(3) li {
+      background-position: -224px 0;
+    }
+    .box ul:nth-child(4) li {
+      background-position: -336px 0;
+    }
+    .box ul:nth-child(5) li {
+      background-position: -448px 0;
+    }
+
+    .box li:nth-child(1) {
+      background-image: url(images/01.jpg);
+      transform: translateZ(190px);
+    }
+
+    .box li:nth-child(2) {
+      background-image: url(images/02.jpg);
+      transform: rotateX(90deg) translateZ(190px);
+    }
+
+    .box li:nth-child(3) {
+      background-image: url(images/03.jpg);
+      transform: rotateX(180deg) translateZ(190px);
+    }
+
+    .box li:nth-child(4) {
+      background-image: url(images/04.jpg);
+      transform: rotateX(270deg) translateZ(190px);
+    }
+
+    .left,.right {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: orange;
+      cursor: pointer;
+    }
+
+    .left {
+      left: -100px;
+    }
+    .right {
+      right: -100px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="arrow">
+      <div class="left">上一页</div>
+      <div class="right">下一页</div>
+    </div>
+  </div>
+
+  <script>
+    /* 
+      需求：当最后一个的ul的过渡都执行完成了，才可以继续下一次的点击
+
+      1. 有一个标记位 var canPlay = true;
+      2. 右箭头点击，需要执行动画， 先判断 canPlay是否是true
+      3. 执行动画的过程中，需要把标记为置为false，，防止其他点击触发
+      4. 当动画执行结束了，需要把标记位改成true
+    */
+    var left = document.querySelector('.left');
+    var right = document.querySelector('.right');
+    var uls = document.querySelectorAll('ul');
+    var count = 0;
+    // 是否允许执行动画
+    var canPlay = true;
+    right.onclick = function() {
+      // 2. 只有canPlay是true，才能执行动画，否则，相当于白点
+      if (canPlay) {
+        // 3. 如果能执行，需要把标记为改成false
+        canPlay = false;
+        count++;
+        for(var i = 0; i < uls.length; i++) {
+          uls[i].style.transition = '1s';
+          uls[i].style.transitionDelay = 0.2 * i + 's';
+          uls[i].style.transform = 'rotateX(' + -90 * count + 'deg)';
+        }
+      }
+    }
+
+    left.onclick = function() {
+      if (canPlay) {
+        canPlay = false;
+        count--;
+        for(var i = 0; i < uls.length; i++) {
+          uls[i].style.transition = '1s';
+          uls[i].style.transitionDelay = 0.2 * i + 's';
+          uls[i].style.transform = 'rotateX(' + -90 * count + 'deg)';
+        }
+      }
+    }
+  
+    // 给最后一个ul注册过渡结束事件
+    uls[uls.length - 1].addEventListener('transitionend', function() {
+      console.log('wo 结束了');
+      canPlay = true;
+    });
+
+
+
+    /* 
+      1. 定义一个标记位  true
+      2. 判断标记位是否是true 如果是 说明可以执行  否则就不执行
+      3. 如果可以执行，把标记位改成false，防止其他的执行。
+      4. 当动画执行结束了，需要重新开启
+    */
+  </script>
+</body>
+</html>

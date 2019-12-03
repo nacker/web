@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 求阶乘   5的阶乘 1...5
+    // 求5的阶段  从1到5的乘积
+    function getFactorial(n) {
+      var product = 1;
+      for(var i = 1; i <= n; i++) {
+        product *= i;
+      }
+      return product;
+    }
+
+    console.log(getFactorial(3));
+
+
+    // 求阶乘和
+    // 求5的阶乘和   1! + 2! + 3! + 4! + 5!
+    // var result = getFactorial(1) + getFactorial(2) + getFactorial(3) + getFactorial(4) + getFactorial(5);
+    function getFactorialSum(n) {
+      var sum = 0;
+      for(var i = 1; i <= n; i++) {
+        // 每次需要加i的阶乘和
+        sum += getFactorial(i);
+      }
+      return sum;
+    }
+    console.log(getFactorialSum(4));
+  </script>
+</body>
+</html>

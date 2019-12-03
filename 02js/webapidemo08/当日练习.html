@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .father {
+      height: 100px;
+      width: 100px;
+      border: 1px solid red;
+      margin: 0 auto;
+      /* overflow: scroll; */
+      /* overflow: hidden; */
+    }
+
+    .son {
+      width: 400px;
+      height: 500px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">一年前发布的小米8和P20 Pro，到今年为止，谁速度</div>
+  </div>
+  <script src="iscroll.js"></script>
+  <script>
+  new IScroll('.father',{
+    scrollX:true,
+  })
+  
+  </script>
+</body>
+</html>

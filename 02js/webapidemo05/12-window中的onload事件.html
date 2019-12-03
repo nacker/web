@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<body>
+  <div>111</div>
+  <img src="xn.png" alt="">
+
+  <script>
+    // window.onload : 当整个网页加载完成，保证网页依赖的资源（图片）加载完成后才会触发onload事件
+    // 在window.onload中可以保证页面加载完成，所以肯定能获取到页面中的元素
+    // 如果将来想要获取页面中图片的宽度和高度， 应该把代码写在window.onload中
+    // 浏览器加载图片，浏览器会做优化
+    window.onload = function () {
+      var div = document.querySelector('div');
+      console.log(div);
+      div.onclick = function() {
+        console.log('哈哈');
+      }
+      var img = document.querySelector('img');
+      console.log(img.offsetWidth);
+      console.log(img.offsetHeight);
+    }
+  </script>
+</body>
+</html>

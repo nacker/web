@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+  <div title="aaa">1</div>
+
+  <script>
+    // 在文档中通过标签名获取元素,,,,,,返回的是多个
+    // document.getElementsByTagName()
+    // divs是个伪数组， 可以和数组一样进行遍历，但是不是数组，所以用不了数组的方法
+    var divs = document.getElementsByTagName('div');
+    // console.log(divs);
+    // divs.push('aaa');
+    // 需要循环
+    for(var i = 0; i < divs.length; i++) {
+      divs[i].title = 'bbb';
+    }
+  </script>
+</body>
+</html>

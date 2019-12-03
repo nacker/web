@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var arr1 = [1, 2, 3];
+    // var arr2 = [4, 5, 6];
+    // concat: 合并多个数组
+    // 返回一个合并后的新数组
+    // 数组1.concat(数组2)
+    // var newArr = arr1.concat(arr2);
+    // console.log(newArr);
+
+
+    // slice: 截取数组的一部分，放到一个新数组中
+    // var arr = ['张飞', '赵云', '马超', '黄忠', '关羽'];
+    // 参数1： 开始的位置
+    // 参数2： 结束的位置 不包含结束的这个元素, 参数可以省略，表示截到末尾
+    // var newArr = arr.slice(1, 3);
+    // console.log(newArr);
+
+
+    // splice()  可以在数组的任意地方删除元素或者增加元素, 返回值：删除掉的元素的数组
+    var arr = ['张飞', '赵云', '马超', '黄忠', '关羽'];
+    // 参数1： 开始的位置
+    // 参数2： 删除几个
+    // 参数3： 要增加哪些元素
+    // var newArr = arr.splice(1, 1, '黄月英', '大乔');
+    // console.log(newArr);
+    // console.log(arr);
+    // arr.splice(2, 1);
+    // console.log(arr);
+    arr.splice(2, 0, '马云');
+    console.log(arr);
+  </script>
+</body>
+</html>

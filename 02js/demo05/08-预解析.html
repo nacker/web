@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 预先解析
+    // 浏览器在执行js代码之前，预先把所有的变量声明和函数声明提前
+    // 1. 找到所有函数声明，提前， 不会提升函数调用  如果函数同名，下面的函数会覆盖上面的。
+    // 2. 找到所有的变量声明 var，提前， 不会提升赋值。  如果遇到了多个同名的变量，忽略
+
+    // console.log(num);
+    // var num = 11;
+    // num = 22;
+    // num = 33;
+  
+    fn();
+    
+    function fn() {
+      console.log('哈哈');
+    }
+
+
+    // 在代码执行之前，把所有的var提升到最顶部，  不会提升赋值  如果多个var同名，会忽略
+    // 在代码执行前，会把所有的function提升到最顶部，不会提升调用，如果有多个函数同名，后面的函数会覆盖前面的函数。
+
+  </script>
+</body>
+</html>

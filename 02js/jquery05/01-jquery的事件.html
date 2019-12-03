@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script scr="./jquery-1.12.4.js"></script>
+  <script>
+    /* 
+      1. 直接通过事件名注册事件
+        优点：不会覆盖， 简单
+        缺点：不能取消
+      
+      2. bind注册事件 unbind
+        优点：可以取消
+        缺点：不能注册委托事件
+      3. delegate 和 undelegate
+        优点：可以注册委托事件， 委托事件可以给动态创建的元素注册。
+        缺点： 只能注册委托事件
+
+      4. jquery-1.7 使用on统一了注册事件
+        on注册自己的事件: $('div').on("click", function(){})  表示给div自己注册事件
+        on注册委托事件:  $('div').on("click", 'p', function(){}) 给div注册委托事件，将来由p元素来执行。
+    */
+
+
+    $('div').click(function(){
+
+    });
+    $('div').bind('click', function(){
+
+    })
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      left: 0;
+    }
+
+    div:nth-of-type(2) {
+      margin-top: 200px; 
+    }
+  </style>
+</head>
+<body>
+  <button>显示</button>
+  <div></div>
+  <div></div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $('button').eq(0).click(function() {
+      // jquery中提供了一个方法 animate用来执行自定义的动画
+
+      /* 
+        功能： 给元素执行自定义动画
+        参数1： 必填
+          指定需要执行动画的样式， 是一个对象
+        参数2   指定动画的时间 默认是normal
+        参数3   指定动画效果   默认：swing(秋千，摇摆) 先慢后快再慢  linear
+        参数4： 函数， 动画结束后就会执行
+      */
+      // $('div').animate({ width: '400px', height: 400, borderRadius: 200} )
+      $('div').eq(0).animate({width:400,height:400,borderRadius:200},100,
+        function(){
+          console.log('球球你别骚了');
+        });
+      $('div').eq(1).animate({top:400,left:400},3000,function(){
+        console.log('球球你别骚了');
+      });
+      console.log('nihaosa a');
+    });
+  </script>
+</body>
+</html>

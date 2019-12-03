@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body id="bd">
+  <button id="btn">关灯</button>
+
+  <script>
+    // 给按钮注册点击事件
+    // 修改body的背景颜色
+    var btn = document.getElementById('btn');
+    // var bd = document.getElementById('bd');
+    btn.onclick = function() {
+      if (btn.innerText === '关灯') {
+        document.body.style.backgroundColor = '#000';
+        btn.innerText = '开灯';
+      } else {
+        document.body.style.backgroundColor = '#fff';
+        btn.innerText = '关灯';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    var div = document.querySelector('div');
+    div.onclick = function(e) {
+      // 鼠标在div中点击的位置
+      // console.log(e.pageX, e.pageY);
+      // console.log(div.offsetLeft, div.offsetTop);
+      console.log(e.pageX - div.offsetLeft,   e.pageY - div.offsetTop);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // find: 返回第一个满足条件的元素
+      // findIndex: 返回第一个满足条件的元素的下标
+
+      const list = [
+        { name: 'zs', age: 18, id: 1 },
+        { name: 'ls', age: 19, id: 2 },
+        { name: 'ww', age: 22, id: 3 },
+        { name: 'zl', age: 30, id: 4 }
+      ]
+
+      // const id = 3
+      // // 找到list中id为3的那个元素
+      // let now
+      // for (let i = 0; i < list.length; i++) {
+      //   if (id === list[i].id) {
+      //     now = list[i]
+      //   }
+      // }
+      // console.log(now)
+
+      // find和filter
+      // filter:得到所有的满足条件的
+      // find:得到第一个满足条件的， 不会继续找
+      // 返回的是一个元素，，第一次满足条件
+      let result = list.findIndex(function(item) {
+        return item.id === 3
+      })
+      console.log(result)
+
+      // let [result] = list.filter(function(item) {
+      //   return item.id === 3
+      // })
+      // console.log(result)
+
+      /* 
+        forEach
+        map
+        filter
+        every
+        some
+        find
+        findIndex
+      */
+    </script>
+  </body>
+</html>

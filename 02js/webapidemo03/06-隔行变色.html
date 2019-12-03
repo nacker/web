@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+  </div>
+  <script>
+    var box = document.querySelector('#box');
+    var children = box.children;
+    for(var i = 0; i < children.length; i++) {
+      if (i % 2 === 1) {
+        children[i].style.backgroundColor = 'red';
+      } else {
+        children[i].style.backgroundColor = 'green';
+      }
+    }
+  </script>
+</body>
+</html>

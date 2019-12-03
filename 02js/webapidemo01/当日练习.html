@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn1">点我</button><br>
+  <button id="btn2">点2</button><br>
+  <img id="img" src="1.jpg" alt="">
+
+
+
+  <script>
+    var btn1=document.getElementById('btn1');
+    var btn2=document.getElementById('btn2');
+    var img=document.getElementById('img');
+    btn1.onclick=function() {
+      img.src='1.jpg';
+    }
+    btn2.onclick=function() {
+      img.src='2.jpg';
+    }
+
+
+  </script>
+</body>
+
+</html>

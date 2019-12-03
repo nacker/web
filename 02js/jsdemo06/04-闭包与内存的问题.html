@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 内存泄漏： 有一块内存，一直被占用了，无法回收， 这块内存泄漏。
+      // js 垃圾回收机制（对于无用的内存，js会自动回收）
+
+      // js中垃圾回收的工作原理
+      // 1. 引用计数
+      // 2. 标记清除
+
+      // obj是这个对象的一个引用
+      // var obj = {
+      //   name: 'zs',
+      //   age: 18
+      // }
+
+      // // obj2 也是这个对象的一个引用   2个引用
+      // var obj2 = obj
+
+      // // 新创建的对象有一个引用  obj
+      // obj = {
+      //   name: 'ls',
+      //   age: 20
+      // }
+
+      // // obj2也不指向最初的那个对象   最初的对象 0个引用  垃圾回收会回收0引用
+      // obj2 = null
+      // obj = null
+
+      // window的属性
+      var num = 12
+      var obj = {
+        name: 'zs'
+      }
+
+      var obj3 = obj
+
+      obj = null
+
+      var obj2 = {
+        age: 18
+      }
+
+      // obj2 = null
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>开启</button>
+  <button>关闭</button>
+
+  <script>
+    var btn1 = document.querySelectorAll('button')[0];
+    var btn2 = document.querySelectorAll('button')[1];
+
+
+    // 记录了最后开启的那个任务编号
+    var timeId;
+    btn1.onclick = function() {
+      // timeId是定时器的编号，是一个累加的数字，，，，浏览器只要开启了一个定时器
+      // 开启一个定时器，就是给浏览器一个任务，让浏览器每隔指定的时间去调用一次函数
+      clearInterval(timeId);
+      timeId = setInterval(function() {
+        console.log('我没病，我真的没病');
+      }, 1000);
+      console.log(timeId);
+    }
+
+    btn2.onclick = function() {
+      clearInterval(timeId);
+      console.log('我清除了任务',timeId);
+    }
+  </script>
+</body>
+</html>

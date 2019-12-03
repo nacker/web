@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">飞飞</button>
+  <script>
+    // 事件的三个要素
+    // 事件源：小飞飞
+    // 事件名： 扇
+    // 事件处理程序：哇哇哇哭了
+    
+    // 扇了飞飞一巴掌，飞飞哇哇哇哭了
+
+    // 语法：如何注册事件
+    // 事件源.on+事件名 = 事件处理程序
+    // var btn = document.getElementsByTagName('button')[0];
+    // console.log(btn);
+    var btn = document.getElementById('btn');
+    // on: 当。。。时候
+    // onclick: 当被点击的时候
+    // 事件处理程序一般都是一个函数，表示做一件事件
+
+
+    // 注意点：这个function什么时候执行。 当前按钮被点击的时候
+    btn.onclick = function () {
+      alert('嘤嘤嘤');
+    }
+  </script>
+</body>
+</html>

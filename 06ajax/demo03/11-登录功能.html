@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" class="username" />
+    <input type="text" class="password" />
+    <button>登录</button>
+    <script src="ajax.js"></script>
+    <script>
+      var button = document.querySelector('button')
+      var username = document.querySelector('.username')
+      var password = document.querySelector('.password')
+
+      button.onclick = function() {
+        ajax({
+          type: 'post',
+          url: '11.php',
+          // data  name=zs&age=18
+          data: {
+            username: username.value,
+            password: password.value
+          },
+          success: function(info) {
+            console.log(info)
+          },
+          error: function() {
+            alert('服务器繁忙')
+          }
+        })
+      }
+
+      // jquery的ajax
+    </script>
+  </body>
+</html>

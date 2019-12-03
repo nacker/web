@@ -1,0 +1,98 @@
+/*可以自己定义一个字体*/
+@font-face {
+  font-family: 'wjs_fonts';
+  src: url('./MiFie-Web-Font.eot'); /* IE9*/
+  src: url('./MiFie-Web-Font.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./MiFie-Web-Font.woff') format('woff'), /* chrome, firefox */
+  url('./MiFie-Web-Font.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./MiFie-Web-Font.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.wjs_icon {
+  font-family: "wjs_fonts" !important;
+}
+
+.wjs_icon_phone::before {
+  content: '\e908';
+}
+
+
+.wjs_icon_tel::before {
+  content: "\e909";
+}
+
+.wjs_icon_logo::before {
+  content: "\e920";
+}
+
+.wjs_icon_word::before {
+  content: "\e93e";
+}
+
+.wjs_icon_info::before {
+  content: "\e903";
+}
+
+.wjs_icon_clock::before {
+  content: "\e906";
+}
+
+.wjs_icon_video::before {
+  content: "\e905";
+}
+
+.wjs_icon_experience::before {
+  content: "\e915"
+}
+
+.wjs_icon_news_01::before {
+  content: "\e90e";
+}
+
+.wjs_icon_news_02::before {
+  content: "\e90f";
+}
+
+.wjs_icon_news_03::before {
+  content: "\e910";
+}
+
+.wjs_icon_news_04::before {
+  content: "\e911";
+}
+
+.wjs_icon_partner01::before {
+  content: "\e946";
+}
+
+.wjs_icon_partner02::before {
+  content: "\e92f";
+}
+
+.wjs_icon_partner03::before {
+  content: "\e92e";
+}
+
+.wjs_icon_partner04::before {
+  content: "\e92a";
+}
+
+.wjs_icon_partner05::before {
+  content: "\e929";
+}
+
+.wjs_icon_partner06::before {
+  content: "\e931";
+}
+
+.wjs_icon_partner07::before {
+  content: "\e92c";
+}
+
+.wjs_icon_partner08::before {
+  content: "\e92b";
+}
+
+.wjs_icon_partner09::before {
+  content: "\e92d";
+}

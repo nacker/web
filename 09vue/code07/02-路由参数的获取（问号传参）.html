@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <router-link to="/detail?id=1">id为1的商品</router-link>
+    <router-link to="/detail?id=2">id为2的商品</router-link>
+    <router-link to="/detail?id=3">id为3的商品</router-link>
+
+    <router-view></router-view>
+
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+  <script>
+
+    const detail = {
+      template: "<div>这是一个详情页组件</div>",
+      created(){
+        // 当前组件中获取路由的？传递的参数，
+        // 我们可以通过this.$route.query就可以获取到所有的参数了
+        console.log(this.$route.query)
+      }
+    }
+
+    const router = new VueRouter({
+      routes: [
+        {
+          path: "/detail",
+          component: detail
+        }
+      ]
+    })
+
+    const vm = new Vue({
+      el: "#app",
+      router
+    })
+
+  </script>
+</body>
+</html>

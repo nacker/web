@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      transition: 1s;
+      /* 缩放：scale  旋转：rotate  位移：translate */
+      /* transition: 过渡  transform: 转换  translate: 位移 */
+      
+    }
+
+    div:hover {
+      /* 
+        translate: 表示位移
+          值： 具体的像素
+          值： 百分比 相对于盒子自身的宽度和高度
+       */
+      /* transform: translateX(100px); */
+      /* transform: translateY(100px); */
+      /* transform: translate(100px, 100px); */
+      transform: translate(50%, 50%);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+</body>
+</html>

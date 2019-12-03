@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 箭头函数内部没有this
+      // const obj = {
+      //   name: 'zs',
+      //   age: 18,
+      //   sayHi: function() {
+      //     let that = this
+      //     setInterval(function() {
+      //       console.log(`大家好，我是${that.name},我今年${that.age}`)
+      //     }, 1000)
+      //   },
+      //   sayHi1: function() {
+      //     setInterval(
+      //       function() {
+      //         console.log(`大家好，我是${this.name},我今年${this.age}`)
+      //       }.bind(this),
+      //       1000
+      //     )
+      //   },
+      //   sayHi2: function() {
+      //     setInterval(() => {
+      //       // 以后碰到了this的指向问题
+      //       // 1. let that = this
+      //       // 2. 使用bind(this)
+      //       // 3. 直接使用箭头函数
+      //       console.log(`大家好，我是${this.name},我今年${this.age}`)
+      //     }, 1000)
+      //   }
+      // }
+
+      // obj.sayHi2()
+      // let name = 'ls'
+      // top name
+      // window name 永远是一个字符串
+      // top永远是window
+      const obj = {
+        name: 'zs',
+        sayHi: function() {
+          console.log(this)
+          console.log(this.name)
+        }
+      }
+
+      // obj.sayHi()
+
+      // let name = 'zs'
+      // name是window自带的一个属性，这个属性一定是一个字符串
+      // let有块级作用域  let
+
+      // name变量少用
+      // top
+
+      // var top = 11
+      // console.log(top)
+      // var name = {
+      //   age: 18
+      // }
+      // console.log(name)
+
+      /* 
+      
+        1. 箭头函数的基本使用 () => {}
+        2. 箭头函数内部没有this指向 （很爽）
+          2.1 箭头函数不能作为构造函数
+          2.2 对象的方法，不用箭头函数
+       */
+    </script>
+  </body>
+</html>

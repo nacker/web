@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .footer{
+        position: fixed;
+        bottom: 0;
+      }
+
+      .router-link-active{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>这是头部</h1>
+
+      <!-- <ul>
+        <li><a href="#/login">登录页</a></li>
+        <li><a href="#/register">注册页</a></li>
+        <li><a href="#/list">列表页</a></li>
+      </ul> -->
+
+      <!-- vue-router中提供了一个声明式导航 -->
+      <ul>
+        <li>
+            <router-link to="/" tag="button" active-class="active">登录页</router-link>
+        </li>
+        <li>
+            <router-link to="/login" tag="button" active-class="active">登录页</router-link>
+        </li>
+        <li>
+            <router-link to="/register">注册页</router-link>
+        </li>
+        <li>
+            <router-link to="/list">列表页</router-link>
+        </li>
+      </ul>
+
+      <router-view></router-view>
+
+
+      <div class="footer">这是底部</div>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+
+      const login = {
+        template: `<div>
+          <h3>这是登录页</h3>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      }
+
+      const register = {
+        template: `<div>
+          <h3>这是注册页</h3>
+          <input type="text"><input type="text"><input type="text"><button>注册</button>
+        </div>`
+      };
+
+      const list = {
+        template: `<div>
+          <h3>这是列表页</h3>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      };
+
+      const router = new VueRouter({
+        routes: [
+          {
+            path: "/",
+            component: login
+          },
+          {
+            path: "/login",
+            component: login
+          },
+          {
+            path: "/register",
+            component: register
+          },
+          {
+            path: "/list",
+            component: list
+          }
+        ]
+      });
+
+
+
+      const vm = new Vue({
+        el: "#app",
+        router
+      });
+
+
+      // 1.引入文件
+      // 2.创建组件的参数对象
+      // 3. 创建vue-router实例
+      // 4. 把vue-touer实例和vue实例关联起来
+      // 5. 指定路由匹配的组件展示的位置 router-view
+    </script>
+  </body>
+</html>

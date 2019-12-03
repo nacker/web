@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 任何一个函数内部，都自带一个对象  arguments
+      // arguments 存储了传递过来的所有的实参
+      // arguments 是一个伪数组， 里面存放了所有的实参
+      // arguments用在不确定参数个数
+      // function fn(a, b) {
+      //   console.log(a, b)
+      //   console.log(arguments)
+      // }
+
+      // fn(1, 2, 3, 4)
+      // fn(1, 2)
+
+      // Math.max() 参数可以无限个
+
+      // 求任意个数字的最大值
+      // function getMax() {
+      //   var max = arguments[0]
+      //   for (var i = 0; i < arguments.length; i++) {
+      //     if (max < arguments[i]) {
+      //       max = arguments[i]
+      //     }
+      //   }
+      //   console.log(max)
+      // }
+
+      // getMax(1, 2, 3)
+      // getMax(1, 2, 3, 5, 10)
+      var length = 10
+      function fn() {
+        console.log(this.length)
+      }
+      var obj = {
+        length: 5,
+        method: function(fn) {
+          // 5 报错
+          console.log(this.length) // 3 5
+          fn() // 10 10
+          arguments[0]() // 3 3
+        }
+      }
+      obj.method(fn)
+      // 3
+
+      function Person() {}
+      var p = new Person()
+
+      Person.prototype = {}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    window.onload = function() {
+      console.log('1');
+    }
+    // jquery入口函数和window.onload的对比
+    // 1. jquery的入口函数可以写多个，不会覆盖。
+    // 2. jquery的入口函数执行要比window.onload早。jquery的入口函数只会等页面加载，不会等待图片的加载。
+    $(function() {
+      console.log('2');
+    });
+  </script>
+</body>
+</html>

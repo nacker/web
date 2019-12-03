@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <img src="1.jpg" alt="">
+  <script>
+    var img = document.querySelector('img');
+
+    img.onmousedown = function(e) {
+      e.preventDefault();
+      // 1. 记录按下的位置
+      var x = e.pageX - img.offsetLeft;
+      var y = e.pageY - img.offsetTop;
+      
+      // 2. 给document注册鼠标移动事件
+      document.onmousemove = function(e) {
+        img.style.position = 'absolute';
+        img.style.left = e.pageX - x + 'px';
+        img.style.top = e.pageY - y + 'px';
+      }
+      // 不让选择图片， 阻止浏览器的默认行为即可
+      // return false;
+    }
+
+    img.onmouseup = function () {
+      document.onmousemove = null;
+    }
+  </script>
+</body>
+</html>

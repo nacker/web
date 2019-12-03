@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // some: 某些  一些
+      // every:  所有的  每个
+
+      // some: 会返回一个布尔类型， 只要function中有一个或者以上返回了true， 整个结果就是true
+      // every: 返回一个布尔值，， 要所有的元素都返回了true，结果才是true
+
+      // 判断数组是否有偶数
+      // var arr = [1, 3, 5, 7, 9, 1]
+      // var flag = true // 没有偶数
+      // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] % 2 === 0) {
+      //     flag = false
+      //   }
+      // }
+      // if (flag) {
+      //   console.log('没有偶数')
+      // } else {
+      //   console.log('有偶数')
+      // }
+      // var arr = [1, 3, 5, 8, 9, 1]
+      // var result = arr.some(function(item) {
+      //   return item % 2 === 0
+      // })
+      // console.log(result)
+
+      // 判断数组中是否全是偶数
+      var arr = [2, 4, 6, 8]
+      var result = arr.every(function(item) {
+        return item % 2 === 0
+      })
+      console.log(result)
+
+      /* 
+        forEach: 作用：只会让每个元素执行一次函数， 没有别的功能  for循环
+        map:     作用：返回一个新的数组，长度和原数组一样 新数组会保存每次function返回的值
+        filter:  作用：得到一个新数组， 保留哪些满足条件（返回true）
+        some:    作用：得到布尔值  只要有函数返回true，整体结果就是true
+        every:   作用：得到布尔值，要所有的函数都返回true，结果就是true
+      */
+      
+    </script>
+  </body>
+</html>

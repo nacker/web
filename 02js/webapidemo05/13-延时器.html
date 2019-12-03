@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>埋炸弹</button>
+  <button>拆弹</button>
+  <script>
+    // console.log(11);
+    // BOM提供了 延时器  定时器
+    // 延时器: 让传入的这个函数延迟一段时间后才调用
+    // 参数1： 函数（匿名函数， 有名字的函数）
+    // 参数2： 延迟时间， 毫秒值
+    // setTimeout(需要延迟执行的函数, 时间)
+    // 返回值：返回延时器的id
+    // setTimeout(function(){
+    //   console.log('boom!!!!');
+    // }, 3000);
+
+
+    // 清除延时器, 需要延时器的id
+    // clearTimeout(timeId)
+
+    // console.log(22);
+
+    var btn1 = document.querySelector('button:first-child');
+    var btn2 = document.querySelector('button:nth-child(2)');
+    var timeId;
+    btn1.onclick = function() {
+      timeId = setTimeout(function(){
+        console.log('boom!!!!');
+      }, 3000);
+    }
+    btn2.onclick = function() {
+      clearTimeout(timeId);
+    }
+  </script>
+</body>
+</html>

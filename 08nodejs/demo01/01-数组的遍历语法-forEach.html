@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 最基本的for循环语法
+      var arr = ['zs', 'ls', 'ww', 'zl']
+      for (var i = 0; i < arr.length; i++) {
+        console.log(i, arr[i])
+      }
+
+      // 数组提供了 forEach方法
+      // arr.forEach(fn) : 会让数组中每个元素都执行一次fn
+      // item: 每次遍历的元素的值
+      // index: 每次遍历到的下标
+      // array: 当前数组
+
+      // 优点：1. 不占用全局变量
+      // 优点  2： 结合箭头函数使用
+      // arr.forEach(function(item, index) {
+      //   console.log(item, index)
+      // })
+      // arr.forEach(item => console.log(item))
+    </script>
+  </body>
+</html>

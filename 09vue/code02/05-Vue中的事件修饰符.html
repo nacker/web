@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 200px;
+        height: 200px;
+        background-color: hotpink;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      事件修饰符 @事件名称.修饰符名称="事件处理函数"
+
+      <!-- <div class="parent" @click="parentClickHandler">
+      <div class="child" @click.stop="childClickHandler"></div>
+    </div> -->
+
+      <a href="http://itcast.cn" @click.prevent="aClickHandler"
+        >传智播客黑马程序员</a
+      >
+
+      <!-- <div class="parent" @click.capture="parentClickHandler">
+        <div class="child" @click="childClickHandler"></div>
+      </div> -->
+
+      <!-- <div class="parent" @click.self="parentClickHandler">
+        <div class="child" @click="childClickHandler"></div>
+      </div> -->
+
+      <div class="parent" @click.once="parentClickHandler">
+      </div>
+
+
+
+      事件修飾符可以給事件添加一些特殊的功能
+
+      @事件名.事件修飾符="事件處理函數"
+
+
+      事件修飾符是可以写多个的，多个的时候直接连着写就行  .stop.prevent
+
+      stop
+      prevent
+      capture
+      self
+      once
+
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        methods: {
+          parentClickHandler() {
+            alert("父盒子被点击了");
+          },
+          childClickHandler(e) {
+            alert("子盒子被点击了");
+            // e.stopPropagation();
+          },
+          aClickHandler(e) {
+            alert("a标签被点击了");
+            // e.preventDefault();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

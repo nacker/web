@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    .size{
+      width: 100px;
+      height: 100px;
+      border: 1px solid yellow;
+    }
+    
+    .red{
+      
+      background-color: red;
+    }
+
+    .green{
+
+      background-color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    1. 可以直接赋值字符串，这个字符串就和我们平时给元素写的class属性值一样
+    <!-- <div id="box" :class="boxStyle"> -->
+    <!-- <div id="box" :class="'size red'"> -->
+
+    2. 可以给class属性绑定一个对象，对象中的每个属性名代表的就是对应的类名，属性的值为布尔值，如果是true，就代表当前的元素拥有该类样式，如果是false，就代表当前的元素没有该类样式
+
+    <!-- <div id="box" :class="boxStyle"></div> -->
+
+    <!-- <div id="box" :class="{red: true, size: true}"></div> -->  这个是最常见的
+    
+    </div>
+
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        // boxStyle: "size red",
+        boxStyle: {
+          size: true,
+          red: true,
+          green: false,
+        }
+      }
+    });
+  </script>
+</body>
+</html>

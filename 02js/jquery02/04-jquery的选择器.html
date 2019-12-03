@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">1111</div>
+  <div>222</div>
+  <div class="demo">
+    <p>111</p>
+    <p>222</p>
+  </div>
+  <p>333</p>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // jquery提供了非常非常多的选择器， 目的：让我们非常方便的能够获取到页面中的元素
+    // 1. jquery中完全兼容css的所有选择器
+    // 2. jquery在css的选择器的基础上海增加了很多jquery自己的选择器
+    $(function() {
+
+      // jquery的方法
+      // css(name, value) : 设置元素的样式
+      // name: 样式名  value: 样式值
+      // id选择器
+      // $('#box').css('backgroundColor', 'red');
+      // $('div').css('backgroundColor', 'red');
+      $('p').css('backgroundColor', 'green');
+
+      $('.demo p').css('color', 'red');
+
+      $('.demo p:first-child').css('fontSize', '50px');
+    });
+  </script>
+</body>
+</html>

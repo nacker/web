@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <myheader></myheader>
+    <myheader></myheader>
+    <myheader></myheader>
+    <myheader></myheader>
+    <myheader></myheader>
+
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+
+    // Vue组件其实就是一个特殊的vue实例，传递的参数对象，基本和vue实例的参数对象一致
+    // 区别： data 的写法不一样
+    // 组件中的data是一个函数，返回一个对象，这个对象就是数据对象！
+    // 模板使用数据的方式，和之前在vue实例中使用数据的方式完全一样！
+
+
+    // 页面中组件是可以被使用多次的
+    // 每使用一次，vue就会自动帮我们新创建一个组件实例出来！
+
+    Vue.component("myheader", {
+      template: "<div>这是一个组件{{msg}}</div>",
+      data(){
+        return {
+          msg: "Hello world"
+        }
+      }
+    })
+    
+    const vm = new Vue({
+      el: "#app"
+    })
+
+   
+
+  </script>
+</body>
+</html>

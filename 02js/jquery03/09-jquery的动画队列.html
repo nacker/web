@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // jquery为了保证动画不丢失， 把所有要执行的动画都保存到一个动画队列中，动画一个一个执行。
+
+    // 好处
+    // 1. 跑到left:400的地方
+    // 2. 宽度变大为300
+    // 3. 高度变为300
+    // 4. 变圆
+
+    // 回调地狱
+    // $('div').animate({left: 400}, function() {
+    //   $('div').animate({width: 300}, function() {
+    //     $('div').animate({height: 300}, function(){
+    //       $('div').animate({borderRadius: 150})
+    //     })
+    //   })
+    // });
+     $('div').animate({left: 400}).animate({width: 300}).animate({height: 300}).animate({borderRadius: 150})  
+  </script>
+</body>
+</html>

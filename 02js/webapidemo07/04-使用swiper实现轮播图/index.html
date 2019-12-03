@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="swiper/css/swiper.css">
+  <style>
+    .swiper-container {
+      width: 790px;
+      height: 340px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 整个轮播图容器 -->
+  <div class="swiper-container">
+    <!-- 存放图片 -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="#"><img src="images/1.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/2.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/3.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/4.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/5.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/6.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/7.jpg" alt=""></a>
+        </div>
+        <div class="swiper-slide">
+          <a href="#"><img src="images/8.jpg" alt=""></a>
+        </div>
+    </div>
+    <!-- 如果需要分页器, 小圆点 -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  
+  <script src="swiper/js/swiper.js"></script>
+  <script>
+    // 参数1： 要初始化哪个轮播图
+    new Swiper('.swiper-container', {
+      // 配置轮播图的一些参数
+      loop: true,
+      // 如果加了，生成小圆点
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      // 要左右箭头
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'cube'
+    });
+  </script>
+</body>
+</html>

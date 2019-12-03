@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 600px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 100px auto;
+
+      /* father就是一个弹性盒子了， 弹性盒子有自己的布局规则 */
+      /* 弹性盒子有主轴和侧轴， 所有的子元素默认在主轴的开始进行排列 */
+
+      /* flex-direction: 设置主轴的方向  row row-reverse column column-reverse */
+      display: flex;
+      /* flex-direction: column; */
+
+      /* 
+        justify-content: 设置主轴的排列方式
+          flex-start
+          flex-end
+          center
+          space-around
+          space-between
+      */
+      justify-content: space-between;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      background-color: red;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+  </div>
+</body>
+</html>

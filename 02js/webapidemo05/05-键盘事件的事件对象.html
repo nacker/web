@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: lightblue;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    img {
+      width: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .toRight {
+      transform: rotate(0deg);
+    }
+
+    .toBottom {
+      transform: rotate(90deg);
+    }
+
+    .toLeft {
+      transform: rotateY(180deg);
+    }
+
+    .toTop {
+      transform: rotate(270deg);
+    }
+  </style>
+</head>
+<body>
+  <img src="xn.png" alt="">
+  <script>
+    // onkeydown :键盘按下事件
+    // onkeyup: 键盘弹起事件
+    // 一般来说，只会给某个文本框注册或者是给整个document去注册
+    // 如果是给文本框注册， 推荐注册onkeyup事件，，，获取到的value值才是最新的
+    // 需要知道按下的是什么键？
+    // ↑ ↓ ← → ESC ENTER
+    var img = document.querySelector('img');
+    // 小鸟的初始位置
+    var x = 0;
+    var y = 0;
+    document.onkeydown = function(e) {
+      // 所有的键盘事件对象中都有一个 e.keyCode: 获取到的键盘的键盘码
+      // console.log(e.keyCode);
+      // 27:esc
+      // 13:enter
+      // ←: 37
+      // ↑: 38
+      // →:39
+      // ↓:40
+      // console.log('触发了键盘按下事件');
+      switch(e.keyCode) {
+        case 27: 
+          img.style.display = 'none';
+          break;
+        case 13:
+          img.style.display = 'block';
+          break;
+        case 37:
+          x -= 10;
+          img.style.left = x + 'px';
+          img.className = 'toLeft';
+          break;
+        case 38:
+          y -= 10;
+          img.style.top = y + 'px';
+          img.className = 'toTop';
+          break;
+          
+        case 39:
+          x += 10;
+          img.style.left = x + 'px';
+          img.className = 'toRight';
+          break;
+        case 40:
+          y += 10;
+          img.style.top = y + 'px';
+          img.className = 'toBottom';
+          break;
+      }
+    }
+  </script>
+</body>
+</html>

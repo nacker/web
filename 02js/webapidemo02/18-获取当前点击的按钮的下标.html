@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <button>按钮</button>
+  <script>
+    // 按钮本身没有下标的，但是在遍历的时候，给每个按钮增加一个下标。
+
+    var btns = document.getElementsByTagName('button');
+    // 需要知道当前点击的按钮的下标
+    for(var i = 0; i < btns.length; i++) {
+      // 给每个按钮添加了一个title属性
+      btns[i].index = i;
+      // 给每个按钮注册了点击事件
+      btns[i].onclick = function() {
+        // console.log('哈哈')
+        console.log(this.index);
+      }
+    }
+  </script>
+</body>
+</html>

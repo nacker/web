@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transition: 1s 2s;
+      /* 
+        过渡
+        如果一个盒子没有trantion,样式的改变是立马发生改变的
+        1. 如果添加了transition, 样式就慢慢的发生了改变，有了过渡效果
+
+        2. 过渡transition其实是一个复合属性
+
+        transition-property: 指定哪些样式有过渡效果 默认值： all  所有的样式都有过渡效果
+      */
+      /* transition-property: all; */
+
+      /* 指定过渡的时间 */
+      /* transition-duration: 3s;  */
+
+      /* 指定过渡的延迟时间 */
+      /* transition-delay: 1s; */
+
+      /* 指定过渡的动画效果   ease:先慢后快，再慢  linear：匀速的  steps(10)*/
+      /* transition-timing-function: linear; */
+
+      /* 连写的注意点：如果只有一个时间，这个时间表示持续时间， 如果有两个时间， 第一个是持续时间 */
+     
+    }
+
+    div:hover {
+      /* width: 300px; */
+      border-radius: 50%;
+     
+      /* background-color: green; */
+      /* margin-left: 300px; */
+    }
+
+
+    /* 
+      小结
+        transition-property: 设置哪个样式有过渡效果   默认值： all
+        transition-duration: 持续时间  必须
+        transition-delay:  延迟时间 延迟的时间
+        transition-timing-function: 设置动画的效果  ease   linear  steps(10)
+     */
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

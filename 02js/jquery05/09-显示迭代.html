@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>复制</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+
+      li {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background: pink;
+        text-align: center;
+        line-height: 200px;
+        margin: 0 20px 20px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul id="ulList">
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+      <li>什么都看不见</li>
+    </ul>
+  </body>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $('li').css('opacity', .5)
+
+    // 如果要给每个元素设置不同的值， 需要自己遍历 显示迭代
+
+    // for(var i = 0; i < $('li').length; i++) {
+    //   $('li').eq(i).css('opacity', (i + 1) / 10);
+    // }
+
+
+    // jquery对象可以遍历
+    // jquery会让每个元素都执行一次这个函数
+    // $('li').each(function(i){
+    //   $(this).css('opacity', (i + 1) / 10)
+    // });
+
+
+    // i: 每个元素的下标
+    // e: 每个元素
+    // this: 每个元素
+    $('li').each(function(i) {
+      // console.log(i, e);
+      $(this).css('opacity', (i + 1)/10);
+    });
+  </script>
+</html>

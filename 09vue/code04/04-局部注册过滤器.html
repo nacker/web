@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in students" :key="item.id">
+          <span>{{ item.name }}</span
+          >====<span>{{ item.gender | genderFilter }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div id="app1">
+      <ul>
+        <li v-for="item in students" :key="item.id">
+          <span>{{ item.name }}</span
+          >====<span>{{ item.gender | genderFilter }}</span>
+        </li>
+      </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      // 1. 全局注册的过滤器，当前页面中所有的vue实例都可以使用
+      // Vue.filter("genderFilter", function(value){
+      //   switch(value){
+      //     case 0:
+      //       return "female"
+      //     case 1:
+      //       return "male"
+      //     case -1:
+      //       return "unknow"
+      //   }
+      // })
+
+      // 2. 局部注册：
+      // 只在某个vue实例中生效(是私有的)
+      // 在创建vue实例的时候，参数对象中添加一个 filters属性，将过滤器函数注册在这个对象中即可
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          students: [
+            { id: 1, name: "张学友", gender: 1 },
+            { id: 2, name: "王祖贤", gender: 0 },
+            { id: 3, name: "吴彦祖", gender: 1 },
+            { id: 4, name: "蔡徐坤", gender: -1 },
+            { id: 5, name: "谢大脚", gender: 0 }
+          ]
+        },
+        filters: {
+          genderFilter(value) {
+            switch (value) {
+              case 0:
+                return "female";
+              case 1:
+                return "male";
+              case -1:
+                return "unknow";
+            }
+          }
+        }
+      });
+
+      const vm1 = new Vue({
+        el: "#app1",
+        data: {
+          students: [
+            { id: 1, name: "张学友", gender: 1 },
+            { id: 2, name: "王祖贤", gender: 0 },
+            { id: 3, name: "吴彦祖", gender: 1 },
+            { id: 4, name: "蔡徐坤", gender: -1 },
+            { id: 5, name: "谢大脚", gender: 0 }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

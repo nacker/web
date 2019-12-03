@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组
+      // 对象
+      // ES6中新增了一种数据类型  Set       Map
+      // Set类型和数组非常的像，  set中的数据不允许重复
+      let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+      arr=[...new Set(arr)]
+      console.log(arr)
+      // 接受一个数组，但是不会有重复的
+      // const s = new Set(arr)
+      // console.log([...s])
+    </script>
+  </body>
+</html>

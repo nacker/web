@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 就近原则： 如果在当前作用域内有这个变量，就使用，
+    // 全局变量
+    // var num = 11;
+
+    // function fn() {
+    //   // 局部变量
+    //   // var num = 22;
+    //   num = 33;
+    //   console.log(num);
+    // }
+
+    // fn();
+    // console.log(num);
+
+
+    var num = 11;
+
+    function fn() {
+      // var num = 22;
+      num = 33;
+      console.log(num);
+    }
+    fn();
+    console.log(num);
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .wrap {
+        width: 300px;
+        margin: 100px auto 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+        width: 300px;
+      }
+
+      th,
+      td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+      }
+
+      th {
+        background-color: #09c;
+        font: bold 16px '微软雅黑';
+        color: #fff;
+      }
+
+      td {
+        font: 14px '微软雅黑';
+      }
+
+      tbody tr {
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+
+      tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="all" />
+            </th>
+            <th>菜名</th>
+            <th>饭店</th>
+          </tr>
+        </thead>
+        <tbody id="j_tb">
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>红烧肉</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>西红柿鸡蛋</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>红烧狮子头</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>日式肥牛</td>
+            <td>田老师</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      // 1. 找对象
+      var all = document.getElementById('all');
+      var tbody = document.getElementById('j_tb');
+      var inputs = tbody.getElementsByTagName('input');
+      // 2. 完成上面的功能
+      // 2.1 给all注册点击事件
+      all.onclick = function() {
+        // 2.2 遍历inputs，给每个input都设置checked属性，和all一样
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].checked = this.checked;
+        }
+      }
+
+      // 3. 完成下面的功能
+      // 3.1 给下面所有的input注册点击事件
+      for(var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = function() {
+          // 3.2 判断下面的inputs是否都选中（假设成立法）
+          // 3.2.1 假设成立
+          var flag = true;
+          // 3.2.2 挨个找打脸条件
+          for(var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].checked) {
+              flag = false;
+              break;
+            }
+          }
+          // 3.2.3 判断最终假设是否成立
+          all.checked = flag;
+        }
+      }
+    </script>
+  </body>
+</html>

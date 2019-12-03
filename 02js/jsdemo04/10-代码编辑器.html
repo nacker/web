@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="" id="" cols="60" rows="30"></textarea>
+    <div></div>
+
+    <script>
+      var text = document.querySelector('textarea')
+      text.onkeyup = function() {
+        try {
+          var content = text.value
+          // 让字符串当成js代码执行
+          // var fn = new Function(content)
+          // fn()
+          eval(content)
+        } catch (e) {
+          // console.log(1)
+        }
+
+        console.log('哈哈')
+      }
+    </script>
+  </body>
+</html>

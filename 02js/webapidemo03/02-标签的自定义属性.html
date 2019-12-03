@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box" class="demo" title="哈哈" aa="bb" product="手机">这是一个盒子</div>
+
+  <script>
+    // html中的标签和内存中的一个对象一一对象的。
+    var box = document.querySelector('#box');
+    // box.title = "呵呵";
+
+    // 只有标签天生自带， 固有的属性  id class title 在对象中可以一一对象。
+    // 对于标签中的自定义的属性， 无法通过 对象.xxx去获取的
+    // console.log(box.aa);
+
+
+    // 获取标签的属性（无论是固有的获取自定义的）
+    // 参数：name 属性名
+    // box.getAttribute(name)
+    var product = box.getAttribute('product');
+    console.log(product);
+    var aa = box.getAttribute('aa');
+    console.log(aa);
+
+    var id = box.getAttribute('id');
+    console.log(id);
+    console.log(box.id);
+
+    // var result = box.className;
+    var result = box.getAttribute('class');
+    console.log(result);
+
+
+    // 给标签设置属性，不管是固有属性或者是自定义属性
+    // box.setAttribute(name, value)
+    box.setAttribute('aa', 'cc');
+    // box.setAttribute('id', 'cc');
+    box.setAttribute('class', 'cc');
+
+
+    // 删除标签的某个属性
+    // box.removeAttribute(name)
+    box.removeAttribute('aa');
+
+
+
+
+
+    // 这三个方法都是用于操作标签的属性，无论是标签的固有属性或者是自定义属性。
+    // box.getAttribute(name) :获取属性
+    // box.setAttribute(name, value): 设置属性
+    // box.removeAttribute(name): 移除属性
+
+  </script>
+</body>
+</html>

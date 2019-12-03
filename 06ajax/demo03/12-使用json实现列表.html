@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: #ccc;
+        padding: 10px 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button>获取数据</button>
+    <table>
+      <thead>
+        <tr>
+          <th>名字</th>
+          <th>性别</th>
+          <th>技能</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 没东西 -->
+      </tbody>
+    </table>
+    <script src="ajax.js"></script>
+    <script>
+      // 1. 点击按钮，注册事件
+      // 2. 发送ajax请求， 获取到json数据
+      // 3. 解析json数据
+      // 4. 动态创建tr和td
+      var button = document.querySelector('button')
+      var tbody = document.querySelector('tbody')
+
+      button.onclick = function() {
+        ajax({
+          url: '05.php',
+          dataType: 'json',
+          success: function(info) {
+            console.log(info)
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

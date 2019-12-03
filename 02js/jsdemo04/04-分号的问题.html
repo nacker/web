@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p>1111</p>
+      <p>1111</p>
+      <p>1111</p>
+      <p>1111</p>
+      <p>1111</p>
+      <p>1111</p>
+    </div>
+    <script>
+      // 第一次碰到不加分号导致报错了
+      // 经验之谈： 在沙箱的前面加一个分号
+
+      // 代码规范之分号
+      // js代码要不要加分号  爱加不加
+
+      // js中必须加分号的五个地方
+      // () [] / + - 前面必须分号结束
+      // ;(function(){
+      //   console.log('哈哈')
+      // })()
+
+      // eslint: 检查代码规范  无分号
+
+      // ;(function(){
+      //   console.log('呵呵')
+      // })()
+
+      /*
+
+          "editor.formatOnSave": true,
+          "prettier.singleQuote": true,
+          "prettier.semi": false
+      */
+      var num = 12
+      ;(function() {
+        console.log('哈哈')
+      })()
+    </script>
+  </body>
+</html>

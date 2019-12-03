@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      [v-cloak]{
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+   
+    <div id="app">
+      <!-- 当网速比较慢点的时候，网页中书写的插值表达式，会首先原样展示在页面上，当页面加载完毕的时候，真实的数据才会展示出来？ -->
+
+      <!-- 问题的效果： 页面加载过慢的时候，表达式会首先原样展示在页面上，等vue加载完毕，对表达式进行解析之后，才会把真实的数据展示出来，给用户的体验就是闪烁了
+
+      原因：Vue加载过慢，表达式没人解析，就原样展示了，vue加载完成后，解析了表达式，表达式的内容就渲染了
+
+      解决办法： v-cloak指令  这个指令需要配合属性选择器的样式使用-->
+
+
+      <!-- 设置了display:none的样式，元素就会处于隐藏状态 -->
+      <!-- 当vue加载完毕之后，vue会处理v-cloak指令，直接把v-cloak从元素中删除了， 元素就接触隐藏了 -->
+      <div v-cloak>{{name}}</div>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          name: "hcc"
+        }
+      });
+    </script>
+  </body>
+</html>

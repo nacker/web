@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 确定函数内部的this指向
+      // 1. 函数调用模式   函数名()   this指向window
+      // 2. 方法调用模式   对象名.方法名()  this永远指向 当前对象
+      // 3. 构造函数调用模式  new 函数名()  this指向新创建的对象
+      // 4. 上下文调用模式
+
+      // 不是对象内部的函数叫做函数
+      // 方法：对象内部的函数叫做方法
+
+      // 函数内部的this，永远指向window
+      // var num = 11
+      // function fn() {
+      //   console.log(this.num)
+      // }
+
+      // fn()
+
+      // 函数内部的this是变化的， 跟这个函数如何调用有关
+      // var age = 20
+      // var obj = {
+      //   name: 'zs',
+      //   age: 18,
+      //   sayHi: function() {
+      //     console.log(this.age)
+      //   }
+      // }
+
+      // obj.sayHi();
+
+      var age = 10
+      function fn() {
+        console.log(this.age)
+      }
+
+      var obj = {
+        age: 20,
+        sayHi: fn
+      }
+
+      obj.sayHi()
+      fn()
+    </script>
+  </body>
+</html>

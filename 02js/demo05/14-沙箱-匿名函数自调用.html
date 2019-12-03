@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 匿名函数自调用：也叫沙盒 沙箱
+    // 防止全局变量污染
+    (function(){
+      // 写你的代码
+    })();
+
+
+    (function () {
+      // 张三
+      function fn() {
+        console.log('哈哈');
+      }
+      var num = 11;
+      fn();
+      console.log(num);
+    })();
+   
+    
+    (function ls() {
+      // 李四
+      var fn = 11;
+      function num() {
+        console.log('呵呵');
+      }
+      console.log(fn);
+      num();
+    })();
+    
+  </script>
+</body>
+</html>

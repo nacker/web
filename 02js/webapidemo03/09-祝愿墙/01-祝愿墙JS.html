@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0 auto;
+      padding: 0px;
+      font-size: 12px;
+      background: url(images/bg.gif) repeat center 36px;
+      text-align: center;
+      background-color: #c30230;
+    }
+
+    #content {
+      margin: 0 auto;
+      width: 960px;
+      background: url(images/content_bg.jpg) no-repeat left top;
+      height: 627px;
+      position: relative;
+    }
+
+    #content .tip1 {
+      position: absolute;
+      width: 227px;
+      left: 0px;
+      top: 0px;
+    }
+
+    #content .tip1 .tip_h {
+      background: url(images/tip1_h.gif) no-repeat left top;
+    }
+
+    #content .tip1 .tip_h {
+      width: 227px;
+      padding-top: 45px;
+      height: 23px;
+      text-align: left;
+      cursor: move;
+    }
+
+    #content .tip1 .tip_c {
+      background: url(images/tip1_c.gif) repeat-y;
+    }
+
+    #content .tip1 .tip_c {
+      width: 200px;
+      padding-left: 12px;
+      padding-right: 15px;
+      min-height: 40px;
+      text-align: left;
+      line-height: 20px;
+      max-height: 160px;
+      word-wrap: break-word;
+      word-break: break-all;
+      overflow: hidden;
+    }
+
+    #content .tip1 .tip_f {
+      background: url(images/tip1_f.gif) no-repeat left top;
+    }
+
+    #content .tip1 .tip_f {
+      width: 227px;
+      height: 53px;
+      padding-top: 20px;
+    }
+
+    #content .close {
+      float: left;
+      font-size: 12px;
+      cursor: pointer;
+      color: #000000;
+    }
+
+    .clr {
+      clear: both;
+      overflow: auto;
+      display: block;
+      height: 0px;
+    }
+
+    #content .icon {
+      float: left;
+      width: 35px;
+      padding-left: 15px;
+      height: 35px;
+      text-align: center;
+    }
+
+    #content .name {
+      float: right;
+      padding-right: 15px;
+      text-align: right;
+      font-size: 14px;
+      line-height: 35px;
+      color: #C0F;
+    }
+
+    #content .num {
+      float: left;
+      padding-left: 7px;
+      width: 195px;
+    }
+  </style>
+</head>
+<body>
+<div id="content">
+  <div class="tip1">
+    <div class="tip_h" title="双击关闭纸条">
+      <div class="num">第[49568]条 2016-02-17 22:51:52</div>
+      <div class="close" title="关闭纸条">×</div>
+      <div class="clr"></div>
+    </div>
+    <div class="tip_c">
+      每天都要被自己给帅醒，希望以后越来越帅！！！
+    </div>
+    <div class="tip_f">
+      <div class="icon">
+        <img src="images/bpic_1.gif" alt="" title="">
+      </div>
+      <div class="name">成真的人</div>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // 1. 克隆10份， 添加到content中
+  var content = document.getElementById('content');
+  var tip1 = document.querySelector('.tip1');
+  var count = 1;
+  for(var i = 1; i <= 10; i++) {
+    // 深度克隆tip1
+    var newTip = tip1.cloneNode(true);
+    content.appendChild(newTip);
+  }
+  // 2. 让祝愿墙的位置随机 top left
+  // 获取到content中所有的tip1
+  var tips = content.children;
+  // 给每个tip设置一个随机的left和top
+  for(var i = 0; i < tips.length; i++) {
+    // 随机left 0-733
+    // 随机top  0-446
+    var randomLeft = parseInt( Math.random() * 734 );
+    var randomTop = parseInt( Math.random() * 447 );
+    tips[i].style.left = randomLeft + 'px';
+    tips[i].style.top = randomTop + 'px';
+
+     // 3. 给祝愿墙注册点击事件， 让下面跑上面（z-index即可）
+     tips[i].onclick = function() {
+       this.style.zIndex = ++count;
+     }
+
+    // 双击头部，关闭祝愿墙
+    // ondblclick:  dbl: double
+    tips[i].firstElementChild.ondblclick = function() {
+      content.removeChild(this.parentNode);
+    }
+
+     // 单击关闭，关闭祝愿墙
+     tips[i].querySelector('.close').onclick = function() {
+        content.removeChild(this.parentNode.parentNode);
+     }
+  }
+
+
+  // var closeBtns = document.querySelectorAll('.close');
+
+ 
+</script>
+</body>
+</html>

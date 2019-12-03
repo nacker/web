@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str = 'get-element-by-id';  // 转成 getElementById
+    // 1. 使用- 切割
+    // ["get", "element", "by", "id"]
+    var arr = str.split('-');
+    // 2. 让数组中每个字符串的首字母 变大写 ，排除第0项
+    for(var i = 1; i < arr.length; i++) {
+      arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+    }
+    // 3. 把数组再次拼接成字符串
+    str = arr.join('');
+    console.log(str);
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 时间戳是事件的 整数的表现形式
+    // 1554620794703: 时间戳：1970年1月1日00:00:00 距离现在所过毫秒数
+    // 任何一个时间都可以转换成时间戳
+    // 时间戳的作用：计算两段时间的时间差
+    // var date = +new Date();
+    // console.log(date);
+
+    // 统计一段代码的执行时间
+
+    // var begin = new Date();// 代码开始的时间
+    // var sum = 0;
+    // for(var i = 1; i < 1000000000; i++) {
+    //   sum += i;
+    // }
+    // console.log(sum);
+    // var end = new Date(); // 代码执行结束的时间
+
+    // console.log(end - begin);
+
+
+    // 倒计时  距离18:30还有多久
+    var now = new Date();
+    var off = new Date('2019-05-01 00:00:00');
+    var time = off - now;
+    
+    // 把time变成秒钟
+    time = parseInt(time / 1000);
+
+    // 小时
+    // 1小时 = 60 = 3600
+    var hour = parseInt(time / 3600);
+    console.log(hour);
+
+    // 只需要显示 不足60的分钟
+    var minute = parseInt(time/60) % 60;
+    console.log(minute);
+
+    var second = time % 60;
+    console.log(second);
+
+
+
+    // 5-1日
+
+    // 1. 按照指定格式显示一个日期
+    // 2. 计算两段时间的差
+  </script>
+</body>
+</html>

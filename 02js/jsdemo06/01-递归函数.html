@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 匿名函数
+      // 自执行函数
+      // 递归函数
+      // 回调函数
+
+      // 递归函数： 函数内部调用函数自己
+      // 递归函数： 有结束的条件
+      // 故事讲5遍
+      // var count = 0
+      // function tellStory() {
+      //   count++
+      //   console.log('从前有座山')
+      //   console.log('山里有座庙')
+      //   console.log('庙里有个老和尚')
+      //   console.log('老和尚给小和尚讲故事')
+
+      //   // 在函数内部又调用了自己
+      //   if (count <= 10) {
+      //     tellStory()
+      //   }
+      // }
+
+      // tellStory()
+
+      // 递归是一种算法   递归是一个思想
+      // 化归思想： 把一个复杂的问题拆解成更简单的问题
+
+      // getSum(88) 结果是多少?
+      // getSum(86) = getSum(87)   + 88
+      // getSum(86) = getSum(86)  + 87
+      // getSum(86) = getSum(85) + 86
+
+      // getSum(3) = getSum(2) +  3
+      // getSum(2) = getSum(1) + 2;   getSum(2) = 3;
+      // getSum(1) = getSum(0) + 1;   getSum(1) = 1;
+
+      // function getSum(n) {
+      //   // 一定要有已知的条件
+      //   if (n === 1) {
+      //     return 1
+      //   }
+      //   return getSum(n - 1) + n
+      // }
+
+      // console.log(getSum(10))
+      // console.log(getSum(100))
+
+      // 经典的递归题
+      // 求斐波那契数列（兔子数）
+      // 代码
+      // 1 1 2 3 5 8 13 21 34 55 89 144
+
+      // 递归虽好， 影响性能
+
+      // 关键点： 一个函数里面，调用自己两次  出现大量的重复运算
+
+      // 缓存
+      // 计算某个月的兔子数的时候， 先判断这个月是否计算过， 如果计算过， 直接使用结果
+      // 如果没有计算过， 计算这个月的兔子数,并且存起来
+
+      // 月份从0算
+      // var arr = [1, 1] // 存储计算过的兔子数
+      // function getTu(n) {
+      //   // if (n === 1 || n === 2) {
+      //   //   return 1
+      //   // }
+      //   if (!arr[n]) {
+      //     arr[n] = getTu(n - 1) + getTu(n - 2)
+      //   }
+      //   return arr[n]
+      // }
+
+      // console.log(getTu(50))
+      // console.log(arr)
+
+      // console.log(getTu(20))
+
+      // 某个月的兔子数 = 前1个月 + 前2个月
+      // 0月  1
+      // 1月  1
+      // 2月  2
+
+      // 使用数组存起来
+      // 1. 计算某个月兔子数，先去数组中判断， 是否有这个月对应的数字 ，不需要计算
+      // 2. 如果没有，说明，这个月是没有算过， 计算即可， 把计算的结果保存下来
+      var arr = [1, 1]
+      function getFib(n) {
+        if (!arr[n]) {
+          // 计算这个月的兔子数
+          arr[n] = getFib(n - 1) + getFib(n - 2)
+        }
+        return arr[n]
+      }
+      console.log(getFib(1000))
+    </script>
+  </body>
+</html>

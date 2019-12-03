@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 200px;
+        height: 200px;
+        background-color: hotpink;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+        <h1>{{word}}</h1>
+
+        <button @click="clickHandler">改变上面的文字</button>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      // 在事件处理函数中，如果想要访问当前vue实例中的数据，直接通过this就可以访问到
+
+      new Vue({
+        el: "#app",
+        data: {
+          word: "Hello World"
+        },
+        methods: {
+          clickHandler(){
+            this.word = "Hello Hcc"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

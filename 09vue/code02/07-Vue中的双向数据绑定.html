@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 200px;
+        height: 200px;
+        background-color: hotpink;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 数据绑定，说的就是，将数据和视图关联起来
+
+      单向绑定： 当数据发生变化的时候，页面中的内容也会随之发生变化，而页面中的内容不会影响数据的变化 -->
+
+      <!-- v-bind是一个单项绑定的指令 -->
+      <!-- <input type="text" :value="name"> -->
+
+
+
+      <!-- 双向绑定：当数据发生变化的时候，页面中的内容会随之变化，页面中的内容发生变化的时候，数据也会随之变化
+
+      双向绑定一般只会出现在表单元素中！ -->
+
+
+
+      <!-- <input type="text" v-model="name">
+
+      <div id="box">{{name}}</div> -->
+
+
+      <!-- 双向绑定最实用的场景，就是获取用户在表单中输入的数据 -->
+
+
+      <label>用户名</label><input type="text" name="username" v-model="username">
+      <br>
+      <label>密码</label><input type="password" name="password" v-model="password">
+      <br>
+      <button @click="login">登录</button>
+
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          // name: "HCC"
+          username: "",
+          password: ""
+        },
+        methods: {
+          login(){
+            console.log(this.username, this.password);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li id="cloth">衣服</li>
+    <li>裤子</li>
+    <li>袜子</li>
+    <li>裤衩</li>
+    <li>鞋子</li>
+  </ul>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    
+    // DOM的方式
+    // var lis = document.querySelectorAll('li');
+    // for(var i = 0; i < lis.length; i++) {
+    //   lis[i].innerText = '洗衣服';
+    // }
+
+    // DOM对象： 通过js的方式获取到的页面中的元素其实都是DOM对象
+    // DOM对象：属性和方法
+
+    // jquery的方式
+    // $('li').text('洗衣服');
+    // $('li') 不是DOM对象
+    // jquery对象： 通过jquery的方式获取到的页面中元素就是jquery对象
+    // jquery对象也有属性和方法
+    // var result = $('li');
+    // console.log(result);
+
+  
+    // var cloth = document.querySelector('#cloth');
+    // cloth.text('哈哈');
+
+    // $('li').getAttribute('name');
+
+
+    // 区别
+    //  DOM对象不能调用jquery对象的方法
+    //  jquery对象也不能调用DOM对象的方法
+
+    // 关联：  jquery是对DOM的封装  jquery对象是DOM对象的一个集合，内部放的DOM对象
+    console.log($('li'));
+
+  </script>
+</body>
+</html>

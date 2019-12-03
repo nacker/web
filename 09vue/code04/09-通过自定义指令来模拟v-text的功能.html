@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+        <div v-mytext="msg"></div>
+        <div v-myhtml="msg"></div>
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      Vue.directive("mytext", {
+        bind(el, binding){
+          // 需求，就是将msg的值，赋值给当前元素的innerText属性
+
+          // msg的值： binding.value
+          // 当前元素： el
+          el.innerText = binding.value;
+        },
+        update(el, binding){
+          el.innerText = binding.value;
+        }
+      })
+
+      Vue.directive("myhtml", {
+        bind(el, binding){
+          // 需求，就是将msg的值，赋值给当前元素的innerText属性
+
+          // msg的值： binding.value
+          // 当前元素： el
+          el.innerHTML = binding.value;
+        },
+        update(el, binding){
+          el.innerHTML = binding.value;
+        }
+      })
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "<h1>hello world</h1>"
+        }
+      });
+    </script>
+  </body>
+</html>

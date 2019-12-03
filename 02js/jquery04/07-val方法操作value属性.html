@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" value="假酒">
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // val方法
+    // val() 没有参数，就表示获取value值
+    // val() 如果有参数，就表示设置value值
+    // console.log($('input').val());
+
+    // $('input').val('哈哈');
+
+    // 1. 给input注册 focus事件， 判断value值是否是 默认值， 如果是需要清空
+    // 2. 给input注册 blur事件，  判断value是否是空，如果是，设置为默认值
+    $('input').focus(function() {
+      if ($(this).val() === '假酒') {
+        $(this).val('');
+      }
+    });
+
+    $('input').blur(function() {
+      if ( $(this).val() === '' ) {
+        $(this).val('假酒');
+      }
+    });
+  </script>
+</body>
+</html>

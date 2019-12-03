@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .father {
+      height: 100px;
+      width: 100px;
+      border: 1px solid red;
+      margin: 0 auto;
+      /* overflow: scroll; */
+      overflow: hidden;
+    }
+
+    .son {
+      width: 400px;
+      height: 500px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">一年前发布的小米8和P20 Pro，到今年为止，谁速度</div>
+  </div>
+
+  <script src="iscroll.js"></script>
+  <script>
+    // iscroll必须满足的结构
+    // 两个盒子， 子盒子超出了父盒子
+    new IScroll('.father', {
+      scrollY: true,
+      scrollX: true
+    });
+    
+    // var son = document.querySelector('.son');
+    // // 记录开始移动的位置
+    // var startX;
+    // var total = 0;
+    // son.addEventListener('touchstart', function(e) {
+    //   startX = e.touches[0].pageX;
+    // });
+
+    // // 让son跟着跑
+    // son.addEventListener('touchmove', function(e) {
+    //   var moveX = e.touches[0].pageX - startX ;
+    //   // 让son跟着动
+    //   var x = total + moveX;
+    //   console.log(x);
+    //   x = Math.min(0, x);
+    //   x = Math.max(x, -300);
+    //   son.style.transform = 'translateX(' + x + 'px)';
+    //   // console.log(moveX);
+    // });
+
+    // // 记录最终移动的距离
+    // son.addEventListener('touchend', function(e) {
+    //   // 本地移动的最终距离
+    //   var totalX = e.changedTouches[0].pageX - startX;
+    //   total += totalX;
+    //   total = Math.min(0, total);
+    //   total = Math.max(total, -300);
+    //   console.log(total);
+    //   // console.log('total',total);
+    // });
+  </script>
+</body>
+</html>

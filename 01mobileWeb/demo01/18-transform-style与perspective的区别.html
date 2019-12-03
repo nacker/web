@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 50px;
+      height: 300px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      position: relative;
+      /* 只是在视觉上有了进大远小的效果，并不影响一个元素是2d还是3d */
+      perspective: 1000px;
+      transform: rotateY(0deg);
+      /* 只有加了这个属性，元素才能说是真正的3d元素 */
+      transform-style: preserve-3d;
+    }
+
+    li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    li:nth-child(1) {
+      background-color: green;
+    }
+
+    li:nth-child(2) {
+      background-color: yellow;
+      transform: rotateX(45deg);
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+</html>

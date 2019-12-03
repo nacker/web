@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+
+  <script>
+    // 我们在设置一个元素的样式的时候
+    // 1. 通过className给他设置一个类，，，前提有一个类
+    // 2. 还可以通过style属性，设置样式（行内样式）
+
+    // 1. js中的style属性对应的标签的行内样式
+    // 2. style是一个对象，里面包含了所有的行内，可以进行修改
+    // 如果要设置background-color，改成驼峰命名法
+    var box = document.getElementById('box');
+
+    box.style.width = '200px';
+    box.style.height = '200px';
+    box.style.backgroundColor = 'green';
+    box.style.borderRadius = '50%';
+  </script>
+</body>
+</html>

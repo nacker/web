@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 在js中，字符串必须使用 '' 或者 ""包裹起来
+    // 推荐 使用 单引号 ''
+    var str = '张三';
+    console.log(str);
+    var name = "李四";
+    console.log(name);
+
+    var name1 = 'zs';
+    console.log(name1);
+
+    // 字符串有一个length的属性，表示字符串中字符的个数
+    var name2 = 'sldkjflskdjflksdjf';
+    console.log(name2.length);
+
+
+    // 打印：   我姓'熏',孙悟空的孙
+    var str3 = '我姓\'熏\',孙悟空的孙';
+    console.log(str3);
+
+    // 打印：   离开'他'吧，我偷"电瓶车"养你
+    // 转义字符
+    //  \"  表示是一个普通的 "字符
+    // \'   表示普通的'字符串
+    // \n   表示换行 表示回车键
+    // \t   制表符 表示按了tab键 一般来说，一个tab键会等于4个空格
+    var str4 = "离开'他'吧，我\t偷\"电瓶车\"养\n你";
+    console.log(str4);
+
+    var str5 = 'abc\tdef';
+    console.log(str5);
+  </script>
+</body>
+</html>

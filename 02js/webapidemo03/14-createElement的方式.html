@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <button>动态生成</button>
+  <script>
+    var button = document.querySelector('button');
+    var div = document.querySelector('div');
+
+    // 在内存中创建元素， 需要使用appendChild方法
+    // 参数： 标签名
+    // document.createElement('div');
+    button.onclick = function() {
+      // 创建一个按钮
+      var btn = document.createElement('button');
+      // 给按钮设置内容
+      btn.innerText = '按钮';
+      // 把内存中的按钮添加到div
+      div.appendChild(btn);
+    }
+  </script>
+</body>
+</html>

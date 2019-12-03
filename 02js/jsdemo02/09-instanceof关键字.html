@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function Person() {
+    // 
+    // }
+
+    // var p = new Person();
+
+    // 验证p 是否是 Person的实例
+    // instanceof规则:
+    // 判断 Person.prototype 是否在 p的原型链上。 如果在p的原型链上，返回true
+    // console.log(p instanceof Person);
+    // console.log(p instanceof Object);
+  function Person() {
+  }
+  var p = new  Person();
+  console.log(p instanceof Person);// true
+
+  //需要画图
+  Person.prototype = {
+    
+  }; // 老王
+  var p1 = new Person();
+  console.log(p instanceof Person); // false
+  console.log(p1 instanceof Person); // true
+
+
+
+  console.log(p instanceof Object);
+  console.log(p1 instanceof Object);
+
+  console.log(p1.constructor);
+  </script>
+</body>
+</html>

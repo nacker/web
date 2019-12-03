@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 短路与 && : 遇到假值会短路 
+    // 短路或 || : 遇到真值会短路
+
+    // function fn(num) {
+    //   num = num || 10;
+    // }
+
+    // function demo(fn) {
+    //   // if (fn) {
+    //   //   fn();
+    //   // }
+    //   fn && fn();
+    // }
+    // demo(function(){
+    //   console.log('哈哈');
+    // });
+    // demo();
+    // fn(100);
+
+
+    // if (age >= 18) {
+    //   console.log('哈哈哈');
+    // }
+
+    age >= 18 && console.log('哈哈');
+  </script>
+</body>
+</html>

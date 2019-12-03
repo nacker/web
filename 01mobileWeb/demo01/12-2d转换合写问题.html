@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 需求： 旋转360  让div往右跑1000px  并且缩小原来的0.5 */
+    div {
+      width: 0px;
+      height: 0px;
+      border-width: 50px;
+      border-style: solid;
+      border-color: red green yellow blue;
+      border-radius: 50%;
+      transition: all 10s;
+    }
+    /* 注意：transform只能写一个，写了多个会覆盖。 */
+    /* 如果有多个transform的值需要设置，使用空格隔开即可 */
+    /* rotate旋转把让坐标轴也跟着旋转 */
+    body:hover div {
+      transform: translateX(1000px) rotate(360deg) scale(.5);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

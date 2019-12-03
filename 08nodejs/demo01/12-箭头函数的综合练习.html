@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const heros = [
+        // wu: 武力    zhi:智力
+        { id: 1, name: '张飞', wu: 97, zhi: 10 },
+        { id: 2, name: '诸葛亮', wu: 55, zhi: 99 },
+        { id: 3, name: '赵云', wu: 97, zhi: 66 },
+        { id: 4, name: '周瑜', wu: 80, zhi: 98 },
+        { id: 5, name: '吕布', wu: 100, zhi: 8 },
+        { id: 6, name: '司马懿', wu: 30, zhi: 98 }
+      ]
+
+      let total = 0
+      heros.forEach(item => (total += item.wu))
+      console.log(total / heros.length)
+
+      const newArr = heros.map(item => item.name)
+      console.log(newArr)
+
+      const newArr1 = heros.filter(item => item.wu > 90)
+      console.log(newArr1)
+
+      const newArr2 = heros.filter(item => item.name !== '周瑜')
+      console.log(newArr2)
+
+      // 判断数组中所有英雄的武力是否都超过60， 最终打印结果： `全是猛将`  `还有弱鸡`     使用两种方式实现
+      // 思考： 找到里面武力值低于60的  只要有  有弱鸡
+      // 思考： 判断里面的武力值是否都超过60， 如果是， 全是猛将
+      // const result = heros.some(item => item.wu < 60)
+      // if (result) {
+      //   console.log('有弱鸡')
+      // } else {
+      //   console.log('全是猛将')
+      // }
+
+      const result = heros.every(item => item.wu >= 60)
+      if (result) {
+        console.log('全是猛将')
+      } else {
+        console.log('还有弱鸡')
+      }
+
+      // 删除数组中名字叫所有智力低于60的英雄
+      const newArr3 = heros.filter(item => item.zhi >= 60)
+      console.log(newArr3)
+
+      // 找到数组中id为2的英雄，求他的武力+智力的综合
+      const { wu, zhi } = heros.find(item => item.id === 2)
+      console.log(wu + zhi)
+
+      // const index = heros.findIndex(item => item.name === '周瑜')
+      // heros.splice(index, 1)
+      // console.log(heros)
+      /* 
+        - 求数组中所有英雄的武力平均值
+        - 得到一个新数组，只保留英雄的名字， `['张飞', '诸葛亮', '赵云', '周瑜', '吕布', '司马懿']`
+        - 得到一个新数组，新数组中只保留武力值超过90的英雄
+        - 删除数组中名字为周瑜的英雄
+        - 判断数组中所有英雄的武力是否都超过60， 最终打印结果： `全是猛将`  `还有弱鸡`     使用两种方式实现
+        - 删除数组中名字叫所有智力低于60的英雄
+        - 找到数组中id为2的英雄，求他的武力+智力的综合
+
+        const 函数名 = (参数列表) => {函数体}
+      */
+    </script>
+  </body>
+</html>

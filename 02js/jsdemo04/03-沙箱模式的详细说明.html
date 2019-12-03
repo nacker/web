@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // window参数的作用： 
+    // 把window从全局变量变成了局部变量 ，查找速度快
+    // 将来开发的时候，全局变量是无法被代码压缩  但是局部变量可以被压缩
+
+    // undefined的参数作用： 保证undefined真的是undefined
+    // ie678中 undefined可以是一个变量
+    (function(window, undefined) {
+      var a = '1111';
+      window.a = a;
+      window.b = '1000';
+    })(window);
+  </script>
+</body>
+</html>

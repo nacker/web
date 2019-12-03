@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .father {
+      height: 100px;
+      width: 100px;
+      border: 4px solid red;
+      margin: 0 auto;
+    }
+
+    .son {
+      width: 400px;
+      height: 100%;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">一年前发布的小米8和P20 Pro，到今年为止，谁速度</div>
+  </div>
+
+  <script>
+    var son = document.querySelector('.son');
+    // 开始触摸，获取到开始触摸的位置
+    var startX;
+    // 总的移动距离
+    var total = 0;
+    son.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].pageX;
+      // console.log(startX);
+    });
+    son.addEventListener('touchmove', function(e) {
+      var distance = e.touches[0].pageX - startX;
+      son.style.transform = 'translateX(' + (total + distance) + 'px)';
+      console.log(distance);
+    });
+    son.addEventListener('touchend', function(e) {
+      // 结束滑动时的距离
+      // touchend中想要获取手指的位置，必须通过changedTouches
+      var distance = e.changedTouches[0].pageX - startX;
+      total += distance;
+    });
+  </script>
+</body>
+</html>

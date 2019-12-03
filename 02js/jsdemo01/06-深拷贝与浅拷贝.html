@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 如何拷贝一个对象
+    // 有一个对象
+    // 需求： 得到一个新对象， 要求新对象与原来的对象是两个对象
+    // var obj = {
+    //   name: 'zs',
+    //   age: 18,
+    //   gender: '男'
+    // };
+
+    // var obj2 = {};
+
+    // for(var k in obj) {
+    //   // obj2['name'] = 'zs';
+    //   // obj2['age'] = 18
+    //   // obj2['gender'] = '男'
+    //   obj2[k] = obj[k];
+    // }
+    
+
+    // obj2.name = 'ls';
+    // console.log(obj);
+    // console.log(obj2);
+
+
+    // 封装一个函数， 能够拷贝一个对象  传入一个对象，返回一个新对象
+    function copy(obj) {
+      var newObj = {};
+      for(var k in obj) {
+        // 不管是简单类型还是值类型， 直接进行了拷贝
+        // 如果是复杂类型，直接拷贝，拷贝的仅仅是个地址
+        newObj[k] = obj[k];
+      }
+      return newObj;
+    }
+
+    var ff = {
+      name: '灰灰',
+      age: 18,
+      car: {
+        brand: '玛莎拉蒂',
+        price: 500
+      }
+    }
+
+    var ff2 = copy(ff);
+
+    ff2.name = '灰灰2';
+    ff2.car.brand = '永久';
+
+    console.log(ff);
+    console.log(ff2);
+  </script>
+</body>
+</html>

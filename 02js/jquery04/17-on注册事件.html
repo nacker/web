@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <button>增加一个p</button>
+  <div>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+    <span>哈哈</span>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+  </div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      // on可以注册两种类型的事件  bind的用法 delegate的用法
+
+
+      // 注册自己的事件
+      // 参数1：注册的事件名
+      // 参数2： 函数
+      $('button').on('click', function() {
+        $('<p>这是一个新p</p>').appendTo('div');
+      });
+
+      // $('p').on('click', function() {
+      //   console.log('哈哈哈');
+      // })
+
+      // 如果要注册委托事件
+      // 参数1； 事件名
+      // 参数2： 必须指定触发的元素
+      // 参数3： 函数
+      $('div').on('click', 'p', function() {
+        console.log('哈哈');
+        console.log(this);
+      })
+    });
+  </script>
+</body>
+</html>

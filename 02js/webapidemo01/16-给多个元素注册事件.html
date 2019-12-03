@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      width: 600px;
+      height: 40px;
+      margin: 100px auto;
+    }
+
+    li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      background-color: pink;
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+
+    li.active {
+      background-color: red;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">导航1</a></li>
+    <li><a href="#">导航2</a></li>
+    <li><a href="#">导航3</a></li>
+    <li><a href="#">导航4</a></li>
+    <li><a href="#">导航5</a></li>
+    <li><a href="#">导航6</a></li>
+  </ul>
+
+  <script>
+    // 需求：点击任何一个li，点击的这个li变红  className="active"
+    var lis = document.getElementsByTagName('li');
+    // 因为要给每个li都注册事件，所以需要遍历lis
+    // 如果在事件中不希望a标签会跳转,, 只需要return false;
+    for(var i = 0; i < lis.length; i++) {
+      lis[i].onclick = function() {
+        // console.log('哈哈哈哈');
+
+        // 给点击的li增加active
+        // 如果是在for循环中注册的事件，请记住， i是在变化的， lis[i]并不能代码当前对象。
+        // 代表事件源的是 this
+        this.className = 'active';
+
+        // 阻止a标签跳转
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

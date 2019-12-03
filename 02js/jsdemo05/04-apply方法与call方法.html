@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // call apply ： 都可以让函数执行， 第一个参数都是 this的指向
+      // 区别：  call(this, 参数1， 参数2， 参数3)
+      //        apply(this, [参数1， 参数2, 参数3])
+      // apply方法要求所有的参数都包含一个数组中
+      // function fn() {
+      //   console.log('11')
+      //   console.log(this)
+      // }
+
+      // // fn.call([])
+
+      // fn.apply([])
+
+      var obj = {
+        0: 'zs',
+        1: 'ls',
+        length: 2
+      }
+
+      // ;[].push.call(obj, '王五', '赵六')
+      ;[].push.apply(obj, ['王五', '赵六'])
+      console.log(obj)
+
+      // ;[].pop.apply(obj)
+      // console.log(obj)
+
+      // function fn(a, b) {
+      //   console.log(a + b)
+      // }
+
+      // fn.call([], 1, 2)
+
+      // fn.apply([], [1, 2])
+    </script>
+  </body>
+</html>

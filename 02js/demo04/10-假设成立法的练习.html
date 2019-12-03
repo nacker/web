@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var arr = ['abcd', 'bbbb', 'dddd', 'gggg'];
+    // 数组中的字符串的长度是否都超过3
+
+    // 假设数组中所有元素的长度都超过3
+    // var flag = true;
+    // for (var i = 0; i < arr.length; i++) {
+    //   if (arr[i].length <= 3) {
+    //     flag = false;
+    //   }
+    // }
+    // if (flag === true) {
+    //   console.log('没打脸');
+    // } else {
+    //   console.log('打脸');
+    // }
+
+
+    // 判断该数组是否有顺序
+    var arr = [1, 3, 5, 7, 8, 9, 10];
+    // 假设数组是有顺序
+    var flag = true;
+    for(var i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        flag = false;
+      }
+    }
+    console.log(flag);
+
+  </script>
+</body>
+</html>

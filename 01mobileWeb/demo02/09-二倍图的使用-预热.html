@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    /* 
+      ui一般会根据iphone 5 或者ihpne6作为标准来设计图
+      640的设计图   960
+      750的设计图   375 * 3 = 1125px
+    */
+    div {
+      width: 75px;
+      height: 40px;
+
+      /* background-color: pink; */
+      position: relative;
+      background-color: pink;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 57px;
+      height: 25px;
+      background: url('./jd-sprites.png') 0 -107px;
+      background-size: 200px 200px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span></span>
+  </div>
+</body>
+</html>

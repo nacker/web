@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>开灯</button>
+  <button>关灯</button>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function() {
+      // $('button'): jq对象
+      // $('button')[1]: DOM对象
+      $('button')[1].onclick = function() {
+        $('body')[0].style.backgroundColor = '#000';
+      }
+
+      $('button')[0].onclick = function() {
+        $('body')[0].style.backgroundColor = '#fff';
+      }
+
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #box {
+      width: 400px;
+      height: 50px;
+      background-color: #acffc2;
+      border: 5px solid black;
+      margin: 100px auto;
+      font: bold 24px/50px 楷体;
+      text-align: center;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  function addZero(n) {
+    return n >= 10 ? n: '0' + n;
+  }
+
+  function getCurrentTime() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var str = year + '-' + addZero(month) + '-' + addZero(day) + ' ' + addZero(hours) + ':' + addZero(minutes) + ':' + addZero(seconds);
+    return str;
+  }
+
+  var box = document.querySelector('#box');
+  box.innerText = getCurrentTime();
+
+  // 定时器的代码不会立即执行的，1秒才会执行。
+  setInterval(function() {
+    box.innerText = getCurrentTime();
+  }, 1000);
+ 
+
+
+</script>
+</body>
+</html>

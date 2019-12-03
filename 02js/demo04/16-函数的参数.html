@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 封装函数的缺点： 封装的重复代码都是写死的， 每次调用结果都是一样。
+    
+    // 函数还可以有参数
+    /* 
+      // 参数1，参数2  动态变化的内容
+      function 函数名(参数1, 参数2, ...) {
+        重复的代码
+      }
+    */
+
+    // n1: 设置了参数n1,
+    function getSum(n1, n2) {
+      console.log(n1 + n2);
+    }
+
+    // 调用
+    getSum(1, 2);
+    getSum(100, 200);
+
+
+    /* 
+      在js中参数分为两种
+      形参  实参
+
+      // 形参： 形式参数：在函数声明的时候定义的参数，叫做形参
+      // 形参是没有具体的值，形参的作用：占位置， 挖了个坑
+      function 函数名(形参1, 形参2) {
+        函数
+      }
+
+
+      如果一个函数在定义的时候，设置了有形参
+      实参：实际参数：函数在调用的时候，传递的参数叫做实参
+      实参指定是一个一个具体的值，作用：把值给形参， 填坑
+      函数名(实参1, 实参2)
+    */
+  </script>
+</body>
+</html>

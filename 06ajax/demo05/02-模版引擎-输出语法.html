@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="info"></div>
+    <script type="text/html" id="tpl">
+      <h1>姓名：{{name}}</h1>
+      <p>性别：{{gender === 1 ? '男':'女'}}</p>
+      <p>爱好：{{@ hobby}}</p>
+      <p>描述：{{desc.toUpperCase()}}</p>
+      <p>座驾：{{car.brand}}</p>
+      <p>年龄：{{age + 1}}</p>
+      <ul>
+        <li>老廖的老婆</li>
+        <li>老李的老婆</li>
+        <li>老张的老婆</li>
+        <li>老刘的老婆</li>
+      </ul>
+    </script>
+    <!-- 1. 引入模版引擎的js文件 -->
+    <script src="template-web.js"></script>
+    <script>
+      // 2. 准备数据
+      var obj = {
+        name: '老王吧1',
+        // 男 1 女 0   1：true  0:false
+        gender: 0,
+        age: 40,
+        hobby: '<a href="#">乐于助人</a>',
+        desc: 'the frinds of women',
+        car: {
+          brand: '玛莎拉蒂',
+          money: 100
+        },
+        friends: ['老廖的老婆', '老李的老婆', '老张的老婆']
+      }
+
+      /* 
+        标准语法：{{}} 在{{}}中可以访问 绑定的对象中的任意属性
+      */
+      var html = template('tpl', obj)
+      // 5. 显示模版的数据
+      document.querySelector('.info').innerHTML = html
+
+      // 6. 修改模版， artTemplate提供一整套模版的语法，使用数据
+
+      // https://aui.github.io/art-template/zh-cn/docs/
+    </script>
+  </body>
+</html>

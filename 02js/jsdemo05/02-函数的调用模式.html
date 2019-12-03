@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 函数调用模式  函数名()   this指向window
+      // 2. 方法调用模式  对象.方法名() this指向对象  数组[下标]()  this指向数组
+      // 3. 构造函数调用模式  new 函数名()  this指向创建的实例
+
+      // 2中特殊的this指向
+      // 定时器 中this 是window
+      // 事件中的this， 事件源，this就是谁
+
+      // 4. 上下文调用模式  方法借调模式
+      // call apply bind
+
+      // function fn() {
+      //   console.log('我执行了没有')
+      //   console.log(this)
+      // }
+      // fn()
+
+      // var arr = [fn]
+      // arr[0]()
+
+      // var obj = {
+      //   fn: fn
+      // }
+      // obj.fn()
+
+      // 任意一个函数， 可以通过()进行调用  所有的函数都有一个方法 call
+      // 也表示调用函数
+      // call的第一个参数可以用来指定this的指向  如果第一个参数没有，就是window
+      // var arr = [1, 2, 3]
+      // var obj = {
+      //   name: 'zs'
+      // }
+      // fn.call(obj)
+
+      // function add(n1, n2) {
+      //   console.log(this)
+      //   console.log(n1 + n2)
+      // }
+      // add();
+      // call方法和()调用  最大的区别：
+      // call比直接调用多一个参数， 多第一个参数，第一个参数用来指定this
+      // add.call([], 1, 2)
+
+      var ff = {
+        name: '喳喳辉',
+        liaomei: function() {
+          console.log('美女，你好，我是', this.name)
+        }
+      }
+      ff.liaomei()
+
+      var cc = {
+        name: 'cc'
+      }
+
+      // ff.liaomei.call(ff);
+      ff.liaomei.call(cc)
+
+      // call因为能够指向this的指向， call可以借用别人没有的方法
+
+      /* 
+        任何一个函数都有call
+        fn.call(this的指向, x, y, z)
+
+      */
+    </script>
+  </body>
+</html>

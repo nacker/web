@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var getFib = (function() {
+      //   var arr = [1, 1]
+      //   function fn(n) {
+      //     if (!arr[n]) {
+      //       // 计算这个月的兔子数
+      //       arr[n] = fn(n - 1) + fn(n - 2)
+      //     }
+      //     return arr[n]
+      //   }
+      //   return fn
+      // })()
+
+      function outer() {
+        var arr = [1, 1]
+        function fn(n) {
+          if (!arr[n]) {
+            // 计算这个月的兔子数
+            arr[n] = fn(n - 1) + fn(n - 2)
+          }
+          return arr[n]
+        }
+        return fn
+      }
+
+      var getFib = outer()
+      console.log(getFib(11))
+
+      getFib = null
+
+      /* 
+        1. 闭包是 内部函数访问了外部函数的局部变量，就会发生闭包
+        2. 闭包的作用：保护私有变量
+        3. 闭包的问题： 内存不会释放
+      */
+
+      var b = {
+        name: 'zs',
+        age: 18
+      }
+      var obj = {
+        a: b
+      }
+
+      b.c = obj
+    </script>
+  </body>
+</html>

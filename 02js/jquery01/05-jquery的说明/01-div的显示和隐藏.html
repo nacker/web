@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 100px;
+      margin-top: 10px;
+      background-color: pink;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="show">显示</button>
+  <button id="set">设置内容</button>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <script>
+    /* 
+    不爽的地方：
+      1. 找对象太繁琐， 方法名很长
+      2. 如果要操作多个元素，需要遍历
+      3. onclick注册会覆盖  addEventListener  不兼容ie678
+      4. 动画效果。 封装一个animate,又难 效果还不行
+    */
+    var show = document.querySelector('#show');
+    var set = document.querySelector('#set');
+    var divs = document.querySelectorAll('div');
+
+    show.onclick = function() {
+      for(var i = 0; i < divs.length; i++) {
+        divs[i].style.display = 'block';
+      }
+    };
+
+    set.onclick = function() {
+      for(var i = 0; i < divs.length; i++) {
+        divs[i].innerText = '我是内容';
+      }
+    };
+  </script>
+</body>
+</html>

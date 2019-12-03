@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in teachers" :key="item.id">{{ item.name }}</li>
+      </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+            teachers: [
+              { id: 1, name: "胡聪聪" },
+              { id: 2, name: "小飞飞" },
+              { id: 3, name: "马文星" },
+              { id: 4, name: "潘明" }
+            ]
+        }
+      });
+
+      // vue中在进行列表渲染的时候，会默认遵守 就地复用策略
+      // 就地复用策略：
+      // 当在进行列表渲染的时候，vue会直接对已有的标签进行复用，不会整个的将所有的标签全部重新删除和创建
+
+      // Vue中为v-for提供了一个属性，key
+      // key属性可以用来提升v-for渲染的效率！
+
+      // 在使用v-for的时候，vue里面需要我们给元素添加一个key属性，这个key属性必须是唯一的标识
+      // 给key赋值的内容不能是可变的
+
+      // 1. 以后在写v-for的时候，都需要给元素加上一个key属性
+      // 2. key的主要作用就是用来提高渲染性能的！
+    </script>
+  </body>
+</html>

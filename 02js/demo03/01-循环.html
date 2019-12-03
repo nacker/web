@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+      while循环
+      while(条件) {
+        循环体
+      }
+    */
+    var i = 1;
+    // 用来记录每次加完的和
+    var sum = 0;
+    while (i <= 5) {
+      sum += i;
+      // 自增
+      i++;
+    }
+    console.log(sum);
+
+
+    /* 
+      do..while循环， 无论如何，先执行一次循环体
+      do {
+        循环体
+      } while (条件);
+    */
+    var i = 1;
+    var sum = 0;
+    do {
+      sum += i;
+      i++;
+    } while(i <= 5);
+    console.log(sum);
+
+
+    /* 
+      for循环（以后是用的最多的）
+      for (初始化语句; 判断条件; 自增) {
+        循环体
+      }
+    */
+    var sum = 0;
+    for (var i = 1; i <= 5; i++) {
+      sum += i;
+    }
+    console.log(sum);
+  </script>
+</body>
+</html>

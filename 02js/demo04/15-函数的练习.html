@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 打招呼
+    function sayHello() {
+      console.log('hello');
+      console.log('阿尼阿斯有');
+      console.log('萨瓦斯卡');
+      console.log('扩尼奇瓦');
+      console.log('吃了没');
+    }
+
+
+    sayHello();
+    sayHello();
+
+
+    // 2. 封装一个函数，计算两个数的和
+    function getSum() {
+      var n1 = 11;
+      var n2 = 22;
+      console.log(n1 + n2);
+    }
+
+    getSum();
+    getSum();
+    getSum();
+    // 3. 封装一个函数，计算1-100之间所有数的和  
+    function getSum1() {
+      var sum = 0;
+      for(var i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      console.log(sum);
+    }  
+    getSum1();
+    getSum1();
+    getSum1();
+  </script>
+</body>
+</html>

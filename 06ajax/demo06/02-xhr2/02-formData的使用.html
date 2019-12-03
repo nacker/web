@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form>
+    用户名<input type="text" name="username"><br>
+    年龄<input type="text" name="age"><br>
+    密码<input type="text" name="pass"><br>
+    确认密码<input type="text"><br>
+    <input type="button" value="提交" id="btn">
+
+  </form>
+
+  <script>
+  
+    var btn = document.querySelector("#btn");
+    btn.onclick = function() {
+
+      var xhr = new XMLHttpRequest;
+
+      //formData可以收集表单的数据，post请求的表单数据
+      xhr.open("post", "02-formData.php");
+
+
+      //1. 创建一个formData,参数：表单
+      var form = document.querySelector("form");
+      //参数：如果没有传，空的内容
+      //如果传了一个表单，那么formData会把表单中所有的带name属性的值都收集起来
+      //可以直接作为send方法的参数
+      //使用formData的时候不需要设置请求头，每次都自动的识别
+      //append方法，允许手动添加
+      var formData = new FormData(form);
+      //append一般用于手动的添加一些额外的信息
+      formData.append("id", "555");
+      xhr.send(formData);
+
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+        }
+      }
+      
+
+    }
+  </script>
+
+</body>
+</html>

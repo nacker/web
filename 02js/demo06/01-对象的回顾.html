@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 对象：一个无序的键值对的集合。 
+    // 作用：存储一个实体（对象）的所有的属性和方法
+
+    // 如何创建对象
+    // 1. var obj = {};
+    // 2. var obj = new Object();
+    var zs = {
+      name: 'zs',
+      age: 18,
+      gender: '男',
+      sayHi: function() {
+        // 在对象的方法中，有一个特殊的变量  this:表示的就是当前对象
+        console.log('大家好，我是' + this.name, this.age);
+      }
+    }
+
+    // 对象中两个比较重要的概念
+    // 属性: 对象中的变量， 一般用于描述对象的特征。
+    // 方法：对象中的函数，表示用做某件事情，描述对象的行为
+
+    // 如何操作对象的属性
+    // 取值 对象名.属性名  对象名.方法名()
+    console.log(zs.name);
+    zs.sayHi();
+
+    // 存值 对象名.属性 = 新值
+    zs.name = '李四';
+    console.log(zs);
+  
+  </script>
+</body>
+</html>

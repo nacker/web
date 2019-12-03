@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮" id="input">
+  <button id="btn">我也是一个按钮</button>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <div id="box"><h3>我是一个标题</h3></div>
+
+  <script>
+    var input = document.getElementById('input');
+    input.value = '哈哈';
+
+    // var btn = document.getElementById('btn');
+    // btn.value = '呵呵';
+
+    // 操作标签的内容 innerText   innerHTML
+    // box.innerText 或者  box.innerHTML 表示获取标签的内容
+    // var btn = document.getElementById('btn');
+    // console.log(btn.innerText);
+    // console.log(btn.innerHTML);
+    // btn.innerHTML = '呵呵';
+
+    // 1. innerText与innerHTML都是用来获取标签的内容或者这是标签的内容
+    // 2. 区别
+    //      innerText只会获取标签文本内容，如果有标签会被忽略
+    //      innerHTML会获取到文本内容+标签
+
+    //      innerText在设置内容的时候，HTML标签不生效，会对所有的标签进行转义  &lt;h1&gt;
+    //      innerHTML在设置内容的时候，HTML会生效
+    var box = document.getElementById('box');
+    // console.log(box.innerText);
+    // console.log(box.innerHTML);
+    box.innerText = '<h1>我是一个更大的标题</h1>';
+    box.innerHTML = '<h1>我是一个更大的标题</h1>';
+    box.innerHTML = '<a href="木马网站">点我有惊喜</a>';
+
+
+
+    // 除非你确定你要设置的这个段内容一定要HTML生效，并且你能够保证安全性，才能用innerHTML, 设置内容大部分情况都应该innerText。
+  </script>
+</body>
+</html>

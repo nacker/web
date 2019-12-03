@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //练习1：土豪的儿子, 输入ABCDE
+    //如果考了A：  买玛莎拉蒂
+    //如果考了B：  买宝马
+    //如果考了C：  买三轮
+    //如果考了D：  买摩拜自行车
+    //如果考了E：  断绝父子关系
+    //如果是其他值，提示代码有bug
+    var result = prompt('请输入你考试的成绩');
+    switch (result) {
+      case 'A':
+        console.log('买玛莎拉蒂');
+        break;
+      case 'B':
+        console.log('买宝马');
+        break;
+      case 'C':
+        console.log('买三轮');
+        break;
+      case 'D':
+        console.log('买摩拜自行车');
+        break;
+      case 'E':
+        console.log('断绝父子关系');
+        break;
+      default:
+        console.log('提示代码有bug');
+    }
+
+    //练习2： 买手机，输入自己的工资
+    //如果超过30000:  买苹果手机
+    //如果10000-30000： 买vivo手机
+    //如果5000-10000 ： 买魅族手机
+    //如果低于5000   ： 还买个锤子
+    var salary = +prompt('请输入你的工资');
+    if (salary >= 30000) {
+      console.log('买个苹果手机');
+    } else if (salary >= 10000) {
+      console.log('买个华为手机');
+    } else if (salary >= 5000) {
+      console.log('买个魅族手机');
+    } else {
+      console.log('还买个锤子');
+    }
+
+    var money = +prompt('请输入你的银行卡余额');
+    var result = money >= 10000 ? '高富帅' : '矮丑穷';
+    console.log(result);
+
+  </script>
+</body>
+</html>

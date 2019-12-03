@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [6, 1, 33, 5, 9, 2, 4, 11 ];
+
+    for(var j = 0; j < arr.length - 1; j++) {
+      // 每次for循环都能找到一个最大值
+      for(var i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+          var temp = arr[i];
+          arr[i] = arr[i + 1];
+          arr[i + 1] = temp;
+        }
+      }
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>携程旅行</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .xc_container {
+      width: 100%;
+      /* height: 1000px; */
+      /* background-color: pink; */
+      max-width: 640px;
+      min-width: 320px;
+      margin: 0 auto;
+    }
+
+    .nav_item {
+      width: 100%;
+      height: 90px;
+      border-radius: 5px;
+      margin-top: 10px;
+
+      display: flex;
+    }
+
+    .nav_item .title {
+      flex: 1;
+    }
+
+    .nav_item .content {
+      flex: 2;
+      /* flex盒子可以嵌套的 */
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .nav_item .content a {
+      box-sizing: border-box;
+      width: 50%;
+      text-align: center;
+      line-height: 45px;
+      height: 45px;
+      color: #fff;
+      text-decoration: none;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+    .nav_item .content a:nth-child(n + 3) {
+      border-bottom: none;
+    }
+
+    .nav_item:nth-child(1) {
+      background-color: #FF697A;
+    }
+
+    .nav_item:nth-child(2) {
+      background-color: blue;
+    }
+
+    .nav_item:nth-child(3) {
+      background-color: lime;
+    }
+
+    .nav_item:nth-child(4) {
+      background-color: orange;
+    }
+
+    .xc_activity ul {
+      display: flex;
+    }
+
+    .xc_activity li {
+      flex: 1;
+    }
+
+
+    .xc_footer {
+      text-align: center;
+    }
+    .xc_footer ul {
+      display: flex;
+      height: 30px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      line-height: 30px;
+      
+    }
+
+    .xc_footer li {
+      flex: 1;
+      
+    }
+
+    .xc_footer a {
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="xc_container">
+    <!-- 轮播图 -->
+    <div class="xc_banner">
+      <a href="#"><img src="images/banner.jpg" alt=""></a>
+    </div>
+    <!-- 导航 -->
+    <nav class="xc_nav">
+      <div class="nav_item">
+        <div class="title"></div>
+        <div class="content">
+          <a href="#">海外酒店</a>
+          <a href="#">团购</a>
+          <a href="#">特价酒店</a>
+          <a href="#">民宿客栈</a>
+        </div>
+      </div>
+       <div class="nav_item">
+        <div class="title"></div>
+        <div class="content">
+          <a href="#">海外酒店</a>
+          <a href="#">团购</a>
+          <a href="#">特价酒店</a>
+          <a href="#">民宿客栈</a>
+        </div>
+      </div>
+       <div class="nav_item">
+        <div class="title"></div>
+        <div class="content">
+          <a href="#">海外酒店</a>
+          <a href="#">团购</a>
+          <a href="#">特价酒店</a>
+          <a href="#">民宿客栈</a>
+        </div>
+      </div>
+       <div class="nav_item">
+        <div class="title"></div>
+        <div class="content">
+          <a href="#">海外酒店</a>
+          <a href="#">团购</a>
+          <a href="#">特价酒店</a>
+          <a href="#">民宿客栈</a>
+        </div>
+      </div>
+    </nav>
+    <!-- 活动 -->
+    <div class="xc_activity">
+      <ul>
+        <li>
+          <a href="#"><img src="images/extra_1.png" alt=""></a>
+        </li>
+        <li>
+          <a href="#"><img src="images/extra_2.png" alt=""></a>
+        </li>
+      </ul>
+    </div>
+    <!-- 底部 -->
+    <footer class="xc_footer">
+      <ul>
+        <li><a href="#">电话预订</a></li>
+        <li><a href="#">下载客户端</a></li>
+        <li><a href="#">我的</a></li>
+      </ul>
+      <p>网站地图 | ENGLISH | 电脑版</p>
+      <p>©2015 携程旅行</p>
+    </footer>
+  </div>
+</body>
+</html>

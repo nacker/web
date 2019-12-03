@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // == : 只会比较值 不会比较类型
+    // === : 会比较类型，也比较值（推荐）
+
+    // == 只会比较值  如果类型不同，自动转成相同的类型进行比较
+    // 1. NaN不等于任何值
+    // 2. null 不等于任何值  除了 本身和undefined
+    // 3. undefined 不等于任何值 除了本身和null
+    // 4. 如果两边有数字或者布尔类型，都转成数字进行比较
+    // 5. 如果两边有字符串，两边都变成字符串比较
+    // 6. 如果两个都是复杂类型， 直接比地址
+
+
+    // ''   0
+    // []  ''   0
+    // {}       
+    // true 1 false 0
+
+    // console.log(NaN == 1);
+    // console.log(NaN == 0);
+    // console.log(NaN == NaN);
+
+
+    // true : 1   false: 0
+    // console.log('1' == true); // 1   1
+    // console.log('2' == true); // 1   1
+    // console.log('2' == 1);
+    // console.log([] == 0); //  [] == 0
+
+    // console.log('' == []); // 
+    // console.log([] == []);
+    // console.log({} == {});
+    // console.log({} == []);
+
+    // console.log(null == null);
+    // console.log(null == undefined);
+
+    // console.log('10' == 10);
+    // console.log('' == 0);
+    // console.log(false == 0);
+    // console.log(true == 1);
+    // console.log([] == 0);
+    // console.log({} == 0);
+
+    console.log('1' == true);
+  </script>
+</body>
+</html>

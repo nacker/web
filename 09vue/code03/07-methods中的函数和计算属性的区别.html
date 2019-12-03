@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="num1">+
+    <input type="text" v-model="num2">=
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+    <span>{{result}}</span>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+ 
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        num1: 0,
+        num2: 0
+      },
+      computed: {
+        result(){
+          console.log("methods中的result函数被调用了")
+          return +this.num1 + +this.num2;
+        }
+      },
+      methods: {
+        // result(){
+        //   console.log("methods中的result函数被调用了")
+        //   return +this.num1 + +this.num2;
+        // }
+      }
+    })
+
+    //methods中的函数和计算属性的区别
+
+    // 1. 如果要用methods中的函数实现和computed属性相同的功能，需要在使用这个函数的时候，加上()
+    // 2. 计算属性在使用的时候，不需要加()
+
+    // 计算属性有缓存，多次使用的时候，性能会比较高，而不是每次都去重新计算一次
+    // methods中的函数没有缓存，多次使用的时候，每次用都会重新调用这个函数，性能比较低
+
+
+    // 使用场景
+
+    // methods中放的是：
+    // 1. 事件处理函数
+    // 2. 对于功能的封装（ajax请求）
+    // 3. methods中的函数不要求一定有返回值
+    // 4. methods是可以传递参数的
+
+    // computed中放的是
+    // 1. 必须有返回值（页面中使用计算属性，就是想要获取一个值，如果没有返回值，页面中拿不到数据）
+    // 2. 计算属性不能传递参数（因为计算属性在用的时候，不能加() ）
+  </script>
+</body>
+</html>

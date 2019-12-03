@@ -1,0 +1,23 @@
+// 函数可以有参数， 指的就是可以变化的值
+.border-radius(@value) {
+  -webkit-border-radius: @value;
+  -moz-border-radius: @value;
+  -ms-border-radius: @value;
+  -o-border-radius: @value;
+  border-radius: @value;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  .border-radius(10px);
+}
+
+
+p {
+  .border-radius(5px);
+}
+
+span {
+  .border-radius(50%);
+}

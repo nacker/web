@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn1">禁用</button>
+  <input id="btn2" type="button" value="按钮">
+  <input id="check" type="checkbox" checked>
+  <select>
+    <option>北京</option>
+    <option>上海</option>
+    <option selected>广州</option>
+    <option>深圳</option>
+  </select>
+
+  <script>
+    /* 
+      表单中的  checked disabled selected这三个属性布尔类型的属性
+      值只能是true或者是false
+      checked true 表示选中
+      disabled: true 表示禁用
+      selected true:表示option被选中
+    */
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var check = document.getElementById('check');
+    btn1.onclick = function() {
+      // console.log(btn2.disabled);
+      btn2.disabled = true;
+      check.checked = false;
+    }
+  </script>
+</body>
+</html>

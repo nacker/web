@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">点我</button><br>
+  <img id="img" src="1.jpg" alt="">
+
+
+  <script>
+    // 1. 找对象
+    var btn = document.getElementById('btn');
+    var img = document.getElementById('img');
+
+    // 2. 给按钮注册点击事件
+    btn.onclick = function() {
+      // 3. 换图片
+      // console.log('哈哈');
+      img.src = '2.jpg';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vuex/dist/vuex.js"></script>
+
+  <script>
+    // action和mutation都是用来操作state中的数据的
+    // 但是action中方的是异步操作    在修改数据的时候，其实还是提交一个mutation完成数据修改
+    // 而mutation中方的是同步操作
+
+    const store = new Vuex.Store({
+      // 数据 存储数据的对象
+      strict: "true",
+      state: {
+        msg: "hello world"
+      },
+      // mutations里面放的就是用来修改数据的方法
+      mutations: {
+        updateMsg(state, value){
+          state.msg = value;
+        }
+      },
+      actions: {
+        updateMsg(context, value){
+          setTimeout(() => {
+            context.commit("updateMsg", value);
+          }, 1000)
+        }
+      }
+    });
+
+    // store.commit("updateMsg", 123)
+    store.dispatch("updateMsg", 456);
+
+    console.log(store.state.msg);
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <input type="text" v-focus>
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      // 注册自定义指令的方式
+      // 1. 全局注册
+      // Vue.directive("指令的名称，不需要写v-",{})
+      // Vue.directive("focus", {
+      //   // Vue会对html代码进行解析
+      //   // 解析之后，会将解析后的内容重新渲染到页面中
+      //   // inserted函数，就会在当前指令所在的元素，被插入到页面中的时候执行
+      //   inserted: function (el) {
+      //     // el 函数中接收的形参el，其实就是当前指令所在的元素
+
+      //     el.focus()
+      //     // console.log(el);
+      //   }
+      // })
+
+      // 2. 局部注册
+      // 在创建Vue实例的时候，参数对象添加directives属性，在属性中注册指令即可！
+
+      // 全局注册所有的vue实例都能用
+      // 局部注册，只能在当前的vue实例中使用
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "<h1>hello world</h1>"
+        },
+        directives: {
+          focus: {
+            inserted(el){
+              el.focus();
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

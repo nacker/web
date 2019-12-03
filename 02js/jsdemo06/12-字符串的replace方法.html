@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var str = 'baabbccdd'
+      var str = 'abcdefeadcba'
+      // str = str.replace(/aa/, 'bb')
+
+      // 正则的参数 /\d/参数  参数 :g  global  全局匹配  i: ignore: 忽略大小写
+      // str = str.replace(/a/g, '-')
+      // console.log(str)
+
+      // var str = 'skdfjlskdjfl    sdljf    sdfj   '
+      // str = str.replace(/\s/g, '')
+      // console.log(str)
+
+      // 把所有的ab都替换成  gg  忽略大小
+      var str = 'abcdABcdAbxxaB'
+      str = str.replace(/ab/gi, 'gg')
+      console.log(str)
+    </script>
+  </body>
+</html>

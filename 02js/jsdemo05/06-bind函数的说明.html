@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function fn() {
+      //   console.log('我执行了吗')
+      //   console.log(this)
+      // }
+
+      // var newFn = fn.bind([])
+      // newFn.call({})
+
+      // 接收一个参数， 参数也表示this指向
+      // bind ： 作用： 根据一个函数返回一个新的函数，并且新函数函数的this永远指向bind的第一个参数
+      // bind和call最大的区别  bind不会让函数执行  call会让函数执行
+      // var newFn = fn.bind([1, 2, 3])
+      // newFn()
+      // var arr = [newFn]
+      // arr[0]()
+
+      // ;(function() {
+      //   console.log('大家好，我是', this.name)
+      // }.bind([]))
+
+      // var obj = {
+      //   name: '喳喳燕',
+      //   sayHi: function() {
+      //     setInterval(
+      //       function() {
+      //         console.log('大家好，我是', this.name)
+      //       }.bind(obj),
+      //       1000
+      //     )
+      //   }
+      // }
+      // obj.sayHi()
+
+      /* 
+        bind: 给返回一个新函数，新函数内部的this指向第一个参数
+
+
+        react注册事件
+      */
+
+      /* 
+    
+      函数的四种调用模式
+        1. 函数调用模式  函数名()  this指向window
+        2. 方法调用模式  对象.方法名() this指向当前对象
+        3. 构造函数模式  new 函数名()  this指向当前实例
+        4. 上下文调用模式 方法借调模式  this永远指向第一个参数
+
+        定时器的this是window
+        事件对象中的this指向事件源
+    */
+    </script>
+  </body>
+</html>

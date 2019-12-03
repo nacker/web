@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 字符串的格式:  ''  ""  ``
+      // ES6中允许我们使用 ``来包裹一个字符串
+
+      // 我们把``包裹起来的字符串，模版字符串
+      // 模版字符串的优点
+      // 1. 会保留空格和换行， 直接换行
+      // let str = `大家好，我是胡聪聪`
+      // console.log(str)
+      // let str =
+      //   '<div>' +
+      //   '<p>我是一个p标签</p>' +
+      //   '<span>我是一个span标签</span>' +
+      //   '</div>'
+
+      // 1. 会保留空格和换行， 直接换行 避免大量的字符串拼串
+      // 2. 模版字符串  可以通过 ${} 插值 来访问变量
+      const name = `hcc`
+      const age = 20
+      const obj = {
+        name: 'zs'
+      }
+      const str = `
+        <div>
+          <p>大家好，我是${name.toUpperCase()}</p>
+          <p>我今年${age + 1}岁</p>
+          <p>${obj.name}</p>
+        </div>
+      `
+      console.log(str)
+    </script>
+  </body>
+</html>

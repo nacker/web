@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // var obj = {
+    //   name: 'zs',
+    //   age: 18
+    // }
+    // var temp = 'name';
+
+    // console.log(obj.name);
+    // console.log(obj[temp]);
+
+    // var arr = ['a', 'c', 'b'];
+    // var obj = {
+    //   a: 1,
+    //   b: 2
+    // };
+    // // console.log(arr[0]);
+    // console.log( obj[ arr[0] ] );
+    // console.log( obj[ arr[1] ] );
+    // console.log( obj[ arr[2] ] );
+
+    // var arr = ["c", "a", "z", "a", "x", "a", "a", "z", "c", "x", "a", "x"];
+
+    // var obj = {
+    // };
+
+    // // 判断 c 在obj中是否存在
+    // if (obj[arr[0]] === undefined) {
+    //   obj[arr[0]] = 1;
+    // } else {
+    //   obj[arr[0]] ++;
+    // }
+
+
+    // if (obj[arr[1]] === undefined) {
+    //   obj[arr[1]] = 1;
+    // } else {
+    //   obj[arr[1]] ++;
+    // }
+   
+
+
+    // console.log(obj);
+
+
+
+    // var arr = ["c", "a", "z", "a", "x", "a", "a", "z", "c", "x", "a", "x"];
+    // 思路： 
+    // 1. 空的对象  表示所有的字符都没有出现过
+    // 2. 遍历这个数组
+    // 3. 判断arr[i]在对象中是否存在  如果不存在， 让obj[ arr[i] ] = 1
+    // 如果存在，   obj[ arr[i] ]++
+
+    var arr = ["c", "a", "z", "a", "x", "a", "a", "z", "c", "x", "a", "x", 'z', 'c', 'd'];
+    var obj = {};
+    for (var i = 0; i < arr.length; i++) {
+      if (obj[arr[i]] === undefined) {
+        // 不存在
+        obj[arr[i]] = 1
+      } else {
+        obj[arr[i]]++;
+      }
+    }
+    console.log(obj);
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@snColor: #fabc09;
+@bgColor: #fff;
+
+.sn_container {
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  height: 1000px;
+  background-color: pink;
+  margin: 0 auto;
+  padding-top: 1.8rem /* 90/50 */;
+}
+
+.sn_header {
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  height: 1.8rem /* 90/50 */;
+  background-color: @snColor;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  display: flex;
+
+  .category,
+  .cart {
+    width: 1.8rem /* 90/50 */;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .category {
+    background-image: url('../images/icon_category.png');
+    background-size: .88rem 1.4rem;
+  }
+  .search {
+    flex: 1;
+    position: relative;
+    input {
+      width: 100%;
+      height: 1.2rem;
+      margin-top: .3rem;
+      border-radius: .2rem;
+      font-size: .48rem;
+      padding-left: 1.2rem;
+      background-color: rgba(255, 255, 255, .5);
+    }
+    i {
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      top: .3rem;
+      left: 0;
+      background: url('../images/icon_search.png') no-repeat center center/.54rem .56rem;
+    }
+  }
+  .cart {
+    background-image: url('../images/icon_cart.png');
+    background-size: 1.26rem 1.36rem;
+  }
+}
+
+.sn_nav {
+  background-color: @bgColor;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 20%;
+      padding-top: .4rem;
+
+      img {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0 auto;
+      }
+      p {
+        text-align: center;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: .48rem;
+      }
+    }
+  }
+
+}
+
+// 底部样式
+.sn_footer {
+  height: 2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: @bgColor;
+  max-width: 750px;
+  min-width: 320px;
+
+  ul {
+    display: flex;
+
+    li {
+      flex: 1;
+      padding-top: .3rem;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 auto;
+      }
+
+      p {
+        text-align: center;
+        height: .6rem;
+        line-height: .6rem;
+        font-size: .32rem;
+      }
+    }
+  }
+}

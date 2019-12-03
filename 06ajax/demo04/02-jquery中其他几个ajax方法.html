@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="username" /><br />
+    <input type="text" class="password" /><br />
+    <input type="button" value="登录" />
+
+    <div class="header"></div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      $('[type=button]').click(function() {
+        // 加载header.htmlw文件，放到.header标签中
+        $('.header').load('header.html')
+
+        // 如果想要发送get请求
+        // $.ajax({
+        //   type: 'get',
+        //   url: ''
+        // })
+        // get写起来要比$.ajax方便
+        // get只能指定success
+        // $.get(
+        //   '01-get.php',
+        //   {
+        //     username: $('.username').val(),
+        //     password: $('.password').val()
+        //   },
+        //   function(info) {
+        //     console.log(info)
+        //   }
+        // )
+        // $.post(
+        //   '01.php',
+        //   {
+        //     username: $('.username').val(),
+        //     password: $('.password').val()
+        //   },
+        //   function(info) {
+        //     console.log(info)
+        //   }
+        // )
+        // $.getJSON() 允许直接访问一个json文件
+        // $.getJSON('data.json', function(info) {
+        //   console.log(info)
+        // })
+        // $.getScript()  访问一个js文件
+        // $.getScript('jquery-1.12.4.js', function(info) {
+        //   console.log(info)
+        // })
+
+        /* 
+          $.ajax
+          $.get()
+          $.post()
+          $.getJSON()
+          $.getScript()
+          $('div').load(页面)
+        */
+      })
+    </script>
+  </body>
+</html>

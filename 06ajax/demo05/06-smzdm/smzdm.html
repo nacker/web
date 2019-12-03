@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .item {
+        float: left;
+        width: 320px;
+        border: 1px solid #0094ff;
+        overflow: hidden;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      .item .title {
+        display: block;
+        width: 100%;
+        position: relative;
+      }
+
+      .title img {
+        display: block;
+        height: 180px;
+
+        width: 100%;
+      }
+
+      .title span {
+        position: absolute;
+        right: 20px;
+        bottom: 0px;
+        width: 50px;
+        text-align: center;
+        background-color: lightgray;
+        color: gray;
+        font-size: 13px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .content {
+        height: 100px;
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      .content a {
+        text-decoration: none;
+        color: black;
+        font-family: '微软雅黑';
+        font-size: 16px;
+      }
+
+      .content p {
+        color: gray;
+        font-size: 13px;
+        font-family: '微软雅黑';
+        margin-bottom: 0;
+      }
+
+      .f_l {
+        float: left;
+      }
+
+      .f_r {
+        float: right;
+      }
+
+      .clearfix::before,
+      .clearfix::after {
+        content: '';
+        display: block;
+        line-height: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+
+      .info {
+        line-height: 25px;
+      }
+
+      .info img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .info a {
+        color: gray;
+        text-decoration: none;
+        font-size: 12px;
+        height: 20px;
+        line-height: 20px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="number" id="num" />
+    <button id="btn">获取数据</button>
+
+    <div class="items"></div>
+
+    <script type="text/html" id="tpl">
+      {{each items v i}}
+        <div class="item clearfix">
+          <a href="#" class="title">
+            <img src="{{v.img}}" alt="" />
+            <span>{{v.time}}</span>
+          </a>
+          <div class="content">
+            <a href="#">{{v.title}}</a>
+            <p>
+             {{v.novel}}
+            </p>
+          </div>
+          <div class="info clearfix">
+            <a href="#" class="f_l">
+              <img src="{{v.icon}}" alt="" />{{v.name}}</a
+            >
+            <a href="#" class="f_r">信息:{{v.messNum}}</a>
+            <a href="#" class="f_r">❤:{{v.starNum}}</a>
+            <a href="#" class="f_r">赞:{{v.goodNum}}</a>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template-web.js"></script>
+    <script>
+      $('#btn').on('click', function() {
+        var num = $('#num').val()
+        console.log(num)
+        $.ajax({
+          url: 'smzdm.php',
+          data: {
+            num: num
+          },
+          success: function(info) {
+            console.log(info)
+
+            // template让模版和  对象绑定了   模版中可以直接访问对象中的任意的属性
+            var html = template('tpl', info)
+            $('.items').html(html)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

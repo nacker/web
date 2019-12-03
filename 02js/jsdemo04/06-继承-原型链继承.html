@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name
+        this.age = age
+      }
+
+      var lw = {
+        house: '独栋大别墅',
+        car: '玛莎拉蒂',
+        constructor: Person
+      }
+
+      // 原型链继承  构造函数创建的对象天生会继承 Person.prototype
+      // 方式1： 把所有的东西都加给原型
+      // Person.prototype.house = '新疆的海景房'
+      // Person.prototype.money = 1000000
+
+      // 方式2： 替换原型对象
+      // 把构造函数的原型替换成了一个新的对象
+      // Person.prototype = lw
+
+      // var p1 = new Person('zs', 18)
+      // var p2 = new Person('ls', 20)
+      // console.log(p1, p2)
+      // console.log(p1.car, p1.house)
+
+      function Game() {}
+
+      // 替换Game的原型
+      Game.prototype = {
+        constructor: Game,
+        start: function() {},
+        end: function() {},
+        init: function() {},
+        addEvent: function() {}
+      }
+    </script>
+  </body>
+</html>

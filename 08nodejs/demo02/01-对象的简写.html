@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let page = 1
+      let pageSize = 5
+
+      // 1. 属性简写： ES6中，如果对象的属性名 和 属性值的变量相同， 可以省略一个
+      //  xx: xx    xx
+      // 2. 方法简写, 对象中的方法 可以省略 :function
+      let obj = {
+        page,
+        pageSize,
+        sayHi() {
+          console.log('大家好')
+        }
+      }
+
+      console.log(obj)
+      obj.sayHi()
+    </script>
+  </body>
+</html>

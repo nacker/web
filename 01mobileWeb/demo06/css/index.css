@@ -1,0 +1,14 @@
+/* 
+  注意：以后写代码在less中写， 引入要引入css代码
+  easy less安装完了，会自动在当前目录生成css文件，将来不容易维护
+  需要给vscode增加一个配置
+
+  "less.compile": {
+    "out": "../css/"
+  }
+  
+*/
+body {
+  background-color: red;
+  font-size: 12px;
+}

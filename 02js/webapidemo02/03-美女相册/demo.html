@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      padding-left: 100px;
+    }
+
+    #imgs {
+      overflow: hidden;
+      margin: 50px 0;
+    }
+
+    #imgs li {
+      float: left;
+      margin-right: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<h1>美女相册</h1>
+
+<ul id="imgs">
+  <li>
+    <a href="images/1.jpg" title="美女A">
+      <img src="images/1-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/2.jpg"  title="美女B">
+      <img src="images/2-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/3.jpg"  title="美女C">
+      <img src="images/3-small.jpg" alt="">
+    </a>
+  </li>
+  <li>
+    <a href="images/4.jpg"  title="美女D">
+      <img src="images/4-small.jpg" alt="">
+    </a>
+  </li>
+</ul>
+<img src="images/placeholder.png" width="400" height="250" alt="" id="bigImg">
+
+
+<!--标签的内容-->
+<p id="des">这是描述信息</p>
+
+<script>
+  // 1. 找对象
+  // 2. 给页面中的4个a标签注册点击事件
+  // 3. 点击的时候，获取到当前a标签的href,设置给大图片 src
+  // 4. 获取到当前a标签的title属性，设置给p标签的内容
+  // 5. return false可以阻止a标签的跳转
+  var ul = document.getElementById('imgs');
+  var links = ul.getElementsByTagName('a');
+  var bigImg = document.getElementById('bigImg');
+  var des = document.getElementById('des');
+
+  // 遍历所有的a标签
+  for(var i = 0; i < links.length; i++) {
+    links[i].onclick = function() {
+      // 设置大图片的src
+      bigImg.src = this.href;
+      // 设置p的内容
+      des.innerText = this.title;
+      return false;
+    }
+  }
+</script>
+
+</body>
+</html>

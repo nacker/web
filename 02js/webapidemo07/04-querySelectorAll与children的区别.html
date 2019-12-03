@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <script>
+    var ul = document.querySelector('ul');
+    // ul所有的子元素
+    console.log(ul.children);
+    // 表示获取ul下所有的li元素   此时 只有 4个
+    console.log(ul.querySelectorAll('li'));
+    // children属性是会动态更新的 
+    ul.appendChild(ul.firstElementChild.cloneNode(true))
+    
+  </script>
+</body>
+</html>

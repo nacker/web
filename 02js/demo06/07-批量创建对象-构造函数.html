@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 创建一个数组
+    var arr = new Array();
+    console.log(arr);
+
+    var obj = new Object();
+    console.log(obj);
+
+
+    // 创建一个人
+    // 构造函数  :
+    // 1. 构造函数一般来说，首字母大写
+    // 2. 构造函数一般和new一起使用，表示创建要一个 对象
+    // 3. 构造函数本质上就是函数
+    // 创建对象的语法： var 对象 = new 构造函数();
+
+    // 构造函数：实例化对象  给新创建的对象增加属性和方法
+    function Person(name, age, gender) {
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+      this.sayHi = function() {
+        console.log('大家好');
+      }
+    }
+
+    // new干了什么
+    // 1. new会创建一个空的对象， 这个对象的类型就是 Person
+    // 2. 让 构造函数内部的this指向这个新对象
+    // 3. 执行构造函数
+    // 4. 返回这个新的对象
+    var p1 = new Person('张三', 18, '男');
+
+    console.log(p1);
+
+    var p2 = new Person('李四', 20, '女');
+    console.log(p2);
+  </script>
+</body>
+</html>

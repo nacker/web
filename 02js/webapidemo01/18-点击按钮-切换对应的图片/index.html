@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- button的title属性把图片地址存起来 -->
+  <button title="images/1.jpg">第1张</button>
+  <button title="images/2.jpg">第2张</button>
+  <button title="images/3.jpg">第3张</button>
+  <button title="images/4.jpg">第4张</button>
+  <button title="images/5.jpg">第5张</button>
+  <button title="images/6.jpg">第6张</button>
+  <br>
+  <img id="img" src="images/1.jpg" alt="">
+
+
+  <script>
+    // 1. 找到所有的button  找到图片
+    // 2. 给所有的button注册点击事件
+    // 3. 修改图片的src属性
+    var btns = document.getElementsByTagName('button');
+    var img = document.getElementById('img');
+
+    for(var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function() {
+        // console.log(this);
+        // img.src = 'images/' + i + '.jpg';
+        img.src = this.title;
+      }
+    }
+  </script>
+</body>
+</html>

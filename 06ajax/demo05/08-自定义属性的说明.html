@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 自定义属性作用：存储一些值 -->
+    <!-- H5中定了一个规范， 所有的自定义属性都应该以data-开头 -->
+    <div
+      id="box"
+      class="demo"
+      data-aa="bb"
+      data-id="10"
+      data-index="1"
+      data-user="zs"
+    ></div>
+    <script src="jquery.min.js"></script>
+    <script>
+      // H5中给所有的DOM对象增加了一个属性 dataset : 所有自定义属性的集合
+      // var div = document.querySelector('div')
+      // // console.log(div.getAttribute('aa'))
+      // // console.log(div.getAttribute('data-aa'))
+      // console.log(div.dataset)
+      // console.log(div.dataset.id)
+      // console.log(div.dataset.aa)
+      // console.log($('div').attr('data-id'))
+      // data只能操作 data-开头的属性
+
+      // 缓存
+      console.log($('div').data('id'))
+
+      $('div').data('id', 100)
+      console.log($('div').data('id'))
+    </script>
+  </body>
+</html>

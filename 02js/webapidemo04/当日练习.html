@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 350px;
+      height: 350px;
+      margin: 100px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .big {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 360px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      display: none;
+    }
+
+    .mask {
+      width: 175px;
+      height: 175px;
+      background: rgba(255, 255, 0, 0.4);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      cursor: move;
+      display: none;
+    }
+
+    .small {
+      position: relative;
+    }
+
+    .box img {
+      vertical-align: top;
+    }
+
+    #bigBox img {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<div class="box" id="box">
+  <div id="smallBox" class="small">
+    <img src="images/001.jpg" width="350" alt=""/>
+    <div id="mask" class="mask"></div>
+  </div>
+  <div id="bigBox" class="big">
+    <img src="images/0001.jpg" width="800" alt=""/>
+  </div>
+</div>
+
+<script>
+  //第一步:找对象
+  var box=document.querySelector('#box');
+  var smallBox=document.querySelector('#smallBox');
+  var mask=document.querySelector('#mask');
+  var bigBox=document.querySelector('#bigBox');
+  var bigImg=document.querySelector('.big img');
+  // 第二步 给smallBox设置现象
+  smallBox.onmouseover=function(){
+    mask.style.display='block';
+    bigBox.style.display='block';
+  }
+  smallBox.onmouseout=function() {
+    mask.style.display='none';
+    bigBox.style.display='none';
+  }
+  smallBox.onmousemove=function(e){
+    var spaceX=e.pageX-box.offsetLeft;
+    var spaceY=e.pageY-box.offsetTop;
+    var x=spaceX-mask.offsetWidth/2;
+    var y=spaceY-mask.offsetHeight/2;
+    if (x<0) {
+      x=0;
+    }
+    if (y<0) {
+      y=0;
+    }
+    if (x>smallBox.offsetWidth-mask.offsetWidth) {
+      x=smallBox.offsetWidth-mask.offsetWidth;
+    }
+    if (y>smallBox.offsetHeight-mask.offsetHeight) {
+      y=smallBox.offsetHeight-mask.offsetHeight;
+    }
+    mask.style.left=x+'px';
+    mask.style.top=y+'px';
+
+    //让大图片等比例移动
+    bigImg.style.left=-x/(smallBox.offsetWidth-mask.offsetWidth)*(bigImg.offsetWidth-bigBox.offsetWidth)+'px';
+    bigImg.style.top=-y/(smallBox.offsetHeight-mask.offsetHeight)*(bigImg.offsetHeight-bigBox.offsetHeight)+'px';
+  }
+
+</script>
+
+</body>
+</html>

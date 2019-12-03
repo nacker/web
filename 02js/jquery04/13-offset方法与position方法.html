@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .father {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background-color: pink;
+      margin: 200px;
+    }
+
+    .son {
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      width: 100px;
+      height: 100px;
+
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      // offset方法和position方法都是用来获取盒子的位置的  left和top
+      // offset方法获取的是盒子在整个body中的位置
+      // position方法获取的盒子距离有定位的最近的父元素的位置 offsetLeft offsetTop
+
+
+      // position().left  ==== offsetLeft
+      // position().top  ==== offsetTop
+
+
+      // offset().left : 距离body的left值
+      // offset().top : 距离body的top值
+      var result = $('.son').position();
+      var result2 = $('.son').offset();
+      console.log(result);
+      console.log(result2);
+
+
+
+      /* 
+        val() 功能： 获取或者设置input框的value值
+              用法:  val() 不传参数，就是获取值   val(值): 传参数，设置值
+        
+        text() 方法：  功能  等于与innerText, 用来获取和设置 标签的文本
+        html() 方法    功能： 等价于innerHTML, 用来获取和设置标签的内容， 标签能够生效，不安全
+
+        width()  innerWidth() outerWidth(false) outerWidth(true) 获取盒子的宽度
+        height() innerHeight() outerHeight(false) outerHeight(true)
+
+          页面的宽度和高度  $(window).width()   $(window).height();
+        
+        scrollTop() : 功能： 获取和设置 页面滚动条的距离 不传参数，表示获取， 传参数设置
+        scrollLeft()
+
+        position(): 功能： 获取当前盒子距离 最近的有定位的父元素的位置 {left: 100, top: 100}
+        offset()   功能： 获取当前盒子相对于body的距离 {left: 300, top: 300}
+        
+      */
+    });
+  </script>
+</body>
+</html>

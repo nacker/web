@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1. 截取字符串"我爱中华人民共和国"，中的"中华"
+    // var str = "我爱中华人民共和国";
+    // console.log(str.slice(2, 4));
+    // console.log(str.substring(2, 4));
+    // console.log(str.substr(2, 2));
+    //2. "abcoefoxyozzopp"查找字符串中所有o出现的位置
+    // var str = "abcoefoxyozzopp";
+    // for (var i = 0; i < str.length; i++) {
+    //   if (str[i] === 'o') {
+    //     console.log(i);
+    //   }
+    // }
+    //3. 把字符串中所有的o替换成!
+    var str = "abcoefoxyozzopoooop";
+    // var arr = str.split('o');
+    // console.log(arr.join('!'));
+    // repacer只会替换一次, 正则
+    // str = str.replace(/o/g, '!');  //global: 全局
+    // console.log(str);
+
+    // 如果里面有o,我就进行替换，没o了，就不替换
+    // var index = str.indexOf('o');
+    // while(index != -1) {
+    //   // 把字符串中的o换成!
+    //   str = str.replace('o', '!');
+    //   // 继续查找o在字符串中的位置
+    //   index = str.indexOf('o');
+    // }
+    // console.log(str);
+    // str = str.replace(/o/g, '!');
+    // console.log(str);
+
+
+    //4. 把一个字符串中所有的空格全部去掉
+    var str = '   a  b c vddd    ';
+    str = str.replace(/ /g, '');
+    console.log(str);
+
+    //5. 统计一个字符串中每个字符出现的次数
+    var str = "abcoefoxyozzopoooop";
+    var obj = {}; // 统计次数
+    for(var i = 0; i < str.length; i++) {
+      // 判断字符串中是否存在str[i]
+      if (obj[ str[i] ] === undefined) {
+        obj[ str[i] ] = 1;
+      } else {
+        obj[ str[i] ]++;
+      }
+    }
+    console.log(obj);
+  </script>
+</body>
+</html>

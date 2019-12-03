@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .firstclass {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .secondclass {
+        background-color: #ccc;
+        color: pink;
+      }
+
+      .thirdclass {
+        background-color: #eee;
+        color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!-- <li v-for="(item, index) in students" :class="{firstclass: index % 2 == 0}">{{item}}</li> -->
+
+        <!-- <li v-for="(item, index) in students" :class="{firstclass: item=='渣渣聪'}">{{item}}</li>  -->
+
+        <li v-for="(item, index) in students" :class="{firstclass: index % 3 == 0, secondclass: index % 3 == 1, thirdclass: index % 3 == 2}">{{item}}</li>
+
+
+        <!-- 下面的写法不可以，因为index拿不到值！ -->
+        <!-- <li v-for="(item, index) in students" :class="styleObj">{{ item }}</li> -->
+      </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          students: [
+            "渣渣飞",
+            "渣渣燕",
+            "渣渣聪",
+            "渣渣棠",
+            "怡口莲",
+            "渣渣潘"
+          ],
+          // styleObj: {
+          //   firstclass: index % 3 == 0,
+          //   secondclass: index % 3 == 1,
+          //   thirdclass: index % 3 == 2
+          // }
+        }
+      });
+    </script>
+  </body>
+</html>

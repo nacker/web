@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      // on  off
+      // on: 注册事件
+      // off解除事件绑定
+      $('div').on('click', function() {
+        console.log('这是div的click事件');
+      });
+      $('div').on('mouseenter', function() {
+        console.log('这是div的mouseenter事件');
+      });
+
+      $('div').on('click', 'p', function() {
+        console.log('这是p的事件， div的委托事件');
+      });
+
+      // 移除事件
+      // off() 会把div身上所有的事件全移除
+      // $('div').off();
+
+      // off('click') 移除click事件
+      // 参数1： 事件的类型
+      // $('div').off('click');
+
+
+      // off也可以移除委托事件
+      // 移除div的委托事件， 给p的事件移除
+      // $('div').off('click', '**');
+    });
+  </script>
+</body>
+</html>

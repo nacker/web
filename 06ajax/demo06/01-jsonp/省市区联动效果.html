@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+
+    <select id="s1">
+      <option value="">请选择</option>
+      <option value="">江西</option>
+    </select>
+
+    <select id="s2">
+      <option value="">请选择</option>
+      <option value="">赣州</option>
+    </select>
+
+    <select id="s3">
+      <option value="">请选择</option>
+      <option value="">随便</option>
+    </select>
+  </div>
+
+
+  <script type="text/html" id="tpl">
+    <option value="">请选择</option>
+    {{each result v i}}
+    <option value="{{v.id}}">{{v.name}}</option>
+    {{/each}}
+  </script>
+
+  <script src="jquery-1.12.4.min.js"></script>
+  <script src="template-web.js"></script>
+  <script>
+  
+    //1. 页面加载，应该发送ajax请求，获取省的数据
+    //2. 当选择省的时候，需要发送ajax请求加载市的数据
+    //3. 当选择市的时候，发送ajax请求加载县的数据
+    $.ajax({
+      type:"get",
+      url:"http://api.jisuapi.com/area/province",
+      data: {
+        appkey: 'e019ec9e9662cc3d'
+      },
+      dataType:'jsonp',
+      success:function(info) {
+        var html = template("tpl", info);
+        $("#s1").html(html);
+      }
+    });
+
+
+    //给s1注册change事件
+    $("#s1").on("change", function() {
+
+      //把s3改为原来的默认值
+      $("#s3").html('<option value="">请选择</option>');
+
+      
+      var id = $("#s1").val();
+      
+      $.ajax({
+        type: "get",
+        url: 'http://api.jisuapi.com/area/city',
+        data: {
+          appkey: 'e019ec9e9662cc3d',
+          parentid: id
+        },
+        dataType: 'jsonp',
+        success: function(info) {
+          var html = template("tpl", info);
+          $("#s2").html(html);
+        }
+      })
+
+    
+    });
+
+
+    //给s1注册change事件
+    $("#s2").on("change", function() {
+      
+      var id = $("#s2").val();
+      
+      $.ajax({
+        type: "get",
+        url: 'http://api.jisuapi.com/area/town',
+        data: {
+          appkey: 'e019ec9e9662cc3d',
+          parentid: id
+        },
+        dataType: 'jsonp',
+        success: function(info) {
+          var html = template("tpl", info);
+          $("#s3").html(html);
+        }
+      })
+
+    
+    });
+
+  </script>
+</body>
+
+</html>

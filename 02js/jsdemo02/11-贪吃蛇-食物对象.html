@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    .box {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <button>开始游戏</button>
+  <div class="box"></div>
+
+
+  <script>
+    // 对象
+    // 蛇
+    // 食物
+    // 游戏
+
+    /* 
+      食物
+      属性：
+        宽度: width
+        高度： height
+        背景色: bgColor
+        坐标：  x
+                y
+      行为：
+        render()
+    */
+
+    // 定义了一个食物对象
+    // css({})
+    // 参数有点多， 虽然都设置了默认值， 但是如果要传第五个参数
+    function Food(options) {
+      // 如果不传参数，options默认为空对象
+      options = options || {};
+      this.width = options.width || 20;
+      this.height = options.height || 20;
+      this.bgColor = options.bgColor || 'blue';
+      // x 和 y 应该随机的
+      this.x = options.x || 0;
+      this.y = options.y || 0;
+    }
+  
+    // var f = new Food({
+    //   bgColor: 'green',
+    //   height: 40
+    // });
+    // console.log(f);
+
+    var f = new Food({});
+    console.log(f);
+  </script>
+</body>
+</html>

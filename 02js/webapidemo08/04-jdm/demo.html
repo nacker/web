@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* input {
+      outline: none;
+      border: none;
+    }
+    a {
+      display: block;
+      width: 100px;
+      height: 100px;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    div {
+      border: 1px solid #ccc;
+    }
+    img {
+      display: block;
+    } */
+    div {
+      width: 100px;
+      background-color: pink;
+    }
+
+    .one-txt-cut {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /*多行溢出*/
+    .txt-cut-2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .txt-cut-3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <a href="#">我是一个a</a>
+  <!-- <div><img src="images/nav03.png" alt=""></div> -->
+
+  <div class="txt-cut">哈哈哈哈哈哈，好多的文字啊</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .wrap {
+        width: 300px;
+        margin: 100px auto 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+        width: 300px;
+      }
+
+      th,
+      td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+      }
+
+      th {
+        background-color: #09c;
+        font: bold 16px '微软雅黑';
+        color: #fff;
+      }
+
+      td {
+        font: 14px '微软雅黑';
+      }
+
+      tbody tr {
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+
+      tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="all" />
+            </th>
+            <th>菜名</th>
+            <th>饭店</th>
+          </tr>
+        </thead>
+        <tbody id="j_tb">
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>红烧肉</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>西红柿鸡蛋</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>红烧狮子头</td>
+            <td>田老师</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>日式肥牛</td>
+            <td>田老师</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      // 找对象
+      var all = document.getElementById("all");
+      var tbody = document.getElementById('j_tb');
+      // tbody下所有的input
+      var inputs = tbody.getElementsByTagName('input');
+
+      // 打印验证一下！！！
+      all.onclick = function() {
+        // 控制inputs中所有的checkbox的checked，和 all.checked
+        for(var i = 0; i < inputs.length; i++) {
+          inputs[i].checked = all.checked;
+        }
+      }
+      // 点击下面的，控制上面的
+      // 遍历inputs，给每个input都注册点击事件
+      for(var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = function() {
+          // 如何控制全选
+          // 如果下面的四个都选中，那么all就应该选中
+          // 只要下面有没选中，all就不选中
+          // 1 假设全部选中
+          var flag = true;
+          // 2. 找打脸  找到inputs中没选中的
+          for(var j = 0; j < inputs.length; j++) {
+            if (inputs[j].checked === false) {
+              flag = false;
+              break;
+            }
+          }
+          if (flag) {
+            all.checked = true;
+          } else {
+            all.checked = false;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

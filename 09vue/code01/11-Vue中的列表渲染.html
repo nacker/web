@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>这个人叫{{ name }} 他的昵称{{ nickName }}</h1>
+
+      <ul>
+        <!-- v-for可以实现数组的遍历 -->
+        <!-- v-for这个指令需要放在哪？ 哪个元素需要被重复创建，就放在哪个元素中 -->
+        <!-- v-for="变量名 in 数组" -->
+        <li v-for="hobby in hobbies">{{ hobby }}</li>
+
+        <li v-for="(hobby, index) in hobbies">{{ index }}--->{{ hobby }}</li>
+      </ul>
+
+      扩展内容： v-for除了可以遍历数组之外，还可以遍历 字符串 对象 数字
+
+      <ul>
+        <li v-for="item in name">{{ item }}</li>
+      </ul>
+
+      <ul>
+        <li v-for="item in car">{{ item }}</li>
+      </ul>
+
+      <ul>
+        <li v-for="item in 10">{{ item }}</li>
+      </ul>
+
+      自己尝试一下，获取这三种形式下的index是什么？！！
+      
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          name: "胡清流",
+          nickName: "Lich King",
+          hobbies: ["抽烟", "喝酒", "烫头", "开车"],
+          car: {
+            brand: "凤凰",
+            price: "RMB50"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

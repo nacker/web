@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 3000px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <div>111</div>
+  <!-- 跳锚点， 表示跳到顶部锚点 -->
+  <!-- javascript:; 表示一个伪协议 href中只要写了javascript: 表示这个a标签不跳转，变成执行js代码了
+  void(0):等价于undefined -->
+  <a href="javascript:void(0);">这是一个连接</a>
+  
+  <!-- 一般来说，写个#，表示这是一个连接， -->
+  <a href="#@">这是一个连接</a>
+  <a href="javascript:;">这是一个连接</a>
+
+
+
+  <!-- 
+    阻止a标签跳转
+    1. 注册点击事件， 阻止浏览器默认行为
+    2. #           : 一般来说，还是连接
+    3. javascript:;： 把a当成按钮来用
+   -->
+</body>
+</html>

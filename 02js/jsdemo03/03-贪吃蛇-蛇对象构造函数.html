@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    #map {
+      width: 1000px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <button>开始游戏</button>
+  <div id="map"></div>
+  <script src="food.js"></script>
+  <script>
+    var map = document.querySelector('#map');
+    
+
+    // 蛇的分析   蛇是由一个一个的关节组成 
+    // 属性:
+    // width height headColor  bodyColor  body
+    // 蛇的位置应该要是一个数组  这个数组 需要描述组成蛇的每一个方块的位置
+    // [{x: 2, y: 0}, {x: 1, y: 0}, {x: 0, y: 0}]
+    // 行为:
+    // render  渲染到map上
+    // move    蛇可以移动
+
+
+    // 通过分析， 蛇还需要一个属性： direction 方向  默认为 right
+
+    function Snake(options) {
+      options = options || {};
+
+      // 蛇的关节的宽度
+      this.width = options.width || 20;
+      // 蛇的关节的高度
+      this.height = options.height || 20;
+      this.headColor = options.headColor || 'green';
+      this.bodyColor = options.bodyColor || 'red';
+      // 组成蛇的每一个关节的位置
+      this.body = [
+        {x: 2, y: 0},
+        {x: 1, y: 0},
+        {x: 0, y: 0}
+      ];
+      // 蛇还应该有一个方向的属性
+      // up right down left
+      this.direction = options.direction || 'right';
+    }
+
+    // 给蛇的原型增加一个方法， render
+    Snake.prototype.render = function(target) {
+      //1. 创建若干个节点
+      //2. 添加到target
+      //3. 根据蛇的属性来设置这些节点的样式 （宽 高 颜色 位置）
+      // 删除之前的span
+      var spans = target.querySelectorAll('span');
+      for(var i = 0; i < spans.length; i++) {
+        target.removeChild(spans[i]);
+      }
+      for(var i = 0; i < this.body.length; i++) {
+        var span = document.createElement('span');
+        // 添加到target中
+        target.appendChild(span);
+        // 设置span的大小
+        span.style.width = this.width + 'px';
+        span.style.height = this.height + 'px';
+        span.style.position = 'absolute';
+
+        // 设置span的颜色
+        span.style.backgroundColor = i === 0 ? this.headColor : this.bodyColor;
+
+        // 设置span的位置
+        span.style.left = this.body[i].x * this.width + 'px';
+        span.style.top = this.body[i].y * this.height + 'px';
+      }
+    }
+
+    Snake.prototype.move = function(target) {
+      // 如何移动，取决与蛇的方向
+      // 1. 复制一个蛇头，添加到body中
+      // 2. 控制复制的这个蛇头的位置
+      // 3. 删除掉最后一个位置
+      var head = {
+        x: this.body[0].x,
+        y: this.body[0].y
+      };
+      switch(this.direction) {
+        case 'right':
+          // 往右
+          head.x++
+          break;
+        case 'left':
+          // 往左
+          head.x--;
+          break;
+        case 'up':
+          // 往上
+          head.y--;
+          break;
+        case 'down':
+          // 往下
+          head.y++;
+          break;
+      }
+      // 增加蛇头
+      this.body.unshift(head);
+      // 删除蛇尾
+      this.body.pop();
+      
+      // 重新渲染
+      this.render(target);
+    }
+
+    var s2 = new Snake({
+      headColor: 'yellow',
+      bodyColor: 'pink'
+    });
+
+    s2.render(map);
+    s2.move(map);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>发送post</button>
+    <script>
+      var button = document.querySelector('button')
+      button.onclick = function() {
+        var xhr = new XMLHttpRequest()
+
+        xhr.open('get', '10.php')
+        xhr.send(null)
+
+        // 获取响应报文
+        xhr.onreadystatechange = function() {
+          // readyState: 表示xhr的状态
+          // 0- 4
+          if (xhr.readyState === 4) {
+            // 获取响应报文
+            // 状态码  状态行
+            console.log(xhr.status)
+            // 响应头
+            // console.log(xhr.getAllResponseHeaders())
+            // 获取某个响应头
+            // console.log(xhr.getResponseHeader('date'))
+
+            console.log(xhr.responseText)
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

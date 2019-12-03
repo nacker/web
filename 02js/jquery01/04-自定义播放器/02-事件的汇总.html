@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="range">
+  <script>
+    // 鼠标的
+    // onclick
+    // ondblclick
+    // onmousedown
+    // onmouseup
+    // onmousemove
+    // onmouseover
+    // onmouseout
+
+    // 键盘
+    // onkeydown
+    // onkeyup
+
+    // window
+    // onload
+    // onscroll
+    // onresize
+
+    // 过渡
+    // transitionend
+
+
+    // 表单文本框
+    // onfocus
+    // onblur
+    // onchange : 当文本框的value值发生改变的
+    // oninput ：  给文本框输入内容的时候
+
+    var input = document.querySelector('input');
+
+
+    // 判断内容改变的时候触发，，，，
+    // 等待你的输入完成
+    input.onchange = function() {
+      console.log('change事件触发了', this.value);
+    }
+
+    // 在输入的时候实时的触发这个事件
+    input.oninput = function() {
+      console.log('input事件触发', this.value);
+    }
+
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    .box {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <button>开始游戏</button>
+  <div class="box"></div>
+
+
+  <script>
+    // 对象
+    // 蛇
+    // 食物
+    // 游戏
+
+    /* 
+      食物
+      属性：
+        宽度: width
+        高度： height
+        背景色: bgColor
+        坐标：  x    40  
+                y   30
+      行为：
+        render()
+    */
+
+  
+    function Food(options) {
+      // 如果不传参数，options默认为空对象
+      options = options || {};
+      this.width = options.width || 20;
+      this.height = options.height || 20;
+      this.bgColor = options.bgColor || 'blue';
+      // x 和 y 应该随机的
+      this.x = options.x || 0;
+      this.y = options.y || 0;
+    }
+
+    // 因为方法是所有的实例所共享的， 所以应该放在原型中
+    // 把食物渲染到targe中
+    Food.prototype.render = function(target) {
+      // this指的是当前对象
+      // console.log(this);
+      // 创建了一个div
+      var div = document.createElement('div');
+      // 把div添加到地图中
+      target.appendChild(div);
+
+      // 设置创建出来的食物的样式
+      div.style.width = this.width + 'px';
+      div.style.height = this.height + 'px';
+      div.style.backgroundColor = this.bgColor;
+
+
+      // 随机x的值和y的值
+      // console.log(target.offsetWidth/ this.width);
+      // console.log(target.offsetHeight/this.height);
+      this.x = Math.random() * target.offsetWidth / this.width | 0;
+      this.y = Math.random() * target.offsetHeight / this.height | 0;
+      // 设置食物的位置
+      div.style.position = 'absolute';
+      div.style.left = this.x * this.width + 'px';
+      div.style.top = this.y * this.height + 'px';
+    };
+
+
+    var box = document.querySelector('.box');
+    // var f = new Food({
+    //   bgColor: 'green'
+    // });
+    // // 需要把食物渲染到div
+    // f.render(box);
+    for(var i = 0; i < 100; i++) {
+      var f = new Food();
+      f.render(box);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮" id="btn">
+  <script>
+    var btn1 = document.getElementById('btn');
+    btn1.onclick = function() {
+      // 在事件处理这个函数中，可以使用this关键字， this代表当前点击的这个按钮,this表示事件源
+      btn1.value = '哈哈哈';
+    }
+  </script>
+</body>
+</html>

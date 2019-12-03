@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #box{
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <!-- v-show指令接受一个数据，如果数据是true则元素展示，否则元素隐藏
+      让元素隐藏的原理，只是加了一个行内的display:none样式 -->
+      <!-- v-if如果条件是false，里面的所有的vue相关的指令照常进行解析和渲染了 -->
+      <div id="box" v-show="isShow">{{name}}</div>
+
+      <!-- v-show指令接受一个数据，如果数据是true则元素展示，否则元素隐藏-->
+      <!-- v-if也能控制展示和隐藏，但是，他是直接将元素从页面dom树种移除掉了 -->
+      <!-- v-if如果条件是false，里面的所有的vue相关的指令都不会进行解析和渲染了 -->
+      <!-- <div id="box" v-if="isShow"></div> -->
+
+
+      <!-- v-show 和 v-if 的使用场景 -->
+
+      <!-- v-show 用于简单的页面中的元素展示和隐藏切换比较频繁的场景！ -->
+
+      <!-- v-if用于只判断一次的场景，因为这个可以用来提高性能 -->
+      <!-- 比如管理员拥有的权限，如果是管理员，就展示，如果不是管理员就不展示，就用v-if -->
+
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          name: "hcc",
+          isShow: true
+        }
+      });
+    </script>
+  </body>
+</html>

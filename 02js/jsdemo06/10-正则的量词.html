@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // * + ?
+      // 表示 * 0个或者1个或者多个
+      // '' a aa aaa  aaaaa
+      // + : 表是1个或者多个
+      // console.log(/^a*$/.test('a'))
+      // console.log(/^a*$/.test(''))
+      // console.log(/^a*$/.test('aa'))
+      // console.log(/^a*$/.test('aab'))
+      // console.log(/^a*$/.test('b'))
+
+      // console.log(/^a+$/.test('a'))
+      // console.log(/^a+$/.test(''))
+      // console.log(/^a+$/.test('aa'))
+      // console.log(/^a+$/.test('aab'))
+      // console.log(/^a+$/.test('b'))
+
+      // ? : 0个或者1个
+      // console.log(/^a?$/.test('a'))
+      // console.log(/^a?$/.test(''))
+      // console.log(/^a?$/.test('aa'))
+      // console.log(/^a?$/.test('aab'))
+      // console.log(/^a?$/.test('b'))
+
+      // 想要精确数量 {m, n}  m到n次
+      //             {m,}   大于等于m次即可
+      //             {m} 精确出现的次数
+      // a  aa
+      console.log(/^a{1,3}$/.test('a'))
+      console.log(/^a{1,3}$/.test('aa'))
+      console.log(/^a{1,3}$/.test('aaa'))
+
+      // *  次数>=0    {0,}
+      // + 次数 >= 1   {1,}
+      // ?   次数为0 或者1   {0,1}
+      // {m, n}
+      // {m,}
+      // {m}
+
+      /* 
+        元字符：  \d \D \w \W  \s  \S  .
+        优先级: | 优先级最低  （） 优先级最高
+        字符[] : 表示一个字符串的位置  [abc]  [a-zA-Z]  [^abc]
+        边界： ^ 开始  $ 结束  ^$:精确匹配
+        量词： * + ? {m} {m,} {m,n}
+      */
+    </script>
+  </body>
+</html>

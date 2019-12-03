@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+    var obj = {
+      name: 'zs',
+      age: 18,
+      gender: '男'
+    }
+
+    // 对象的遍历语法
+    // 对象名.属性名
+    // for(var k in 对象){}   k:对象的键, 对象的下标
+
+    // 一般情况，操作对象的属性  对象名.属性名, 明确知道属性名叫啥
+    // 如果属性名存在于变量中， 对象名[变量]
+    for(var k in obj) {
+      console.log(k);
+      // console.log(obj.k);  // obj的k属性
+      console.log(obj[k]);
+    }
+  </script>
+</body>
+</html>

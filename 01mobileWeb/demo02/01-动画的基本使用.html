@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      animation: dong 1s 10 linear;
+    }
+    /* 
+      要使用动画有2个步骤
+        1. 要定义一个动画  
+        @keyframes 动画名字 {
+          from {}
+          to {}
+        }
+        2. 给某个元素 使用动画
+        animation: 动画名字 时间
+    */
+    @keyframes dong {
+      /* 开始的状态 */
+      from {
+        transform: rotate(0deg);
+      }
+      /* 结束的状态 */
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

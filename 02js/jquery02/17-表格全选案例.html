@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .wrap {
+      width: 300px;
+      margin: 100px auto 0;
+    }
+    
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #c0c0c0;
+      width: 300px;
+    }
+    
+    th,
+    td {
+      border: 1px solid #d0d0d0;
+      color: #404060;
+      padding: 10px;
+    }
+    
+    th {
+      background-color: #09c;
+      font: bold 16px "微软雅黑";
+      color: #fff;
+    }
+    
+    td {
+      font: 14px "微软雅黑";
+    }
+    
+    tbody tr {
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    
+    tbody tr:hover {
+      cursor: pointer;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <table>
+    <thead>
+    <tr>
+      <th>
+        <input type="checkbox" id="all"/>
+      </th>
+      <th>菜名</th>
+      <th>饭店</th>
+    </tr>
+    </thead>
+    <tbody id="tb">
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>红烧肉</td>
+      <td>田老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>西红柿鸡蛋</td>
+      <td>田老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>红烧狮子头</td>
+      <td>田老师</td>
+    </tr>
+    <tr>
+      <td>
+        <input type="checkbox"/>
+      </td>
+      <td>日式肥牛</td>
+      <td>田老师</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function() {
+    // 使用变量把$('all')给存起来
+    var $all = $('#all');
+    var $input = $('#tb input');
+
+    // 1. 点击上面的，控制下面的
+    // 1.1 给全选注册点击事件
+    // 1.2 让下面所有的input框的选中状态和全选一样
+    $all.click(function() {
+      // attr prop
+      var isChecked = $(this).prop('checked');
+      $input.prop('checked', isChecked);
+    });
+
+    // 2. 点击下面的，控制上面
+    // 2.1 给下面的所有的input注册点击事件
+    // 2.2 获取到下面input的总个数
+    // 2.3 获取下面选中的input的个数
+    // 2.4 判断两个个数是否想相等，如果相等表示全选中 否则没有全选中
+    $input.click(function() {
+      var allLength = $input.length;
+      var checkedLength = $('#tb input:checked').length;
+      // console.log(allLength, checkedLength);
+      // if (allLength === checkedLength) {
+      //   $('#all').prop('checked', true);
+      // } else {
+      //   $('#all').prop('checked', false);
+      // }
+      // allLength === checkedLength ? $('#all').prop('checked', true) : $('#all').prop('checked', false)
+      $all.prop('checked', allLength === checkedLength);
+    })
+
+  });
+</script>
+
+</body>
+</html>

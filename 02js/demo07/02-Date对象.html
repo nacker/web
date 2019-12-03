@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Date构造函数 如果需要一个日期的话，需要new Date
+
+    // 创建了一个当前的日期
+    // 1. new Date() 如果不传参数，表示的是当前的时间
+    // 2. new Date(指定时间) 还可以创建一个指定时间
+    // var date = new Date();
+    // var date1 = new Date('2019-05-05 12:00:00');
+    // console.log(date);
+
+
+    // 日期格式化问题
+    // date.toString();
+    // date.toLocaleString();  locale: 本地 当地
+    // console.log(date);
+    // console.log(date.toString());
+    // console.log(date.toLocaleString());
+
+
+    // 希望时间显示成这样：  2019-04-07 14:48:00
+    // 如何获取日期的每一个部分（年 月 日 时 分 秒）
+    var date = new Date();
+    // 获取年份  date.getFullYear()
+    var year = date.getFullYear();
+    console.log(year);
+
+    // 获取月份 date.getMonth()
+    // 注意：月份 0-11  对应1月-12月  月份从0开始记
+    var month = date.getMonth() + 1;
+    console.log(month);
+
+    // 获取星期 0-6  date.getDay()
+    // 获取日  1-31      date.getDate()
+    var day = date.getDate();
+    console.log(day);
+
+    // 小时
+    var hour = date.getHours();
+    console.log(hour);
+
+    // 分钟
+    var minute = date.getMinutes();
+    console.log(minute);
+    // 秒钟
+    var second = date.getSeconds();
+    console.log(second);
+  </script>
+</body>
+</html>

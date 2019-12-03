@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="box">{{ msg }}</div>
+
+      <button @click="btnChangeMsg">改数据</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "Hello World"
+        },
+        methods: {
+          btnChangeMsg() {
+            // 在vue中数据向视图上进行更新的操作，是异步的
+            this.msg = "Hello HCC";
+            // 异步的就意味着，在代码中更改完数据之后，直接去访问页面中的元素中的内容，还是老数据
+            // console.log(document.getElementById("box").innerHTML);
+
+            // $nextTick回调函数，能够确保我们获取到的页面中的内容，都是最新的！
+            this.$nextTick(function() {
+              console.log("这个函数，会在Vue将数据更新到视图之后，执行");
+              console.log(document.getElementById("box").innerHTML);
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

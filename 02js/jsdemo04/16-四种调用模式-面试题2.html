@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var length = 10
+      // function fn() {
+      //   console.log(this.length)
+      // }
+
+      // var arr = [fn, '222', '333']
+      // // 10  报错/10/2
+
+      // // 函数调用模式
+      // fn() // 10
+
+      // // 方法调用模式  obj.sayHi()   obj['sayHi']()   arr[0]() 也是方法调用使用
+      // arr[0]()
+
+      // var length = 10
+      // function fn() {
+      //   console.log(this.length)
+      // }
+
+      // var obj = {
+      //   length: 5,
+      //   fn: function() {
+      //     console.log(this.length)
+      //   }
+      // }
+
+      // var arr = [fn, obj.fn, 100, 10]
+
+      // fn() // 10
+      // obj.fn() // 5
+      // arr[0]() // 4
+      // arr[1]() // 4 5
+
+      function fn() {
+        console.log(this)
+      }
+
+      fn()
+
+      var arr = [fn]
+      arr[0]()
+      var obj = {
+        fn: fn
+      }
+
+      obj.fn()
+    </script>
+  </body>
+</html>

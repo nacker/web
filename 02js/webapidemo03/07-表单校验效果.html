@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="请输入用户名" class="username"> <span></span><br>
+  <input type="text" placeholder="请输入密码" class="password"> <span></span>
+
+
+  <script>
+    // 用户名如何做校验
+    // onclick
+    // onmouseover
+    // onmouseout
+    // onfocus
+    // onblur
+
+    // onkeydown: 当键盘按下的时候触发
+    // onkeyup: 当键盘弹起的时候触发  一般给keyup注册事件
+
+    // 1. 获取username的文本框
+    var username = document.querySelector('.username');
+    // 2. 给username注册了点击事件
+    username.onkeyup = function() {
+      // 3. 判断value的长度  2-6位
+      // if (this.value.length < 2 || this.value.length > 6)
+
+      var span = this.nextElementSibling;
+      if (this.value.length >= 2 && this.value.length <= 6) {
+        // 满足
+        span.innerText = '✔';
+        span.style.color = 'green';
+      } else {
+        // 不满足
+        span.innerText = '✖' + '用户名的长度需要在2-6位之间';
+        span.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

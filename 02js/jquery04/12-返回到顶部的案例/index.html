@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      height: 8000px;
+    }
+    
+    a {
+      color: #FFF;
+    }
+    
+    .actGotop {
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 150px;
+      height: 195px;
+      display: none;
+      z-index: 100;
+    }
+    
+    .actGotop a, .actGotop a:link {
+      width: 150px;
+      height: 195px;
+      display: inline-block;
+      background: url(images/gotop.png) no-repeat;
+      outline: none;
+    }
+    
+    .actGotop a:hover {
+      width: 150px;
+      height: 195px;
+      background: url(images/gotop.gif) no-repeat;
+      outline: none;
+    }
+  </style>
+
+  
+</head>
+<body>
+<!-- 返回顶部小火箭 -->
+<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    // 1. 给window注册scroll事件
+    // 2. 判断scrollTop是否超过 700， 如果超过700 让小火箭淡入  否则让小火箭淡出
+    // 3. 点击小火箭， 慢慢回到 0
+    var $actGotop = $('.actGotop');
+    $(window).scroll(function() {
+      var scrollTop = $(this).scrollTop();
+      if ( scrollTop >= 700 ) {
+        $actGotop.fadeIn();
+      } else {
+        $actGotop.fadeOut();
+      }
+    });
+
+    // 设置scrollTop
+    // document.documentElement.scrollTop = 0
+    // $(window).scrollTop(0) // 内部其实也在
+    $actGotop.click(function() {
+      $('html').animate({
+        scrollTop: 0
+      }, 2000);
+    });
+  });
+</script>
+</body>
+</html>

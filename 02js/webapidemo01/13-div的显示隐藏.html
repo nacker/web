@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn1">显示</button>
+  <button id="btn2">隐藏</button>
+  <button id="btn3">切换</button>
+  <div id="box" class="show"></div>
+  
+  <script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var btn3 = document.getElementById('btn3');
+    var box = document.getElementById('box');
+
+    btn1.onclick = function() {
+      box.className = 'show';
+    }
+
+    btn2.onclick = function() {
+      box.className = 'hide';
+    }
+
+
+    btn3.onclick = function() {
+      // 要么设置为show, 要么设置为hide
+      // if (box.className === 'show') {
+      //   box.className = 'hide';
+      // } else {
+      //   box.className = 'show';
+      // }
+      box.className = box.className === 'show' ? 'hide' : 'show'; 
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>shop</h1>
+    <shop></shop>
+
+    <h1>youtudou</h1>
+    <youtudou></youtudou>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+  
+
+    // 组件之间是相互独立的，数据是无法直接互相访问的！！
+
+    // 在实际开发当中，我们经常会遇到，在一个组件中，要使用另外一个组件中的数据的情况
+    // 这个时候就需要使用组件通讯技术！！
+
+    // 组件通讯： 就是在组件之间传递数据
+
+    Vue.component("swiper", {
+      template: "<div>我这里是一个轮播图组件，我要展示的图片有这么几张{{lunbotu}}</div>"
+    })
+
+
+    
+
+
+    Vue.component("shop", {
+      template: "<div>这是一个明星商品网站<swiper></swiper></div>",
+      data(){
+        return {
+          lunbotu: [
+            "第一张图：高圆圆",
+            "第二张图：林志玲",
+            "第三张图：迪丽热巴"
+          ]
+        }
+      }
+    })
+
+    Vue.component("youtudou", {
+      template: "<div>这是一个视频网站<swiper></swiper></div>",
+      data(){
+        return {
+          lunbotu: [
+            "第一张图： 权利的游戏",
+            "第二张图： 手撕鬼子",
+            "第三张图： 手雷丢飞机"
+          ]
+        }
+      }
+
+    })
+
+
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

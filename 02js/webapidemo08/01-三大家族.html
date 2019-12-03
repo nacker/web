@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      padding: 10px;
+      border: 10px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    /* 
+      offset系列
+        offsetWidth offsetHeight: 盒子自身的大小
+        offsetLeft与offsetTop  盒子的位置
+
+      scroll系列
+        scrollWidth scrollHeight 盒子内容的大小
+        scrollLeft与scrollTop 盒子的滚动条的位置
+      获取整个window的滚动条的距离
+        window.onscroll = function(){
+          // document.documentElement.scrollTop
+          window.pageXOffset
+          window.pageYOffset
+        }
+      
+      client系列  client:客户区，可视区 获取盒子的大小，不包括边框
+        clientWidth clientHeight
+        clientLeft clientTop
+    */
+    var div = document.querySelector('div');
+    // console.log(div.clientWidth);
+    // console.log(div.clientHeight);
+
+    // console.log(div.offsetWidth);
+    // console.log(div.offsetHeight);
+
+    // clientLeft：获取的就是左边框的宽度
+    // clientTop: 获取的就是上边框的宽度
+    // console.log(div.clientLeft);
+    // console.log(div.clientTop);
+
+
+
+    // client系列： 获取整个window的大小
+    // window.onload window.onscrll  window.onresize: 当窗口大小发生改变的时候
+    window.onresize = function() {
+      console.log('哈哈');
+      // 获取到窗口的宽度和高度
+      // console.log(document.documentElement.clientWidth);
+      // console.log(document.documentElement.clientHeight);
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+    }
+  </script>
+</body>
+</html>

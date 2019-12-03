@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    
+  </div>
+  <script>
+    // 假设从后台获取到一个数组(ajax)
+    // <ul><li><a href="#">床前明月光</a></li></ul>
+    var arr = [
+      '床前明月光',
+      '疑是地上霜',
+      '举头望明月',
+      '低头思故乡'
+    ];
+
+    // ul li
+
+    // 1. 生成ul,添加到div中
+    var div = document.querySelector('div');
+    // 2. 创建ul
+    var ul = document.createElement('ul');
+
+    // 3. 把ul添加到div中
+    div.appendChild(ul);
+
+    // 4. 创建li，添加给ul  li应该要有多个
+    for(var i = 0; i < arr.length; i++) {
+      // 4.1 创建一个li
+      var li = document.createElement('li');
+      // 4.2 把li添加给ul
+      ul.appendChild(li);
+
+      // 4.3 创建一个a， 添加给li
+      var a = document.createElement('a');
+      li.appendChild(a);
+
+      // 4.4 给a设置属性  内容
+      a.innerText = arr[i];
+      a.setAttribute('href', '#');
+    }
+  </script>
+</body>
+</html>

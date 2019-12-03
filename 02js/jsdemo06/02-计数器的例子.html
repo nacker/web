@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 需求： 有一个函数， 我需要统计这个函数执行的次数
+      // ;(function() {
+      //   var count = 0
+      //   function fn() {
+      //     count++
+      //     console.log('哈哈哈', count)
+      //   }
+
+      //   window.fn = fn
+      // })()
+
+      // 闭包
+      // 一个内函数访问了另一个外函数的局部变量就会发生闭包
+      // function fn() {
+      //   // 局部变量
+      //   var count = 1
+
+      //   function inner() {
+      //     count++
+      //     console.log(count)
+      //   }
+
+      //   return inner
+      // }
+      // // 外部无法访问到函数内部的局部变量
+      // var result = fn()
+      // // console.log(result)
+      // result()
+      // result()
+
+      function outer() {
+        var count = 0
+        function fn() {
+          count++
+          console.log('调用了', count)
+        }
+        return fn
+      }
+      var result = outer()
+      result()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 计算1-n之间所有数的和,并且返回结果
+    function getSum(n) {
+      var sum = 0;
+      for(var i = 1; i <= n; i++) {
+        sum += i;
+      }
+      return sum;
+    }
+
+    // var result =  getSum(100);
+    // alert(result);
+
+    console.log( getSum(10) )
+
+    // 2. 计算两个数的和，并且返回结果
+    function getSum1(n1, n2) {
+      return n1 + n2;
+    }
+    console.log(getSum1(1, 2))
+    
+    // 3. 计算m-n之间所有数的积，并且返回结果
+    function getProduct(m, n) {
+      var product = 1;
+      for (var i = m ; i <= n; i++) {
+        product *= i;
+      }
+      return product;
+    }
+
+    console.log( getProduct(9, 10) );
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+}
+.header .logo {
+  width: 75px;
+  height: 40px;
+  background-color: pink;
+}
+.header .logo .icon {
+  width: 20px;
+  height: 20px;
+}
+.header > .search {
+  width: 20px;
+}
+.header.active {
+  background-color: pink;
+}
+.header::before {
+  content: '';
+}

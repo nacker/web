@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 访问对象
+    // 对象名.属性名 
+    // 如果属性名存在， 得到具体的值,  如果属性名不存在，返回undefined
+
+
+    // 属性搜索原则：
+    // 如果我们访问某个对象的属性
+    // 1. 直接在对象中查找这个属性， 如果有，就直接得到结果
+    // 2. 如果对象自己没有这个属性， 会查找原型中是否有这个属性
+    // 3. 如果还没有，会一直沿着这条原型链一直查找，直到Object.prototype
+    // 4. 如果还没有，就返回undefined
+    // // p ----> p.__proto__ ---> p.__proto__.__proto__
+    // Object.prototype.gender = '男';
+    // // obj.__proto__
+    // var obj = {
+    //   name: 'zs',
+    //   age: 18,
+    //   gender: '女'
+    // };
+    // console.log(obj.name);
+    // console.log(obj.age);
+    // console.log(obj.gender);
+    // console.log(obj.aa);
+    // console.log(obj);
+
+
+    // 设置属性的说明
+    Object.prototype.money = 100;
+    var obj = {
+      name: 'zs',
+      age: 18
+    }
+
+    // 设置属性来说
+    // 如果对象有这个属性，就修改值
+    // 如果对象没有这个属性，直接增加值。
+    obj.money = 10000;
+    console.log(obj.money);
+    console.log(obj.__proto__.money);
+
+    var obj2 = {};
+    console.log(obj2.money);
+  </script>
+</body>
+</html>

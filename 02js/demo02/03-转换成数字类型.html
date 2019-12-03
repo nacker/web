@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str = '123abc';
+    // 1. 转换成数字类型 Number(字符串) 结果就是数字类型
+    // 如果字符串不是一个合法的数字 , Number转换成数字的结果是NaN (not a number)
+    str = Number(str);
+    console.log(str);
+
+    // 2. parseInt() 也可以把一个字符串变成数字类型（整数）
+    // 从第一个字符串开始，遇到到了数字就开始转换，一直转到非数字
+    var str1 = '11.11abc';
+    str1 = parseInt(str1);
+    console.log(str1);
+
+    // 3. parseFloat() 把一个字符串变成数字类型，保留一个小数点
+    // 从第一个开始转换，能识别第一个小数点，如果遇到了非数字，结束了
+    var str2 = '11.22.33';
+    str2 = parseFloat(str2);
+    console.log(str2);
+
+    // 200px
+    // 4. 参与运算
+    var str = '123';
+    console.log(+str);
+
+
+
+    // 1. Number()
+    // 2. parseInt()  会忽略掉小数点以及后面非法的字符
+    // 3. parseFloat() 能够识别第一个小数点
+    // 4. 参与运算  str - 0  str * 1  +str
+  </script>
+</body>
+</html>

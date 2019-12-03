@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>点我呀</button>
+  <script>
+    var button = document.querySelector('button');
+
+    // 给一个元素添加一个事件监听， 给元素注册一个事件
+
+    // 参数1： 事件的类型 类型中没有on
+    // 参数2： 事件处理程序
+    // 参数3： 你现在别管
+    // 事件源.addEventListener(事件类型, 事件处理程序)
+
+    // on+事件： 缺点： 同一个元素注册多个相同的事件，会覆盖
+    // addEventListener: 优点：可以允许你注册多个事件， 缺点：麻烦，，，，ie678不兼容
+    // attachEvent: 专门用于在ie678注册事件
+    // button.addEventListener('click', function() {
+    //   console.log('点你就点你');
+    // });
+
+    // button.addEventListener('click', function() {
+    //   console.log('你不服啊');
+    // });
+
+    // button.addEventListener('click', function() {
+    //   console.log('我就点你了');
+    // });
+    
+
+    // 事件类型
+    // 事件的处理程序
+    // button.attachEvent('onclick', function() {
+    //   console.log('哈哈');
+    // });
+    // button.attachEvent('onclick', function() {
+    //   console.log('哈哈1');
+    // });
+  </script>
+</body>
+</html>

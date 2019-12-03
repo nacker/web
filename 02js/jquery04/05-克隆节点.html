@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>这是div</span>
+  </div>
+  <p>这是p元素</p>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $('p').click(function() {
+        console.log('哈哈');
+      })
+      
+      // clone的作用：在内存中克隆一份节点
+      // 参数： true 和 false
+      // 在jquery中 clone(false) 表示深克隆， 会克隆标签和内容
+      // clone(true) : 深克隆， 还会克隆事件
+      $('p').clone(true).appendTo('div');
+
+      // $('div').append( $('p').clone() );
+
+    });
+
+
+
+
+    /* 
+      创建  $('<div></div>')
+      添加
+            append  appendTo prepend prependTo before after
+      删除  remove()
+      清空  empty()
+      克隆： clone(true | false)
+    
+    
+    */
+  </script>
+</body>
+</html>

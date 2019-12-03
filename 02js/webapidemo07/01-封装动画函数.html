@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+
+  <script>
+    var div = document.querySelector('div');
+    div.onclick = function() {
+      animate(div, 400);
+    };
+
+
+    function animate(element, target, num) {
+      // 默认step为50
+      num = num || 50;
+      // 开启定时器，让盒子不停的在原来的位置的基础上运动一小段距离
+      clearInterval(element.timeId);
+      element.timeId = setInterval(function() {
+        var current = element.offsetLeft;
+        var step = target > current ? num : -num;
+        // 跑
+        if (Math.abs(current - target) >= Math.abs(step)) {
+          current += step;
+          element.style.left = current + 'px';
+        } else {
+          clearInterval(element.timeId);
+          element.style.left = target + 'px';
+        }
+      }, 16);
+    }
+  
+  </script>
+</body>
+</html>

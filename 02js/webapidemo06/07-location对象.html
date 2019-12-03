@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    console.log(location);
+    // location.href : 表示的当前的地址信息
+    // 可以实现页面的跳转
+    console.log(location.href);
+
+    // setTimeout(function() {
+    //   location.href = 'https://youku.com';
+    // }, 1000);
+    // 方法： reload() 重新加载： 刷新
+    var button = document.querySelector('button');
+    button.onclick = function() {
+      location.reload();
+    }
+  </script>
+</body>
+</html>

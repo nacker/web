@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    // 注册事件不调用的， 点击的是才调用
+
+    // 注册事件 div.onclick = function(){}
+    // 解除事件 div.onclick = null
+    // var button  = document.querySelector('button');
+    // button.onclick = function() {
+    //   console.log('哈哈哈');
+
+    //   // 使用on方式注册事件，解除事件绑定
+    //   button.onclick = null;
+    // }
+
+
+    // 使用addEventListener来注册事件
+    function fn(){
+      console.log(2);
+      
+    }
+    var button = document.querySelector('button');
+    button.addEventListener('click', function() {
+      console.log(1);
+    });
+    button.addEventListener('click', fn);
+    button.addEventListener('click', function() {
+      console.log(3);
+    });
+
+    // 清空点击事件
+    // 参数1： 事件类型
+    // 参数2： 你当初注册事件的那个函数
+    // div.removeEventListener() 移除事件监听
+    button.removeEventListener('click', fn);
+    
+
+    // 1. 大部分的事件都是只需要注册，不需要移除的
+    // div.addEventListener('click', function(){})
+    // 2. 如果注册的事件需要被移除, 必须使用一个有名字的函数. 有名字的函数才能被移除
+    // function fn(){}
+    // div.addEventListener('click',  fn);
+    // 3. 直接on的方式
+  </script>
+</body>
+</html>

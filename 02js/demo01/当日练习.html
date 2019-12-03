@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 数据类型
+        1 数字-->整数和浮点数
+        2 字符串-->  1 由'' 和 "" 包裹的内容
+                     2 length属性 -->字符串的长度
+                     3 转义字符 \'表示这是一个单纯的'
+                               \"" 表示这是一个单纯的""
+                               \n  表示换行    
+                     4 拼串的操作 + 如果两边都是数字 就是加法
+                                 + 只要有一边有字符串,就是字符串的拼接功能
+        3 布尔类型 true  false
+        4 undefined
+        5 null
+
+
+        算术运算符 加减乘除%
+        赋值运算符 += 例子:num+=10   num=num+10
+                  -=  同上模式
+                  *=
+                  /=
+                  %=
+                 
+        自增 num++  ++num
+        自减 num--  --num
+
+        逻辑运算符  &&
+                   ||
+                   !
+
+        比较运算符  ><<=>=   ==  !=  === !==           
+
+        优先级  ()第一
+                ++ -- ! 第二
+                %/*优先级大于+-  第三
+                <<=>=   优先级大于   ==  !=  === !==  第四
+                &&优先级大于|| 第五
+
+
+
+
+
+
+
+
+
+
+
+         */
+    
+    // var num1=20;
+    // var num2=40;
+    // var temp=num1;
+    // num1=num2;
+    // num2=temp;
+
+    // console.log(num1,num2);
+    
+    var i=1;
+    var sum=0;
+    while (i <=100) {
+        if (i % 3 === 0){
+            sum +=i;
+        }
+        i++;
+    }
+    console.log(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    FirstName<input type="text" v-model="firstName">
+    LastName<input type="text" v-model="lastName">
+    FullName<input type="text" v-model="fullName">
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+       firstName: "",
+       lastName: ""
+      },
+      computed: {
+
+        // 默认情况下，我们在声明计算属性的时候，直接给一个函数
+        // 这个函数，会在页面中使用这个属性的时候，被调用，页面中获取到的值，就是这个函数的返回值
+        // fullName(){
+        //   return this.firstName + "·" + this.lastName
+        // }
+
+        // 有的时候，我们需要给计算属性赋值，那么直接写一个函数，是无法实现赋值的功能的
+        // 当在fullname文本框中输入内容的时候，我们需要将其拆开，分别赋值给firstname和lastname
+
+        fullName: {
+          get(){
+            // 这个函数会在用户获取这个计算属性值得时候调用，返回值就是用户获取到的值
+            return this.firstName + "·" + this.lastName
+          },
+          set(value){
+            // 这个函数会在用户为这个计算属性赋值的时候调用
+            // 在这个函数中，我们可以对fullname进行拆分
+            // console.log("set函数被调用了")
+
+            // value就是用户给这个计算属性赋的值
+
+            this.firstName = value.split("·")[0]
+            this.lastName = value.split("·")[1]
+
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    p {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    我是一个div
+    <span>哈哈哈</span>
+  </div>
+  <p>我是一个p标签111</p>
+
+
+  <script>
+    // 把child添加到parent的子元素中的最后位置
+    // parent.appendChild(child)
+    // var p = document.querySelector('p');
+    // var div = document.querySelector('div');
+
+    // div.appendChild(p);
+
+
+
+    // 参数： true或者false
+    // true: 深度克隆，会把p包括内容原样在内存中克隆一份
+    // false: 浅克隆，只会在内存克隆一份标签签
+    // node.cloneNode() : 在内存中克隆一个节点
+    var p = document.querySelector('p');
+    // 在内存中克隆一份p
+    var newP = p.cloneNode(true);
+    
+    // 把克隆出来的p标签添加给div
+    var div = document.querySelector('div');
+    div.appendChild(newP);
+
+
+
+
+
+
+    // parent.appendChild(child); 把child添加到父元素的最后面
+    // node.cloneNode() :在内存中克隆一份节点  true:深克隆   false:前克隆
+  </script>
+</body>
+</html>

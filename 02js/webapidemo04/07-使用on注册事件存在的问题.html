@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>点我呀</button>
+  <script>
+    // 要给一个按钮，要注册两个点击事件
+
+    // 使用on来注册事件
+    // 缺点：如果需要注册多个事件，后面的事件会覆盖前面的事件
+    var button = document.querySelector('button');
+    button.onclick = function() {
+      console.log('电你咋滴');
+    }
+
+
+    button.onclick = function() {
+      console.log('呵呵');
+    }
+  </script>
+</body>
+</html>

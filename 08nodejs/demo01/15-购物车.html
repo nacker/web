@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+
+      1. 点击全选，控制下面的全部
+      2. 点击下面的，控制全选，，，，，，下面只有有一个选中，上面都会选中
+      
+
+     -->
+  <h3>全选： <input type="checkbox"/></h3>
+  <ul>
+    <li><input type="checkbox" name="item" />商品1</li>
+    <li><input type="checkbox" name="item" />商品2</li>
+    <li><input type="checkbox" name="item" />商品3</li>
+    <li><input type="checkbox" name="item" />商品4</li>
+    <li><input type="checkbox" name="item" />商品5</li>
+    <li><input type="checkbox" name="item" />商品6</li>
+    <li><input type="checkbox" name="item" />商品7</li>
+    <li><input type="checkbox" name="item" />商品8</li>
+    <li><input type="checkbox" name="item" />商品9</li>
+  </ul>
+
+
+
+  <script>
+    // let $all = $('h3 input')
+    // let $lis = $('ul input')
+    // $('h3 input').click(() => {
+    //   let isChecked = $all.prop('checked')
+    //   $lis.prop('checked', isChecked)
+    // })
+
+    // $lis.click(() => {
+    //   $isAllcheked = $('ul input:checked').length
+    //   $all.prop('checked', $isAllcheked > 0)
+    // })
+    // allcheck.onclick = () => {
+    //   let ischecked = allcheck.checked
+    //   checkes.forEach((v, i) => {
+    //     v.checked = ischecked
+    //   })
+    //   // allcheck.checked = true;
+    // }
+    // checkes.forEach((v) => {
+    //   v.onclick = () => {
+    //     // let ischecked = v.checked
+    //     let checkedlength = document.querySelectorAll('ul input:checked')
+    //     if (checkedlength.length === checkes.length) {
+    //       allcheck.checked = true
+    //     } else {
+    //       allcheck.checked = false
+    //     }
+
+    //   }
+    // })
+
+    // let allcheck = document.querySelector('h3 input')
+    // let checkes = document.querySelectorAll('ul input')
+    // allcheck.onclick = () => {
+    //   let ischecked = allcheck.checked
+    //   checkes.forEach((v, i) => {
+    //     v.checked = ischecked
+    //   })
+    //   // allcheck.checked = true;
+    // }
+    // checkes.forEach((v) => {
+    //   v.onclick = () => {
+    //     // let ischecked = v.checked
+    //     let checkedlength = document.querySelectorAll('ul input:checked')
+    //     if (checkedlength.length === checkes.length) {
+    //       allcheck.checked = true
+    //     } else {
+    //       allcheck.checked = false
+    //     }
+
+    //   }
+    // })
+
+
+    let all = document.querySelector('h3 input')
+    let lis = document.querySelector('ul input')
+    all.onclick = () => {
+      let isChecked = all.checked
+      lis.forEach((v, i) => v.checked = isChecked)
+    }
+    lis.forEach(v => {
+      v.onclick = () => {
+        // let ischecked = v.checked
+        let checkedlength = document.querySelectorAll('ul input:checked')
+        if (checkedlength.length === lis.length) {
+          all.checked = true
+        } else {
+          all.checked = false
+        }
+
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

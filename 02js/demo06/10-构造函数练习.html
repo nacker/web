@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 英雄
+    
+    // 属性
+      // name:    名字
+      // gender:  性别
+      // skill:  技能
+      // country: 国家
+      // price : 价格
+    // 方法
+      // attack : 攻击
+      // run   : 跑
+
+
+    // 奥特曼  男   激光   日本  0
+
+    // 德玛     男  大宝剑  德玛西亚  3150
+    function Hero(name, gender, skill, country, price) {
+      this.name = name;
+      this.gender = gender;
+      this.skill = skill;
+      this.country = country;
+      this.price = price;
+      this.attack = function(n) {
+        console.log(this.name + '使用了' + this.skill + '攻击了' + n)
+      }
+      this.run = function() {
+        console.log(this.name + '逃跑了');
+      }
+    }
+
+    var atm = new Hero('奥特曼', '不详', '激光', '日本', 1000);
+    console.log(atm);
+    atm.run();
+    atm.attack('小怪兽');
+    atm.attack('红buff');
+
+
+    var dm = new Hero('盖伦', '男', '正义审判', '德玛西亚', 3150);
+    dm.attack('防御塔');    
+
+  </script>
+</body>
+</html>

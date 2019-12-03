@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // js对象是一种复杂类型， 一个无序的键值对的集合。
+
+    // 1. 字面量的方式  11 'abc' true [] {}
+
+    // 空对象
+    // var obj = {};
+    // console.log(obj);
+    // 2. 构造函数
+    // new Array()
+    // 创建了一个空对象
+    // var obj = new Object();
+    // console.log(obj);
+
+    // 无序的键值对的集合
+    // 键值对   键: 值   键值对之间用,隔开
+    /* 
+    特征：
+      姓名: 黄xx
+      年龄：32
+      性别：不详
+      身高：120
+      体重：120
+    行为：
+      点名
+      唱歌 
+    */
+    // 键：字符串类型
+    // 值可以是任意类型
+    var bz = {
+      age: 32,
+      name: '黄XX',
+      gender: '不详',
+      height: 180,
+      weight: 120,
+      sayName: function() {
+        console.log('点名了');
+      },
+      sing: function() {
+        console.log('今天给大家唱首歌');
+      }
+    }
+  </script>
+</body>
+</html>

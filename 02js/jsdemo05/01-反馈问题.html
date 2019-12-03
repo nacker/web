@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 涉及到  预解析
+      // 设计 函数调用模式
+      // 原型 继承
+      // window.getName = function(){console.log(1)}
+
+      function Foo() {
+        getName = function() {
+          console.log(1)
+        }
+        // 返回window
+        return this
+      }
+      Foo.getName = function() {
+        console.log(2)
+      }
+      Foo.prototype.getName = function() {
+        console.log(3)
+      }
+      var getName = function() {
+        console.log(4)
+      }
+      function getName() {
+        console.log(5)
+      }
+
+      Foo.getName() // 2
+      getName() // 4
+      // 先调用Foo()函数 得到返回值  返回值.getName()
+      // Foo()  返回了window 并且把全局的getName console.log(1)
+      Foo().getName() // 1
+      getName() // 1
+
+      // 1. 创建新对象 2. 让this指向新对象  3. 执行构造函数 4. 返回新对象
+      new Foo.getName() // 2
+
+      // 构造函数模式
+      // var result = new Foo()
+      // console.log(result)
+      new Foo().getName() // 3
+      // new Foo()   空对象
+      new new Foo().getName()()
+    </script>
+  </body>
+</html>

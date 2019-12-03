@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // javascript object Notation: js 对象标记
+
+      // 1. json实质上是一个字符串  JSON是具有特殊格式的字符串
+      // 2. json的格式和js对象的格式一样 ，但是属性名必须使用""包裹起来
+
+      // js对象
+      // var obj = {
+      //   name: 'zs',
+      //   age: 18
+      // }
+
+      // 1. json是一个字符串
+      // 2. json的格式和js的对象一样，但是属性名使用双引号包裹起来
+      // var json = '{"name": "zs", "age": 18}'
+
+      // var json1 = '["张三", "李四", "王五"]'
+      // var json = '{"name": "zs", "age": 18}'
+      // js中 json可以转成js对象  js对象也可以转成json
+      // JSON 专门用于处理 JSON数据和js对象（数组）之间的转换
+      // JSON.stringify()
+      // JSON.parse()  解析
+      // var obj = {
+      //   name: 'zs',
+      //   age: 18,
+      //   gender: '男'
+      // }
+
+      // string: 字符串  ify: 化
+      // 字符串化  把js对象转成JSON字符串
+      // var str = JSON.stringify(obj)
+      // console.log(str)
+
+      // var arr = [{ name: 'zs', age: 18 }, { name: 'ls', age: 20 }]
+
+      // console.log(JSON.stringify(arr))
+
+      var json1 = '{"name":"zs","age":18,"gender":"男"}'
+      var json2 = '[{"name":"zs","age":18},{"name":"ls","age":20}]'
+      // 把一个json字符串解析JS对象或者数组
+      var obj = JSON.parse(json1)
+      console.log(obj)
+
+      var arr = JSON.parse(json2)
+      console.log(arr)
+    </script>
+  </body>
+</html>

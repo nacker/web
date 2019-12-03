@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>我是一个div</div>
+  <button>动态生成</button>
+  <script>
+    // js中动态创建元素有三种方式  通过js动态的生成结构
+    // 1. document.write() 基本不用的  document.write只能在页面中生成，不能生成某个盒子中
+    var button = document.querySelector('button');
+    button.onclick = function() {
+      document.write('<h1>哈哈哈</h1>');
+    }
+    document.write('<h1>哈哈哈</h1>');
+  </script>
+</body>
+</html>

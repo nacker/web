@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <input type="button" value="按钮">
+  <script>
+    var inputs = document.getElementsByTagName('input');
+    for(var i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = function() {
+        // console.log(this);
+        // console.log(inputs[i]);
+        this.value = '哈哈哈哈';
+      }
+    }
+  </script>
+</body>
+</html>

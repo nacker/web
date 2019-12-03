@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    .map {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <button>开始游戏</button>
+  <div class="map"></div>
+
+
+  <script>
+    var map = document.querySelector('.map');
+
+    // 定义一个Food的构造函数
+    // width height bgColor x y
+    function Food(options) {
+      options = options || {};
+      this.width = options.width || 20;
+      this.height = options.height || 20;
+      this.bgColor = options.bgColor || 'blue';
+      // 一会渲染的时候，会动态随机这两值
+      this.x = 0;
+      this.y = 0;
+    }
+
+    Food.prototype.render = function(target) {
+      // 1. 动态生成一个span
+      var span = document.createElement('span');
+      // 2. 添加到地图
+      target.appendChild(span);
+      // 3. 设置span的样式
+      span.style.width = this.width + 'px';
+      span.style.height = this.height + 'px';
+      span.style.backgroundColor = this.bgColor;
+      span.style.position = 'absolute';
+
+      // 4. 设置span的位置
+      // 随机x和y
+      this.x = Math.random() * target.offsetWidth / this.width | 0;
+      this.y = Math.random() * target.offsetHeight / this.height | 0;
+      // 根据xy设置食物的left和top
+      span.style.left = this.x * this.width + 'px';
+      span.style.top = this.y * this.height + 'px';
+    };
+
+    // 创建食物对象，并且渲染地图中
+    var f = new Food();
+    f.render(map);
+
+    var f = new Food({
+      bgColor: 'green'
+    });
+    f.render(map);
+  </script>
+</body>
+</html>

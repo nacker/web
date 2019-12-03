@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="hcc" />
+    </div>
+
+    <script>
+      let obj = {
+        name: "胡聪聪出来接锅"
+      };
+
+
+      let nameValue = "";
+      Object.defineProperty(obj, "name", {
+        set(value){
+          hcc.value = nameValue = value;
+          // nameValue = value;
+        },
+        get(){
+          return nameValue;
+        }
+      })
+
+      // 双向绑定：其实描述的就是视图和数据的关系，视图的变化会同步更新数据，数据变化也会同步更新视图
+
+      // 1. 视图中用户输入数据的时候，我们需要获取到用户的输入，然后赋值给obj.name
+
+      // 1.1 注册事件
+      let hcc = document.querySelector("#hcc");
+
+      hcc.oninput = function() {
+        // 1.2 获取用户的输入
+        // 1.3 赋值给obj.name
+        obj.name = this.value;
+      };
+
+
+      // 2. 数据在发生改变的时候，我们需要把数据赋值给input框
+
+      // 当用户通过=给obj.name赋值的时候，会触发上面的set方法
+      // 我们只需要在set方法中，把当前的更新的数据，赋值给input框即可
+      // obj.name = "123";
+
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <myheader></myheader>
+
+
+
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+
+    // 组件的模板中必须有一个根元素，否则会报错！
+
+    Vue.component("myheader", {
+      template: "<div><div>这是一个组件{{msg}} <button @click='clickHandler'>按钮</button></div><br> <input type='text' v-model='num1'> + <input type='text' v-model='num2'> = <span>{{result}}</span></div>",
+      data(){
+        return {
+          msg: "Hello world",
+          num1: 0,
+          num2: 0
+        }
+      },
+      methods: {
+        clickHandler(){
+          alert(123)
+        }
+      },
+      computed: {
+        result(){
+          return +this.num1 + +this.num2;
+        }
+      }
+    })
+    
+    const vm = new Vue({
+      el: "#app"
+    })
+
+   
+
+  </script>
+</body>
+</html>

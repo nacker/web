@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .box {
+      width: 790px;
+      height: 340px;
+      margin: 100px auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .box ul {
+      width: 800%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .box ul li {
+      float: left;
+    }
+
+    .box ol {
+      height: 20px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, .5);
+      border-radius: 10px;
+      padding: 0 5px;
+    }
+
+    .box ol li {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+      float: left;
+      margin: 4px 5px;
+      cursor: pointer;
+    }
+
+    .box ol li.now {
+      background-color: #f23030;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul>
+      <li><a href="#"><img src="images/1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/4.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/5.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/6.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/7.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/8.jpg" alt=""></a></li>
+    </ul>
+    <ol>
+      <li class="now"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+  <script src="animate.js"></script>
+  <script>
+    // 功能1：小圆点功能
+    // 1. 找对象
+    // 2. 给小圆点注册点击事件
+    // 3. 让小圆点排他效果
+    // 4. 获取到小圆点的下标，计算ul需要移动的距离
+    var box = document.querySelector('.box');
+    var points = box.querySelectorAll('ol li');
+    var ul = box.querySelector('ul');
+    var imgWidth = box.offsetWidth;
+    for(var i = 0; i < points.length; i++) {
+      points[i].index = i;
+      points[i].onclick = function() {
+        for(var i = 0; i < points.length; i++) {
+          points[i].className = '';
+        }
+        this.className = 'now';
+
+        // 让ul移动 -小圆点的下标 * 图片的宽度
+        console.log(this.index);
+        animate(ul, -this.index * imgWidth);
+      }
+    }
+  
+  </script>
+</body>
+</html>

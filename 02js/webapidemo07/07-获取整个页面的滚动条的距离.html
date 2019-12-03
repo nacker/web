@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      width: 2000px;
+      height: 2000px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 很少获取一个盒子的scrollTop 获取一个页面的scrollTop场景非常多
+
+    // window对象 onload
+    // window对象有三个事件  load  scroll resize
+
+    window.onscroll = function() {
+      console.log('哈哈哈');
+      // 想要获取到scrollTop值
+      // 早期：要么获取html的，要么获取body的
+      // 现在直接通过 window.pageYOffset就可以获取
+      // 垂直滚动条的距离
+      console.log(window.pageYOffset);
+      // 水平滚动条的距离
+      console.log(window.pageXOffset);
+    }
+
+
+
+
+    // 1. 给window注册onscroll事件
+    // 2. 通过window.pageYOffset可以获取到垂直滚动条滚动的距离
+  </script>
+</body>
+</html>

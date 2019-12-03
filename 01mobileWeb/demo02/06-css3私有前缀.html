@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin: 200px auto;
+      /* 私有前缀 */
+      /* 谷歌浏览器 safari  -webkit- */
+      /* ie浏览器  -ms- */
+      /* 火狐浏览器  -moz- */
+      /* opera:     -o- */
+
+      /* 写私有前缀的目的： 为了尽可能兼容更多的浏览器 */
+      /* -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -moz-transform: rotate(45deg); */
+
+      /* webpack 将来自动帮我们加前缀 */
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

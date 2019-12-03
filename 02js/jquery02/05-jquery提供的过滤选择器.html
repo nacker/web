@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+    <li>这是第4个li</li>
+    <li>这是第5个li</li>
+    <li>这是第6个li</li>
+    <li>这是第7个li</li>
+    <li>这是第8个li</li>
+    <li>这是第9个li</li>
+    <li>这是第10个li</li>
+  </ul>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function() {
+      // 所有li中 下标为奇数的那些li
+      // :odd 所有下标为奇数
+      // :even: 所有下标为偶数
+      $('li:odd').css('backgroundColor', 'pink');
+      $('li:even').css('backgroundColor', 'green');
+
+      $('li:first').css('color', 'red');
+      $('li:last').css('color', 'yellow');
+
+      $('li:eq(2)').css('fontSize', '50px');
+
+
+
+      /* 
+        :odd: 下标为奇数
+        :even: 下标为偶数
+        :first: 下标为0 第一个
+        :last:  最后一个
+        :eq(index) 指定下标的
+      */
+    });
+  </script>
+</body>
+</html>

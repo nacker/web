@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+<body>
+  <div>哈哈哈</div>
+  <!-- 1. 引入jquery -->
+  <script src="jquery-1.12.4.js"></script>
+  <!-- 2. 使用入口函数 -->
+  <script>
+    // 入口函数: 等待页面的加载完成，才会执行代码
+    // $(document).ready(function() {
+    //   // 当文档加载好了，就执行
+    //   $('div').text('嘻嘻');
+    // });
+
+    // 入口函数写法2：
+    // 入口函数的好处
+    // 1. 保证元素正确加载
+    // 2. 形成一个沙箱
+    $(function() {
+      // 3. 执行功能
+      $('div').text('嘻嘻');
+    });
+
+
+
+
+    /* 
+    
+      入口函数
+        $(document).ready(function(){
+
+        });
+
+        $(function(){
+
+        });
+        1. 保证页面加载完成
+        2. 形成沙箱，防止全局变量污染
+    */
+
+  </script>
+</body>
+</html>

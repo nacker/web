@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+
+    .son {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .sun {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">
+      <div class="sun"></div>
+    </div>
+  </div>
+
+  <script>
+    var son = document.querySelector('.son');
+    var sun = document.querySelector('.sun');
+    var father = document.querySelector('.father');
+    // var arr = [son, sun, father, document.body, document];
+    // // 给5个人都注册点击事件
+    // for(var i = 0; i < arr.length; i++) {
+    //   // 第三个参数： useCapture: 是否捕获  默认是false, 
+    //   arr[i].addEventListener('click', function fn() {
+    //     console.log(this);
+    //   }, true);
+    // }
+    document.addEventListener('click', function() {
+      console.log(this);
+    }, false);
+    document.body.addEventListener('click', function() {
+      console.log(this);
+    }, true);
+    father.addEventListener('click', function() {
+      console.log(this);
+    }, true);
+    son.addEventListener('click', function() {
+      console.log(this);
+    }, false);
+    sun.addEventListener('click', function() {
+      console.log(this);
+    }, true);
+    
+
+
+    // 任何一个事件都会经历3个阶段
+    // 1. 事件捕获
+    // 2. 目标阶段
+    // 3. 事件冒泡
+
+    // 注册事件的时候  第三个参数： 如果true，表示该事件在捕获阶段执行，  如果false，表示事件在冒泡阶段执行。
+    // addEventLisntener
+    // on注册的事件， 默认在冒泡阶段执行
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+// less中选择器允许嵌套
+.header {
+  height: 40px;
+  line-height: 40px;
+
+  // 后代选择器
+  .logo {
+    width: 75px;
+    height: 40px;
+    background-color: pink;
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  // 子代选择器
+  > .search {
+    width: 20px; 
+  }
+  // &： 表示父选择器
+  &.active {
+    background-color: pink;
+  }
+
+  &::before {
+    content: '';
+  }
+}
+
+

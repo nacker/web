@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .clock {
+      width: 600px;
+      height: 600px;
+      margin: 50px auto;
+      background: url(images/clock.jpg) no-repeat;
+      position: relative;
+    }
+    
+    .clock div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(images/hour.png) no-repeat center center;
+    }
+    
+    #m {
+      background-image: url(images/minute.png);
+    }
+    
+    #s {
+      background-image: url(images/second.png);
+    }
+  
+  
+  </style>
+</head>
+<body>
+<div class="clock">
+  <div id="h"></div>
+  <div id="m"></div>
+  <div id="s"></div>
+</div>
+
+<script>
+  // 1. 找对象
+  var h = document.querySelector('#h');
+  var m = document.querySelector('#m');
+  var s = document.querySelector('#s');
+
+  function setTime() {
+    // 2. 根据当前的时间, 时 分 秒
+    var date = new Date();
+
+    // 小时获取到的需要是小数， 应该包含分钟的部分
+    var millis = date.getMilliseconds();
+    var seconds = date.getSeconds() + millis/1000;
+    var minutes = date.getMinutes() + seconds/60;
+    var hours = date.getHours() + minutes/60;
+   
+    
+
+    // 3. 分别计算时 分 秒 三个盒子的旋转角度
+    // 计算小时  12小时 = 360度   1小时 = 30度   
+    // 60分钟 = 360   1分钟 = 6度
+    // 60秒 = 360     1秒钟 = 6度
+    h.style.transform = 'rotate(' + 30 * hours + 'deg)';
+    m.style.transform = 'rotate(' + 6 * minutes + 'deg)';
+    s.style.transform = 'rotate(' + 6 * seconds + 'deg)';
+  }
+
+  setTime();
+
+  // 开启定时器， 重复执行setTime函数
+  // 定时器的参数1： 一个函数 ，这个函数可以是匿名，也可以是有名字
+  // 参数2： 函数每次调用的间隔时间
+
+  // 肉眼： 60帧以后就分辨不出来  25帧以上就有动画效果
+  setInterval(setTime, 16);
+
+</script>
+
+
+</body>
+</html>

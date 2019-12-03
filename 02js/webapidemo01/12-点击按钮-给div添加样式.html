@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">添加</button>
+  <div id="box">大家好，我是喳喳辉，是兄弟，就来砍我</div>
+
+  <script>
+    //1. 找对象
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    // console.dir(box);
+    // 2 给按钮注册点击事件
+    btn.onclick = function() {
+      // 注意：标签中有一个属性叫class，用来设置类型
+      // 对象中并没有class属性，因为class属性在js中是保留字，在对象中有一个属性className和标签中的class属性对应的
+      // 想要修改类名，必须通过className属性才可以改
+      // box.class = 'box';
+      box.className = 'box';
+    }
+  </script>
+</body>
+</html>

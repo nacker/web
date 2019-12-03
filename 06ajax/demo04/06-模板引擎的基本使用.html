@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <!-- 1. 引入模板引擎的文件 -->
+    <script src="template-web.js"></script>
+    <!-- 3. 使用一个script标签来准备模版, 当一个script的type属性指定为text/html的时候，浏览器不会解析 -->
+    <script type="text/html" id="aa">
+      <li>姓名：{{name}}</li>
+      <li>年龄：{{age}}</li>
+      <li>性别：{{gender}}</li>
+      <li>描述：{{desc}}</li>
+    </script>
+    <script>
+      // 固定的步骤
+      // 数据 + 模版 = 最终要生成结构
+      // 数据： 发送ajax来获取
+      // 2. 有数据
+      var obj = {
+        name: '隔壁小王1',
+        age: 181,
+        gender: '男1',
+        desc: '乐于助人1'
+      }
+
+      // 4. 模版和数据结合起来
+      // 参数1： 模版的id
+      // 参数2： 模版的数据 需要一个对象
+      // 返回值： 返回的需要创建出来的结构
+      // 在模版中可以直接使用对象的所有的数据
+      var html = template('aa', obj)
+
+      // 5. 把最终渲染的结构显示出来
+      document.querySelector('ul').innerHTML = html
+
+      // var ul = document.querySelector('ul')
+
+      // var str = ''
+      // str += '<li>姓名: ' + obj.name + '</li>'
+      // str += '<li>年龄: ' + obj.age + '</li>'
+      // str += '<li>性别: ' + obj.gender + '</li>'
+      // str += '<li>描述: ' + obj.desc + '</li>'
+
+      // ul.innerHTML = str
+
+      /* 
+        1 引入模版文件js
+        2. 准备数据
+        3. 准备模版
+        4. 结合数据+模版  得到内容
+        5. 把最终的内容显示出来
+        6. 在模版中显示数据
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+          
+    const inventors = [
+      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+    ];
+
+    // 要求1：筛选出生日期在16世纪（1500-1599年）的发明家。
+    const newArr=inventors.filter(item => item.year<=1599&item.year>=1500)
+    console.log(newArr)
+    // 要求2：列出发明家的名和姓的数组。
+    const newArr1=inventors.map(item=> {
+    return {first:item.first,last:item.last}
+    })
+    console.log(newArr1)
+    // 要求3：根据发明家的出生日期，按照从大到小的顺序进行排序。
+    const newArr2=inventors.sort((a,b) => b.year-a.year)
+    console.log(newArr2)
+    // 要求4：所有的发明家一共活了多少岁。
+    let ha=0
+    inventors.forEach(item =>ha+=(item.passed-item.year))
+    console.log(ha)
+    // 要求5：按照发明家的年龄大小    排序
+    const newArr5=inventors.sort((a,b) => (a.passed-a.year)-(b.passed-b.year))
+    console.log(newArr5)
+    </script>
+  </body>
+</html>

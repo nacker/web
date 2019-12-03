@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button>登录</button>
+    <el-button>登录</el-button>
+    <el-div><template slot="front">123</template><template slot="back">456</template></el-div>
+
+    <el-comp><template v-slot:content="{msg}"><p>{{msg}}</p></template></el-comp>
+    
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+
+    Vue.component("el-button", {
+      template: "<button><slot></slot></button>"
+    })
+
+    Vue.component("el-div", {
+      template: "<div><slot name='front'></slot>  这里中间的内容 <slot name='back'></slot>   </div>"
+    })
+
+    Vue.component("el-comp", {
+      template: "<div><slot name='content' :msg='msg'></slot></div>",
+      data(){
+        return {
+          msg: "Hello world"
+        }
+      }
+    })
+
+
+  </script>
+</body>
+</html>

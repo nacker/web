@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .footer{
+        position: fixed;
+        bottom: 0;
+      }
+
+      .router-link-active{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <router-link to="/login"></router-link>
+      <router-link :to="{name: 'lg'}">123</router-link>
+      <router-link :to="{name: 'lg', query: {age: 18, name: 'zs'}}">query</router-link>
+      <router-link :to="{name: 'lg', params: {age: 18, name: 'zs'}}">params</router-link>
+      <router-link to="/login?age=18&name=zs">123</router-link>
+      <router-view></router-view>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+
+      const login = {
+        template: `<div>
+          <h3>这是登录页</h3>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      }
+
+
+      // 假设路由规则为  /login/:name/:age
+      // 用户要访问这个页面 请求的路径就必须是  /login/zs/18
+
+      const router = new VueRouter({
+        routes: [
+          {
+            name: "lg",
+            path: "/login/:name/:age",
+            component: login
+          }
+        ]
+      });
+
+
+
+      const vm = new Vue({
+        el: "#app",
+        router
+      });
+
+
+    </script>
+  </body>
+</html>

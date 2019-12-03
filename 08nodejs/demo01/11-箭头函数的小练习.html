@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 有一个数组`[1,3,5,7,9,2,4,6,8,10]`,请对数组进行排序
+      // 2. 有一个数组`['a','ccc','bb','dddd']`,请按照字符串长度对数组进行排序
+      // 3. 有一个数组，`[57,88,99,100,33,77]`,请保留60分以上的成绩，返回一个新的数组
+      const arr = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+      // arr.sort(function(a, b) {
+      //   return a - b
+      // })
+
+      arr.sort((a, b) => a - b)
+      console.log(arr)
+
+      const arr2 = ['aaaaa', 'ccc', 'bb', 'dddd']
+      arr2.sort((a, b) => a.length - b.length)
+      console.log(arr2)
+
+      const arr3 = [57, 88, 99, 100, 33, 77]
+      // const newArr = arr3.filter(function(item) {
+      //   return item >= 60
+      // })
+      const newArr = arr3.filter(item => item <= 60)
+      console.log(newArr)
+    </script>
+  </body>
+</html>

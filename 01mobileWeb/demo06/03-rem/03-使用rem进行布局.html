@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    @media (min-width: 320px) {
+      html {
+        font-size: 50px;
+      }
+    }
+
+    @media (min-width: 360px) {
+      /* 640/100 = 360/x */
+      html {
+        font-size: 56.25px;
+      }
+    }
+
+    @media (min-width: 375px) {
+      /* 640/100 = 360/x */
+      html {
+        font-size: 58.59px;
+      }
+    }
+
+    @media (min-width: 400px) {
+      /* 640/100 = 360/x */
+      html {
+        font-size: 62.5px;
+      }
+    }
+
+    @media (min-width: 414px) {
+      /* 640/100 = 360/x */
+      html {
+        font-size: 64.6875px;
+      }
+    }
+
+    @media (min-width: 640px) {
+      html {
+        font-size: 100px;
+      }
+    }
+
+    div {
+      width: 2rem;
+      height: 2rem;
+      font-size: .5rem;
+      background-color: red;
+    }
+
+    p {
+      width: 1.5rem;
+      height: .8rem;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    你拿到了一张设计图 640的设计图  量出来了一个div 200px * 200px  字体大小50px
+
+    又从设计图得到了一个p标签， width: 150px height: 80px; 
+    要求：兼容所有的屏幕 320 360 375 400 414  640
+   -->
+   <div>中国</div>
+   <p></p>
+</body>
+</html>

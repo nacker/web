@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    /* ul {
+       margin: 50px auto;
+    }  */
+    li {
+      font-size: 50px;
+      float: left;
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+  </ul>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      
+      //1. 给li注册mouseenter事件, 让当前li以及前面所有的li都变成实心 让后面的兄弟变空心
+      //2. 给整个盒子注册mouseleave事件， 让所有的li变成空心
+      //3. 给li注册click事件， 打分的功能
+
+      var $li = $('li');
+      var $ul = $('ul');
+      $li.on('mouseenter', function() {
+        // prev(): 获取上一个兄弟
+        // prevAll() 获取前面所有的兄弟
+        // next() 下一个兄弟
+        // nextAll() 后面的所有的兄弟
+        // siblings();
+        // $(this).text('★');
+        // $(this).prevAll().text('★');
+        // $(this).nextAll().text('☆');
+        // $(this).text('★').prevAll().text('★')
+        // $(this).nextAll().text('☆');
+
+        // $(this).text('★').prevAll().text('★').end().nextAll().text('☆').end();
+
+        $(this).text('★');
+        $(this).prevAll().text('★');
+        $(this).nextAll().text('☆');
+      });
+
+      $ul.on('mouseleave', function() {
+        // 如何知道点没点？？
+        $li.text('☆');
+
+        // 让 now和 now前面都变成实心
+        $('.now').text('★').prevAll().text('★');
+      });
+
+      $li.on("click", function() {
+        // 做什么？？？
+        // 记录当前点击的那个li
+        // 给当前点击的li添加了一个类名
+        $(this).addClass('now').siblings().removeClass('now');
+      });
+    });
+  </script>
+</body>
+</html>

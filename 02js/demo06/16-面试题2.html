@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function Person(name, age, salary) {
+    //   this.name = name;
+    //   this.age = age;
+    //   this.salary = salary;
+    // }
+    // function f1(person) {
+    //   person.name = "ls";
+    //   console.log(person.name);
+    // }
+    // var p = new Person("zs", 18, 1000);//创建一个新对象
+    // console.log(p.name);
+    // f1(p);
+    // console.log(p.name);
+
+    // console.log(p);
+
+    function Person(name, age, salary) {
+      this.name = name;
+      this.age = age;
+      this.salary = salary;
+    }
+    function f1(person) {
+      person.name = "ls";
+      person = {
+        name : 'zs'
+      }
+      console.log(person.name);
+    }
+    var p = new Person("zs", 18, 1000);//创建一个新对象
+    console.log(p.name);//
+    f1(p);
+    console.log(p.name);
+
+  </script>
+</body>
+</html>

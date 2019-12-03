@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>哈哈</title>
+    <link rel="stylesheet" href="css/demo.css" />
+  </head>
+  <body id="transitiongallery">
+    <section class="container">
+      <h1><span class="flux">Flux</span> <span class="slider">Slider</span></h1>
+      <h2>Hardware accelerated image transitions using CSS3.</h2>
+      <div id="slidercontainer">
+        <div id="slider">
+          <img src="img/avatar.jpg" alt="" />
+          <img src="img/ironman.jpg" alt="" />
+          <img src="img/tron.jpg" alt="" />
+          <img src="img/greenhornet.jpg" alt="" />
+        </div>
+        <div id="transitions">
+          <h2>2D Transitions</h2>
+          <ul id="trans2D">
+            <li><a title="bars">Bars</a></li>
+            <li><a title="zip">Zip</a></li>
+            <li><a title="blinds">Blinds</a></li>
+            <li><a title="blocks">Blocks</a></li>
+            <li><a title="concentric">Concentric</a></li>
+            <li><a title="warp">Warp</a></li>
+            <li><a title="slide">Slide</a></li>
+          </ul>
+          <h2>3D Transitions</h2>
+          <ul id="trans3d">
+            <li><a title="bars3d">Bars3D</a></li>
+            <li><a title="cube">Cube</a></li>
+            <li><a title="tiles3d" class="new">Tiles3D</a></li>
+            <li><a title="blinds3d" class="new">Blinds3D</a></li>
+            <li><a title="turn" class="new">Turn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.ui.widget.js"></script>
+    <script src="js/flux.min.js"></script>
+    <script src="js/flux.jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        var slider = new flux.slider('#slider', {
+          autoplay: false,
+          pagination: false
+        });
+
+        $('div#transitions').on('click', 'a', function(event) {
+          event.preventDefault();
+          // slider.next(this.title);
+          var text = $(this)
+            .text()
+            .toLowerCase();
+          slider.next(text);
+        });
+      });
+    </script>
+  </body>
+</html>

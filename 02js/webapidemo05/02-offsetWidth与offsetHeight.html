@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+
+      padding: 10px;
+
+      border: 10px solid #ccc;
+
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    // offsetWidth offsetHeight offsetLeft offsetTop offsetParent
+
+    // offsetWidth 与 offsetHeight: 用于获取元素真实的高度和高度
+    var div = document.querySelector('div');
+
+    // style对应的 标签中的style属性，对应的是行内样式
+    // 通常来说，我们不会通过style来获取样式，只能获取行内样式。
+    // console.log(div.style.width);
+    // console.log(div.style.height);
+
+    // div都提供offsetWidth 用于获取盒子的宽度   offsetHeight: 用于获取盒子的高度
+    // 1. 获取到的是盒子的真实的大小, width + padding + border
+    // 2. 获取到的直接数字类型，直接运算
+    // 3. offsetWidth是只读属性，不允许修改
+    // console.log(div.offsetWidth);
+    // console.log(div.offsetHeight);
+    // div.offsetWidth = 400;
+  </script>
+</body>
+</html>

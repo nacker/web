@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .footer{
+        position: fixed;
+        bottom: 0;
+      }
+
+      .router-link-active{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <button @click="clickHandler">跳转到注册页</button>
+
+      <router-view></router-view>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+
+      const login = {
+        template: `<div>
+          <h3>这是登录页</h3>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      }
+
+      const register = {
+        template: `<div>
+          <h3>这是注册页</h3>
+          <input type="text"><input type="text"><input type="text"><button>注册</button>
+        </div>`
+      };
+
+      const list = {
+        template: `<div>
+          <h3>这是列表页</h3>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      };
+
+      const router = new VueRouter({
+        routes: [
+          {
+            path: "/",
+            component: login
+          },
+          {
+            path: "/login",
+            component: login
+          },
+          {
+            name: "rg",
+            path: "/register",
+            component: register
+          },
+          {
+            path: "/list",
+            component: list
+          }
+        ]
+      });
+
+
+
+      const vm = new Vue({
+        el: "#app",
+        router,
+        methods: {
+          clickHandler(){
+            // 在js代码中如果想要跳转页面，有个东西
+            // router.push("/register");
+
+            this.$router.push("/register")
+            // this.$router.push({path: "/register"})
+            // this.$router.push({name: "rg"})
+          }
+        }
+      });
+
+    </script>
+  </body>
+</html>

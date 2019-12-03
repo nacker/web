@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1. 求1-100之间不能被7整除的整数的和（用continue）
+    // var sum = 0;
+    // for (var i = 1; i <= 100; i++) {
+    //   // 如果能被7整除的数，直接跳过
+    //   if (i % 7 === 0) {
+    //     continue;
+    //   }
+    //   sum += i;
+    // }
+
+    //2. 求200-300之间所有的奇数的和（用continue）
+    // var sum = 0;
+    // for (var i = 200; i <= 300; i++) {
+    //   if (i % 2 === 0) {
+    //     continue;
+    //   }
+    //   sum += i;
+    // }
+    // console.log(sum);
+    
+
+    //3. 求200-300之间第一个能被7整数的数（break）
+    // for(var i = 200; i <= 300; i++) {
+    //   if (i % 7 === 0) {
+    //     console.log(i);
+    //     break;
+    //   }
+    // }
+    
+    //4. 求200-300之间第3个能被7整数的数（break）
+    var count = 0;
+    for(var i = 200; i <= 300; i++) {
+      if (i % 7 === 0) {
+        // console.log(i);
+        count++;
+        if (count === 3) {
+          console.log(i);
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

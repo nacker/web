@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <my-header></my-header>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+
+    // 在Vue中注册组件的方式：
+    // 1. 全局注册
+    // Vue.component("组件名称", {这是组件的参数对象})
+
+    // Vue.component("my-header", {
+    //   template: "<div class='top'>这是头部</div>"
+    // })
+
+    // 在页面中使用已经注册好的组件，只需要，将组件名作为标签名，书写标签即可
+
+    // 注意： 组件名中不能包含大写字母，如果需要将多个单词分隔开，需要使用-  中划线进行分割
+
+    // 2. 局部注册
+    const vm = new Vue({
+      el: "#app",
+      components: {
+        "my-header": {
+          template: "<div class='top'>这是头部</div>"
+        }
+      }
+    })
+
+
+    // 全局注册的，所有vue实例中都可以使用
+    // 局部注册的，只能在当前vue实例中使用
+  </script>
+</body>
+</html>

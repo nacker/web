@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <component :is="currentPage"></component>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      // url 地址
+      // 协议名 域名 端口号 路径 参数 哈希值
+
+      // http://www.itcast.cn:80/home/index?name=zs#absdklfajdf
+      // 哈希值改变，页面不会发生跳转
+
+      // 单页面应用因为只有一个页面，所以页面不能发生跳转，但是，我们又需要根据url地址来展示不同的组件
+      // 这个时候，只能用哈希值来表示究竟要展示哪个组件了
+
+      // 单页面应用就是根据hash值来改变页面内容的
+
+      // http://39qi.com/index.html#/home
+      // http://39qi.com/index.html#/list
+
+      // 设计用户访问的规则
+      // #/login  访问登录页  要给用户展示login组件
+      // #/register 访问注册页  要给用户展示register组件
+      // #/list 列表页 要给用户展示list组件
+
+      Vue.component("login", {
+        template: `<div>
+          <h1>这是登录页</h1>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      });
+
+      Vue.component("register", {
+        template: `<div>
+          <h1>这是注册页</h1>
+          <input type="text"><input type="text"><input type="text"><button>注册</button>
+        </div>`
+      });
+
+      Vue.component("list", {
+        template: `<div>
+          <h1>这是列表页</h1>
+          <input type="text"><input type="text"><button>登录</button>
+        </div>`
+      });
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          currentPage: "login"
+        },
+        created() {
+          // console.log(location)
+          this.goPage();
+
+          window.onhashchange = () => {
+            this.goPage();
+          };
+        },
+        methods: {
+          goPage() {
+            switch (location.hash) {
+              case "#/login":
+                this.currentPage = "login";
+                break;
+              case "#/register":
+                this.currentPage = "register";
+                break;
+              case "#/list":
+                this.currentPage = "list";
+                break;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

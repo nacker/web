@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="box">{{ msg }}</div>
+
+      <button @click="btnChangeMsg">改数据</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "Hello World"
+        },
+        methods: {
+          btnChangeMsg() {
+            // this.msg
+            this.sayHello();
+          },
+          sayHello(){
+            console.log("Hello")
+          }
+        }
+      });
+
+      // 我们是将数据放在参数对象中的data属性中传递给Vue构造函数的
+      // Vue构造函数在接收到这个参数后
+      // 1. 会读取data属性中所有的数据，通过Object.defineProperty方法，将这些数据全部加到vue实例上
+          // 1.1 这样做，可以让属性有了set和get方法，可以实现双向绑定等等功能
+          // 1.2 这样做，可以让程序员直接通过this来访问数据，方便使用
+      
+      // 2. Vue还会读取所有methods中的函数，把所有的函数，全部加给vue实例
+         // 可以直接通过this来访问这些函数
+
+    </script>
+  </body>
+</html>

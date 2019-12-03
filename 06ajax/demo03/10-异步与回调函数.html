@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 回调函数： 回调函数就是一个函数， 把函数当成参数来使用的函数， 把这个当成参数的函数叫做回调函数
+      // function fn(callback) {
+      //   // 需要1秒钟 做一件事情 ，做这件事情不确定
+      //   setTimeout(function() {
+      //     callback()
+      //   }, 1000)
+      // }
+
+      // fn(function() {
+      //   console.log('1111')
+      // })
+
+      // fn(function() {
+      //   console.log('222')
+      // })
+
+      function fn(callback) {
+        console.log('窗前明月光')
+        // console.log('地上鞋两双')
+        // console.log('疑是地上霜')
+        callback()
+      }
+
+      fn(function() {
+        console.log('地上鞋两双')
+      })
+
+      fn(function() {
+        console.log('疑是地上霜')
+      })
+    </script>
+  </body>
+</html>

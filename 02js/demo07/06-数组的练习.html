@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //练习1
+    // var arr = ["刘备"];
+    // //添加数据后变成：["赵云","马超","刘备","关羽","张飞"]
+    // arr.push('关羽', '张飞');
+    // arr.unshift('赵云', '马超');
+  
+    // //删除数据后变成：["关羽","张飞"]
+    // arr.shift();
+    // arr.shift();
+    // arr.shift();
+    // console.log(arr);
+
+    //练习2
+    var arr = ["赵云","马超","刘备","关羽","张小飞"];
+    //把数组的最后一个元素变成数组的第一个元素
+    // var result = arr.pop();
+    // arr.unshift(result);
+    // arr.unshift(arr.pop());
+    // console.log(arr);
+    //把数组的第一个元素变成数组的最后一个元素
+    arr.push(arr.shift());
+    console.log(arr);
+  </script>
+</body>
+</html>

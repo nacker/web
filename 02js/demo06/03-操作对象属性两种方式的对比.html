@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      name: 'zs',
+      age: 18
+    }
+    // 二者对比
+    //1. 点语法更加简洁 写死 obj.age
+    //2. 中括号语法更加灵活， []语法只要保证[]中最终是一个字符串即可。
+
+    // 以后操作对象的属性， 推荐使用点语法， 如果点语法没办法完成的时候，记得还有一种方式叫[]
+    console.log(obj.age);  // obj的temp属性
+
+
+    var temp = 'age';
+    console.log(obj[temp]);
+  </script>
+</body>
+</html>

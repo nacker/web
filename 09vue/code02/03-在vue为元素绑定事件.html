@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <button v-on:click="btnClickHandler">点我呀！</button>
+
+    <div id="box" v-on:mouseenter="divMouseEnterHandler"></div> -->
+
+    <!-- v-on:事件名称="事件处理函数的名称"   事件处理函数是保存在methods属性中！ -->
+
+
+    事件注册的简写形式：
+    <!-- @事件名称="事件处理函数的名称" -->
+    <button @click="btnClickHandler">点我呀！</button>
+
+    <div id="box" @mouseenter="divMouseEnterHandler"></div>
+
+
+    <!-- 事件注册的时候，如果要给事件处理函数传递参数，那么我们直接给函数名称后面加上小括号，将参数放进去即可！ -->
+    <button @click="btnClickHandler(100)">点我呀！</button>
+
+
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      methods: {
+        btnClickHandler(arg){
+          // alert("点你咋地！！")
+          alert(arg);
+        },
+        divMouseEnterHandler(){
+          console.log("我进来了")
+        }
+      }
+    })
+  </script>
+</body>
+</html>

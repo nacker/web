@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //eventloop
+
+      // js是单线程
+      // js同一时间只能做一件事情
+      // console.log(1)
+      // console.log(2)
+      // for (var i = 0; i < 10000; i++) {
+      //   console.log(i)
+      // }
+      // console.log('哈哈')
+
+      // 1234
+      // 1243
+      console.log(1)
+      console.log(2)
+
+      // 定时器是异步操作
+
+      // js中，异步的操作： 注册的事件   定时器和延时器  ajax
+      setTimeout(function() {
+        console.log('定时器的代码')
+      }, 0)
+      for (var i = 0; i < 10000; i++) {
+        console.log(i)
+      }
+    </script>
+  </body>
+</html>

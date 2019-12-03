@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>凋残</li>
+    <li>西斯</li>
+    <li>赵军</li>
+    <li>郁欢</li>
+  </ul>
+
+  <script>
+
+    // parent.removeChild(child);
+    // 父节点删除某个子节点
+    var lis = document.querySelectorAll('li');
+    var ul = document.querySelector('ul');
+    for(var i = 0; i < lis.length; i++) {
+      lis[i].onclick = function() {
+        // 删除当前li
+        ul.removeChild(this);
+      }
+    }
+  </script>
+</body>
+</html>

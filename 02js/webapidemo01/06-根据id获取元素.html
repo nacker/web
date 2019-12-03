@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <img src="1.jpg" title="培训" alt="aaaa" id="box">
+  <script>
+    // DOM可以操作网页中内容
+
+    // 在文档中 通过id获取元素
+    // document.getElementById()
+
+    // 页面中的元素 
+    // console.log()  显示出来是一个标签， 看不到里面具体的内容
+    // console.dir(元素) 以对象的形式显示  
+    // 找到的box对象和页面中这个图片是完全一一对象
+    var box = document.getElementById('box');
+    // console.dir(box);
+    box.title = "前端";
+    box.src = "2.jpg";
+  </script>
+</body>
+</html>

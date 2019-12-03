@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button>显示</button>
+  <button>隐藏</button>
+  <button>切换</button>
+  <div></div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $('button:first').click(function() {
+      // 作用: 让一个元素显示
+      // 修改了元素的width 和 height 和opacity 进行动画
+      // 参数1：
+      //    1. 如果没有参数，没有动画效果
+      //    2. 参数可以指定为一个时间， 毫秒值， 动画的时间
+      //    3. 参数还可以是固定的字符串， fast:快=200ms normal：正常=400ms slow:慢=600ms
+      // 参数2：
+      //    回调函数， 表示当动画执行完成后，这个函数 就会调用
+      $('div').show(1000, function() {
+        console.log('动画执行完成了');
+      });
+    });
+
+    $('button').eq(1).click(function() {
+      $('div').hide(1000);
+    });
+
+    $('button').eq(2).click(function() {
+      // 如果是显示状态，就会隐藏， 如果是隐藏装填，就会显示
+      $('div').toggle(1000);
+    })
+
+
+    /* 
+      show:显示
+      hide:隐藏
+      toggle：切换
+    */
+  </script>
+</body>
+</html>

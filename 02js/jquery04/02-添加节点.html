@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>111</span>
+  </div>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <p>我是一个p标签</p>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $('<p>我是一个新p</p>').appendTo('div');
+    // $('div').append($('ul'));
+    $('div').before($('ul'));
+
+    // parent.append(child)
+    // append() 给元素追加一个子元素
+    // $('div').append( $('p') );
+
+    // $('div').append( $('<p>这是新建的p标签</p>') );
+
+    // prepend: 给元素的子元素最前面添加一个元素
+    // $('div').prepend( $('p') );
+
+
+    // child.appendTo(parent)  作用相当于   parent.append(child)
+    // $('div').append( $('p') );
+    // $('p').appendTo($('div'));
+
+    // child.prependTo(parent) 相当于  parent.prepend(child)
+    // $('p').prependTo( $('div') );
+    // $('div').prepend( $('p') );
+
+
+    // before:    node.before(node1)
+    // afther
+
+    // 把p添加到div的前面，作为兄弟元素
+    // $('div').before( $('p') );
+
+
+    // $('div').after( $('p') );
+
+
+
+    /* 
+      parent.append(child)  把child追加到parent的子元素最后面
+      child.appendTo(parent ) 把child追加到parent的子元素最后面
+      parent.prepend(child)  把child追加到parent的子元素最前面
+      child.prependTo(parent)把child追加到parent的子元素最前面
+
+      div.before(p) :  把p添加到div的前面
+      div.after(p):   把p添加到div的后面
+    */ 
+  </script>
+</body>
+</html>

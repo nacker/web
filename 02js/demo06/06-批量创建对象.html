@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // // zs
+    // var zs = {};
+    // zs.name = '张三';
+    // zs.age = 18;
+    // zs.gender = '男';
+    // zs.sayHi = function() {
+    //   console.log(this.name);
+    // }
+
+    // // ls
+    // var ls = {};
+    // ls.name = '李四';
+    // ls.age = 50;
+    // ls.gender = '女';
+    // ls.sayHi = function() {
+    //   console.log(this.name);
+    // }
+
+    // 创建人
+    // 批量创建对象  -------工厂函数
+    function createPerson(name, age, gender) {
+      var obj = new Object();
+      obj.name = name;
+      obj.age = age;
+      obj.gender = gender;
+      obj.sayHi = function() {
+        console.log(this.name);
+      }
+      return obj;
+    }
+
+    var zs = createPerson('张三', 50, '女');
+    var ls = createPerson('李四', 100, '男');
+    zs.sayHi();
+    ls.sayHi();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <style>
+    .container {
+      background-color: pink;
+      height: 200px;
+    }
+    .container div {
+      border: 1px solid #000;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- container类会自动设置版心，有左右各15的padding -->
+  <!-- row: 作用：抵消15px的padding -->
+  <!-- 
+    栅格类
+    col-xx-yy
+    xx: 什么屏生效 lg 大屏   md 中屏以上   sm 小屏以上  xs: 超小屏以上
+    yy: 1-12 占多少格
+  -->
+  <div class="container">
+    <div class="col-lg-4 col-md-4 col-sm-6">在大屏下占用6格</div>
+  </div>
+</body>
+</html>

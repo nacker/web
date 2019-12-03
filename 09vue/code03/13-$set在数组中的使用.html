@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in students" :key="item.id">{{item.name}}</li>
+      </ul>
+
+      <button @click="btnChangeName">改名字</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          students: [
+            { id: 1, name: "王伟" },
+            { id: 2, name: "桂安" },
+            { id: 3, name: "传智吴彦祖（耿佳想）" }
+          ]
+        },
+        methods: {
+          btnChangeName() {
+            // 数组通过索引直接修改索引对应的内容，是无法实现响应式的效果
+            // this.students[1] = {id: 2, name: "贵安"};
+            this.$set(this.students, "1", {id: 2, name: "贵安"})
+
+            // this.$set(要设置属性的对象, "要修改/添加的属性名", 值)
+
+
+            // 什么时候用$set??
+            // 1. 当给对象动态添加属性的时候，需要用$set
+            // 2. 当想要通过数组的下表给元素赋值的时候，需要用$set
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

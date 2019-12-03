@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>购物车</title>
+</head>
+
+<body>
+  <h3>商品价格列表</h3>
+  <input type="checkbox" name="item" value="300" /> 运动鞋<br />
+  <input type="checkbox" name="item" value="200" /> 板鞋<br />
+  <input type="checkbox" name="item" value="3000" /> 笔记本电脑<br />
+  <input type="checkbox" name="item" value="400" /> 手表<br />
+  <input type="checkbox" name="item" value="150" /> 厨具<br />
+  <hr />
+  <input type="checkbox" id="all" οnclick="selectAll()" />全选/全不选 &nbsp;
+  <input type="button" id="reverse" οnclick="reverseSelect()" value=" 反 选 " />&nbsp;
+  <input type="button" value=" 结 账 " οnclick="total()" />&nbsp;<span id="result"></span>
+
+  <script>
+    /*点击全选和全不选的按钮 其他的复选框 应该跟全选框一致*/
+    function selectAll() {
+      //点击全选的状态.
+      //1.获得全选和全不选的状态值 通过checked属性  checked="checked" ==>>html语法
+      var allCkb = document.getElementById("all");
+      //checked属性是boolean类型 ==>> javascript语法
+      //alert(allCkb.checked);
+
+      //2.获得其他复选框
+      var otherCkb = document.getElementsByName("item");
+      for (var i = 0; i < otherCkb.length; i++) {
+        //全选框的状态赋值给每一个复选框
+        otherCkb[i].checked = allCkb.checked;
+      }
+    }
+    //点击事件
+    function reverseSelect() {
+      //获得其他复选框即可
+      var otherCkb = document.getElementsByName("item");
+      //遍历
+      for (var i = 0; i < otherCkb.length; i++) {
+        otherCkb[i].checked = !otherCkb[i].checked;
+      }
+    }
+    //点击结账
+    function total() {
+      //1.获得所有复选框
+      var otherCkb = document.getElementsByName("item");
+
+      var totalPrice = 0;
+      //2.循环判断哪些被选中
+      for (var i = 0; i < otherCkb.length; i++) {
+        if (otherCkb[i].checked == true) {
+          //3.选中的价格相加
+          totalPrice += parseInt(otherCkb[i].value);
+        }
+      }
+      alert(totalPrice);
+    }
+  </script>
+
+</body>
+
+</html>

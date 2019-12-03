@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul {
+      width: 700px;
+      height: 60px;
+      margin: 0 auto;
+    }
+
+    li {
+      float: left;
+      width: 100px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      background-color: #000;
+      position: relative;
+      overflow: hidden;
+    }
+    a {
+      color: blue;
+      font-size: 24px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 60px;
+      left: 0;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <a href="#">导航1</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航2</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航3</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航4</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航5</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航6</a>
+      <span></span>
+    </li>
+    <li>
+      <a href="#">导航7</a>
+      <span></span>
+    </li>
+  </ul>
+
+
+  <!-- 用户体验 -->
+  <button>切换</button>
+  <div>
+    <audio src="mp3/1.mp3"></audio>
+    <audio src="mp3/2.mp3"></audio>
+    <audio src="mp3/3.mp3"></audio>
+    <audio src="mp3/4.mp3"></audio>
+    <audio src="mp3/5.mp3"></audio>
+    <audio src="mp3/6.mp3"></audio>
+    <audio src="mp3/7.mp3"></audio>
+  </div>
+  <img src="1.jpg" alt="">
+  
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      var $li=$('li');
+      var $audio=$('audio');
+      var flag=true;
+      var index=1;
+      // 1. 导航动画效果
+     $li.mouseenter(function() {
+       $(this).children('span').stop().animate({top:0});
+       var idx=$(this).index();
+       $audio.get(idx).load();
+       $audio.get(idx).play();
+     })
+     $li.mouseleave(function() {
+       $(this).children('span').stop().animate({top:60});
+     })
+
+      // 给document注册键盘按下和键盘弹起事件
+    $(document).keydown(function(e) {
+      if(flag) {
+        flag=false;
+        var code=e.keyCode;
+        if (code>=49 && code<=55) {
+          $li.eq(code-49).mouseenter();
+        }
+      }
+    })
+      // 如果键盘按下不松开，会导致事件一直在触发
+      // 键盘按下只触发一次mouseenter
+    $(document).keyup(function(e) {
+      flag = true;
+      var code = e.keyCode;
+      if (code <= 55 && code >= 49) {
+        // 触发对应的li的mouseenter事件
+        $('li').eq(code - 49).mouseleave();
+      }
+    })
+    // 切换图片
+    $('button').click(function() {
+      index++;
+      if( index>3) {
+        index=1;
+      }
+      $('img').attr('src',index+'.jpg');
+    })
+    });
+  </script>
+</body>
+</html>

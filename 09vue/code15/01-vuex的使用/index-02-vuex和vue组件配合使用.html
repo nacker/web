@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <xiongda></xiongda>
+    <xionger></xionger>
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vuex/dist/vuex.js"></script>
+
+  <script>
+  
+    // 1. 创建一个vuex store实例
+    const store = new Vuex.Store({
+      state: {
+        msg: "熊大，光头强又来砍树了"
+      },
+      mutations: {
+        updateMsg(state, value){
+          state.msg = value;
+        }
+      }
+    })
+
+    Vue.component("xiongda", {
+      template: "<div>{{$store.state.msg}} <button @click='changeMsg'>改数据</button></div>",
+      methods: {
+        changeMsg(){
+          this.$store.commit("updateMsg", "打他！");
+        }
+      }
+    })
+
+    Vue.component("xionger", {
+      template: "<div>{{$store.state.msg}}</div>"
+    })
+
+    // 2. 将vuexstore实例和vm实例关联起来
+    const vm = new Vue({
+      el: "#app",
+      store
+    })
+
+    // 当把store实例和根组件关联之后
+    // store就可以在任意组件中通过 this.$store 就可以访问到这个store实例了
+
+  </script>
+</body>
+</html>

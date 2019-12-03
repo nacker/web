@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    select {
+      width: 200px;
+      background-color: teal;
+      font-size: 24px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <select multiple id="src">
+    <option>北京</option>
+    <option>上海</option>
+    <option>深圳</option>
+    <option>杭州</option>
+  </select>
+  <button>></button>
+  <button>>></button>
+  <button><</button>
+  <button><<</button>
+  <select multiple id="tar"></select>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $('button').eq(0).click(function() {
+        // appendTo( parent )  parent允许直接是一个选择器
+        $('#src > option:selected').appendTo('#tar');
+      })
+
+      $('button').eq(1).click(function() {
+        // appendTo( parent )  parent允许直接是一个选择器
+        $('#src > option').appendTo('#tar');
+      })
+
+      $('button').eq(2).click(function() {
+        // appendTo( parent )  parent允许直接是一个选择器
+        $('#tar > option:selected').appendTo('#src');
+      })
+
+      
+      $('button').eq(3).click(function() {
+        // appendTo( parent )  parent允许直接是一个选择器
+        $('#tar > option').appendTo('#src');
+      })
+    });
+
+
+  </script>
+</body>
+</html>

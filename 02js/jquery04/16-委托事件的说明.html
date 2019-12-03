@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <button>增加一个p</button>
+  <div>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+    <span>哈哈</span>
+    <p>这是一个p</p>
+    <p>这是一个p</p>
+  </div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $('button').bind('click', function() {
+        $('<p>这是一个新p</p>').appendTo('div');
+      });
+
+
+      $('p').bind('click', function() {
+        console.log('哈哈');
+      })
+
+
+
+      // 委托事件  代理事件
+      // delegate  undelegate
+      // 给需要注册的子元素的公共的父元素去注册这个委托事件
+      // 参数1： 选择器， 指定谁来触发这个事件
+
+
+      // 1. 给父元素注册
+      // 2。一定要指定触发的元素，  最终事件还是交给了子元素
+      $('div').delegate('p', 'click', function() {
+        console.log('哈哈');
+      });
+
+
+      $('div').click(function(){
+        console.log('给div自己的注册的事件');
+      })
+
+    });
+  </script>
+</body>
+</html>

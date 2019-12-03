@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li id="one">1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+  </ul>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // jquery实质上就是一个js库， 就是一个js文件，内部封装了大量的js的方法。
+
+    // jquery的版本： 1.12.4 这是能兼容ie678的最后一个版本
+
+    // 入口函数， 可以保证页面加载，不会等待图片加载，加载速度比较快
+    // $(document).ready(function(){})   $(function(){})
+
+
+    // DOM对象与jquery对象
+    // jquery这个文件封装的大量的方法不是直接给 DOM对象添加的。
+    // jquery这个文件中封装的这些方法DOM对象无法使用， jquery对象
+    // jquery把DOM操作的细节给封装起来了。
+
+    // var one = document.querySelector('#one');
+    // DOM对象无法直接调用jquery中的方法。
+    // jquery对象也无法直接调用DOM的方法
+    // one.innerText = '2';
+    // one.text('2');
+    // $('#one').text('2');
+
+    // DOM对象 -----> jquery对象   $(dom对象)
+    // jquery对象 ----> dom对象    $('li')[0]  $('#one')[0]
+    var result = $('li');
+    console.log(result.get(2));
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "03-art-template-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-模版引擎的测试.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2"
+  }
+}

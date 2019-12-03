@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <button>发送请求</button>
+    <div></div>
+    <p>333</p>
+    <p>4444</p>
+
+    <script>
+      // 点击按钮，发送一个ajax请求  get请求
+      // 把最终获取到的数据 异步的放到div
+
+      var button = document.querySelector('button')
+      button.onclick = function() {
+        // 发送一个http请求， 1. 通过表单提交  2. ajax发送
+        //1. 创建要给ajax对象,这个对象可以用来发送http请求，异步
+        var xhr = new XMLHttpRequest()
+
+        //2. 发送http请求  准备好请求三部分 （请求行， 请求头,  请求体）
+        // 2.1 设置请求行
+        // 参数1： 请求的方式  get / post
+        // 参数2： 请求的url地址
+        xhr.open('get', '05.php')
+
+        // 2.2 设置请求头
+        // get请求不用设置请求头
+
+        // 2.3 设置请求体
+        // 参数： 请求体，如果get请求，没有请求体，，传null
+        xhr.send(null)
+      }
+
+      /* 
+        1. 创建一个ajax对象
+        var xhr = new XMLHttpRequest();
+
+        2. 设置请求报文
+        2.1 设置请求行
+        xhr.open('get', '05.php');
+        2.2 设置请求头 
+        2.3 设置请求
+        // get请求没有请求，所以传null
+        xhr.send(null)
+      
+      */
+    </script>
+  </body>
+</html>

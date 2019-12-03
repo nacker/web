@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      width: 800px;
+      height: 40px;
+      border: 1px solid #000;
+      margin: 100px auto;
+      display: flex;
+    }
+
+
+    /* flex: 分配主轴的剩余空间 */
+    /* order: 用于给子元素进行排序用的，值越小，越靠前， 默认0 */
+    /* align-self: 用于设置当前子元素侧轴的位置 */
+    li {
+      order: 1;
+      flex: 1;
+      line-height: 40px;
+      text-align: center;
+      border-right: 1px solid #000;
+    }
+
+    li:nth-child(2) {
+      flex: 2;
+      order: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li>大陆剧</li>
+    <li>港台剧</li>
+    <li>美剧</li>
+    <li>韩剧</li>
+    <li>日剧</li>
+    <li>泰剧</li>
+  </ul>
+</body>
+</html>

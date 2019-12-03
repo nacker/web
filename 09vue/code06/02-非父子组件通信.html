@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <brother-a></brother-a>
+    <brother-b><button>通知熊大</button></brother-b>
+    
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+
+
+    // globel-event-bus  全局事件总线
+
+    const bus = new Vue();
+
+
+    Vue.component("brotherA", {
+      template: "<div>这是熊大</div>",
+      methods: {
+        getMsgFromBear2(value){
+          console.log("熊二来信了："+value)
+        }
+      },
+      created(){
+        // $on是用来注册事件的
+        // bus.$on("事件名", 事件函数)
+        bus.$on("getMsg", this.getMsgFromBear2)
+      }
+    })
+
+    Vue.component("brotherB", {
+      template: "<div>这是熊二 <button @click='sendMsgToBearBig'>通知熊大</button></div>",
+      data(){
+        return {
+          msg: "熊大，光头强又来砍树了"
+        }
+      },
+      methods: {
+        sendMsgToBearBig(){
+          bus.$emit("getMsg", this.msg);
+        }
+      }
+    })
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

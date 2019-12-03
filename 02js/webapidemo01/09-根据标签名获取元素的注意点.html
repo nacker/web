@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="left">
+    <li>11</li>
+    <li>11</li>
+    <li>11</li>
+    <li>11</li>
+  </ul>
+
+
+  <ul id="right">
+    <li>2</li>
+    <li>2</li>
+    <li>2</li>
+    <li>2</li>
+  </ul>
+  <script>
+    // 1. document.getElementsByTagName 无论找到多少个，哪怕是0个，都会返回一个伪数组
+    // 2. 方法可以缩小查找范围
+    var left = document.getElementById('left');
+    // 查找left中所有的li
+    var lis = left.getElementsByTagName('li');
+    console.log(lis);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var arr = ['张飞', '赵云', '马超', '关羽'];
+    // console.log(arr[1]);
+
+    // 0 --- 3
+    // 数组的遍历： 遍及所有  从第一个开始到最后一个都要挨个访问一遍。
+    // var arr1 = [100, 90, 80, 77];
+    var arr = ['张飞', '赵云', '马超', '关羽', '曹操', '孙策'];
+    //遍历数组
+    /* 
+      // 下标从0开始
+      // i最多只能到length-1 到不了length
+      for(var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+     */
+    // for(var i = 0; i < arr.length; i++) {
+    //   console.log(arr[i]);
+    // }
+
+
+    var arr = ['张飞', '赵云', '马超', '关羽', '曹操', '孙策'];
+    // 逆向遍历
+    for(var i = arr.length - 1; i >= 0; i--) {
+      console.log(arr[i]);
+    }
+  </script>
+</body>
+</html>

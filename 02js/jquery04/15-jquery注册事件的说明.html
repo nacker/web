@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      //1. 直接使用事件名进行注册 click mouseenter
+      //  优点： 相比js来说，注册的事件不会覆盖
+      //  缺点： 没法取消
+      // $('button').click(function() {
+      //   console.log('哈哈哈');
+      // });
+      // $('button').click(function() {
+      //   console.log('嘻嘻嘻');
+      // });
+
+      
+      // 2. bind方法  unbind方法
+      // 优点： 可以移除事件
+      // 缺点： 无法给动态创建的元素注册事件
+      // 参数1： 事件名
+      // 参数2： 函数，事件处理程序
+      // $('button').bind('click', function() {
+      //   console.log('哈哈');
+      // });
+      // $('button').bind('click', function() {
+      //   console.log('呵呵');
+      // });
+      // $('button').bind('mouseenter', function() {
+      //   console.log('嘻嘻');
+      // })
+
+      // $('button').unbind('click');
+
+      // $('button').bind('click mouseenter', function() {
+      //   console.log('哈哈');
+      // });
+
+
+      // 3. 委托事件  代理事件
+      
+    });
+  </script>
+</body>
+</html>

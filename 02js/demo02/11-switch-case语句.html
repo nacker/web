@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     // switch: 开关选择
+    /* 
+      语法
+      switch (变量) {
+        case 值1:
+          语句1;
+          break;
+        case 值2:
+          语句2;
+          break;
+        ...
+        default: 
+          默认执行的语句;
+      } 
+
+      判断变量的值， 如果变量等于 值1， 执行语句1  break 结束整个switch
+      变量等于值2 执行语句2
+      ..
+      变量值不等于所有的case, 执行默认的语句
+    */
+    // var num = 8;
+    // switch (num) {
+    //   case 8:
+    //     console.log('8');
+    //     break;
+    //   default:
+    //     console.log('其他');
+    // }
+
+    // 需求： 判断是星期几  输入一个数字  0-6
+    var week = +prompt('请输入一个数字 0-6');
+    switch (week) {
+      case 0:
+        console.log('今天是星期天');
+        break;
+      case 1:
+        console.log('今天是星期一');
+        break;
+      case 2:
+        console.log('今天是星期二');
+        break;
+      case 3:
+        console.log('今天是星期三');
+        break;
+      case 4:
+        console.log('今天是星期四');
+        break;
+      case 5:
+        console.log('今天是星期五');
+        break;
+      case 6:
+        console.log('今天是星期六');
+        break;
+      default:
+        console.log('你输入的数字有误');
+        break;
+    }
+  </script>
+</body>
+</html>

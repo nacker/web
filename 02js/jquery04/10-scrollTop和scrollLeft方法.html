@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      width: 4000px;
+      height: 4000px;
+    }
+    button {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <button>回到顶部</button>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // scrollTop: 获取和设置页面滚动条的scrollTop值 
+    // scrollLeft: 
+
+    $(window).scroll(function() {
+      // console.log(window.pageYOffset);
+      // console.log(document.documentElement.scrollTop);
+      // console.log($(this).scrollTop());
+    });
+
+    $('button').click(function() {
+      // $(window).scrollTop(0);
+      // pageYOffset只读的，不允许修改
+      // window.pageYOffset = 0;
+      // document.documentElement.scrollTop = 0;
+
+      $(window).scrollTop(0);
+    });
+
+
+
+    /* 
+      获取页面的scrollTop
+        jq中：  $(window).scrollTop()
+        js中：  window.pageYOffset 或者  document.documentElement.scrollTop
+
+      设置scrollTop
+        jq:    $(window).scrollTop(0)
+        js:    document.documentElement.scrollTop = 0
+    */
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <button>生成</button>
+  <div>
+  </div>
+  <script>
+    var arr = [
+      '习近平电贺金正恩再次就任朝鲜国务委员会委员长',
+      '西柏坡,启迪新时代"赶考"征程 壮丽70年·奋斗新时代',
+      '祖孙三代“建”证时代发展  共和国史诗激发磅礴力量',
+      '为老挝橡胶带来新生机 “一带一路”有多“近”  专题',
+      '海关总署:一季度中美贸易总值下降11%  世园会专题1',
+      '海关总署:一季度中美贸易总值下降11%  世园会专题2',
+      '海关总署:一季度中美贸易总值下降11%  世园会专题3',
+      '海关总署:一季度中美贸易总值下降11%  世园会专题'
+    ];
+
+    // 1. 给button注册点击事件
+    // 2. 动态生成ul， 把ul添加到div中
+    // 3. 根据数组的个数，动态生成li，添加到ul中
+    var button = document.querySelector('button');
+    var div = document.querySelector('div');
+    // button.onclick = function() {
+      // 内存中动态生成ul
+      var ul = document.createElement('ul');
+      // 添加到div中
+      div.appendChild(ul);
+
+      // 遍历数组，动态生成li
+      for(var i = 0; i < arr.length; i++) {
+        // 动态创建li
+        var li = document.createElement('li');
+        // 给每个li设置内容
+        li.innerText = arr[i];
+        // 添加到ul中
+        ul.appendChild(li);
+      }
+
+    // }
+  </script>
+</body>
+</html>

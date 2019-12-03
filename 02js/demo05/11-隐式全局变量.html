@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量可以不声明，可以直接赋值，
+    // 没有声明的变量，叫做隐式全局变量（以后杜绝）  浏览器不认识这个变量，又给这个变量赋值了，才是隐式全局变量。
+    // var num2 = 11;
+    // function fn() {
+    //   num2 = 33;
+    //   console.log(num2);
+    // }
+    // fn();
+    // console.log(num2);
+
+
+    fn3();
+    console.log(c);
+    console.log(b);
+    console.log(a);
+    function fn3() {
+      var a = b = c = 9;
+      // c = 9;
+      // b = 9;
+      // var a = 9;
+      console.log(a);
+      console.log(b);
+      console.log(c);
+    }
+
+
+    // 代码规范问题： 无论是变量还是函数 都应该先声明，才能使用
+  </script>
+</body>
+</html>

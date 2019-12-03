@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <mycomp :num="10"></mycomp>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+
+    // Prop校验
+
+    Vue.component("mycomp", {
+      template: "<div>{{num * 10}}</div>",
+      props: {
+        // 规定，传入到组件内的num属性，必须是数字类型的！
+        // num: Number
+        // num: [Number, String]
+        num: {
+          type: Number,
+          required: true
+        }
+      }
+    })
+
+    new Vue({
+      el: "#app",
+      data: {
+        msg: "hello world"
+      }
+    })
+  </script>
+</body>
+</html>

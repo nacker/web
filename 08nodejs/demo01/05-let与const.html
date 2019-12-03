@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var定义变量, 预解析  bug的源头
+      // 预解析会让代码不可控
+      // var num = 11
+      // function num() {
+      //   console.log('哈哈')
+      // }
+      // num()
+
+      // ES6提供了两种定义变量的新方式
+      // let
+      // const
+
+      // 关键字  和  保留字
+
+      // 1  let可以和var一样定义变量
+      // 2. let定义的变量不会预解析  必须先声明变量，才可以使用
+      // 3. let不能重复定义相同的变量
+      // 4. let具有块级作用域 （全局作用域和局部作用域）
+      // console.log(num)
+      // let num = 11
+      // let num = 22
+      // console.log(num)
+      // let num = 11
+      // {
+      //   console.log(num)
+      // }
+      // console.log(num)
+      // let age = 30
+      // if (age >= 20) {
+      //   let num = 100
+      //   console.log(num)
+      // }
+
+      // for (let i = 0; i < 10; i++) {
+      //   setTimeout(function() {
+      //     console.log(i)
+      //   }, i * 100)
+      // }
+
+      // const  :
+      // 1. 常量  表示一个值不能变化的常量
+      // 2. const定义的变量必须初始化， 必须定义的时候就赋值
+      // 3. const变量也可以存储一个对象, 只要地址不发生改变即可
+      // 4. 不会与解析
+      // 5. 不可以重复定义
+      // 6 也有块级作用域
+      // const pi = 3.14
+      // const g = 0.98
+      // const num = 10
+      // num++
+      // console.log(num)
+      // const num
+      // console.log(num)
+      // const obj = {
+      //   name: 'zs',
+      //   age: 18
+      // }
+      // obj = {}
+      // console.log(obj)
+
+      // let 用的多还是const用的多
+      // 能用const的地方就用const，保证数据不会改变
+      // 明确这个数据会发生改变，就用let
+
+      // 以后不用var定义变量  可以用
+      // 通常用const来定义变量
+      // 如果这个值需要发生改变，就用let
+
+      let obj = {
+        name: 'zs'
+      }
+    </script>
+  </body>
+</html>

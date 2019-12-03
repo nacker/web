@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <input type="text" v-focus="msg">
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      // 自定义指令中有钩子函数，钩子函数指的就是在特定的时机下触发的函数
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world"
+        },
+        directives: {
+          focus: {
+
+            // 当vue要对当前指令所在的元素进行解析的时候执行
+            bind(el){
+              console.log("bind 钩子函数被执行了")
+              
+            },
+            // 当当前指令所在的元素被插入到页面中的时候，会执行的函数
+            inserted(el){
+              console.log("inserted 钩子函数被执行了")
+              // el.focus();
+            },
+            // 当当前指令绑定的数据，发生改变的时候，会执行update函数
+            update(el){
+              console.log("update 钩子函数被执行了")
+              
+            },
+            // 当数据改变完成，元素更新完毕之后，会执行componentUpdated
+            componentUpdated(el){
+              console.log("componentUpdated 钩子函数被执行了")
+              el.value='sbb'
+            },
+            // 当指令被卸载的时候
+            unbind(el){
+              console.log("unbind 钩子函数被执行了")
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

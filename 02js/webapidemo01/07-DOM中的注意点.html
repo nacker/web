@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<body>
+  <img src="1.jpg" alt="" id="img">
+  <script>
+    // 注意1. 以后写dom的代码，js代码，通常都会写在body的最后面。保证页面先加载，才能获取页面中的元素
+    // 保证id存在，才能获取到元素
+    var img = document.getElementById('img');
+    // console.log(img);
+    // undefined: 一个没有赋值的变量
+    // null: 指定的一个空的对象  本来应该是一个对象
+    // console.log(img);
+    console.dir(img);
+
+    img.src = '2.jpg';
+  </script>
+</body>
+</html>
+

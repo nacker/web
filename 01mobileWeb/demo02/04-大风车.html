@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 240px;
+      height: 240px;
+      /* background-color: pink; */
+      margin: 100px auto;
+      animation: rotate 1s infinite linear;
+      position: relative;
+    }
+
+    .item {
+      position: absolute;
+      background-color: green;
+      width: 60px;
+      height: 120px;
+      top: 0;
+      left: 60px;
+      border-radius: 60px 0 0 60px;
+      transform-origin: right bottom;
+    }
+
+    .item:nth-child(2) {
+      background-color: yellow;
+      transform: rotate(90deg);
+    }
+
+    .item:nth-child(3) {
+      background-color: purple;
+      transform: rotate(180deg);
+     
+    }
+
+    .item:nth-child(4) {
+      background-color: hotpink;
+      transform: rotate(270deg);
+    }
+
+    /* .item:nth-child(2) {
+      position: absolute;
+      background-color: yellow;
+      width: 120px;
+      height: 60px;
+      top: 60px;
+      left: 120px;
+      border-radius: 60px 60px 0 0;
+    } */
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>

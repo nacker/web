@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 简单类型：number string boolean undefined null。。 值类型
+    // 复杂类型：Array function object 所有自定义的类型。。。引用类型
+
+    // 内存存储
+    // 代码执行也是占用的内存
+    // 对于简单类型来说，变量存储的直接就是值本身。 所以把简单类型叫做值类型。
+    var num = 11;
+
+
+    // 复杂类型：对于复杂类型来说，变量存储的仅仅是复杂类型的地址， 复杂类型会在内存中单独开辟一块空间来存储。
+    var obj = {
+      name: 'zs',
+      age: 18
+    };
+
+
+    // 值类型： 简单类型， 变量在存储简单类型的时候， 直接就存储了值本身。
+    // 引用类型： 复杂类型，复杂类型在存储的时候，单独开辟空间存储，变量存储的仅仅是复杂类型的地址。
+  </script>
+</body>
+</html>

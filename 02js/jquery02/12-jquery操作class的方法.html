@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .base {
+      background-color: pink;
+    }
+
+    .fz {
+      font-size: 50px;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="aa bb">1</li>
+    <li class="aa bb">2</li>
+    <li class="aa bb">3</li>
+    <li class="aa bb">4</li>
+    <li class="aa bb">5</li>
+    <li class="aa bb">6</li>
+  </ul>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // addClass(name): 添加类名
+    // removeClass(name): 移除类名
+    // toggleClass(name): 切换类名
+    // hasClass(name): 是否有某个类名
+
+    $('li').addClass('base dd ee');
+    // $('li').addClass('red');
+
+    $('li').removeClass('bb');
+
+    $('li').toggleClass('cc');
+    $('li').toggleClass('cc');
+
+    console.log( $('li').hasClass('red')  );
+  </script>
+</body>
+</html>

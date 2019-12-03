@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    // 事件对象： 任意一个事件都会有一个事件对象
+    // 事件对象的作用： 用来获取鼠标的位置， 键盘的按下的键
+
+    // 当我们需要获取鼠标的位置   或者按下的键 需要用到事件对象
+    
+    // 怎么获取事件对象
+    // 在注册事件的时候，给function提供一个形参
+    var button = document.querySelector('button');
+    button.onclick = function(event) {
+      console.log(event);
+    }
+
+    // button.addEventListener('click', function(e) {
+    //   console.log(e);
+    // });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      /* 
+        透视，视距
+        一般要给旋转元素的父元素加
+        1000px 眼睛距离 页面的距离
+        perspective: 值越大，表示距离越远，近大远小的效果就越不明显
+                     值越大，表示距离越远，近大远小的效果就越明显, 不能给太小
+      */
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      margin: 100px auto;
+      transition: 1s;
+    }
+
+    img:hover {
+      transform: rotateX(60deg);
+    }
+  </style>
+</head>
+<body>
+  <img src="images/box.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a href="http://www.baidu.com">注册成功，3秒自动跳转到登录页</a>
+  <script>
+    var link=document.querySelector('a');
+    var time=3;
+    setInterval(function(){
+      time--;
+      link.innerText='注册成功，'+time+'秒自动跳转到登录页';
+      if (time===0) {
+        location.href=link.href;
+      }
+    },1000)
+  </script>
+</body>
+</html>

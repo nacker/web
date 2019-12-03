@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>发送get请求</button>
+    <button>发送post请求</button>
+    <script>
+      // 第一种方式： get()  post()
+      // 第二种方式： ajax()
+      var btn1 = document.querySelector('button:nth-child(1)')
+      var btn2 = document.querySelector('button:nth-child(2)')
+
+      btn1.onclick = function() {
+        var xhr = new XMLHttpRequest()
+        xhr.open('get', '07-get.php?username=admin&password=123456')
+        xhr.send(null)
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText)
+            }
+          }
+        }
+      }
+
+      btn2.onclick = function() {
+        var xhr = new XMLHttpRequest()
+        xhr.open('post', '07-post.php')
+        xhr.setRequestHeader(
+          'content-type',
+          'application/x-www-form-urlencoded'
+        )
+        xhr.send('username=admin&password=123456')
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText)
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

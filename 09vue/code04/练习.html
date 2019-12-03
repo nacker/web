@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #parent{
+      width: 200px;
+      height: 200px;
+      background-color:pink;
+    }
+
+    #child{
+      width: 100px;
+      height: 100px;
+      background-color:hotpink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    
+    <div id="parent" v-myon:click.capture="parentClickHandler">
+      <div id="child" v-myon:click.stop="childClickHandler"></div>
+    </div>
+
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+
+    Vue.directive('myon',{
+      bind(el,binding){
+        console.log(binding)
+        el.addEventListener(binding.arg,function(e){
+          binding.value(e) 
+          if(binding.modifiers.stop){
+            e.stopPropagation()
+          }
+        })
+      }
+    })
+
+    const vm = new Vue({
+      el: "#app",
+      methods: {
+        childClickHandler(){
+          alert("子元素被点击了")
+        },
+        parentClickHandler(){
+          alert("父元素被点击了")
+        }
+      }
+    })
+  </script>
+</body>
+</html>

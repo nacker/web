@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>菲菲</li>
+    <li>燕燕</li>
+    <!-- 倾国倾城 -->
+    <li>如花</li>
+    <li>死鱼</li>
+  </ul>
+
+  <script>
+    var ul = document.querySelector('ul');
+
+    // childNodes : 获取所有的子节点
+    // children: 获取所有的子元素 
+    // 元素： 标签节点
+    // 节点： 可以是注释 可以是文本  标签
+    // console.log(ul.childNodes); // 11
+    console.log(ul.children);  // 4
+
+
+    // firstChild : 第一个子节点
+    // firstElementChild: 第一个子元素
+    console.log(ul.firstChild);
+    console.log(ul.firstElementChild);
+    console.log(ul.children[0]);
+
+    // lastChild: 最后一个子节点
+    // lastElementChild: 最后一个子元素
+    console.log(ul.lastChild);
+    console.log(ul.lastElementChild);
+
+
+
+
+
+    // 找所有的  childNodes    children
+    // 找第一个  firstChild    firstElementChild
+    // 找最后一个： lastChild  lastElementChild
+  </script>
+</body>
+</html>

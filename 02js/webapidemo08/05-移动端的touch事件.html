@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    // 移动端有专属的四个事件
+    // touchstart: 开始触摸
+    // touchmove: 触摸移动
+    // touchend: 触摸结束
+    // touchcancel: 触摸取消  被系统取消，系统有一些优先级很高的应用，电话
+    var div = document.querySelector('div');
+    // div.addEventListener()
+    // 手指的位置
+    div.addEventListener('touchstart', function(e) {
+      
+      // touches: 当前屏幕上所有的手指。
+      // targetTouches: 目标元素上的手指
+      // changedTouches: 改变的手指
+      // 如果只考虑一根手指的情况
+      // console.log(e.touches[0]);
+      // console.log(e.targetTouches[0]);
+      // console.log(e.changedTouches[0]);
+      var touch = e.touches[0];
+      console.log(touch.pageX);
+      console.log(touch.pageY);
+    });
+    div.addEventListener('touchmove', function(e) {
+      console.log('移动了');
+    });
+    div.addEventListener('touchend', function(e) {
+      console.log('结束了');
+    });
+    div.addEventListener('touchcancel', function() {
+      console.log('取消了');
+    });
+
+
+
+
+    /* 
+      touchstart
+      touchmove
+      touchend
+
+      获取到手指的滑动距离
+      e.touches[0]
+      e.targetTouches[0]
+      e.changedTouches[0]
+
+      手指的位置
+      pageX pageY
+    */
+  </script>
+</body>
+</html>

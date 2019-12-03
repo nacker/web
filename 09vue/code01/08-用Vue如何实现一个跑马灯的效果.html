@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box {
+      border: 1px solid pink;
+      background-color: #000;
+      color: red;
+      height: 50px;
+      width: 500px;
+      margin: 0 auto;
+      font-size: 33px;
+      overflow: hidden;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="box">
+      {{welcomeWord}}
+    </div>
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        welcomeWord: "~，来了老弟~，来了老弟~，来了老弟~，来了老弟~，来了老弟~，来了老弟~，来了老弟~来了老弟"
+      }
+    })
+
+    setInterval(() => {
+      vm.welcomeWord = vm.welcomeWord.slice(1) + vm.welcomeWord.slice(0, 1)
+    }, 200)
+  </script>
+</body>
+</html>

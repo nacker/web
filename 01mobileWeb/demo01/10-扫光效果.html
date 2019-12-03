@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+    div {
+      width: 500px;
+      height: 384px;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    /* 光 */
+    div::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 400px;
+      top: 0;
+      left: -300px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255,255,255, 1), rgba(255, 255, 255, 0));
+      transform: skewX(-40deg);
+     
+    }
+
+    div:hover::after {
+      left: 800px;
+      transition: 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="images/box.jpg" alt="">
+  </div>
+</body>
+</html>

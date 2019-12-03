@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Array是一个构造函数
+    // var arr = new Array();
+
+
+    // 1. arr.join() : 会把数组中的每一项都拼接起来，拼接成一个字符串
+    // var arr = ['张飞', '赵云', '马超'];
+
+    // 参数： 分隔符， 默认是,
+    // 返回值：拼接好的字符串
+    // var str = arr.join('');
+    // console.log(str);
+
+
+    // 2. 数组的增删操作
+    // arr.push(): 在数组的最后面增加若干个元素 返回值：数组的新长度
+    // arr.unshift(): 在数组的前面增加若干个元素 返回值：数组的新长度
+    // arr.pop() : 在数组的最后面删除一个元素 返回删除掉的那个元素
+    // arr.shift(): 在数组的最前面删除一个元素 返回值删除掉的那个元素
+    var arr = ['张飞', '赵云', '马超'];
+    // arr.unshift('凋残');
+    // arr.unshift('西施');
+    // console.log(arr);
+    // arr.push('黄忠', '刘备');
+    // console.log(arr);
+    var result = arr.shift();
+    console.log(arr);
+    console.log(result);
+  </script>
+</body>
+</html>

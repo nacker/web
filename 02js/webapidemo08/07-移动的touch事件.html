@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    // 1. 移动端有3个事件  touchstart  touchmove touchend
+    var div = document.querySelector('div');
+    var startX;
+    var startY;
+    div.ontouchstart = function(e) {
+      // 获取到在div上触摸的手指
+      // 手指上有手指的位置  clientX clientY   pageX pageY
+      startX = e.touches[0].pageX;
+      startY = e.touches[0].pageY;
+    };
+    div.ontouchmove = function(e) {
+      // console.log(e.touches[0].pageX, e.touches[0].pageY);
+    };
+
+    div.ontouchend = function(e) {
+      // console.log(e.changedTouches[0].pageX, e.changedTouches[0].pageY)
+      var x = e.changedTouches[0].pageX - startX;
+      console.log(x);
+    }
+  </script>
+</body>
+</html>

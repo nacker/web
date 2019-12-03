@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button>显示</button>
+  <button>隐藏</button>
+  <button>切换</button>
+  <div></div>
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $('button').eq(0).click(function() {
+      // fade系列：用来让一个元素淡入和淡出的效果
+
+
+      // 作用：淡入  慢慢的显示出来  修改是透明度
+      // 参数1： 如果没有，默认是normal
+      // $('div').fadeIn(1000);
+      $('div').fadeIn(1000, function() {
+        console.log('动画结束了');
+      })
+    });
+
+    $('button').eq(1).click(function() {
+      $('div').fadeOut(1000);
+    });
+
+    //  转场动画
+    $('button').eq(2).click(function() {
+      $('div').fadeToggle();
+    })
+
+
+  </script>
+</body>
+</html>

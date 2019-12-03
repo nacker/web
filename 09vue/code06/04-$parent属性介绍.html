@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+
+    
+    <father></father>
+
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+
+    Vue.component("father", {
+      template: "<div>这是父组件 <son></son></div>",
+      data(){
+        return {
+          msg: "hello world"
+        }
+      }
+    })
+
+    Vue.component("son", {
+      template: "<div>这是子组件  <button @click='clkHandler'>获取父组件中的数据</button></div>",
+      methods: {
+        clkHandler(){
+         
+          // console.log(this.$parent)
+          // this.$parent获取到的就是当前组件的父组件实例
+          // 可以通过这个来访问父组件中所有内容
+          console.log(this.$parent.msg)
+        }
+      }
+    })
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

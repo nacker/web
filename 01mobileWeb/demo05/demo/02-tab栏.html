@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 引入了样式文件 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <!-- 引入了js文件: 现在大家不用去纠结 -->
+  <script src="jquery/jquery-1.12.4.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<div>
+
+  <!-- 头部的切换的导航 -->
+
+  <!-- 
+    bootstrap中盲人设备的属性
+      role属性
+      aria-****属性
+      带了sr-only属性的标签
+
+      ctrl + D: 匹配相同的内容，  一个一个往下选
+      ctrl + shift + L: 直接匹配所有的选中内容
+      ctrl + f: 查找
+      ctrl + h: 替换
+   -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+    <li><a href="#profile" data-toggle="tab">Profile</a></li>
+    <li><a href="#messages" data-toggle="tab">Messages</a></li>
+    <li><a href="#settings" data-toggle="tab">Settings</a></li>
+    <li><a href="#my" data-toggle="tab">我的</a></li>
+  </ul>
+
+  <!-- 具体要显示的内容 -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home">1</div>
+    <div class="tab-pane" id="profile">2</div>
+    <div class="tab-pane" id="messages">3</div>
+    <div class="tab-pane" id="settings">4</div>
+    <div class="tab-pane" id="my">5</div>
+  </div>
+
+</div>
+</body>
+</html>

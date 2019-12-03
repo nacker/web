@@ -1,0 +1,21 @@
+.box {
+  width: 100%;
+  height: 40px;
+}
+.box .left,
+.box .right {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+}
+.box .left {
+  float: left;
+}
+.box .right {
+  float: right;
+}
+p {
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+}

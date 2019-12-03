@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 插槽，当组件中需要一些内容，这些内容是通过在组件标签内书写，传递进去的，那么我们需要使用插槽进行接收 -->
+
+      <!-- 具名插槽： 插槽可以起名字， 将内容和插槽进行对应 -->
+
+      <!-- <mycomp><div slot="front">这是放在组件最前面的内容</div><div slot="back">这是放在组件最后面的内容</div></mycomp> -->
+
+      <!-- <el-button>按钮</el-button> -->
+
+      <!-- <mycomp>
+        <div slot="front">这个要放到前面</div>
+        <div slot="front">这个也要放到前面</div>
+        <div slot="back">这个放在后面</div>
+        <div slot="back">这个也要放在后面</div>
+      </mycomp> -->
+
+      <!-- <mycomp> -->
+        <!-- 如果有多个内容要放到同一个插槽里，那么就可以使用template标签把他们包起来 -->
+        <!-- template标签不会生成额外的标签，不会影响标签结构 -->
+          <!-- <template slot="front">
+              <div>这个要放到前面</div>
+              <div>这个也要放到前面</div>
+          </template>
+          
+          <template slot="back">
+              <div>这个放在后面</div>
+              <div>这个也要放在后面</div>
+          </template>
+        </mycomp> -->
+
+
+        <!-- 作用域插槽： 当我们在给组件中插槽填写内容的时候，如果想要用到组件中的数据，直接使用拿不到数据
+        这个时候就可以使用作用域插槽，把组件中的数据给传递出来，就可以直接使用了 -->
+
+        <!-- v-slot:插槽的名字="组件中传递出来的数据对象" -->
+        <mycomp><template v-slot:second="{btnText}"><button>{{btnText}}</button></template></mycomp>
+
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      // Vue.component("mycomp", {
+      //   template:
+      //     "<div> <slot name='front'></slot> 这是组件 <slot name='back'></slot> </div>"
+      // });
+
+      Vue.component("mycomp", {
+        template:
+          "<div>1： <slot name='first' :btnText='btnText'></slot> 2：<slot name='second' :btnText='btnText'></slot></div>",
+        data(){
+          return {
+            btnText: "按钮文字"
+          }
+        }
+      });
+
+
+      new Vue({
+        el: "#app"
+      });
+    </script>
+  </body>
+</html>

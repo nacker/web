@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{person.name}}
+
+    <input type="text" v-model="person.name">
+
+    <input type="text" v-model="person.age">
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm=new Vue({
+      el:'#app',
+      data:{
+        person:{
+          name:'富国',
+          age:18
+        }
+      },
+      watch:{
+        person:{
+          handler() {
+            console.log('我手机呢')
+          },
+          deep:true,
+          // 进来就执行一次代码
+          immediate:true
+        }
+      }
+    })
+  </script>
+</body>
+</html>

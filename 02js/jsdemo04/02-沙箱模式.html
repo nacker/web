@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 匿名函数自调用
+    // 沙箱： 作用，防止全局变量污染
+    (function fn() {
+      // 在函数内部的变量都是局部变量
+      console.log('哈哈');
+    })();
+  
+  </script>
+</body>
+</html>

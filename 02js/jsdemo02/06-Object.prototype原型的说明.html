@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 所有的对象都有原型 ，，，所有对象的原型链的尽头一定是Object.prototype
+    // Object.prototype中的成员是可以被所有对象访问的。
+    // 研究Object.prototype中的成员。
+
+    // console.log(Object.prototype);
+
+    // hasOwnProperty 用于判断 某个属性是否是对象自己的，而不是继承来的
+
+
+
+    // Object.prototype.money = 1000;
+    // var obj = {
+    //   name: 'zs',
+    //   age: 18
+    // };
+
+
+    // console.log(obj.money);
+    // for(var k in obj) {
+      // console.log(k);
+    // }
+    // 判断name是否是obj对象自己的属性
+    // var result = obj.hasOwnProperty('money');
+    // console.log(result);
+
+    // 当我们遍历一个对象的，一般来说，我们希望遍历的这个属性肯定是自己，而不是继承的
+    // for (var k in obj) {
+    //   if (obj.hasOwnProperty(k)) {
+    //     console.log(k, obj[k]);
+    //   }
+    // }
+
+
+    /* 
+      Object.prototype中的一个方法
+      hasOwnProperty() 可以被任意的对象所访问。 用来判断某个属性是否是对象自己的
+    */
+
+
+
+    // in操作符: in操作符可以用来判断对象是否能够访问某个属性
+    var obj = {
+      name: undefined,
+      age: 18
+    }
+
+    Object.prototype.money = 100;
+
+    // 判断obj是否有name属性
+    // if(obj.name === undefined) {
+    //   console.log('没有name属性');
+    // } else {
+    //   console.log('有name属性');
+    // }
+    if (obj.hasOwnProperty('money')) {
+      console.log('是');
+    } else {
+      console.log('否');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 简单数据类型（值类型）
+      // number string boolean undefined null
+    // 复杂数据类型（引用类型）
+      // 对象 数组 函数
+
+    // 简单类型没有属性和方法,只有一个值，所以才叫简单
+    // 复杂类型有属性和方法
+
+    // js为了我们使用简单类型方便， 每个每一个简单类型 number string boolean分别提供了对应的复杂类型。
+    // Number  String  Boolean
+    // var str = new String('abc');
+    // console.log(str);
+    // var num = 11;
+    // num.aa = 'bb';
+    // console.log(num.aa);
+
+    
+    // var str = 'abc';
+    // console.log(str.length);
+
+    // var num = 11;
+    // console.log(num.toString());
+
+
+    // 基本包装类型
+    // js为了我们使用方便，给简单类型提供了对应的复杂类型，复杂类型有属性方法。
+    // 当我们调用简单类型的属性和方法的时候。js内部会自动把简单类型给你变成复杂类型。结束后，再把复杂类型变回了简单类型，这个过程对于我们是透明的。
+
+    // 基本包装类型，当我们使用基本类型调用属性和方法的时候，js会自动包装成复杂类型。结束后自动变成简单类型。
+    var str = 'abc';
+    console.log(str);
+    console.log(str.length);
+
+
+    // number数字 可以用哪些方法  Number对象中所有的方法
+    // boolean可以用Boolean对象中所有的方法
+    // string字符串可以使用String对象中所有的方法
+  </script>
+</body>
+</html>

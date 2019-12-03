@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- name属性要和form一起用，form提交的时候，自动拼接成参数 -->
+    <input type="text" /> <span></span>
+
+    <script>
+      // 什么时候发送ajax请求？
+      var input = document.querySelector('input')
+      var span = document.querySelector('span')
+      /* 
+        新单词:
+        xml: 解释
+        http: 协议
+        request: 请求
+      */
+      input.onblur = function() {
+        // 发送ajax请求
+        // 1. 创建对象
+        var xhr = new XMLHttpRequest()
+        // 2. 设置请求报文
+        xhr.open('get', '08.php?username=' + this.value)
+        xhr.send(null)
+
+        // 3. 获取响应报文
+        // ready: 准备
+        // state: 状态
+        // change: 改变
+        // response : 响应
+        // 当xhr状态发生改变的时候，会触发
+        xhr.onreadystatechange = function() {
+          // 表示完成了
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            if (xhr.responseText === 'yes') {
+              // 存在的
+              span.innerText = '已经被注册了，换一个吧'
+              span.style.color = 'red'
+            } else {
+              span.innerText = '✔'
+              span.style.color = 'green'
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

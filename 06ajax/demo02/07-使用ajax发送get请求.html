@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="请输入用户名" />
+    <button>发送请求</button>
+    <div></div>
+    <script>
+      // 需求： 当点击发送请求的时候，把用户名 发送给服务器   把服务器给我们的结果显示到div
+
+      // 1. 给button注册点击事件
+      // 2. 获取到用户名
+      // 3. 发送ajax请求
+      // 3.1 创建对象
+      // 3.2 处理请求报文
+      // 3.3 处理响应报文
+
+      var button = document.querySelector('button')
+      var input = document.querySelector('input')
+      var div = document.querySelector('div')
+      button.onclick = function() {
+        // 获取文本框内容
+        var value = input.value
+
+        // 发送ajax请求
+        // 创建对象
+        var xhr = new XMLHttpRequest()
+
+        // 处理请求报文
+        // 请求行： get请求的参数拼接到地址栏的后面
+        xhr.open('get', '07.php?username=' + value)
+
+        // 请求头, 没有
+        // 请求体, get没有请求，传null
+        xhr.send(null)
+
+        // 注册事件，获取响应
+        xhr.onreadystatechange = function() {
+          // 判断状态是4
+          if (xhr.readyState === 4) {
+            // 响应完成了
+            // 获取响应的状态码 200 404 500
+
+            if (xhr.status === 200) {
+              div.innerText = xhr.responseText
+            } else {
+              alert('服务器繁忙，请稍候尝试')
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

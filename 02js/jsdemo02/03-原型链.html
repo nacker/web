@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 任何一个对象都会有原型，，，原型又是个对象， 原型对象还会有原型，一环扣一环，原型之间就组成了原型链。
+    // 一个对象，除了可以访问自己的成员， 还可以访问原型的成员，可以访问整条原型链上的成员。
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.money = 100;
+    Person.prototype.car = '摩拜';
+    Person.prototype.sayHi = function() {
+      console.log('你好');
+    }
+
+    // p -----> p.__proto___(Person.prototype)  ----> p.__proto__.__proto__
+    var p = new Person('zs', 18);
+    console.log(p);
+
+    console.log(p.toString());
+  </script>
+</body>
+</html>

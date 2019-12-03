@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="fa/css/font-awesome.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    html,body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 800px;
+      height: 500px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      /* 1. 水平的偏移  2. 垂直的偏移  3. 羽化值，阴影模糊度 4. 阴影外延值 */
+      box-shadow: 0px 0px 10px 2px #000;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 4;
+    }
+    .right {
+      flex: 1;
+      background-color: #ccc;
+    }
+
+    .video_box {
+      height: 85%;
+      width: 100%;
+      background-color: #000;
+    }
+
+    .video_box  video {
+      width: 100%;
+      height: 100%;
+    }
+    .toolbar {
+      height: 15%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .icon_play,
+    .icon_full,
+    .icon_volume {
+      flex: 1;
+      cursor: pointer;
+      font-size: 22px;
+      color: orange;
+      position: relative;
+    }
+
+    .icon_volume .volume_bar {
+      position: absolute;
+      top: -70px;
+      left: -30px;
+      transform: rotate(-90deg);
+      display: none;
+    }
+
+    .icon_volume:hover .volume_bar {
+      display: block;
+    }
+    .progress {
+      flex: 7;
+    }
+
+
+    .right li {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="left">
+      <div class="video_box">
+        <video src="movies/movie01.mp4"></video>
+      </div>
+      <div class="toolbar">
+        <!-- fa fa-xxx -->
+        <i class="icon_play fa fa-play"></i>
+        <i class="icon_full fa fa-arrows-alt"></i>
+        <input class="progress" type="range" min="0" max="100" value="0">
+        <i class="icon_volume fa fa-volume-up">
+          <input type="range" min="0" max="100" value="100" class="volume_bar">
+        </i>
+      </div>
+    </div>
+    <div class="right">
+      <ul>
+        <li movie-src="movies/movie01.mp4">视频1</li>
+        <li movie-src="movies/movie02.mp4">视频2</li>
+        <li movie-src="movies/movie03.mp4">视频3</li>
+        <li movie-src="movies/movie04.mp4">视频4</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    // 1. 找对象
+    var iconPlay = document.querySelector('.icon_play');
+    var iconFull = document.querySelector('.icon_full');
+    var video = document.querySelector('video');
+    var progress = document.querySelector('.progress');
+    var volumeBar = document.querySelector('.volume_bar');
+    var iconVolume = document.querySelector('.icon_volume');
+    var lis = document.querySelectorAll('.right li');
+
+    // http://www.w3school.com.cn/jsref/dom_obj_video.asp
+    // 2. 播放和暂停功能
+    // 2.1 给按钮注册点击事件
+    // 2.2 让视频播放 修改图标
+    // 2.3 判断状态
+    iconPlay.addEventListener('click', function() {
+      // if (iconPlay.classList.contains('fa-play')) {
+      //   // 播放视频
+      //   video.play();
+      //   // 移除fa-play字体
+      //   iconPlay.classList.remove('fa-play');
+      //   iconPlay.classList.add('fa-pause');
+      // } else {
+      //   video.pause();
+      //   iconPlay.classList.add('fa-play');
+      //   iconPlay.classList.remove('fa-pause');
+      // }
+      iconPlay.classList.contains('fa-play') ? video.play() : video.pause();
+      iconPlay.classList.toggle('fa-play');
+      iconPlay.classList.toggle('fa-pause');
+    });
+
+    // 3. 全屏功能
+    // 3.1 给全屏注册点击事件
+    // 3.2 调用video的全屏方法
+    iconFull.addEventListener('click', function() {
+      // 请求全屏
+      video.requestFullscreen();
+    });
+
+    // 4. 进度条功能
+    // 4.1 视频播放的时候，动态的修改进度条的value
+    // 4.1.1 给视频注册事件， 实时的获取视频的进度  timeupdate
+    // 4.1.2 动态计算range的value值  视频当前的进度/视频总长度 = input的value/100
+    video.addEventListener('timeupdate', function() {
+      // console.log('哈哈');
+      // console.log(this.currentTime, this.duration);
+      progress.value = this.currentTime / this.duration * 100;
+    });
+
+    // 4.2 修改进度条的value, 动态修改视频的进度
+    progress.addEventListener('input', function() {
+      video.currentTime = this.value / 100 * video.duration;
+    });
+    // 5. 音量功能
+    volumeBar.addEventListener('input', function() {
+      // 0-1之间一个值 
+      // 当前音量/ 总音量 = 当前值/100
+      video.volume = this.value / 100;
+      console.log(video.volume);
+      if (video.volume === 0) {
+        // 没有音量
+        iconVolume.className = 'icon_volume fa fa-volume-off';
+      } else if (video.volume <= 0.5) {
+        iconVolume.className = 'icon_volume fa fa-volume-down';
+      } else {
+        iconVolume.className = 'icon_volume fa fa-volume-up';
+      }
+    });
+
+    
+
+    // 6. 视频切换
+    // 6.1 给每个li注册点击事件
+    // 6.2 修改video的src属性即可
+    for(var i = 0; i < lis.length; i++) {
+      lis[i].addEventListener('click', function() {
+        // console.log(this.getAttribute('movie-src'));
+        video.src = this.getAttribute('movie-src');
+
+        video.load();
+        video.play();
+      });
+    }
+
+
+
+    /* 
+      方法：
+        load(): 重新加载视频
+        play(): 播放视频
+        pause()：暂停
+        requestFullScreen(): 请求全屏
+      事件：
+        timeupdate: 视频播放中，事件发生改变就会触发
+      
+      属性：
+        currentTime: 视频的当前进度  单位秒
+        duration: 视频的总长度  持续时间
+        volume: 视频的音量 0-1  0：没声音  1：最大声音  
+
+    */
+  
+  </script>
+</body>
+</html>

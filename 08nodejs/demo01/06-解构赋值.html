@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组的解构
+      // 对象的解构
+      // 1张
+      // const obj = {
+      //   name: 'zs',
+      //   age: 18
+      // }
+      // let age = obj.age
+      // let name = obj.name
+      // 同时定义两个变量
+      // 从obj中解构赋值两个变量  name age
+      // 解构赋值： 可以同时定义多个变量， 从一个对象中解构出来
+      // let { name, age } = obj
+      // console.log(name, age)
+      // let name = 'ls'
+
+      // if (obj.age >= 18) {
+      //   console.log('成年')
+      // } else {
+      //   console.log('未成年')
+      // }
+      // console.log('哈哈')
+      // console.log('呵呵')
+      // let { log } = console
+      // log('哈哈')
+      // log('呵呵')
+      let age = 20
+
+      let obj = {
+        username: 'zs',
+        age: 18,
+        gender: '男',
+        sex: '女'
+      }
+
+      // 给解构起别名
+      // let { age: age2 } = obj
+      // console.log(age2)
+      // console.log(age)
+      // console.log(obj.age)
+
+      // 解构的默认值
+      let { username, sex = '男', gender } = obj
+      console.log(username, sex, gender)
+
+      // 数组解构
+
+      // let colors = ['red', 'yellow', 'green']
+      // let [c1, c2, c3] = colors
+      // console.log(c1, c2, c3)
+
+      // let colors = ['red', 'yellow', 'green']
+      // let [, c2, ] = colors
+
+      // let str = '?key=10'
+      // let [, key] = str.split('=')
+      // console.log(key)
+
+      // 函数的参数解构
+      // 将来函数的参数如果是数组或者对象，我们直接从里面解构出来我们需要的变量
+      function sayHi({ name, age, hobby }) {
+        // let { name, age, hobby } = person
+        console.log(
+          '大家好，我是' + name + ',我今年' + age + '我的爱好是' + hobby
+        )
+      }
+      /* 
+        success: function(info) {
+          if (info.code === 1) {
+            console.log(info.msg)
+          }
+        }
+        success: function({code, msg}) {
+          if (code === 1) {
+            console.log(msg)
+          }
+        }
+       */
+      sayHi({
+        name: 'hcc',
+        age: 18,
+        hobby: '敲代码'
+      })
+
+      /* 
+        对象的解构
+          let {name, age} = {name: 'zs', age: 18}
+          let {name: userName, age} = {name: 'zs', age: 18}
+          let {name = 'ls', age} = {name: 'zs', age: 18}
+
+        数组解构
+          let [c1, c2] = ['red', 'yellow']
+          let [, c2] = ['red', 'yellow']
+        函数的参数如果是数组和对象，也可以解构
+      */
+    </script>
+  </body>
+</html>

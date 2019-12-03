@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: pink;
+    }
+
+    .two {
+      background-color: green;
+      margin: 100px;
+    }
+
+    .three {
+      background-color: yellow;
+      margin: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+  <script>
+    var zIndex = 1;
+    var divs = document.querySelectorAll('div');
+    for(var i = 0; i < divs.length; i++) {
+      divs[i].onclick = function() {
+        this.style.zIndex = zIndex++;
+      }
+    }
+  </script>
+</body>
+</html>

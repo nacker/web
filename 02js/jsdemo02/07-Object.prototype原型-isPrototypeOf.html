@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // A.isPrototypeOf(B) : 判断A是否是B的原型
+    // function Person(name) {
+    //   this.name = name;
+    // }
+
+    // var p = new Person();
+
+    // // console.log(Person.isPrototypeOf(p));
+    // console.log(Person.prototype.isPrototypeOf(p));
+    // console.log(Object.prototype.isPrototypeOf(p));
+
+    // 属性 是否 可以枚举 （遍历）
+    // propertyIsEnumerable();
+    // var obj = {
+    //   name: 'zs',
+    //   age: 18
+    // }
+    // Object.prototype.money = 100;
+    // console.log(Object.prototype);
+
+    // for(var k in obj) {
+    //   console.log(k);
+    // }
+
+    // var result = Object.prototype.propertyIsEnumerable('constructor');
+    // console.log(result);
+
+
+    // ==
+    // console.log({} == '[object Object]'); // 对象会自动转换成字符串类型  toString();
+    // var obj = {};
+    // console.log(obj.toString());
+
+    console.log({} == 1);// {}  [object Object]  NaN
+    console.log({} == true);// {}  [object Object]  NaN
+    console.log({} == false);// {}  [object Object]  NaN
+    console.log({} == '[object Object]');// {}  [object Object]  NaN
+  </script>
+</body>
+</html>

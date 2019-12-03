@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <a href="http://www.baidu.com">哈哈</a>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $('a').on("click", function(e) {
+        console.log(e);
+        // e.stopPropagation() 阻止事件冒泡
+        // e.preventDefault(); // : 阻止浏览器默认行为
+        // return false; 即可阻止事件冒泡， 也可以阻止浏览器的默认行为
+        return false;
+      });
+
+      $(document).on('click', function() {
+        console.log('哈哈哈哈哈');
+      })
+    });
+  </script>
+</body>
+</html>

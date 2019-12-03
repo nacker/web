@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        background-color: #222d32;
+      }
+      form {
+        width: 400px;
+        background-color: #fff;
+        margin: 200px auto;
+        padding: 30px 20px;
+        border-radius: 10px;
+      }
+
+      div {
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/login" method="POST">
+      <div>
+        <input
+          type="text"
+          name="username"
+          placeholder="请输入用户名"
+          autocomplete="off"
+        />
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="请输入密码" />
+      </div>
+      <div>
+        <input type="submit" value="登录" />
+      </div>
+    </form>
+  </body>
+</html>

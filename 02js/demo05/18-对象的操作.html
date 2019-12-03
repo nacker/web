@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 如果有值，得到具体的值
+    // 如果没值，返回undefined,  如果当成方法来调用，就会报错
+    // 取值
+    // 对象名.属性名
+    // 对象名.方法名()
+
+
+    // 存值
+    // 对象名.属性名 = 值
+    // 对象名.方法名 = function(){}
+    var bz = {
+      name: '黄XX',
+      age: 32,
+      gender: '不详',
+      height: 180,
+      weight: 120,
+      sayName: function() {
+        console.log('点名了');
+      },
+      sing: function() {
+        console.log('今天给大家唱首歌');
+      }
+    }
+
+    // console.log(bz.hairStyle);
+    // console.log(bz.aa());
+    // bz.sing();
+    // bz.hair = 'middlelandsea';
+    // console.log(bz);
+    bz.fire = function() {
+      console.log('你们下课别走');
+    }
+    console.log(bz);
+    bz.fire();
+  </script>
+</body>
+</html>

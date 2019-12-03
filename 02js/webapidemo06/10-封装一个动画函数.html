@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    div {
+      border-top: 10px solid lime;
+      width: 100px;
+      height: 90px;
+      background-color: hotpink;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      left: 0px;
+    }
+  </style>
+</head>
+<body>
+  <button>奔跑到400</button>
+  <button>奔跑到800</button>
+  <div>小飞飞</div>
+  <script>
+    // 定义一个函数，可以让任意的元素运动到任意的位置
+    function animate(element, target) {
+      var timeId = setInterval(function() {
+        var current = element.offsetLeft;
+        current += 10;
+        if (current <= target) {
+          element.style.left = current + 'px';
+        } else {
+          clearInterval(timeId);
+        } 
+      }, 16);
+    }
+
+    var button1 = document.querySelectorAll('button')[0];
+    var button2 = document.querySelectorAll('button')[1];
+    var div = document.querySelector('div');
+
+    // 需求： 让div渐渐的跑到400
+    // 动画的原理： 每次在盒子的原来的基础上 运动一小段距离， 只要频率
+    button1.onclick = function() {
+      animate(div, 400);
+    }
+
+    button2.onclick = function() {
+      animate(div, 800);
+    }
+
+
+
+  </script>
+</body>
+</html>

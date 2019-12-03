@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 如何交换两个变量的值
+    // var n1 = 11;
+    // var n2 = 22;
+    // var temp = n1;
+    // n1 = n2;
+    // n2 = temp;
+    // console.log(n1, n2);
+
+    // 2. 如何把最大的数放到最后面。
+    // arr[i] 和 arr[i + 1]
+    var arr = [8, 7, 6, 5, 4, 3, 2];
+
+    // i = length -1
+    // arr[arr.length - 2]   arr[length - 1]
+
+    for (var i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // 交换两个变量的值
+        var temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+
+    for (var i = 0; i < arr.length - 1 - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // 交换两个变量的值
+        var temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+
+     for (var i = 0; i < arr.length - 1 - 1 -1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // 交换两个变量的值
+        var temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

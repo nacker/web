@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // map方法  map:映射
+      // map会得到一个新数组， 新数组中包含 每次函数调用返回的结果
+      // var arr = [1, 2, 3, 4]
+      // 需求： 得到一个新数组， 需要每个值的平方  [1, 4, 9, 16]
+      // var newArr = []
+      // arr.forEach(function(item) {
+      //   newArr.push(item * item)
+      // })
+      // console.log(newArr)
+      // map会返回一个新的数组， 数组中会包含每次函数返回的结果
+      // 一比一得到一个新数组
+      // var newArr = arr.map(function(item) {
+      //   return item * item
+      // })
+      // console.log(newArr)
+
+      var list = [
+        { month: '1月', count: 1000 },
+        { month: '2月', count: 2000 },
+        { month: '3月', count: 3000 }
+      ]
+
+      var counts = list.map(function(item) {
+        return item.count
+      })
+      // var counts = list.map(item => item.count)
+      console.log(counts)
+    </script>
+  </body>
+</html>

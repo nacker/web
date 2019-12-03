@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>稀释</li>
+    <li>凋残</li>
+    <li>皂君</li>
+    <li>郁欢</li>
+  </ul>
+
+  <script>
+    // 创建一个小飞飞，添加到最后面
+    var ul = document.querySelector('ul');
+    var xff = document.createElement('li');
+    xff.innerText = '小飞飞';
+
+    // parent.replaceChild(newChild, oldChild)
+    // ul.removeChild(ul.firstElementChild);
+    // ul.insertBefore(xff, ul.firstElementChild);
+    ul.replaceChild(xff, ul.firstElementChild);
+  </script>
+</body>
+</html>

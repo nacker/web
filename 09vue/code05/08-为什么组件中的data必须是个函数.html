@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <myheader></myheader>
+
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+
+    // vue组件中的data必须是个函数的目的：就是为了保证组件实例之间不会相互影响！
+
+    Vue.component("myheader", {
+      template: "<div>这是一个组件{{msg}}</div>",
+      data(){
+        return {
+          msg: "Hello world"
+        }
+      }
+    })
+    
+    const vm = new Vue({
+      el: "#app"
+    })
+
+
+    // let a = {msg: "hello world"}
+    // b = a;
+    // c = a;
+
+    // a.msg = "123"
+
+    function data(){
+      return {
+        msg: "hello world"
+      }
+    }
+
+    let a = data();
+    let b = data();
+
+    console.log(a == b);
+   
+
+  </script>
+</body>
+</html>

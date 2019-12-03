@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    mouseenter: 鼠标进入事件
+    mouseleave: 鼠标离开事件
+
+    mouseover: 鼠标移入
+    mouseout: 鼠标移出
+   -->
+   <div class="father">
+
+     <div class="son"></div>
+
+   </div>
+
+   <script src="jquery-1.12.4.js"></script>
+   <script>
+    //  $('.father').mouseover(function() {
+    //    console.log('进来了');
+    //  })
+
+    //  $('.father').mouseout(function() {
+    //    console.log('离开了');
+    //  })
+
+
+    // mouseenter和mouseleave事件只有在进入或者离开父元素时才会触发， 在子元素上不会触发
+    // mouseover和mouseout进入或者离开父元素会触发，进入或者离开子元素也会触发
+     $('.father').mouseenter(function() {
+       console.log('进来了');
+     })
+
+     $('.father').mouseleave(function() {
+       console.log('离开了');
+     })
+   </script>
+</body>
+</html>

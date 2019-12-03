@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+      我叫{{hcc.name}}
+      <br>
+      我有辆{{hcc.car}}
+      <br>
+      我今年才{{hcc.age}}
+      </p>
+
+      <button @click="btnAddAge">让胡聪聪有年龄</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          hcc: {
+            name: "胡聪聪",
+            car: "玛莎拉蒂"
+          }
+        },
+        methods: {
+          btnAddAge(){
+            // 给data中的对象动态新增的属性，不能够有响应式的效果，也就是说不能触发视图更新
+            // 如果想要有响应式效果
+            // 1. 就需要提前，在对象中先把属性声明好 在hcc中一开始就添加好age属性，哪怕不给值
+            // this.hcc.age = 18;
+            // 2. 如果确实需要动态的给hcc对象添加age属性，那么我们可以用到vue中提供的$set方法 
+            // 这个方法，可以动态的给数据添加响应式的属性！
+            
+            // this.$set(this.hcc, "age", 18);
+            // Vue.set(this.hcc, "age", 18)
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

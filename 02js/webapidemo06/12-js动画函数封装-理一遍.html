@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    div {
+      border-top: 10px solid lime;
+      width: 100px;
+      height: 90px;
+      background-color: hotpink;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      left: 0px;
+    }
+    p {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <button>奔跑到400</button>
+  <button>奔跑到800</button>
+  <div>小飞飞</div>
+  <p>你好</p>
+  <script>
+    var button1 = document.querySelectorAll('button')[0];
+    var button2 = document.querySelectorAll('button')[1];
+    var div = document.querySelector('div');
+    var p = document.querySelector('p');
+    // 优点：每次调用animate都可以清除之前的定时器
+    // 缺点：每次用animate的时候，保证有一个全局变量，timeId
+    button1.onclick = function() {
+      animate(div, 500);
+      animate(p, 200);
+    }
+
+    button2.onclick = function() {
+      animate(div, 1000);
+      animate(p, 800);
+    }
+
+    // 附加的好处：
+    function animate(element, target) {
+      // 一进来，清除之前开的定时器
+      // 把timeId传给了element的一个属性
+      clearInterval(element.timeId);
+      element.timeId = setInterval(function() {
+        // 当前位置
+        var current = element.offsetLeft;
+        // 每次的步数
+        var step = target > current ? 10 : -10;
+        // 能够继续动画的条件， current和target的距离要超过一个step
+        if ( Math.abs(current - target) >= Math.abs(step) ) {
+          current += step;
+          element.style.left = current + 'px';
+        } else {
+          clearInterval(element.timeId);
+          element.style.left = target + 'px';
+        }
+      }, 16);
+    }
+  </script>
+</body>
+</html>

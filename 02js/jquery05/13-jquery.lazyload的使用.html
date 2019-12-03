@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 3000px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+
+  <!-- 真实图片的地址放在 data-original -->
+  <img class="lazy" data-original="1.jpg" alt="" width="500" height="350">
+  <img class="lazy" data-original="2.jpg" alt="">
+  <script src="jquery-1.12.4.js"></script>
+  <script src="jquery.lazyload.js"></script>
+  <script>
+    $(".lazy").lazyload();
+  </script>
+</body>
+</html>

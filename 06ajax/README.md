@@ -1,0 +1,2 @@
+# 06ajax
+ajax

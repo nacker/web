@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in teachers" :key="item.id">
+          {{ item.name }} 生于:{{ item.birthDay | dateFormat("YY-MM-DD") }}
+        </li>
+      </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/moment/moment.js"></script>
+    <script>
+
+      // filter
+      // 过滤器
+
+      // 过滤器其实就是一个函数
+
+      // 创建过滤器的方式：
+      // 1. 全局注册
+
+      // Vue.filter(过滤器的名称， 函数)
+      // 函数接收的参数就是 | 前面的数据
+      // 在使用过滤器的时候  只需要在数据后面加上 |
+      // 数据 | 过滤器名称
+
+      // 数据 | 过滤器名称（参数）
+      // 过滤器函数中第一个参数，就是要过滤的数据，第二个往后的参数才是括号中传递进来的参数
+      
+      Vue.filter("dateFormat", function(value, pattern, a){
+        // value就是用户给的时间对象
+        return moment(value).format(pattern)
+
+      })
+
+
+
+      // 2. 局部注册
+
+      
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          teachers: [
+            {
+              id: 1,
+              name: "胡聪聪",
+              birthDay: new Date("1992-05-08")
+            },
+            {
+              id: 2,
+              name: "徐燕",
+              birthDay: new Date("1992-06-08")
+            },
+            {
+              id: 3,
+              name: "邱凌飞",
+              birthDay: new Date("1993-05-08")
+            },
+
+            {
+              id: 4,
+              name: "潘明",
+              birthDay: new Date("2002-05-08")
+            }
+          ]
+        }
+      });
+
+
+     
+    </script>
+  </body>
+</html>

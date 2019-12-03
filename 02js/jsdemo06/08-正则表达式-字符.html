@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // console.log(/abc/.test('abcd'))
+
+      // 就想匹配小写字母
+      // []表示一个字符串的位置  里面的内容表示 可以出现的字符  也可以表示范围
+      // [a-z] [A-Z] [0-9]
+      // console.log(/[a-z]/.test('bAAAA'))
+      // console.log(/[a-z]/.test('AAAA'))
+
+      // console.log(/[A-Z]/.test('aaa'))
+      // console.log(/[a-zA-Z]/.test('111'))
+
+      // console.log(/[^a-z]/.test('aaa'))
+      // console.log(/[^a-z]/.test('aaA'))
+
+      // a b c d A B C D
+      console.log(/[a-dA-D]/.test('aggggg'))
+    </script>
+  </body>
+</html>

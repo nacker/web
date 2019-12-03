@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <button ref="btn">按钮</button>
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      mounted(){
+
+        // 如果ref属性是添加在 vue组件标签中，那么$refs获取到的就是组件的实例
+        // 如果ref属性是添加在普通的dom元素上的，那么$refs获取到的就是dom对象
+        console.log(this.$refs.btn);
+      }
+    })
+  </script>
+</body>
+</html>

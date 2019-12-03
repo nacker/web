@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      name: 'zs',
+      age: 18,
+      gender: '男',
+      sayHi: function() {
+        console.log('大家好，我是', this.name);
+      }
+    };
+
+    // 在js中，操作对象的属性有两种方式
+    // 1. 点语法   对象名.属性名
+    // 2. []语法, 关联数据的语法，，也可以把对象看成数组   对象名[属性名]
+    // obj.name = "张三";
+
+    // console.log(obj);
+    // console.log(obj.age);
+    // console.log([1,2,3]);
+    console.log(obj.age); // obj.age obj对象的age属性
+
+
+    // 对象名['属性名'] ： 属性名是一个字符串
+    console.log(obj['age']);
+    console.log(obj['name']);
+    obj['hobby'] = 'ls';
+    console.log(obj);
+
+    obj['sayHi']();
+    obj.sayHi();
+  </script>
+</body>
+</html>

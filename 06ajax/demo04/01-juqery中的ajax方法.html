@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="username" /><br />
+    <input type="text" class="password" /><br />
+    <input type="button" value="登录" />
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      $('[type=button]').click(function() {
+        // 发送ajax请求
+        // jquery中直接提供了一个ajax方法
+        // 参数：
+        // 1. type 请求类型，默认是get
+        // 2. url: 请求地址
+        // 3. data: 数据  可以是字符串，也可以是对象
+        // 4. dataType: 返回的数据类型  xml text json  默认值会根据后台返回的content-type自动判断
+        // 5. success: 成功的回调函数
+        // 6. error: 失败的回调函数
+        console.log('哈哈哈')
+        // 如果在beforeSend中返回了false， 能够终止整个ajax的发送
+        // 可以在beforeSend中做一些表单校验
+        if ($('.username').val() === '') {
+          alert('用户名不能为空')
+          return false
+        }
+        $.ajax({
+          type: 'post',
+          url: '01.php',
+          data: {
+            username: $('.username').val(),
+            password: $('.password').val()
+          },
+          // timeout: 2000,
+          // dataType: 'json',
+          // 在ajax发送前会执行的一个回调函数
+          beforeSend: function() {},
+          success: function(info) {
+            console.log(info)
+          },
+          error: function() {
+            alert('服务器繁忙')
+          },
+          complete: function() {
+            console.log('ajax结束了')
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

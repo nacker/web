@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 函数参数的默认值
+      // ES6允许给函数的参数设置默认值
+      // 如果参数传了，默认值不生效  如果没传默认值生效
+      // const add = function(a = 0, b = 0) {
+      //   console.log(a + b)
+      // }
+
+      // add()
+      // add(1)
+      // add(1, 2)
+
+      // const add = function(a = 0, b) {
+      //   console.log(a + b)
+      // }
+      // add(1)
+
+      // rest参数  剩余参数
+      // arguments: 没有定义参数， 别人用的时候不知道传什么参数
+      // es6中新增了一个 rest参数， 剩余参数
+      // 剩余参数必须是最后一个参数
+      const add = function(num, ...colors) {
+        // console.log(arguments)
+        console.log(colors)
+      }
+      add(1, 2, 3, 4)
+
+      /* 
+        1. 函数参数的默认值  function fn(a = 1, b = 1){}
+
+        2. rest参数，剩余参数  function fn(...nums) {}  nums会接受所有的参数
+      
+      
+       */
+    </script>
+  </body>
+</html>

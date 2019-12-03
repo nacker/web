@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "雨一直下，气氛非常融洽"
+      },
+      beforeCreate() {
+        // beforeCreate 数据初始化之前执行的，这时候还没数据
+        // console.log(this.msg);
+        console.warn("beforeCreate 被执行了")
+      },
+      created() {
+        // 能够访问数据最早的钩子函数，其实就是created
+        // 重点： 工作中最常用的就是这个钩子函数
+        // 页面一家在就要请求数据的ajax请求一般都在这里发送
+        // console.log(this.msg);
+        console.warn("created 被执行了")
+      },
+      beforeMount() {
+        // console.log(document.getElementById("app"));
+        console.warn("beforeMount 被执行了")
+      },
+      mounted() {
+        // console.log(document.getElementById("app"));
+        // 如果在实际开发当中，我们要访问有数据的DOM，那么久需要在mounted钩子函数里去做
+        console.warn("mounted 被执行了")
+      },
+      beforeUpdate() {
+        // 这里可以访问更新前的DOM
+        console.log(document.getElementById("app").innerHTML);
+        console.warn("beforeUpdate 被执行了")
+      },
+      updated() {
+        // 这里可以访问更新后的DOM
+        console.log(document.getElementById("app").innerHTML);
+        console.warn("updated 被执行了")
+      },
+      beforeDestroy() {
+        console.warn("beforeDestroy 被执行了")
+      },
+      destroyed() {
+        console.warn("destroyed 被执行了")        
+      },
+    })
+  </script>
+</body>
+</html>

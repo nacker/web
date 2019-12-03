@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <!-- <li v-for="item in $store.getters.evenNum">{{item}}</li> -->
+      <li v-for="item in $store.getters.zhengchuArr(4)">{{item}}</li>
+    </ul>
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script src="./node_modules/vuex/dist/vuex.js"></script>
+
+  <script>
+  
+    // 1. 创建一个vuex store实例
+    const store = new Vuex.Store({
+      state: {
+        arr: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      },
+      // getters就像是vue中的计算属性
+      // 如果要获取一个数据，而这个数据是通过对state中的数据进行计算之后的结果
+      // 我们就可以通过getters来实现了
+      getters: {
+        evenNum(state){
+          return state.arr.filter(v => v % 2 == 0);
+        },
+
+        // 在vue中计算属性是无法传参的
+        // 但是在vuex中，getters是可以传递参数的
+        //  $store.getters.zhengchuArr(3)
+        zhengchuArr(state){
+          return function(value){
+            return state.arr.filter(v => v % value == 0);
+          }
+        },
+        // zhengchuArr: state => value => state.arr.filter(v => v % value == 0)
+      }
+    })
+
+    // 2. 将vuexstore实例和vm实例关联起来
+    const vm = new Vue({
+      el: "#app",
+      store
+    })
+
+    // 当把store实例和根组件关联之后
+    // store就可以在任意组件中通过 this.$store 就可以访问到这个store实例了
+
+  </script>
+</body>
+</html>

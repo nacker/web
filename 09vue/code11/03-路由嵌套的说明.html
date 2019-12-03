@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <router-view></router-view>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+      const home = {
+        template: "<div>首页</div>"
+      };
+
+      const account = {
+        template: `<div>
+          <h1>这是account页面</h1>
+          <router-link to="/account/login">登录</router-link>
+          <router-link to="/account/register">注册</router-link>
+          <router-view></router-view>
+      </div>`
+      };
+
+      const login = {
+        template: "<h2>这是login</h2>"
+      };
+
+      const register = {
+        template: "<h2>这是register</h2>"
+      };
+
+      const router = new VueRouter({
+        routes: [
+          { path: "/", component: home },
+          { 
+            path: "/account", 
+            component: account,
+            children: [
+              {
+                path: "login",
+                component: login
+              },
+              {
+                path: "register",
+                component: register
+              }
+            ]
+          }
+        ]
+      });
+
+      new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world"
+        },
+        router
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 函数的目的： 求任意两个数的和
+    // 将来我们有需求，想要获取到函数最终的计算结果
+
+    // 函数可以封装一段重复的代码
+    // 注意点：函数是一个独立的盒子，函数内部的值在函数外部访问不到
+
+    // 外界如果想要访问函数内部的结果，return: 返回
+    // 函数可以有return, return可以把函数内部的结果返回给外部使用
+    function getSum(n1, n2) {
+      var sum = n1 + n2;
+      return sum;
+    }
+
+    var result = getSum(1, 2);
+    console.log(result);
+    alert(result);
+
+
+    // confirm('你爱我吗')
+  
+  </script>
+</body>
+</html>

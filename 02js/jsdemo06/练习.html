@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 校验qq
+      // qq的规律
+      // 1. 都是数字
+      // 2. 长度 5-11位
+      // 3. 不能0开头
+      // var reg= /^[1-9]\d{4,10}$/ 
+      // console.log(reg.test('123341'))
+      // 校验电话号码
+      // xxx-xxxxxx
+      // 0开头
+      // -前面有3位或者4位   大城市 3位  小城市 4位  021  010
+      // - 后面 7 到 8 位
+      // var phone=/^0\d{2}-\d{8}$|0\d{3}-\d{7}$/
+      // console.log(phone.test('021-12345678'))
+      // console.log(phone.test('0213-1234567'))
+      // 姓名
+      // 必须汉字
+      // 长度2-4
+      // [\u4e00-\u9fa5]
+      // utf8    gb2312 gbk          ascii
+      var nam=/^[\u4e00-\u9fa5]{2,4}$/
+      console.log(nam.test('我'))
+      console.log(nam.test('我是'))
+      console.log(nam.test('我是谁'))
+      console.log(nam.test('我是谁啊'))
+      console.log(nam.test('我是谁啊啊'))
+
+      // 手机号
+
+      // 邮箱
+      
+      // 手机号
+      // 1开头
+      // 11位
+
+      // 前三位  13[0-9]  147 149  15[0-9]  166  17[0-9] 18[0-9]  199 198
+     
+
+      // 校验邮箱
+      // 必须  字母 数字_ @ 字母 数字 _  . com
+     
+    </script>
+  </body>
+</html>

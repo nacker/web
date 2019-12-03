@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var ff = {
+      name: '灰灰',
+      age: 18,
+      car: {
+        brand: '玛莎拉蒂',
+        price: 500
+      }
+    };
+
+    // 深拷贝
+    function deepCopy(obj) {
+      var newObj = {};
+      for(var k in obj) {
+        // 判断 obj[k] 的类型， 如果是简单类型，直接拷贝  如果是复杂类型，需要继续拷贝
+        // console.log(obj[k]);
+        // if (typeof obj[k] === 'object') {
+        //   // 如果obj[k]是复杂类型， 需要拷贝一份这个对象，交给newObj
+        //   newObj[k] = deepCopy(obj[k]);
+        // } else {
+        //   newObj[k] = obj[k];
+        // }
+        newObj[k] = typeof obj[k] === 'object' ? deepCopy(obj[k]) : obj[k];
+      }
+      return newObj;
+    }
+
+    var ff2 = deepCopy(ff);
+
+    ff.car.brand = '劳斯莱斯';
+    console.log(ff);
+    console.log(ff2);
+  </script>
+</body>
+</html>

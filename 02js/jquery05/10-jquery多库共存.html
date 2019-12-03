@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script src="itcast.js"></script>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // $  jQuery
+    // $(function() {
+    //   console.log('啊哈哈');
+    // });
+    // console.log($);
+    // console.log(jQ
+    // jQuery(function() {
+    //   console.log($);
+    // })
+
+    // conflict() :冲突
+    // 不冲突， jquery会释放$的控制权
+    // $.noConflict()
+    console.log($);
+
+    var c = $.noConflict();
+    // console.log($);
+
+    c(function() {
+      console.log(c);
+      console.log($);
+    })
+
+  </script>
+</body>
+</html>

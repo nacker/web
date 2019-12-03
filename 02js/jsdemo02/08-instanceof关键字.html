@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 如何判断对象类型 -->
+  <script>
+    // typeof: 仅仅能够判断简单的数据类型，对于复杂的数据类型，返回的全是object
+    // 严格的判断一个对象的类型，应该用instranceof
+    // instance实例 
+    // A instanceof B: 判断A是否是B的实例
+    function Person(name) {
+      this.name = name;
+    }
+    var p = new Person();
+    // console.log(p.constructor.name);
+    // p -----> Person.prototype ------> Object.prototype
+    console.log(p instanceof Person);
+    console.log(p instanceof Object);
+  </script>
+</body>
+</html>

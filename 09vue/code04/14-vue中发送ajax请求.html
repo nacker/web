@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./node_modules/axios/dist/axios.js"></script>
+  <script>
+    // axios.get("请求地址?参数").then(function(response){
+    //   console.log(response);
+    // })
+
+    // axios.get("./data/students.json").then(function(response){
+    //   if(response.status == 200){
+    //     console.log(response.data);
+    //   }
+    //   // response对象中的data属性，就是请求返回回来的数据
+    // })
+
+    // axios.post("", {参数对象}).then(function(){})
+
+
+    // 失败的回调有两种写法
+    // axios.get('url').then(成功的回调, 失败的回调)
+    // axios.get('url').then(成功的回调).catch(失败的回调)
+
+
+
+    axios({
+      url: "./data/students.json",
+      method: "get",
+    }).then(response => {
+      if(response.status == 200){
+        console.log(response.data);
+      }
+    })
+  </script>
+</body>
+</html>

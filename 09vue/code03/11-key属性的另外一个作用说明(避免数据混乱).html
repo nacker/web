@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in teachers" >{{ item.name }} <input type="text"></li>
+      </ul>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+            teachers: [
+              { id: 1, name: "胡聪聪" },
+              { id: 2, name: "小飞飞" },
+              { id: 3, name: "马文星" },
+              { id: 4, name: "潘明" }
+            ]
+        }
+      });
+
+      // 1. 以后在写v-for的时候，都需要给元素加上一个key属性
+      // 2. key的主要作用就是用来提高渲染性能的！
+      // 3. key属性还可以避免数据混乱的情况出现  （如果元素中包含了有临时数据的元素，如果不用key就会产生数据混乱）
+    </script>
+  </body>
+</html>

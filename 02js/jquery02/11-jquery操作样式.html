@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    // style：行内样式
+    // class:  类样式
+
+
+    // css() 方法：用来操作行内样式的
+    // 设置单个样式  css(name, value)
+    // 参数： name: 样式名  value: 样式值
+    $('li').css('backgroundColor', 'pink');
+    $('li').css('fontSize', 50);
+    $('li').css('color', 'red');
+
+    // css(obj) 可以设置多个样式
+    // $('li').css({
+    //   backgroundColor: 'pink',
+    //   fontSize: 50,
+    //   color: 'red'
+    // });
+  
+    // 获取样式 css()
+    // css(name)  需要获取的样式的名字
+    console.log($('li').css('fontSize'));
+
+
+
+    /* 
+      css: 可以给jquery对象中所有的元素设置样式
+        设置单个样式 css(name, value)
+        设置多个样式： css(obj)
+        获取样式： css(name)
+    */
+  </script>
+</body>
+</html>

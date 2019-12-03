@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      height: 4000px;
+    }
+  </style>
+</head>
+<body>
+  <img src="tianshi.gif" alt="">
+  <script>
+    // onmouseover: 鼠标经过
+    // onmouseout: 鼠标离开
+    // onmousemove: 鼠标移动
+    var ts = document.querySelector('img');
+    document.onmousemove = function(e) {
+      console.log('hahahah');
+      // console.log(e);
+      ts.style.position = 'absolute';
+      ts.style.left = e.pageX + 'px';
+      ts.style.top = e.pageY + 'px';
+    }
+  </script>
+</body>
+</html>

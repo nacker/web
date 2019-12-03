@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: 100px auto;
+      transition: all 2s;
+    }
+    div:hover {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    // transitionend: 过渡结束事件
+    // 当某个元素有过渡，过渡结束时，就会触发transitionend事件
+    var div = document.querySelector('div');
+
+    // 坑： 对于C3提供的一些新事件，需要使用addEventListener
+    div.addEventListener('transitionend', function() {
+      console.log('我的过渡执行结束了');
+    });
+  </script>
+</body>
+</html>

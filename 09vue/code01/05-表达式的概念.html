@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    {{name.toUpperCase()}}  
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  
+  <script>
+
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        name: "dsb"
+      }
+    })
+
+
+    // 插值表达式
+    // {{表达式}}  插值表达式的作用，其实就是在页面中插入数据！
+
+
+    // 表达式是什么？
+
+    // 语句和表达式的区别？
+    // 语句就是能加上分号，单独作为一行，就可以称为语句
+    // let a = 10;
+    // a = 10;
+    // console.log("Hello HCC");
+
+    // 表达式指的就是有值得内容, 我们把他放到等号的右边，看能不能成立，如果可以，就是表达式
+
+    // let a = 10;
+    // let b = a = 100;
+
+    // let c = console.log("HCC");
+
+    // if(true){console.log(10)}
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div>好多蚊子，好多蚊子，好多蚊子，好多蚊子，好多蚊子，好多蚊子，好多蚊子，好多蚊子，好多蚊子，</div>
+  <script>
+    // scrollWidth scrollHeight : 指的是内容的大小,如果内容超出了，大小会比盒子更大
+    // scrollLeft scrollTop：获取滚动条滚动的距离
+
+    var div = document.querySelector('div');
+    // console.log(div.offsetHeight);
+    // console.log(div.scrollHeight);
+    // console.log(div.scrollWidth);
+
+    console.log(div.scrollTop);
+
+    // 事件 onscroll 当div的滚动条滚动的时候
+    div.onscroll = function() {
+      console.log(div.scrollTop);
+    }
+  </script>
+</body>
+</html>

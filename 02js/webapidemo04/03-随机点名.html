@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      margin: 50px auto;
+    }
+
+    td {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      padding: 0 30px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var arr = [
+      ['@', '@', '张三', '@', '王五', '赵六', '田七'],
+      ['张三', '@', '张三', '@', '王五', '赵六', '田七'],
+      ['@', '@', '张三', '@', '王五', '赵六', '田七'],
+      ['@', '@', '张三', '@', '王五', '赵六', '田七'],
+      ['@', '张三', '张三', '@', '王五', '赵六', '田七'],
+      ['@', '@', '张三', '@', '王五', '赵六', '田七'],
+      ['张三', '@', '张三', '@', '王五', '赵六', '田七']
+    ];
+    
+    // 1. 创建一个table, 添加到body
+    var table = document.createElement('table');
+    document.body.appendChild(table);
+    // 2. 创建多个tr，添加到table
+    for(var i = 0; i < arr.length; i++) {
+      var tr = document.createElement('tr');
+      table.appendChild(tr);
+
+      // 3. 创建多个td，添加tr
+      for(var j = 0; j < arr[i].length; j++) {
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        if (arr[i][j] === '@') {
+          continue;
+        }
+        td.innerText = arr[i][j];
+        td.style.backgroundColor = 'yellowgreen';
+      }
+    }
+    
+  </script>
+</body>
+</html>

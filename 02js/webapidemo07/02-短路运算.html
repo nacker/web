@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 逻辑运算符  && || !
+    // && 和 || 也叫短路运算
+    // &&: 短路与，  特点：只要碰到了等价与false就短路，只要碰到了false，就不会继续往后执行了。
+    //          如果短路了，得到的第一个值，如果不短路，得到的是第二个值
+    // console.log( true && true ); // true
+    // console.log( false && true );
+    // console.log( true && false);
+
+    // console.log( false && console.log('哈哈') );
+
+    // 细节： && 和 || 的结果不一定是布尔类型
+    // console.log('abc' &&  123);
+    // console.log( null && 123 );
+
+
+    // var flag = true;
+    // if (flag) {
+    //   console.log('哈哈哈');
+    // }
+    // var flag = false;
+    // console.log(flag && console.log('哈哈'));
+
+    // || 短路或， 只要碰到了true就会短路， 如果短路，得到第一个值， 如果不短路，得到第二个值
+    // console.log( true || false );
+    // console.log( false || true );
+    // console.log( 11 || 22 );
+
+    // 短路或一般用于设置函数的默认参数
+    function add(n1, n2) {
+      n1 = n1 || 0;
+      n2 = n2 || 0;
+      console.log(n1 + n2);
+    }
+
+    add();
+
+    add(100);
+    add(100, 200);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>我是第0个li</li>
+      <li>我是第1个li</li>
+      <li>我是第2个li</li>
+      <li>我是第3个li</li>
+      <li>我是第4个li</li>
+      <li>我是第5个li</li>
+      <li>我是第6个li</li>
+      <li>我是第7个li</li>
+      <li>我是第8个li</li>
+      <li>我是第9个li</li>
+    </ul>
+
+    <div>
+      <p>0</p>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>6</p>
+      <p>7</p>
+      <p>8</p>
+      <p>9</p>
+    </div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script>
+      var startIndex = -1
+      $('ul').sortable({
+        start: function(e) {
+          startIndex = $(e.toElement).index()
+        },
+        update: function(e, ui) {
+          var endIndex = $(e.toElement).index()
+          console.log(startIndex, endIndex)
+          // 下标 9 - 7
+          var $p = $('p')
+
+          if (endIndex > startIndex) {
+            if (endIndex + 1 >= $p.length) {
+              $('div').append($p.eq(startIndex))
+            } else {
+              $p.eq(endIndex + 1).before($p.eq(startIndex))
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

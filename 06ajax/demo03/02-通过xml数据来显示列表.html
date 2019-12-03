@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: #ccc;
+        padding: 10px 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button>获取数据</button>
+    <table>
+      <thead>
+        <tr>
+          <th>名字</th>
+          <th>性别</th>
+          <th>技能</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 没东西 -->
+      </tbody>
+    </table>
+
+    <script>
+      // 1. 点击按钮，注册事件
+      // 2. 发送ajax请求， 获取到xml数据
+      var button = document.querySelector('button')
+      var tbody = document.querySelector('tbody')
+
+      button.onclick = function() {
+        var xhr = new XMLHttpRequest()
+
+        xhr.open('get', '02.php')
+        xhr.send(null)
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // 1. 获取响应体
+            // responseText(响应的文本)  responseXML(响应的xml)
+            // console.log(xhr.responseText)
+
+            // DOM操作不仅能够处理HTML 也能够处理XML
+            // 把result当成就是一个document
+            var result = xhr.responseXML
+            var heros = result.querySelectorAll('hero')
+            // 根据heros中的数据动态创建tr
+            for (var i = 0; i < heros.length; i++) {
+              // console.log(heros[i].children[0].innerHTML)
+              // console.log(heros[i].children[1].innerHTML)
+              // console.log(heros[i].children[2].innerHTML)
+              var tr = document.createElement('tr')
+              tbody.appendChild(tr)
+              for (var j = 0; j < heros[i].children.length; j++) {
+                var td = document.createElement('td')
+                tr.appendChild(td)
+                td.innerText = heros[i].children[j].innerHTML
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

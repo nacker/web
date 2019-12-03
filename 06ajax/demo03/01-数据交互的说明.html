@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 可以使用ajax获取到后台的数据
+      var xhr = new XMLHttpRequest()
+
+      // 设置请求报文
+      xhr.open('get', '01.php')
+      xhr.send(null)
+
+      // 获取响应结果
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log(xhr.responseText)
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

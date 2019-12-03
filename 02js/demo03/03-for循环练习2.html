@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //0. 打印100-200之间所有的数
+    // for(var i = 100; i <= 200; i++) {
+    //   console.log(i);
+    // }
+
+    // 1. 100-200之间所有数的和
+    // sum 存储每次加完的数据
+    // var sum = 0;
+    // for(var i = 100; i <= 200; i++) {
+    //   sum += i;
+    // }
+    // console.log(sum);
+
+    //1 计算100-200之间不能被7整除的数的和  13043
+    // var sum = 0;
+    // for (var i = 100; i <= 200; i++) {
+    //   if (i % 7 !== 0) {
+    //     sum += i;
+    //   }
+    // }
+    // console.log(sum);
+
+    //2 求200-350之间所有偶数的和
+    // 20900
+    var sum = 0;
+    for (var i = 200; i <= 350; i++) {
+      if (i % 2 == 0) {
+        sum += i;
+      }
+    }
+    console.log(sum);
+
+  </script>
+</body>
+</html>

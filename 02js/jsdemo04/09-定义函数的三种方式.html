@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 函数声明
+      // function fn() {
+      //   console.log('哈哈')
+      // }
+      // fn()
+
+      // 函数表达式
+      // var fn1 = function() {
+      //   console.log('呵呵')
+      // }
+      // fn1()
+
+      // 创建函数的第三种方式  构造函数的方式
+      // 函数是一个复杂类型  Function
+      // var fn = function(){}
+
+      // 传递参数
+      // arg1, arg2, arg3... body
+      // var fn = function(){alert(111)}
+      // var fn = function(a, b) {
+      //   console.log(a + b)
+      // }
+      // 最后一个参数，指的是函数体
+      // 其他的都指定的函数的参数
+
+      // new Function() 可以创建一个函数 ,通过字符串
+      // var fn = new Function('a', 'b', 'alert(a + b)')
+      // fn(1, 2)
+
+      var str = 'var a = 1; var b = 2; console.log(a + b)'
+      var fn = new Function(str)
+      fn()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 函数调用的时候，会把实参的值赋值给形参。
+    // var num = 10;
+    // // 形参可以理解就是函数内部声明的变量, 函数调用的时候，把实参的值赋值给形参
+    // function fn(a) {
+    //   a = 99;
+    //   console.log(a);
+    //   return a;
+    // }
+    // fn(num);
+    // console.log(num);
+
+    function fn(a, b) {
+      a = a + 1;
+      b = b + 1;
+      console.log(a);
+      console.log(b);
+    }
+
+    var x = 10;
+    var y = 20;
+    fn(x, y);
+    console.log(x);
+    console.log(y);
+
+  
+  </script>
+</body>
+</html>

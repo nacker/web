@@ -1,0 +1,30 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.filter-bar {
+  border: 1px solid red;
+  display: flex;
+}
+
+.active {
+  border-right: 1px solid red;
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  border-bottom: none;
+}
+
+.filter-bar span {
+  border: 1px solid red;
+  margin: 2px;
+  flex: 1;
+}
+
+.filter-wrapper {
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+}
+.filter-wrapper h3 {
+  margin: 0;
+}

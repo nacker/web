@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      padding: 10px;
+      border: 10px solid #ccc;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      // console.log( $('div').css('width') );
+
+      // width() : 获取盒子的宽度
+      // 用法：
+      // console.log( $('div').width() );
+      // $('div').width(200);
+
+      // width() 用来获取盒子的width宽度
+      console.log( $('div').width() );
+      // innerWidth();  用来获取盒子 的padding + width
+      console.log( $('div').innerWidth() );
+      // outerWidth(false); 用来获取盒子的 padding + border + width
+      console.log( $('div').outerWidth() );
+      // outerWidth(true)  padding + border + width + margin
+      console.log( $('div').outerWidth(true) );
+
+
+
+      /* 
+        val()
+        text() html()
+        width()  innerWidth() outerWidth(false)  outerWidth(true)
+        height()  innerHeight() outerHeight(false)  outerHeight(true)
+
+
+        width() 和 height() 可以用于获取屏幕的宽度和高度
+      */
+      $(window).resize(function() {
+        // console.log(window.innerWidth);
+        console.log($(window).width());
+        console.log($(window).height());
+      });
+    });
+  </script>
+</body>
+</html>

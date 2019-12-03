@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div></div> -->
+    <script>
+      // try ..catch 用于处理异常    将来在node中
+
+      // try: 尝试
+      // try必须和catch一起用
+      try {
+        // 写可能会报错的代码
+        // 如果报错了，catch的代码就会执行， e里面会有错误的信息
+        // 如果try不报错，catch是不会执行的
+        // finally: 最终的  可以不写的
+        // finally中的代码无论报不报错，都会执行  一些无论如何都要执行的代码。
+        var div = document.querySelector('div')
+        div.innerText = '哈哈'
+      } catch (e) {
+        // 如果报错了，catch的代码就会执行， e里面会有错误的信息
+        console.error(e)
+      } finally {
+        console.log('嘻嘻嘻')
+      }
+
+      console.log(1)
+      console.log(2)
+    </script>
+  </body>
+</html>

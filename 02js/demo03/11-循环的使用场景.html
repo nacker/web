@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // while循环 当我们不知道要循环多少次，使用while循环
+    // for循环： 明确的知道要循环的范围 for更加方便
+    // do..while和while是一样，如果先执行一次，使用do..while
+
+    // 循环表白案例
+    // do {
+    //   var result = confirm('你爱我吗');
+    // } while (result === false);
+    // alert('我也爱你');
+    for(var result = confirm('你爱我吗'); result === false; ) {
+      result = confirm('你爱我吗');
+    }
+  </script>
+</body>
+</html>

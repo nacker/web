@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 计算1-100之间所有数的和
+    // == === != !== > < >= <=
+    // var i = 1;
+    // var sum = 0;
+    // while(i <= 100) { 
+    //   sum += i;
+    //   i++;
+    // }
+    // console.log(sum);
+
+
+    // 计算1-100之间 偶数的和
+    // var i = 1;
+    // var sum = 0;
+    // while(i <= 100) {
+    //   if (i % 2 === 0) {
+    //     sum += i;
+    //   }
+    //   i++;
+    // }
+    // console.log(sum);
+
+
+
+    // 循环表白
+    // 1. 询问： 你爱我吗？  
+    // 如果得到的结果是不爱， 继续循环   
+    // 如果是爱，  结束循环
+    var result = confirm('你爱我吗');
+    while(result === false) {
+      result = confirm('你爱我吗');
+    }
+    alert('我也是，我也很爱我自己');
+
+
+    var result = prompt('请输入你的用户名');
+    while(result !== 'admin') {
+      result = prompt('请输入你的用户名');
+    }
+    alert('恭喜你，登录成功');
+
+
+    // while(条件) {循环体}
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 数据驱动的思想，是指，不需要再关注任何DOM操作，要想让页面上的内容，发生变化，我们需要做的只有一件事，就是操作数据！ -->
+
+  <div id="app">
+    我叫{{name}}
+
+    <img :src="imgUrl">
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        name: "张学友",
+        imgUrl: "./logo.png"
+      }
+    })
+  </script>
+</body>
+</html>

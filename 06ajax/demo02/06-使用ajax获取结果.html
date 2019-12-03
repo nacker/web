@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <button>发送请求</button>
+    <div></div>
+    <p>333</p>
+    <p>4444</p>
+
+    <script>
+      var button = document.querySelector('button')
+      var div = document.querySelector('div')
+      button.onclick = function() {
+        var xhr = new XMLHttpRequest()
+        // 请求行
+        xhr.open('get', '05.php')
+        // 请求体
+        xhr.send(null)
+        // 获取结果
+        // 因为ajax是异步的操作，想要获取结果需要一定时间，如何知道结果已经获取到了
+        // 1. 注册一个事件
+        //  readystatechange : 当ajax的准备状态发生改变的时候，触发事件
+        xhr.onreadystatechange = function() {
+          // readyState状态为4的时候，说明响应就结束
+          if (xhr.readyState === 4) {
+            // 1. 表示状态码 状态行
+            console.log(xhr.status)
+            // 2. 响应头
+            console.log(xhr.getAllResponseHeaders())
+            // 3. 响应体
+            // 获取响应文本
+            // console.log(xhr.responseText)
+            div.innerText = xhr.responseText
+          }
+        }
+      }
+
+      /* 
+        1. 给xhr注册onreadystatechange 事件
+        2. 等到readyState变成4
+        3. 通过xhr.reponseText获取响应结果
+      */
+    </script>
+  </body>
+</html>

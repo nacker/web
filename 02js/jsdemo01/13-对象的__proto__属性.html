@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 任何一个对象都有一个属性 __proto__ 属性 : __proto__ 指的就是这个对象的原型
+    // var obj = {}
+    // console.log(obj);
+    function Person (name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.sayHi = function() {
+      console.log('大家好');
+    }
+
+    Person.prototype.sing = function() {
+      console.log('哈哈哈');
+    }
+
+    var p = new Person('zs', 18);
+
+    var p2 = new Person('ls', 20);
+
+    // 不要这么做， 修改原型中的属性，应该Person.prototype修改
+    p.__proto__.dance = function() {
+      console.log('跳舞');
+    }
+
+    p2.dance();
+
+
+  </script>
+</body>
+</html>

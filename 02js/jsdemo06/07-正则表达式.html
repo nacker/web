@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 正则表达式： 匹配规律和规则的一个表达式  作用：常用来表单校验
+      // 1. 正则表达式的创建
+      // 1.1 构造函数
+      // 1.2 字面量
+      // 这个正则表达式用于匹配数字
+      // var reg = new RegExp(/\d/)
+      // // 参数是一个字符串： 正则表示表示一条规则， test方法用于测试一个字符串是否符合规律
+      // // 返回值： 布尔
+      // console.log(reg.test('abc'))
+      // console.log(reg.test('111'))
+      // console.log(reg.test('abc1'))
+
+      // 字面量： 11 'abc' true [] {} // function(){}
+      // var reg = /\d/
+      // console.log(reg.test('aaaa'))
+      // ;/\d/.test('aaa')
+
+      // console.log(/\d/.test('abcde'))
+
+      // 学习正则的这些规则
+
+      // 正则元字符
+      // \d : digit: 数字  \d表示匹配 数字 0-9
+      // console.log(/\d/.test('aaa'))
+      // console.log(/\d/.test('aa1'))
+      // console.log(/\d/.test('111'))
+
+      // \D : 非数字  匹配除了0-9之间的其他值
+      // console.log(/\D/.test('111'))
+      // console.log(/\D/.test('a111'))
+      // console.log(/\D/.test('abc'))
+
+      // \w : word   \w 用于匹配单词字符  a-z A-Z 0-9 _
+      // console.log(/\w/.test('111'))
+      // console.log(/\w/.test('_'))
+      // console.log(/\w/.test('￥￥￥'))
+      // console.log(/\w/.test('￥￥￥_'))
+
+      // \W: 匹配除了 \w之外的其他字符
+      // console.log(/\W/.test('a-b'))
+      // console.log(/\W/.test('abc'))
+      // console.log(/\W/.test('a1c'))
+
+      // \s: 匹配所有不可见字符         \n
+      // console.log(/\s/.test('abc'))
+      // console.log(/\s/.test('a bc'))
+      // console.log(/\s/.test('a\nbc'))
+
+      // \S: 匹配可见字符
+      // console.log(/\S/.test(' 1   '))
+
+      // . 匹配任意字符串
+      // .有特殊意义，表示匹配所有字符
+      // 就想匹配. \.
+      // console.log(/\./.test('abc'))
+      // console.log(/\./.test('  '))
+      // console.log(/\./.test('aa.com'))
+
+      // | 优先级最低  ab 或者 cd
+      // ()优先级最高的
+      // console.log(/ab|cd/.test('abbbb'))
+      // console.log(/ab|cd/.test('111cd'))
+
+      // abd  或者 acd    abd | acd
+      // console.log(/a(b|c)d/.test('abc'))
+      // console.log(/a(b|c)d/.test('abdddd'))
+      // console.log(/a(b|c)d/.test('acdddd'))
+      // console.log(/a(b|c)d/.test('abcd'))
+
+      console.log(/b|foot/.test('bbbbb'))
+      // boot foot
+      console.log(/(b|f)oot/.test('bbbbb'))
+    </script>
+  </body>
+</html>

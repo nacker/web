@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 350px;
+        height: 350px;
+        margin: 100px;
+        border: 1px solid #ccc;
+        position: relative;
+      }
+
+      .big {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 360px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        display: none;
+      }
+
+      .mask {
+        width: 175px;
+        height: 175px;
+        background: rgba(255, 255, 0, 0.4);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        cursor: move;
+        display: none;
+      }
+
+      .small {
+        position: relative;
+      }
+
+      .box img {
+        vertical-align: top;
+      }
+
+      #bigBox img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box">
+      <div id="smallBox" class="small">
+        <img src="images/001.jpg" width="350" alt="" />
+        <div id="mask" class="mask"></div>
+      </div>
+      <div id="bigBox" class="big">
+        <img src="images/0001.jpg" class="bigImg" width="800" alt="" />
+      </div>
+    </div>
+    <script>
+      // 1. 找对象
+
+      var smallBox = document.querySelector('#smallBox');
+      var bigBox = document.querySelector('#bigBox');
+      var box = document.querySelector('#box');
+      var bigImg = document.querySelector('.bigImg');
+      // mask: 遮罩
+      var mask = document.querySelector('#mask');
+      // 2. 给小盒子注册鼠标移入事件， 显示大盒子和mask
+      smallBox.onmouseover = function() {
+        bigBox.style.display = 'block';
+        mask.style.display = 'block';
+      }
+      // 3. 给小盒子注册鼠标移出事件   隐藏大盒子和mask
+      smallBox.onmouseout = function() {
+        bigBox.style.display = 'none';
+        mask.style.display = 'none';
+      }
+      // 4. 鼠标在小盒子中移动， mask会跟着鼠标移动
+      smallBox.onmousemove = function(e) {
+        // 获取鼠标在smallbox中的位置
+        // console.log(smallBox.offsetLeft);
+        // console.log(box.offsetLeft);
+        // smallBox.offsetLeft得到的是0
+        // 还需要减掉mask一般的宽度和高度，保证mask的中心跟着鼠标跑
+        var x = e.pageX - box.offsetLeft - mask.offsetWidth / 2;
+        var y = e.pageY - box.offsetTop - mask.offsetHeight / 2;
+
+
+        // 5. 控制mask的移动范围, 必须是设置mask的位置之前
+        // if (x < 0) {
+        //   x = 0;
+        // }
+        // if ( x > smallBox.offsetWidth - mask.offsetWidth) {
+        //   x = smallBox.offsetWidth - mask.offsetWidth;
+        // }
+        // if (y < 0) {
+        //   y = 0;
+        // }
+
+        // if (y > smallBox.offsetHeight - mask.offsetHeight) {
+        //   y = smallBox.offsetHeight - mask.offsetHeight;
+        // }
+        x = Math.max(x, 0)
+        x = Math.min(x, smallBox.offsetWidth - mask.offsetWidth);
+        y = Math.max(y, 0);
+        y = Math.min(y, smallBox.offsetHeight - mask.offsetHeight);
+        mask.style.left = x + 'px';
+        mask.style.top = y + 'px';
+
+        // 6. 大图片等比例的移动
+        // 假设吃包子的速度是不变
+        // 燕燕总共能吃10个包子 小飞飞 总共能吃80个包子    
+        // 燕燕吃完第4个包子的时候，   小飞飞要 吃完 32个包子
+        // 燕燕现在吃了多个包子 / 燕燕能够吃的总包子数 = 飞飞现在吃了多少个包子 / 飞飞能吃的总包子数
+        // mask已经移动的距离 / mask能移动总距离 = 大图片需要移动的距离 / 大图片能够移动总距离
+        // 大图片需要移动的距离 
+        bigImg.style.left = -x / (smallBox.offsetWidth - mask.offsetWidth) * (bigImg.offsetWidth - bigBox.offsetWidth) + 'px';
+        bigImg.style.top = -y / (smallBox.offsetHeight - mask.offsetHeight) * (bigImg.offsetHeight - bigBox.offsetHeight) + 'px';
+      }
+      
+      
+    </script>  
+  </body>
+</html>

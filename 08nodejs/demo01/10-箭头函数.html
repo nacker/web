@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 箭头函数： Arrow Function
+      // ES6中，允许我们使用 箭头来定义一个函数
+      // function
+      // const fn = function() {
+      //   console.log('哈哈')
+      // }
+      // fn()
+
+      // function(参数列表) {函数数体}
+      // 箭头函数的基本语句:
+      //  （参数列表） => {函数体}
+      // const fn = () => {
+      //   console.log('哈哈')
+      // }
+      // fn()
+
+      // const add = function(a, b) {
+      //   console.log(a + b)
+      // }
+
+      const add = (a, b) => {
+        console.log(a + b)
+      }
+      add(1, 2)
+
+      // const 函数名 = (参数1, 参数2) => {函数体}
+      // 参数列表的优化
+      // 如果函数没有参数 () => {}
+      // 如果只有一个参数 ，可以省略小括号
+      // 如果有多个参数， 不能省略小括号
+      // const sayHi = function(name) {
+      //   console.log(name)
+      // }
+
+      // 函数体的优化
+      // 如果函数体只有一行代码  {} 可以省略
+      // 如果函数体只有一行代码， 而且这个行代码 如果有return  return也可以省略
+      // const sayHi = name => {
+      //   console.log(name)
+      //   console.log('111')
+      // }
+
+      // const fn = function(num) {
+      //   return num * num
+      // }
+
+      // const fn = num => num * num
+      // console.log(fn(4))
+
+      // 1. 箭头的基本语法 const 函数名 = (参数列表) => {函数体}
+      // 2. 如果参数只有一个， ()可以省略
+      // 3. 如果函数体只有一行， 省略 {} 和return
+    </script>
+  </body>
+</html>

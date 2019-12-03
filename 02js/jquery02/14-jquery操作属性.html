@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <img src="02.jpg" title="哈哈" alt="图破了">
+  <img src="02.jpg" title="哈哈" alt="图破了">
+  <img src="02.jpg" title="哈哈" alt="图破了">
+
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+
+      // jquery中操作属性： attr 用法和css的用法是一样
+      // attr操作标签的属性的   css用来操作样式的
+      // attr(name, value)
+      // 作用：设置单个属性 
+      // name:属性名  value:属性值
+      // $('img').attr('title', '呜呜');
+      // $('img').attr('alt', '无法显示');
+
+      // attr(obj)
+      // 设置多个属性
+      // $('img').attr({
+      //   src: '01.jpg',
+      //   title: '呜呜'
+      // });
+
+      // removeAttr() : 删除一个属性
+      // console.log( $('img').attr('title') );
+      // console.log( $('img').attr('alt') );
+
+      $('img').removeAttr('title');
+    });
+  </script>
+</body>
+</html>

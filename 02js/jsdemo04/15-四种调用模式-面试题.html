@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var age = 38
+      // var obj = {
+      //   age: 18,
+      //   getAge: function() {
+      //     console.log(this.age)
+      //   }
+      // }
+
+      // var f = obj.getAge
+      // // 函数名()  函数调用模式  this指向window
+      // f()
+
+      // // 对象名.方法名() 方法调用模式  this指向当前对象
+      // obj.getAge()
+
+      // var name = 'zs' // window.name
+      // var age = 20 // window.age = 20
+      // function Person(name, age) {
+      //   this.name = name
+      //   this.age = age
+      // }
+
+      // var p1 = new Person('ls', 30) // 函数调用模式  方法调用模式  构造函数调用
+      // console.log(p1)
+      // console.log(name) // zs           ls
+      // console.log(age) // 20            30
+      // console.log(p1.name) // ls  zs     ls
+      // console.log(p1.age) // 30   20     30
+
+      var age = 38
+      var obj = {
+        age: 18,
+        getAge: function() {
+          console.log(this.age) //18
+          function foo() {
+            console.log(this.age) //38
+          }
+
+          // 函数调用模式
+          foo()
+        }
+      }
+      // 18 38/18 报错
+      // 方法调用模式  this 指向
+      // obj.getAge()
+
+      obj['getAge']()
+    </script>
+  </body>
+</html>

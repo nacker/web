@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      display: none;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <button>开始</button>
+  <button>停止</button>
+  <div></div>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      
+      $('button').eq(0).click(function() {
+        $('div').stop(true).slideDown(2000);
+      })
+
+
+      $('button').eq(1).click(function() {
+        // 停止当前这个执行的这个动画
+
+        // 参数1： 是否清除动画队列 clearQueue false
+        // 参数2： 是否跳转到当前动画最终效果 false  true
+        $('div').stop(false, false);
+      })
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 如果是对象独有的属性： 应该给this增加
+    // 如果是一些共享的方法， 应该给 Person.prototype属性增加
+    function Person(name, age) {
+      this.name = name; 
+      this.age = age;
+    }
+
+    Person.prototype.sayHi = function() {
+      console.log('大家好，我是' + this.name);
+    }
+
+    Person.prototype.sing = function() {
+      console.log('唱歌');
+    }
+
+    var p1 = new Person('zs', 18);
+    var p2 = new Person('ls', 20);
+    console.log(p1.name);
+    console.log(p2.name);
+    p1.sayHi();
+    p2.sayHi();
+
+    console.log(p1.sayHi === p2.sayHi);
+  </script>
+</body>
+</html>

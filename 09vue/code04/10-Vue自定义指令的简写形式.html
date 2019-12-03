@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+        <div v-mytext="msg"></div>
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      // 一般在使用Vue自定义指令的时候，两个钩子函数比较常用： bind update
+      // 而且这两个钩子函数中执行的事情，一般都是一样的
+      // 所以Vue提供了自定义指令的简写形式
+
+      Vue.directive("mytext", function(el, binding){
+        el.innerText = binding.value;
+      })
+
+      // Vue.directive("mytext", {
+      //   bind(el, binding){
+      //     el.innerText = binding.value;
+      //   },
+      //   update(el, binding){
+      //     el.innerText = binding.value;
+      //   }
+      // })
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "<h1>hello world</h1>"
+        }
+      });
+    </script>
+  </body>
+</html>

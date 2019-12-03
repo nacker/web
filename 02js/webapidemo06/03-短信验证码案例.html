@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>点击发送短信</button>
+  <script>
+    // 1. 找对象
+    // 2. 给button注册点击事件
+    // 3. 禁用按钮
+    // 4. 开启一个定时器， 每秒改变按钮的内容
+    // 5. 时间结束后， 重新启用按钮， 清除定时器
+
+
+    // 定时器中的this永远指向window
+    var button = document.querySelector('button');
+    button.onclick = function() {
+      this.disabled = true;
+      var time = 5;
+
+      // 开启一个定时器
+      var timeId = setInterval(function() {
+        time--;
+        // 设置按钮的内容
+        // 在定时器中不要使用this，因为this指向window
+        button.innerText = time + '秒后可以再次发送';
+
+        if (time <= 0) {
+          // 清定时器
+          clearInterval(timeId);
+          // 恢复按钮
+          button.disabled = false;
+          // 修改button的内容
+          button.innerText = '再次发送';
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

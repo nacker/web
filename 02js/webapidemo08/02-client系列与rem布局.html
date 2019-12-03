@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      rem布局： 给不同的屏幕设置不同的html的fontSize
+
+      750px   font-size: 50px
+    */
+    div {
+      width: 4rem;
+      height: 4rem;
+      background-color: pink;
+    }
+  </style>
+  <script>
+    // 一般需要在页面加载前设置html的fontSize的大小
+    function fn(){
+      console.log('哈哈')
+      var width = window.innerWidth;
+      width = Math.min(width, 750);
+      width = Math.max(width , 320);
+      document.documentElement.style.fontSize = width/15 + 'px';
+    }
+    fn();
+    window.onresize = fn;
+
+  </script>
+</head>
+<body>
+  <!-- 200px 200px -->
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      width: 790px;
+      height: 340px;
+      margin: 100px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box ul {
+      width: 900%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .box ul li {
+      float: left;
+    }
+
+    .box ol {
+      height: 20px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, .3);
+      border-radius: 10px;
+      padding: 0 5px;
+    }
+
+    .box ol li {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+      float: left;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .box ol li.now {
+      background-color: #f23030;
+    }
+
+    .arrow .left,
+    .arrow .right {
+      position: absolute;
+      width: 30px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, .3);
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      line-height: 60px;
+      text-align: center;
+      font-weight: 700;
+      font-family: '宋体';
+      display: none;
+    }
+
+    .arrow .left {
+      left: 0;
+    }
+
+    .arrow .right {
+      right: 0;
+    }
+
+    .box:hover .arrow .left,
+    .box:hover .arrow .right {
+      display: block;
+    }
+
+    .arrow .left:hover,
+    .arrow .right:hover {
+      background-color: rgba(0, 0, 0, .7);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li><a href="#"><img src="images/1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/4.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/5.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/6.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/7.jpg" alt=""></a></li>
+      <li><a href="#"><img src="images/8.jpg" alt=""></a></li>
+    </ul>
+    <ol>
+      <li class="now"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+    <div class="arrow">
+      <div class="left">&lt;</div>
+      <div class="right">&gt;</div>
+    </div>
+  </div>
+  <!-- 引入写好的轮播图函数 -->
+  <script src="animate.js"></script>
+  <script>
+    //找对象
+    var box=document.querySelector('.box');
+    var ul=box.firstElementChild;
+    var imgs=ul.children;
+    var points=box.querySelectorAll('ol li');
+    var left=box.querySelector('.left');
+    var right=box.querySelector('.right');
+    var imgWidth=box.offsetWidth;
+    //添加一张假图片
+    ul.appendChild(ul.firstElementChild.cloneNode(true));
+    var count=0;
+    //左右箭头
+    right.onclick=function() {
+      // 如果是最后一张 直接跳转到第一张
+      if (count>=imgs.length-1) {
+        count=0;
+        ul.style.left=0;
+      }
+      count++;
+      animate(ul,-count*imgWidth);
+      // 让对应的小点亮起来
+      for (var i=0;i<points.length;i++) {
+        // 先把所有人都杀了
+        points[i].className='';
+      }
+      //把自己复活
+      if (count>=imgs.length-1) {
+        points[0].className='now';
+      } else {
+        points[count].className='now';
+      }
+    }
+    left.onclick=function() {
+      // 如果是第一张 直接跳转到最后一张
+      if (count<=0) {
+        count=imgs.length-1;
+        ul.style.left=-count*imgWidth+'px';
+      }
+      count--;
+      animate(ul,-count*imgWidth);
+      // 让对应的小点亮起来
+      for (var i=0;i<points.length;i++) {
+        // 先把所有人都杀了
+        points[i].className='';
+      }
+      //把自己复活
+      if (count>=imgs.length-1) {
+        points[0].className='now';
+      } else {
+        points[count].className='now';
+      }
+    }
+    //自动播放
+    var timeId=setInterval(function() {
+      right.onclick();
+    },1000);
+    // 设置移入事件
+    box.onmouseover=function() {
+      clearInterval(timeId);
+    }
+    // 设置移出事件
+    box.onmouseout=function() {
+      timeId=setInterval(function() {
+        right.onclick();
+      },1000);
+    }
+    //小圆点
+    //排他
+    for (var i=0;i<points.length;i++) {
+      points[i].index=i;
+      points[i].onclick=function() {
+        for (var i=0;i<points.length;i++) {
+          points[i].className='';
+        }
+        this.className='now';
+        if (count>=imgs.length-1) {
+          count=0;
+          ul.style.left=0;
+        }
+        count=this.index;
+        animate(ul,-count*imgWidth);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      margin: 50px auto;
+    }
+
+    td {
+      padding: 15px;
+      text-align: center;
+    }
+
+    input {
+      width: 100px;
+      height: 40px;
+      margin: 0 auto;
+    }
+  </style>
+
+</head>
+
+<body>
+<input type="button" value="开始" id="btn1">
+<input type="button" value="结束" id="btn2">
+</body>  
+
+<script>
+    // 用于存储所有需要点名的td
+    var tds = [];
+    var list = [
+      ["@", "@", "@", "@", "@", "@", "@", "讲师",                                "@", "@", "@", "@", "@", "@", "@", "@"],
+      ["陈祎晟", "闫留洋", "贾国安", "刘博文", "王怡力", "柳杨青","王伟","耿佳想",     "@", "王金辉","赵耀", "孟世杰", "杨雪珂", "黄腾", "张建慧", "章霞林","付颖康"], 
+      ["吴奥", "乐轮", "陈林", "章磊", "杨静茹", "袁雪","高委","姜国欣",              "@", "黄昌森","郭锡玲", "贾后哲", "吉洪奇", "杨程", "柯元泉", "刘博","刘艳侠"],
+      ["刘明鑫", "宋磊", "王梦雨", "周子恒", "郭冬亚", "李超","郑俊泽","陈玲",        "@", "祝添祥","薛伟", "张飞", "徐情", "栾煜程", "周铁柔", "刘芬","梁志方"],
+      ["董洵", "钟夏文", "姚惟超", "汪帅", "朱校影", "朱媛敏","黄江南","黄淑兵",      "@", "吕冰倩","李力强", "徐晓雪", "吴刚", "姚莉", "钱四伟", "张莹钰","张丽琴"],
+      ["蒋闪闪", "周建国", "庞聪刚", "陈宝明", "蒋雪", "张路路","朱鹏飞","沈刚",      "@", "詹展","刘枝富", "桂安", "严国泉", "方玉红", "张钰珂", "法治兵","刘玉华"],
+      ["@", "@", "@", "@", "@", "@", "@", "@",                                   "@", "@", "@", "@", "@", "@", "@", "@", "@"],
+      ["@", "@", "徐仲", "张辉", "刘晓宾", "王良兵","曹家辉","叶照晶",                "@", "檀鉴","叶光伟", "梁卫光", "齐刘松", "李明武", "周燕雪", "@", "@"],
+      ["@", "@", "何旭东", "董传聪", "靳梦阳", "徐龙鑫","李洋洋","张帅",              "@", "吕君健","靳亚杰", "朱音奇", "宋石磊", "李通通", "潘舒婷", "@", "@"],
+      ["@", "@", "孔德源", "程小青", "杨倩怡", "翟帅","安九会","张海涛",              "@", "马梦月","高旗", "李楠", "郑顺", "姚瑶", "陶正阔", "柯财余", "@"],
+      ["白云聪", "@", "周翔", "刘尚宇", "高星", "丁杨鹏飞", "李小玉", "刘卫湘",       "@", "汪萍","李雪杰", "汪洋", "胡日", "孙少伍", "周皖宁", "罗文彬", "@"],
+      ["@", "@", "@", "@", "@", "@", "@", "@",                                   "@", "@", "@", "@", "张琦龙", "公彦强", "王鹏飞", "占磊", "@"],
+  ];
+    // 创建表格
+    var btn1 = document.querySelector('#btn1');
+    var btn2 = document.querySelector('#btn2');
+    var table = document.createElement('table');
+    document.body.appendChild(table);
+
+    // 创建tr
+    for(var i = 0; i < list.length; i++) {
+      var tr = document.createElement('tr');
+      table.appendChild(tr);
+
+      // 创建td
+      for(var j = 0; j < list[i].length; j++) {
+        var td = document.createElement('td');
+        tr.appendChild(td);
+
+        // 给td设置内容和背景色
+        if (list[i][j] !== '@') {
+          td.innerText = list[i][j];
+          td.style.backgroundColor = 'yellowgreen';
+
+          tds.push(td);
+        }
+      }
+    }
+
+
+    var timeId;
+    btn1.onclick = function() {
+      clearInterval(timeId);
+      timeId = setInterval(function(){
+        // 随机选中tds中某一个td 
+        var random = parseInt(Math.random() * tds.length);
+        // 让所有的tds的背景色都是yellowgreen
+        for(var i = 0; i < tds.length; i++) {
+          tds[i].style.backgroundColor = 'yellowgreen';
+        }
+        tds[random].style.backgroundColor = 'hotpink';
+      }, 15);
+    }
+
+    btn2.onclick = function() {
+      clearInterval(timeId);
+    }
+  </script>
+</body>
+</html>

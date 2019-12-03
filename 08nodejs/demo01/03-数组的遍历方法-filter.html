@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // filter: 过滤
+      // filter方法和map方法非常像
+      // filter也会返回一个新的数组， 数组中保存所有(满足了过滤条件的那些值)function中return 了true的那些元素
+
+      // 需要奇数
+      // var arr = [1, 2, 3, 4, 5, 6, 7]
+      // var newArr = arr.filter(function(item) {
+      //   // if (item % 2 === 1) {
+      //   //   return true
+      //   // } else {
+      //   //   return false
+      //   // }
+      //   return item % 2 === 1
+      // })
+      // console.log(newArr)
+
+      // 及格的留下来， 没及格 出门右拐
+      var students = [
+        { name: 'zs', score: 90 },
+        { name: 'ls', score: 30 },
+        { name: 'ww', score: 10 },
+        { name: 'zl', score: 100 },
+        { name: 'tq', score: 70 },
+        { name: 'wb', score: 60 }
+      ]
+      var result = students.filter(function(item) {
+        return item.score >= 60
+      })
+      console.log(result)
+    </script>
+  </body>
+</html>

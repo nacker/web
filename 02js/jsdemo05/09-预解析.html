@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // undefined  函数
+      // 1
+
+      // console.log(a)
+      // function a() {
+      //   console.log('aaaaa')
+      // }
+      // var a = 1
+      // console.log(a)
+
+      // 词法作用域：静态作用域
+      // 作用域在函数声明的时候就确定了，跟调用无关
+      // 函数四种调用模式 是确定this
+      // 函数在执行的时候，如果在自己内部找不到变量，就会去外面找
+      // var num = 123
+      // function f1() {
+      //   console.log(num)
+      // }
+
+      // function f2() {
+      //   var num = 456
+      //   f1()
+      // }
+      // f2()
+
+      // var num = 11
+      // function fn() {
+      //   var num = 22
+      //   function fn1() {
+      //     console.log(num)
+      //   }
+      //   fn1()
+      // }
+
+      // fn()
+
+      // var num = 11
+      // function fn() {
+      //   // var num = 22
+      //   function fn1() {
+      //     // var num = 33
+      //     console.log(num)
+      //   }
+      //   fn1()
+      // }
+      // fn()
+
+      // var str = '123'
+      // function fn() {
+      //   var str = '456'
+      //   console.log(str) //???
+      // }
+      // fn()
+      // console.log(str) //???
+
+      // var num = 10
+      // fn1()
+      // function fn1() {
+      //   console.log(num)
+      //   var num = 20
+      //   console.log(num)
+      // }
+      // console.log(num)
+      // undefined 20 10
+
+      // 100 200 300 10 200 报错
+      // 100 200 300 10 200 undfefined
+      //
+      // var num1 = 10
+      // var num2 = 20
+      // function fn(num1) {
+      //   num1 = 100
+      //   num2 = 200
+      //   num3 = 300
+      //   console.log(num1)
+      //   console.log(num2)
+      //   console.log(num3)
+      //   var num3
+      // }
+      // fn()
+      // console.log(num1)
+      // console.log(num2)
+      // console.log(num3)
+
+      // 101 101 1
+      // 100 101 1
+      // 101 102 1
+      // var num = 1
+      // function fn() {
+      //   var num = 100
+      //   // num++ ++num
+      //   num++
+      //   console.log(num)
+      // }
+      // fn()
+      // fn()
+      // console.log(num)
+
+      // blue blue
+      // red blue  2
+      // blue red
+      // red red 2
+
+      // red red blue
+      var color = 'red'
+      function outer() {
+        var anotherColor = 'blue'
+
+        function inner() {
+          var tmpColor = color
+          color = anotherColor
+          anotherColor = tmpColor
+          console.log(anotherColor)
+        }
+
+        inner()
+      }
+      outer()
+      console.log(color)
+    </script>
+  </body>
+</html>

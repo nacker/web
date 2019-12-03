@@ -1,0 +1,32 @@
+<heros>
+  <hero>
+    <!-- 
+      1. 标签的名字不固定
+      2. 必须有一个根元素
+      3. 标签都必须闭合
+    -->
+    <name>奥特曼</name>
+    <gender aa='box'>男</gender>
+    <skill>激光火炮</skill>
+  </hero>
+  <hero>
+    <name>葫芦娃</name>
+    <gender>男</gender>
+    <skill>喷火</skill>
+  </hero>
+  <hero>
+    <name>美羊羊</name>
+    <gender>女</gender>
+    <skill>化妆</skill>
+  </hero>
+  <hero>
+    <name>红太狼</name>
+    <gender>女</gender>
+    <skill>平底锅</skill>
+  </hero>
+  <hero>
+    <name>光头强</name>
+    <gender>男</gender>
+    <skill>砍树</skill>
+  </hero>
+</heros>

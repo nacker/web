@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: skyblue;
+    }
+
+    div {
+      width: 174px;
+      height: 126px;
+      background-image: url('./images/fish-12-126.png');
+      /* animation可以有多个动画，多个动画有逗号隔开 */
+      animation: dou .5s infinite steps(12), you 3s linear infinite;
+    }
+
+    div:nth-child(2),
+    div:nth-child(4) {
+      animation-duration: 1s, 5s;
+    }
+    
+
+    /* 小鱼抖动的动画 */
+    @keyframes dou {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 0 -1512px;
+      }
+    }
+
+    /* 
+      小鱼游的动画
+
+      1. 游到右边 1000px, 0
+      2. 在右边的时候转圈180
+      3. 游回来
+      4. 转回来
+    */
+    @keyframes you {
+      0% {
+        transform: translateX(0px) rotate(0deg);
+      }
+      25% {
+        transform: translateX(1000px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateX(1000px) rotate(180deg);
+      }
+
+      75% {
+        transform: translateX(0px) rotate(180deg);
+      }
+
+      100% {
+        transform: translateX(0px) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

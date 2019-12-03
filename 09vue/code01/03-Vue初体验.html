@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>我叫{{name}}, 我今年{{age}}岁</h1>
+    {{name}}
+
+    插值表达式
+  </div>
+
+  {{name}}
+
+  <!-- 1. 安装Vue  npm  yarn -->
+  <!-- 2. 引入Vue -->
+  <script src="./node_modules/vue/dist/vue.js"></script>
+
+  <script>
+    
+    // 1. 创建一个Vue实例
+    const vm = new Vue({
+      // element: 规定Vue实例所管控的元素
+      el: "#app",
+      // data: 要渲染的数据
+      data: {
+        name: "胡聪聪",
+        age: 81
+      }
+    });
+
+    // el 不能改名字
+    // data 也不能改名字
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/index.css" />
+  </head>
+  <body>
+    <div class="content">
+      <a class="pb_btn" href="/add">发表内容</a>
+      <a class="pb_btn" href="/logout" style="margin-top: 10px;">退出</a>
+      <div class="list">
+        <ul>
+          {{each list v i}}
+          <li>
+            <img src="../static/images/timg.jpg" alt="" class="pic" />
+            <div class="list_con">
+              <div class="time">
+                <strong>
+                  <i class="now_time">{{ v.time }}</i>
+                </strong>
+                <a href="/delete?id={{ v.id }}">
+                  <img src="../static/images/lj.jpg" alt="" />
+                </a>
+              </div>
+              <p>
+                <b>作者：</b>
+                <span>{{ v.name }}</span>
+              </p>
+              <p>
+                <b>标题：</b>
+                <span>{{ v.title }}</span>
+              </p>
+              <p>
+                <b>内容：</b>
+                {{ v.content }}
+              </p>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <script src="../static/js/moment.js"></script>
+    <script>
+      const times = document.querySelectorAll('.now_time')
+      times.forEach(item => {
+        // console.log(item.innerText)
+        item.innerText = moment(item.innerText.replace(/\"/g, '')).format(
+          'YYYY-MM-DD HH:mm:ss'
+        )
+      })
+    </script>
+  </body>
+</html>

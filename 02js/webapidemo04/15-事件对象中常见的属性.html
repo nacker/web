@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      height: 4000px;
+    }
+    
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    var div = document.querySelector('div');
+    div.onclick = function(e) {
+      // 想要获取鼠标的位置
+      // screenX screenY : 相对于屏幕最左上角的距离（用的不多）
+      // clientX clientY : 相对于可视区左上角的距离
+      // pageX pageY:      相当于整个页面左上角的距离 如果有滚动条， pageY是包含滚动条隐藏的那部分高度
+      console.log(e);
+    }
+  </script>
+</body>
+</html>

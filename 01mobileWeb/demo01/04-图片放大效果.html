@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 500px;
+      height: 384px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      overflow: hidden;
+    }
+    img {
+      /* 注意点： 谁想要有过渡效果，transition给谁加 */
+      transition: 1s;
+      /* 
+        transform-origin: 设置转换的原点， 放大的点
+        1. 取值可以是方位名词： left right center top bottom
+        2. 具体的像素点
+      */
+      /* transform-origin: center center; */
+      transform-origin: 240px 340px;
+    }
+
+    img:hover {
+      transform: scale(2);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="images/box.jpg" alt="">
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [10, 9, 8 , 7, 6, 5, 4 ];
+
+    // 让数组中的元素两两比较
+    // 只需要找到6个最大的数即可
+    var ci = 0;
+    for(var j = 0; j < arr.length - 1; j++) {
+      // 两两比较， 7个数 只需要比6次
+      // j = 0 的时候，不能少比
+      // j = 1 的时候， 得到了一个最大的数，少比1次
+      // j = 2 的时候， 得到了2个最大的数，少比2次
+      for(var i = 0; i < arr.length - 1 - j; i++) {
+        ci++;
+        if (arr[i] > arr[i + 1]) {
+          var temp = arr[i];
+          arr[i] = arr[i + 1];
+          arr[i + 1] = temp;
+        }
+      }
+    }
+    
+    console.log(ci);
+    console.log(arr);
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .box {
+      width: 600px;
+      margin: 100px auto;
+      border: 1px solid #000;
+      padding: 20px;
+    }
+
+    textarea {
+      width: 450px;
+      height: 160px;
+      outline: none;
+      resize: none;
+    }
+
+    ul {
+      width: 450px;
+      padding-left: 80px;
+    }
+
+    ul li {
+      line-height: 25px;
+      border-bottom: 1px dashed #cccccc;
+    }
+
+    .fl {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="weibo">
+  <span>微博发布</span>
+  <textarea name="" id="txt" cols="30" rows="10"></textarea>
+  <button id="btn">发布</button>
+  <ul id="ul">
+
+  </ul>
+</div>
+
+<script>
+  // 1. 找对象
+  var txt = document.querySelector('#txt');
+  var btn = document.querySelector('#btn');
+  var ul = document.querySelector('#ul');
+  // 2. 给发布按钮注册点击事件
+  btn.onclick = function() {
+    // 3. 获取到textarea的value
+    var content = txt.value.trim();
+    // 清空文本域的内容
+    txt.value = '';
+    // 3.1 判断content是否为空
+    if (content === '') {
+      alert('胸dei,请输入点东西呀');
+      // 函数遇到return就结束了
+      return;
+    }
+    // 4. 创建一个li标签
+    var li = document.createElement('li');
+    li.innerText = content;
+    // 5. 添加给ul
+    ul.insertBefore(li, ul.firstElementChild);
+    // 给每个li增加一个删除的按钮
+    var button = document.createElement('button');
+    button.innerText = '删除';
+    button.setAttribute('class', 'fl');
+    // 给创建的按钮注册事件
+    button.onclick = function() {
+      ul.removeChild(this.parentNode);
+    }
+    // 添加给li
+    li.appendChild(button);
+  }
+
+    
+  
+</script>
+
+</body>
+</html>

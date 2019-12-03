@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //思考：
+    //将[3, 6, 1, 5, 10, 2,11]从小到大排列
+    // var arr = [3, 6, 1, 5, 10, 2,11];
+    // arr.sort(function(a, b) {
+    //   return a - b;
+    // })
+    // console.log(arr);
+    // //将字符串数组按照字符长度从小到大排列
+    // var arr1 = ['aaa', 'bb', 'c', 'dddd'];
+    // arr1.sort(function(a, b) {
+    //   return a.length - b.length;
+    // })
+    // console.log(arr1);
+    //将学生数组按照年龄从小到大排列
+    var arr2 = [
+      {name: 'zs', age: 18, score: 100},
+      {name: 'ls', age: 28, score: 50},
+      {name: 'ww', age: 88, score: 9},
+      {name: 'zl', age: 5, score: 88}
+    ];
+    arr2.sort(function(a, b) {
+      return b.age - a.age;
+    })
+    console.log(arr2);
+  </script>
+</body>
+</html>

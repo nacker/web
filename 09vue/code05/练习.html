@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <father></father>
+    
+    
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    // 在实际开发过程中，也会遇到，需要子组件将数据传递给父组件去使用的情况
+    // 比如： 日期组件  
+
+    // 父组件给子组件传值，用的是属性传值，而且是在标签中直接书写，代码一运行起来，数据就会传递过去
+
+    // 子组件给父组件传值，是通过事件传值的
+
+
+    // 在父组件中使用子组件的时候，我们需要给子组件标签，绑定一个函数，这个函数就是用来接收数据的
+
+    // 1. 需要在父组件中先声明一个函数出来，这个函数可以接收一个参数
+    // 2. 将这个函数通过@绑定给子组件标签
+    // 3. 在子组件中要给父组件传递数据的时候，通过this.$emit("绑定的函数的名称")，调用父组件中的函数，把自己的数据当做参数传递过去
+    // 4. 在父组件中，就可以拿到这个数据了
+
+
+    // 子组件给父组件传值（事件传值）
+    
+    Vue.component("father",{
+      template:`<div>这是爸爸{{msgFromSon}}<son @sb="getMsgFromSon"/></div>`,
+      data(){
+        return {
+          msgFromSon:''
+        }
+      },
+      methods:{
+        getMsgFromSon(value){
+          this.msgFromSon=value
+        }
+      }
+    })
+    Vue.component("son",{
+      template:`<div>这是儿子<button @click="sendMsgToFather">点击发送</button></div>`,
+      data(){
+        return {
+          msg:'没钱了,打钱'
+        }
+      },
+      methods:{
+        sendMsgToFather(){
+          this.$emit('sb',this.msg)
+        }
+      }
+    })
+    
+
+
+
+    // Vue.component("father", {
+    //   template: `<div>这是父组件：儿子的来信{{msgFromSon}}<son @sendmsg="getMsgFromSon"/></div>`,
+    //   data(){
+    //     return {
+    //       msgFromSon: ""
+    //     }
+    //   },
+    //   methods: {
+    //     getMsgFromSon(value){
+    //       // console.log("儿子来信了：说啥来着，看一下：" + value)
+    //       this.msgFromSon = value;
+    //     }
+    //   }
+    // })
+
+    // Vue.component("son", {
+    //   template: "<div>这是子组件 <button @click='sendMsgToFather'>发消息给父亲</button></div>",
+    //   data(){
+    //     return {
+    //       msg: "没钱了，打点钱！",
+    //     }
+    //   },
+    //   methods: {
+    //     sendMsgToFather(){
+    //       // 这个点击事件中，我们需要把子组件中的msg发送给父组件去使用
+
+    //       this.$emit("sendmsg", this.msg)
+
+    //     }
+    //   }
+    // })
+
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+
+</html>

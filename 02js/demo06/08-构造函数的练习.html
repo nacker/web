@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 飞飞
+    // 燕燕
+    // 聪聪
+
+    // 构造函数首字母大写
+    // 构造函数的作用：给对象增加属性和方法（实例化对象）
+    function Teacher(name, age, gender) {
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+      this.sing = function() {
+        console.log('大家好，我是' + this.name + '今天晚上，我给大家唱首歌');
+      }
+    }
+
+
+    // 1. ff对象怎么来的
+    // 因为new做了四件事情
+    // 1. new会创建一个新的空对象，Teacher
+    // 2. 让构造函数内部的this指向新对象
+    // 3. 执行构造函数
+    // 4. 返回这个空对象
+    var ff = new Teacher('飞飞', 18, '女');
+    console.log(ff);
+    ff.sing();
+
+    var yy = new Teacher('燕燕', 16, '男');
+    console.log(yy);
+    yy.sing();
+  </script>
+  
+</body>
+</html>

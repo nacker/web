@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      width: 600px;
+      height: 200px;
+      border: 1px solid #000;
+      margin: 50px auto;
+
+      /* flex布局， 弹性布局 */
+      /* block  inline  inline-block none table flex */
+      /* 一个盒子，只要设置了display:flex, 说明这个盒子就是弹性盒子，弹性盒子有自己的布局规则 */
+      /* 一个弹性盒子，有主轴和侧轴的概念，  主轴：默认水平往右  侧轴：默认垂直向下 */
+      /* 弹性盒子的子元素默认在主轴上进行排列 */
+      display: flex;
+
+
+      /* flex-direction: 设置主轴的方向 row: 默认  column: 向下 */
+      /* flex-direction: column-reverse; */
+
+
+      /* 
+        设置子元素在主轴上的排列方式
+        flex-start: 从开始位置排列
+        center: 排列在主轴中间
+        flex-end: 排列在主轴的结尾
+        space-around: 所有的子元素均分对齐
+        space-between: 中间的子元素均分对齐，第一个贴左边  最后一个帖右边
+      */
+      justify-content: space-between;
+
+    }
+    li {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border: 1px solid #000;
+      box-sizing: border-box;
+
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+</html>

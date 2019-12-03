@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.json字符串  =====>   js对象    JSON.parse(json)
+      // 2. js对象=======>      json      JSON.stringify()
+
+      // eval 可以把json变成js对象
+      var json = '["张三", "李四", "王五"]'
+      var arr = eval(json)
+
+      var json2 = '{"name": "zs", "age": 18}'
+      var obj = eval('(' + json2 + ')')
+      console.log(obj)
+
+      // dry: dont repeat yourself
+    </script>
+  </body>
+</html>

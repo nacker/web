@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 打印100-1之间所有的数
+    for(var i = 100; i >= 1; i--) {
+      console.log(i);
+    }
+
+
+    // 2. 计算200-100之间所有奇数的和
+    var sum = 0;
+    for (var i = 200; i >= 100; i--) {
+      if (i % 2 === 1) {
+        sum += i;
+      }
+    }
+    console.log(sum);
+
+  </script>
+</body>
+</html>

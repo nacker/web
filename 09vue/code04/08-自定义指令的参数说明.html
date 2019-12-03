@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <input type="text" v-hucongcong:shuaige.dashuaige.gaofushuai="msg">
+        
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      // 指令的使用语法
+      // v-bind:src="msg"
+      // v-on:click="clickHandler"
+      // v-on:click.stop=""
+
+      // 一个指令完整的写法
+      // 指令名称:指令参数.修饰符="表达式"
+
+
+      // 在自定义指令中的钩子函数里，我们可以拿到和当前指令相关的所有的信息
+      // 指令名称:指令参数.修饰符="表达式"
+
+
+      Vue.directive("hucongcong", {
+        bind(el, binding){
+          console.log(el);
+          console.log(binding);
+
+          // binding可以用来获取当前指令的所有的信息
+          // name: 获取的是当前指令的名称
+          // rawName: 带v的指令名称名称
+          // expression: 等号后面的表达式
+          // value: 这个是表达式的值
+          // arg: 获取到的就是指令的参数 冒号后面的内容
+          // modifiers: 指令的修饰符，这是一个对象，修饰符都会被作为属性存储到这个对象中，属性值是true
+        }
+      })
+
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world"
+        }
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+/* less中可以通过 @变量: 值的方式定义变量 */
+/* 变量： 可以变化的量 */
+/* 1. 定义变量   @变量名:值 */
+/* 2. 使用变量   @变量 */
+body {
+  background-color: green;
+}
+.wjs_header {
+  color: green;
+}
+div {
+  border: 1px solid green;
+}

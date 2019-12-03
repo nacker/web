@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // instanceof 判断 A instanceof B
+      // B.prototype 是否在 A的原型链上
+
+      // Function ---> Function.prototype ---> Object.prototype ---> null
+
+      // 以后 任何对象 instanceof Object  true
+      ///    任意的函数 instance Function   true
+      // console.log(Function instanceof Function)
+
+      // console.log(Function instanceof Object)
+
+      // // Object ------ > Function.prototype ----> Object.prototype ---> null
+      // console.log(Object instanceof Function)
+      // console.log(Object instanceof Object)
+      // function fn() {}
+      // console.log(fn instanceof Function)
+      // console.log(fn instanceof Object)
+
+      // 1. 所有的函数都是有Function创建出来，，，，，所有函数.__proto__ 都是Function.prototype
+      // 2. 所有的原型都是有Object创建出来       所有原型.__proto__ 都是Object.prototype
+      // function Person() {}
+      // var p = new Person()
+      // p.call()
+      // p是实例
+      // Person是构造函数
+      // Person.prototype 是原型
+
+      // Person.prototype 实例
+      // Object是构造函数
+      // Object.prototype
+
+      // Person构造函数 实例
+      // Function 构造函数
+      // Function.prototype
+
+      // Function 构造函数也是函数   Function的妈妈  是Function   Function的爸爸 Function.prototype
+
+      // function fn() {}
+      // console.log(fn.__proto__.constructor === Function)
+      // console.log(Function.__proto__.constructor === Function)
+      // console.log(Object.__proto__.constructor === Function)
+      // var p = new fn()
+      // console.log(p.__proto__.constructor === fn)
+
+      // 族谱列一下
+
+      function Fn() {}
+
+      Fn.money = 100
+      Fn.prototype.car = '玛莎拉蒂'
+      Function.prototype.house = '别墅'
+      Object.prototype.girl = '小姐姐'
+
+      var f = new Fn()
+
+      // f---> Fn.prototype ----> Object.prototype
+      // console.log(f.money) // undefined
+      // console.log(f.car) // 玛莎拉蒂
+      // console.log(f.house) // undefined
+      // console.log(f.girl) // 小姐姐
+
+      // Fn ---> Function.prototype ---> Object.prototype
+      console.log(Fn.money) // 100
+      console.log(Fn.car) // undefined
+      console.log(Fn.house) // 别墅
+      console.log(Fn.girl) // 小姐姐
+    </script>
+  </body>
+</html>

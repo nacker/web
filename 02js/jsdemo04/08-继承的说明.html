@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 继承的目的： 给对象增加属性和方法
+
+      // 1. 混入式继承   一个对象想要继承另一个对象
+      //   给对象增加一个extend方法
+
+      // 2. 原型链继承
+      // 想要给实例增加属性方法
+      // 2.1 直接给原型增加属性和方法 缺点： 如果要加的属性比较多
+      // 2.2 直接把原型替换成一个对象， 一般要给新对象提供一个constructor
+      // 2.3 给原型增加一个extend方法， 原型可以继承很多的对象。
+
+      // 3. Object.create() 快速让一个对象继承另一个对象
+      var obj = {
+        name: 'zs',
+        age: 18
+      }
+
+      // 作用：返回一个新对象， 这个新对象直接会继承自 obj
+
+      // newObj.__proto__  === obj
+      var newObj = Object.create(obj)
+      console.log(newObj.name)
+      console.log(newObj.age)
+
+      // 寄生式组合继承（不用深入研究 ------ 高级程序设计）
+      //
+      // es6   class extend
+    </script>
+  </body>
+</html>

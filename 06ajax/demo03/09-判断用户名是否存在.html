@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" /> <span></span>
+    <script src="ajax.js"></script>
+    <script>
+      var input = document.querySelector('input')
+      var span = document.querySelector('span')
+      input.onblur = function() {
+        ajax({
+          url: '09.php',
+          data: 'mobile=' + input.value,
+          success: function(info) {
+            if (info === 'yes') {
+              span.innerText = '手机号已经被注册'
+            } else {
+              span.innerText = '✔'
+            }
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 精确匹配
+      // console.log(/a/.test('abcd'))
+      // 18511223344kajdfkjdslkfjlksjd
+
+      // ^表示开始  $符表示结束   [^abc]
+
+      // 表示 规则必须以a开头
+      // console.log(/^a/.test('baaa'))
+      // console.log(/^a/.test('abbb'))
+      // $表示结尾
+      // console.log(/a$/.test('baaa'))
+      // console.log(/a$/.test('abbb'))
+
+      // ^ $ 一起用表示精确匹配 以某个字符串开始，同时也要以这个字符结尾
+      // console.log(/^a$/.test('abbb'))
+      // console.log(/^a$/.test('a'))
+      // console.log(/^a$/.test('a'))
+      // console.log(/^aa$/.test('aa'))
+
+      // console.log(/^chuan/.test('dachuan'))
+      // console.log(/^chuan/.test('chuang'))
+      // console.log(/^chuan/.test('chuan'))
+      // console.log(/chuan$/.test('chuan'))
+      // console.log(/chuan$/.test('dachuan'))
+      // console.log(/chuan$/.test('chuang'))
+      // console.log(/^chuan$/.test('chuanchuan'))
+
+      // console.log(/^\d$/.test('1'))
+      // console.log(/^\d$/.test('2'))
+      // console.log(/^\d$/.test('4'))
+      // console.log(/^\d$/.test('9'))
+      // console.log(/^\d\d$/.test('11'))
+      // console.log(/^\d\d$/.test('a1'))
+      // console.log(/^\d\d$/.test('12'))
+      // console.log(/^\d\d$/.test('100'))
+
+      // console.log(/^1\d\d\d\d\d\d\d\d\d\d$/)
+    </script>
+  </body>
+</html>

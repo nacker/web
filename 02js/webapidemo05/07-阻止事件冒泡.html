@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    var div = document.querySelector('div');
+    div.onclick = function(e) {
+      // stop:停止  propagation:传播  
+      // 阻止事件冒泡
+      e.stopPropagation();
+      console.log('div执行了');
+    };
+
+    document.onclick = function() {
+      console.log('document执行了');
+    }
+  </script>
+</body>
+</html>

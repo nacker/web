@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script type="text/html" id="tpl">
+      <h1>姓名：{{name}}</h1>
+      <h3>描述：{{desc}}</h3>
+      <ul>
+        {{each hobby}}
+          <li>{{$value}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script src="template-web.js"></script>
+    <script>
+      var obj = {
+        name: '菜虚鲲',
+        desc: '鸡你太美',
+        hobby: [
+          '打篮球',
+          '唱',
+          '跳',
+          'rap',
+          '发律师函',
+          '烫头发',
+          '抽烟',
+          '喝酒'
+        ]
+      }
+
+      // 使用模版引擎来实现
+      // 1. 引入模版引擎
+      // 2. 准备数据
+      // 3. 准备模版
+      // 4. 结合数据和模版
+      // 5. 把结构显示到页面
+      var html = template('tpl', obj)
+      document.querySelector('.box').innerHTML = html
+    </script>
+  </body>
+</html>

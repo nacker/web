@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>发送get请求</button>
+    <button>发送post请求</button>
+    <script>
+      // 第一种方式： get()  post()
+      // 第二种方式： ajax()
+      var btn1 = document.querySelector('button:nth-child(1)')
+      var btn2 = document.querySelector('button:nth-child(2)')
+
+      btn1.onclick = function() {
+        ajax({
+          url: '07-get.php',
+          data: 'username=admin&password=123456'
+        })
+      }
+
+      btn2.onclick = function() {
+        ajax({
+          type: 'post',
+          url: '07-post.php',
+          data: 'username=admin&password=123456'
+        })
+      }
+
+      /* 
+        参数1： type  请求的方式  get  post  默认为get
+        参数2： url    请求的地址  没有默认值
+        参数3： data  请求的数据 默认为 ''
+      */
+      function ajax(options) {
+        // 如果不传options参数，或者你传递options参数不是个对象
+        // 参数的处理
+        if (!options || typeof options !== 'object') {
+          return
+        }
+        // type指定请求方式，默认为get
+        var type = options.type || 'get'
+        // 如果url没有传递，不发送请求
+        var url = options.url
+        if (!url) {
+          return
+        }
+        var data = options.data
+
+        // 创建ajax对象
+        var xhr = new XMLHttpRequest()
+
+        // 设置请求头
+        // 请求行  如果是post请求，直接是url  如果是get请求  url + '?' + data
+        // if (type === 'get') {
+        //   xhr.open(type, url + '?' + data)
+        // } else {
+        //   xhr.open(type, url)
+        // }
+
+        // 如果get请求，并且有data参数需要传递， 才把data拼接到url后面
+        if (type === 'get' && data) {
+          url = url + '?' + data
+          data = null
+        }
+        xhr.open(type, url)
+
+        // 请求头
+        if (type === 'post') {
+          xhr.setRequestHeader(
+            'content-type',
+            'application/x-www-form-urlencoded'
+          )
+        }
+
+        // 请求体
+        // if (type === 'get') {
+        //   xhr.send(null)
+        // } else {
+        //   xhr.send(data)
+        // }
+
+        // type === 'get' ? xhr.send(null) : xhr.send(data)
+        // xhr.send(type === 'get' ? null : data)
+        xhr.send(data)
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText)
+            } else {
+              console.log('服务器繁忙，请稍候尝试')
+            }
+          }
+        }
+      }
+
+      function ajax(options) {
+        // 如果options没有传，或者options传的不是对象类型 不发送请求
+        if (!options || typeof options !== 'object') {
+          return
+        }
+
+        // 处理url  如果url没有传递，不发送请求
+        var url = options.url
+        if (!url) {
+          return
+        }
+
+        // 处理type, 默认type为get
+        var type = options.type || 'get'
+        // 处理data
+        var data = options.data || null
+
+        // 创建ajax对象
+        var xhr = new XMLHttpRequest()
+
+        // 设置请求行
+        // 如果get请求，url需要拼接data
+        if (type === 'get' && data) {
+          url = url + '?' + data
+          data = null
+        }
+        xhr.open(type, url)
+
+        // 处理请求头
+        if (type === 'post') {
+          xhr.setRequestHeader(
+            'content-type',
+            'application/x-www-form-urlencoded'
+          )
+        }
+
+        // 处理请求
+        xhr.send(data)
+
+        // 处理响应
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log(xhr.responseText)
+            } else {
+              console.log('服务器繁忙')
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

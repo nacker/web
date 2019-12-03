@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <father></father>
+    <div>这是爸爸</div>
+    <son></son>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    // 如何把父组件中的数据传递给子组件使用？ 父到子的传值(属性传值)
+
+    // 1. 在父组件中使用子组件的时候，给子组件的标签中，添加一个属性，这个属性就是用来传递数据的
+    // 2. 这个属性应该使用动态绑定的方式传递 需要加上:
+    // 3. 在子组件的参数对象中，添加一个props属性
+    // 4. 这个属性是一个数组，数组中存放点的，就是父组件传递数据的时候使用的属性名
+    // 5. 在子组件中，就直接可以使用这个属性了 
+
+
+    // 注意： 父组件中的数据发生变化之后，子组件中接收到的数据也会随之变化
+
+
+
+    // Vue.component("father", {
+    //   template: `<div>这是父组件：<son :msgfromfather="msg" :numfromfather="num"/></div>`,
+    //   data(){
+    //     return {
+    //       msg: "这是父组件中的数据",
+    //       num: 9999
+    //     }
+    //   }
+    // })
+
+    // Vue.component("son", {
+    //   template: "<div>这是子组件{{msgfromfather}}, {{numfromfather}}</div>",
+    //   props: ["msgfromfather", "numfromfather"]
+    // })
+
+
+    // const vm = new Vue({
+    //   el: "#app"
+    // })
+
+
+    // 子组件接收到的数据会随父组件变化
+
+    // Vue.component("father", {
+    //   template: `<div>这是父组件：<input type="text" v-model="msg"/><son :msgfromfather="msg" :numfromfather="num"/></div>`,
+    //   data(){
+    //     return {
+    //       msg: "这是父组件中的数据",
+    //       num: 9999
+    //     }
+    //   }
+    // })
+
+    // Vue.component("son", {
+    //   template: "<div>这是子组件{{msgfromfather}}, {{numfromfather}}</div>",
+    //   props: ["msgfromfather", "numfromfather"]
+    // })
+
+
+    // const vm = new Vue({
+    //   el: "#app"
+    // })
+
+
+    // 子组件中修改富父组件传递过来的数据，会不会改变父组件中的数据
+    // 父组件传递给子组件的数据，子组件是不可以进行修改的！
+
+    // 单向数据流！
+
+    // Vue.component("father", {
+    //   template: `<div>这是父组件：<input type="text" v-model="msg"/><son :msgfromfather="msg" :numfromfather="num"/></div>`,
+    //   data(){
+    //     return {
+    //       msg: "这是父组件中的数据",
+    //       num: 9999
+    //     }
+    //   }
+    // })
+
+    // Vue.component("son", {
+    //   template: `<div>这是子组件 <button @click="clickHandler">修改父组件的数据</button>{{msgfromfather}}, {{numfromfather}}</div>`,
+    //   props: ["msgfromfather", "numfromfather"],
+    //   methods: {
+    //     clickHandler(){
+    //       this.numfromfather = 6666;
+    //     }
+    //   }
+    // })
+
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+
+</html>

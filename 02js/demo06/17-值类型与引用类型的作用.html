@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [1, 2, 3];
+    function fn(a) {
+      a[2] = 100;
+    }
+
+    fn(arr);
+    console.log(arr);
+
+
+    function bubbleSort(arr) {
+      // 对数组冒泡排序
+      for(var i = 0; i < arr.length - 1; i ++) {
+        for(var j = 0; j < arr.length - i - 1; j++) {
+          if (arr[j] > arr[j+1]) {
+            var temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      }
+    }
+    var array = [1, 3, 5, 7, 9, 2, 4, 6, 8];
+    bubbleSort(array);
+    console.log(array);
+
+  </script>
+</body>
+</html>

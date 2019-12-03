@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 校验qq
+      // qq的规律
+      // 1. 都是数字
+      // 2. 长度 5-11位
+      // 3. 不能0开头
+      // var reg = /^[1-9]\d{4,10}$/
+      // console.log(reg.test('1234123'))
+      // console.log(reg.test('8888888'))
+
+      // 校验电话号码
+      // xxx-xxxxxx
+      // 0开头
+      // -前面有3位或者4位   大城市 3位  小城市 4位  021  010
+      // - 后面 7 到 8 位
+      // var mobileReg = /^0\d{2,3}-\d{7,8}$/
+      // console.log(mobileReg.test('021-12345678'))
+      // console.log(mobileReg.test('0111-12345678'))
+
+      // var mobileReg = /^0\d{2}-\d{8}|0\d{3}-\d{7}$/
+      // console.log(mobileReg.test('021-12345678'))
+      // console.log(mobileReg.test('0211-1234578'))
+
+      // 姓名
+      // 必须汉字
+      // 长度2-4
+      // [\u4e00-\u9fa5]
+      // utf8    gb2312 gbk          ascii
+
+      // 手机号
+
+      // 邮箱
+      // console.log('\u4e00')
+      // console.log('\u9fa5')
+
+      // var reg = /^[\u4e00-\u9fa5]{2,4}$/
+      // // console.log(reg.test('胡'))
+      // // console.log(reg.test('胡聪'))
+      // console.log(reg.test('胡聪聪'))
+
+      // 手机号
+      // 1开头
+      // 11位
+
+      // 前三位  13[0-9]  147 149  15[0-9]  166  17[0-9] 18[0-9]  199 198
+      // var reg = /^(13[0-9]|14[79]|15[0-9]|166|17[0-9]|18[0-9]|19[89])\d{8}$/
+
+      // var reg = /^1[2-9]\d{9}$/
+      // // var reg = /^1\d{10}$/
+      // console.log(reg.test('18511112222'))
+
+      // var myreg = /^[1][3,4,5,67,8][0-9]{9}$/
+      // console.log(myreg.test('1,345678901'))
+
+      // 校验邮箱
+      // 必须  字母 数字_ @ 字母 数字 _  . com
+      var reg = /^\w+@\w+(\.[a-z]+){1,2}$/
+      console.log(reg.test('123@qq.com.cn'))
+      console.log(reg.test('123@qq.org'))
+      console.log(reg.test('1111@163.com'))
+    </script>
+  </body>
+</html>

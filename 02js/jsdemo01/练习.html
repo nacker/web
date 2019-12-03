@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var ff = {
+      name: '灰灰',
+      age: 18,
+      car: {
+        brand: '玛莎拉蒂',
+        price: 500
+      }
+    };
+
+    // 深拷贝
+    function deepCopy(obj) {
+      var newObj={};
+      for (var k in obj) {
+        if (typeof obj[k]==='object') {
+          newObj[k]=deepCopy(obj[k]);
+        } else {
+          newObj[k]=obj[k];
+        }
+      }
+      return newObj;
+    }
+    var ff2=deepCopy(ff);
+    ff2.car.brand='卡面拉一大';
+    console.log(ff);
+    console.log(ff2);
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>埋炸弹</button>
+  <button>拆弹</button>
+  <script>
+    // 定时器： setInterval()  clearInterval()  用法和延时器一样
+    // 功能： 延时器，延迟一段时间，代码就执行，只会执行一次
+    //        定时器：每个一段时间，函数就会被调用一次，只要不清除，会一直执行
+    var btn1 = document.querySelector('button:first-child');
+    var btn2 = document.querySelector('button:nth-child(2)');
+    var timeId;
+    btn1.onclick = function() {
+      // 开始定时器
+      timeId = setInterval(function(){
+        console.log('boom!!!!');
+      }, 1000);
+    }
+    btn2.onclick = function() {
+      clearInterval(timeId);
+      console.log('清除了');
+    }
+  </script>
+</body>
+</html>

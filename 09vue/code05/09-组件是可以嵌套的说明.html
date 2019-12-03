@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <wangjianlin>
+    </wangjianlin>
+  </div>
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+  
+    // 组件之间的父子关系
+    // 在使用组件的时候，如果一个组件的模板中，用到了另一个组件标签，则这两个组件就形成了父子关系
+
+    Vue.component("wangsicong", {
+      template: "<div>大家好，我是王思聪</div>"
+    })
+
+    Vue.component("wangjianlin", {
+      template: "<div>定一个小目标，赚他一个亿, 我有个儿子，不听话<wangsicong /></div>"
+    })
+
+
+    Vue.component("parent", {
+      template: "<div>这是一个组件</div>",
+      // 局部注册的组件，不一定就能够形成父子关系
+      // 局部注册只是说明，这个组件的使用范围, 并不能证明这就是父子关系
+      components: {
+        "something": {
+          template: "<div>这是一个在组件内部注册的局部组件</div>"
+        }
+      }
+    })
+
+    const vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>

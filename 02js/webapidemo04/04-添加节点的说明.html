@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>稀释</li>
+    <li>凋残</li>
+    <li id="zj">皂君</li>
+    <li>郁欢</li>
+  </ul>
+
+  <script>
+    // 创建一个小飞飞，添加到最后面
+    var ul = document.querySelector('ul');
+    var xff = document.createElement('li');
+    xff.innerText = '小飞飞';
+    // parent.appendChild只能添加到父元素的子元素的最后面
+    
+    // insertBefore: 把newChild添加到parent中的refChild的前面
+
+    // newChild: 需要添加的添加的节点
+    // refChild: 添加到谁的前面
+    // parent.insertBefore(newChild, refChild);
+    // var zj = document.querySelector('#zj');
+
+    // 如果要添加到最前面  parent.inserBefore(newChild, parent.firstElementChild);
+    // ul.insertBefore(xff, ul.firstElementChild);
+
+
+    // 注意：insertBefore必须指定两个参数
+    // 参数1：新增加的节点  newChild
+    // 参数2： 添加到那个节点的前面   parent.firstElementChild  
+    //       如果第二个参数指定为null，添加到最后面， appendChild的效果
+    ul.insertBefore(xff, null);
+  </script>
+</body>
+</html>

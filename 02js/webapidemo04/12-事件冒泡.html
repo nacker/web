@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+    }
+
+    .sun {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">
+      <div class="sun"></div>
+    </div>
+  </div>
+
+  <script>
+    var son = document.querySelector('.son');
+    var sun = document.querySelector('.sun');
+    var father = document.querySelector('.father');
+    var arr = [son, sun, father, document.body, document];
+    // 给5个人都注册点击事件
+    for(var i = 0; i < arr.length; i++) {
+      // 第三个参数： useCapture: 是否捕获  默认是false, 
+      arr[i].addEventListener('click', function fn() {
+        console.log(this);
+      });
+    }
+
+
+    
+  </script>
+</body>
+</html>

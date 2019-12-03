@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <!-- 如果直接在checkbox中通过v-model双向绑定一个布尔值，那么这个布尔值就是用来控制checkbox的checked属性的 -->
+    <!-- <input type="checkbox" v-model="isChecked"> -->
+
+
+    <!-- 下面这种情况不常用 -->
+    <!-- 如果有多个checkbox拥有相同的name，并且通过v-model绑定了同一个数据，那么当当前的复选框被选中的时候，当前的复选框的value值，就会被添加到v-model绑定的数组中 -->
+    <!-- <input type="checkbox" name="hobbies" value="smoke" v-model="hobbies"> 抽烟
+    <input type="checkbox" name="hobbies" value="drink"  v-model="hobbies"> 喝酒
+    <input type="checkbox" name="hobbies" value="hothead"  v-model="hobbies"> 烫头 -->
+
+  </div>
+
+  <script src="./node_modules/vue/dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        // isChecked: false,
+        hobbies: []
+      }
+    })
+  </script>
+</body>
+</html>

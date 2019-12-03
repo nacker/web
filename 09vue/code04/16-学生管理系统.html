@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="name">
+    <button id="btnAdd">添加学生</button>
+
+  </div>
+  <script src="./node_modules/axios/dist/axios.js"></script>
+  <script>
+    axios({
+      url: "http://localhost:3000/students"
+    }).then(response => {
+      console.log(response.data)
+    })
+
+    document.getElementById("btnAdd").onclick = function (){
+      let name = document.getElementById("name").value
+      axios({
+        url: "http://localhost:3000/students",
+        method: "post",
+        data: {
+          name
+        }
+      }).then(response=> {
+        console.log(response)
+      })
+    }
+
+
+    // axios({
+    //   url: "http://localhost:3000/students/1"
+    // }).then(response => {
+    //   console.log(response.data);
+    // })
+
+    // axios({
+    //   url: "http://localhost:3000/students/1",
+    //   method: "delete"
+    // }).then(response => {
+    //   console.log(response)
+    // })
+
+    // axios({
+    //   url: "http://localhost:3000/students/4",
+    //   method: "patch",
+    //   data: {
+    //     name: "徐大燕"
+    //   }
+    // }).then(res => {
+    //   console.log(res);
+    // })
+    
+  </script>
+</body>
+</html>
+
+
+<!-- {
+  "name": "刘玺",
+  "id": 2
+},
+{
+  "name": "胡聪聪",
+  "id": 3
+},
+{
+  "name": "徐大燕",
+  "id": 4
+},
+{
+  "name": "阿萨大",
+  "id": 5
+} -->

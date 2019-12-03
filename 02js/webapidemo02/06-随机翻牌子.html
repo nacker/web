@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">翻牌子</button>
+  <select>
+    <option>燕燕</option>
+    <option id="xff">小飞飞</option>
+    <option>怡口莲</option>
+    <option>乐轮</option>
+    <option>杨静茹</option>
+    <option>张路路</option>
+    <option>汪萍</option>
+  </select>
+
+  <script>
+    // 找对象
+    // 1. 给翻牌子注册点击事件
+    // 2. 随机选中options中的某一个 ()
+
+    var btn = document.getElementById('btn');
+    var options = document.getElementsByTagName('option');
+    btn.onclick = function() {
+      // 让小飞飞选中
+      // 让option中随机一个选中
+      var random = parseInt(Math.random() * options.length);
+      options[random].selected = true;
+    }
+  </script>
+</body>
+</html>
